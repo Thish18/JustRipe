@@ -16,5 +16,10 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // tom is here.
+        }
     }
 }
