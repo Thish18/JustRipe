@@ -16,20 +16,5 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (txtUsername != null && txtPassword != null)
-            {
-
-                MessageBox.Show("Done.");
-
-            }
-            else {
-
-                MessageBox.Show("Fail.");
-
-            }
-        }
     }
 }
