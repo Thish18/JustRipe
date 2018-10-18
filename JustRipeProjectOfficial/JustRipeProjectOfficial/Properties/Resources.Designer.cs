@@ -79,5 +79,15 @@ namespace JustRipeProjectOfficial.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap just_ripe {
+            get {
+                object obj = ResourceManager.GetObject("just-ripe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
