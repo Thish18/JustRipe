@@ -19,7 +19,8 @@ namespace JustRipeProjectOfficial
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // tom is here.
+            MainMenu  frm = new MainMenu();
+            frm.ShowDialog();
         }
     }
 }
