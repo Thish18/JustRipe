@@ -32,6 +32,7 @@ namespace JustRipeProjectOfficial
             {
 
                 /*do it when the username and password are correct.*/
+                dbconn.userInfoImport(un);
                 frm.Show();
                 this.Hide();
 

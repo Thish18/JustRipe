@@ -15,13 +15,19 @@ namespace JustRipeProjectOfficial
     {
         /*Setup for connection to the MYSQL Server*/
         private MySqlConnection conn;
+
         //fill in information needed for connection.
         private string server = "localhost";
         private string database = "justripe";
         private string uid = "root";
         private string password = "";
+
         //solve the server doesnt support ssl connection error.
         private string sslmode = "none";
+
+        //setup logged in info.
+        private int userID;
+        private int rankID;
 
         /*Using information given above to fill in the gaps in connection string
          the use it for the actual SQL connection query.*/
@@ -34,6 +40,24 @@ namespace JustRipeProjectOfficial
 
             //connection query for SQL.
             conn = new MySqlConnection(connStr);
+
+        }
+
+        //once MYSQL Connected. I believe this will actually try to connet to the database server.
+        public bool OpenConn(){
+
+            try {
+
+                conn.Open();
+                return true;
+                
+            }
+            catch (MySqlException ex) {
+
+                MessageBox.Show(ex.Message);
+                return false;
+
+            }
 
         }
 
@@ -129,8 +153,32 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public void userInfoImport(string un)
+        {
+
+            Initialize();
+            conn.Open();
+
+            string query = "SELECT * FROM users WHERE username = '" + un + "'";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            /*important code to export data read from sql database.*/
+            MySqlDataReader mdr = cmd.ExecuteReader();
+
+            while (mdr.Read())
+            {
+
+                userID = (int)mdr["users_ID"];
+                rankID = (int)mdr["rankID"];
+
+            }
+
+
+
+        }
+
         //damn, finally it works
-        
+
         public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw) {
 
             //this one works, but i have to figure out how to use the initialize
