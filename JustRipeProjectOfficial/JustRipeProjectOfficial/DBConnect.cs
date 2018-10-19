@@ -50,7 +50,7 @@ namespace JustRipeProjectOfficial
 
                 conn.Open();
                 return true;
-
+                
             }
             catch (MySqlException ex) {
 
@@ -83,16 +83,50 @@ namespace JustRipeProjectOfficial
         /*-DO NOT UN COMMENT OR DELETE THIS AREA BELOW-*/
         /*
         //not tested yet
-        public bool unCheck(string un) {
+        public bool unCheckExist(string un) {
 
+            string query = "SELECT username FROM users WHERE username = '"+ un +"'";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataReader dR = new MySqlDataReader();
+            //create reader for this to output cmd data.
+            dR = cmd.ExecuteReader();
+
+            //compare the username
+            if(){
+                
+                //if username is exist
+                return true;
+        
+            } else {
             
+                //if username is not exist
+                return false;
+        
+            }
 
         }
 
         //not tested yet
         public bool pwCheck(string pw){
 
+            string query = "SELECT Password FROM users WHERE username = '"+ pw +"'";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataReader dR = new MySqlDataReader();
+            //create reader for this to output cmd data.
+            dR = cmd.ExecuteReader();
+
+            //compare the password
+            if(){
+                
+                //if password is correct
+                return true;
+        
+            } else {
             
+                //if password is incorrect
+                return false;
+        
+            }
 
         }
 
