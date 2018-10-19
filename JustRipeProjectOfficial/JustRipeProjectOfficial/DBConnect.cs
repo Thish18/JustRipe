@@ -79,48 +79,33 @@ namespace JustRipeProjectOfficial
 
         }
 
-        /*not tested yet*/
+        /*[WORKING IN PROGRESS]*/
+        /*-DO NOT UN COMMENT OR DELETE THIS AREA BELOW-*/
+        /*
+        //not tested yet
         public bool unCheck(string un) {
 
-            string query = "SELECT username FROM Users WHERE username = "+ un +";";
-            /*dunno will it work or not,  but probably means like (<what you wanna do with query>, <the database and server you connect>)*/
-            MySqlCommand cmd = new MySqlCommand(query,conn);
-
-            if (cmd.ToString() != un)
-            {
-
-                return false;
-
-            }
-            else {
-
-                return true;
-
-            }
+            
 
         }
 
-        /*not tested yet*/
+        //not tested yet
         public bool pwCheck(string pw){
 
-            string query = "SELECT Password FROM Users WHERE username = " + pw + ";";
-            /*dunno will it work or not,  but probably means like (<what you wanna do with query>, <the database and server you connect>)*/
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-
-            if (cmd.ToString() != pw)
-            {
-
-                return false;
-
-            }
-            else
-            {
-
-                return true;
-
-            }
+            
 
         }
+
+        public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw) {
+
+            //is it something like this
+            string query = "INSERT INTO users (firstname, lastname, username, Password, ContactNum) " +
+                           "VALUES ('"+ fn +"', '"+ ln +"', '"+ un +"', '"+ pw +"', '"+ no +"');";
+            //dunno will it work or not,  but probably means like (<what you wanna do with query>, <the database and server you connect>)
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            
+
+        }*/
 
     }
 }

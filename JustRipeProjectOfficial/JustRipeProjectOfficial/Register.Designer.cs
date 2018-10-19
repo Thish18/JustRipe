@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tBGender = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tBDoB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tBLastName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tBContactNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tBAddress2 = new System.Windows.Forms.TextBox();
+            this.tBAddress1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBFirstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tBUN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tBPW = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox4
+            // tBGender
             // 
-            this.textBox4.Location = new System.Drawing.Point(251, 58);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(41, 20);
-            this.textBox4.TabIndex = 32;
+            this.tBGender.Location = new System.Drawing.Point(251, 58);
+            this.tBGender.Name = "tBGender";
+            this.tBGender.Size = new System.Drawing.Size(41, 20);
+            this.tBGender.TabIndex = 32;
             // 
             // label7
             // 
@@ -67,12 +67,12 @@
             this.label7.TabIndex = 31;
             this.label7.Text = "Gender: ";
             // 
-            // textBox3
+            // tBDoB
             // 
-            this.textBox3.Location = new System.Drawing.Point(81, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(104, 20);
-            this.textBox3.TabIndex = 30;
+            this.tBDoB.Location = new System.Drawing.Point(81, 58);
+            this.tBDoB.Name = "tBDoB";
+            this.tBDoB.Size = new System.Drawing.Size(104, 20);
+            this.tBDoB.TabIndex = 30;
             // 
             // label6
             // 
@@ -83,12 +83,12 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Date of Birth: ";
             // 
-            // textBox7
+            // tBLastName
             // 
-            this.textBox7.Location = new System.Drawing.Point(81, 32);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(211, 20);
-            this.textBox7.TabIndex = 28;
+            this.tBLastName.Location = new System.Drawing.Point(81, 32);
+            this.tBLastName.Name = "tBLastName";
+            this.tBLastName.Size = new System.Drawing.Size(211, 20);
+            this.tBLastName.TabIndex = 28;
             // 
             // label9
             // 
@@ -99,12 +99,12 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Last Name: ";
             // 
-            // textBox6
+            // tBContactNo
             // 
-            this.textBox6.Location = new System.Drawing.Point(81, 136);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(211, 20);
-            this.textBox6.TabIndex = 26;
+            this.tBContactNo.Location = new System.Drawing.Point(81, 136);
+            this.tBContactNo.Name = "tBContactNo";
+            this.tBContactNo.Size = new System.Drawing.Size(211, 20);
+            this.tBContactNo.TabIndex = 26;
             // 
             // label8
             // 
@@ -115,19 +115,19 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Contact No.:";
             // 
-            // textBox5
+            // tBAddress2
             // 
-            this.textBox5.Location = new System.Drawing.Point(81, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(211, 20);
-            this.textBox5.TabIndex = 24;
+            this.tBAddress2.Location = new System.Drawing.Point(81, 110);
+            this.tBAddress2.Name = "tBAddress2";
+            this.tBAddress2.Size = new System.Drawing.Size(211, 20);
+            this.tBAddress2.TabIndex = 24;
             // 
-            // textBox2
+            // tBAddress1
             // 
-            this.textBox2.Location = new System.Drawing.Point(81, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 20);
-            this.textBox2.TabIndex = 23;
+            this.tBAddress1.Location = new System.Drawing.Point(81, 84);
+            this.tBAddress1.Name = "tBAddress1";
+            this.tBAddress1.Size = new System.Drawing.Size(211, 20);
+            this.tBAddress1.TabIndex = 23;
             // 
             // label5
             // 
@@ -138,12 +138,12 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Address: ";
             // 
-            // textBox1
+            // tBFirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 20);
-            this.textBox1.TabIndex = 21;
+            this.tBFirstName.Location = new System.Drawing.Point(81, 6);
+            this.tBFirstName.Name = "tBFirstName";
+            this.tBFirstName.Size = new System.Drawing.Size(211, 20);
+            this.tBFirstName.TabIndex = 21;
             // 
             // label4
             // 
@@ -162,6 +162,7 @@
             this.btnCreate.TabIndex = 33;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
@@ -173,12 +174,12 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // textBox8
+            // tBUN
             // 
-            this.textBox8.Location = new System.Drawing.Point(181, 162);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(109, 20);
-            this.textBox8.TabIndex = 36;
+            this.tBUN.Location = new System.Drawing.Point(181, 162);
+            this.tBUN.Name = "tBUN";
+            this.tBUN.Size = new System.Drawing.Size(109, 20);
+            this.tBUN.TabIndex = 36;
             // 
             // label1
             // 
@@ -189,12 +190,12 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "Username: ";
             // 
-            // textBox9
+            // tBPW
             // 
-            this.textBox9.Location = new System.Drawing.Point(181, 188);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(109, 20);
-            this.textBox9.TabIndex = 38;
+            this.tBPW.Location = new System.Drawing.Point(181, 188);
+            this.tBPW.Name = "tBPW";
+            this.tBPW.Size = new System.Drawing.Size(109, 20);
+            this.tBPW.TabIndex = 38;
             // 
             // label2
             // 
@@ -228,24 +229,24 @@
             this.ClientSize = new System.Drawing.Size(302, 272);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.tBPW);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.tBUN);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tBGender);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tBDoB);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.tBLastName);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.tBContactNo);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tBAddress2);
+            this.Controls.Add(this.tBAddress1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tBFirstName);
             this.Controls.Add(this.label4);
             this.Name = "Register";
             this.Text = "Register";
@@ -256,24 +257,24 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tBGender;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tBDoB;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tBLastName;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tBContactNo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tBAddress2;
+        private System.Windows.Forms.TextBox tBAddress1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBFirstName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tBUN;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tBPW;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label3;
