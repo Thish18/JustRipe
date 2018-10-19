@@ -25,7 +25,14 @@ namespace JustRipeProjectOfficial
 
         /*Using information given above to fill in the gaps in connection string
          the use it for the actual SQL connection query.*/
-        public void Initialize() {
+        public void DBInitialize() {
+
+            Initialize();
+
+        }
+
+
+        private void Initialize() {
 
             //using information given above.
             string connStr = "Server=" + server + ";database=" + database +
@@ -67,6 +74,49 @@ namespace JustRipeProjectOfficial
 
                 MessageBox.Show(ex.Message);
                 return false;
+
+            }
+
+        }
+
+        /*not tested yet*/
+        public bool unCheck(string un) {
+
+            string query = "SELECT username FROM Users WHERE username = "+ un +";";
+            /*dunno will it work or not,  but probably means like (<what you wanna do with query>, <the database and server you connect>)*/
+            MySqlCommand cmd = new MySqlCommand(query,conn);
+
+            if (cmd.ToString() != un)
+            {
+
+                return false;
+
+            }
+            else {
+
+                return true;
+
+            }
+
+        }
+
+        /*not tested yet*/
+        public bool pwCheck(string pw){
+
+            string query = "SELECT Password FROM Users WHERE username = " + un + ";";
+            /*dunno will it work or not,  but probably means like (<what you wanna do with query>, <the database and server you connect>)*/
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            if (cmd.ToString() != pw)
+            {
+
+                return false;
+
+            }
+            else
+            {
+
+                return true;
 
             }
 
