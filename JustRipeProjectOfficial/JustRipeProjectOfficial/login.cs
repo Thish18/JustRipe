@@ -19,8 +19,20 @@ namespace JustRipeProjectOfficial
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MainMenu  frm = new MainMenu();
-            frm.ShowDialog();
+            MainMenu frm = new MainMenu();
+            frm.Show();
+            this.Hide();
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

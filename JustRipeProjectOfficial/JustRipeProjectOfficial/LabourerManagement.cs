@@ -16,5 +16,12 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainMenu mm = new MainMenu();
+            mm.Show();
+            this.Close();
+        }
     }
 }

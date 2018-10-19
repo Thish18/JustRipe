@@ -38,13 +38,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnHarvestTimetable = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCrops
             // 
             this.btnCrops.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrops.Location = new System.Drawing.Point(145, 8);
-            this.btnCrops.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrops.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrops.Name = "btnCrops";
             this.btnCrops.Size = new System.Drawing.Size(133, 130);
             this.btnCrops.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             this.btnFertilizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFertilizer.Location = new System.Drawing.Point(283, 8);
-            this.btnFertilizer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFertilizer.Margin = new System.Windows.Forms.Padding(2);
             this.btnFertilizer.Name = "btnFertilizer";
             this.btnFertilizer.Size = new System.Drawing.Size(133, 130);
             this.btnFertilizer.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             this.btnVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicle.Location = new System.Drawing.Point(8, 142);
-            this.btnVehicle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVehicle.Margin = new System.Windows.Forms.Padding(2);
             this.btnVehicle.Name = "btnVehicle";
             this.btnVehicle.Size = new System.Drawing.Size(133, 130);
             this.btnVehicle.TabIndex = 3;
@@ -77,18 +78,19 @@
             // 
             this.btnLabourManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLabourManagement.Location = new System.Drawing.Point(145, 142);
-            this.btnLabourManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLabourManagement.Margin = new System.Windows.Forms.Padding(2);
             this.btnLabourManagement.Name = "btnLabourManagement";
             this.btnLabourManagement.Size = new System.Drawing.Size(133, 130);
             this.btnLabourManagement.TabIndex = 4;
             this.btnLabourManagement.Text = "Labour Management";
             this.btnLabourManagement.UseVisualStyleBackColor = true;
+            this.btnLabourManagement.Click += new System.EventHandler(this.btnLabourManagement_Click);
             // 
             // btnWorkSchedule
             // 
             this.btnWorkSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWorkSchedule.Location = new System.Drawing.Point(283, 142);
-            this.btnWorkSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWorkSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.btnWorkSchedule.Name = "btnWorkSchedule";
             this.btnWorkSchedule.Size = new System.Drawing.Size(133, 130);
             this.btnWorkSchedule.TabIndex = 5;
@@ -98,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 274);
+            this.label1.Location = new System.Drawing.Point(11, 279);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
@@ -107,16 +109,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(63, 274);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(53, 277);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(135, 20);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(319, 274);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Location = new System.Drawing.Point(232, 277);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(98, 20);
             this.textBox2.TabIndex = 9;
@@ -124,12 +126,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(227, 274);
+            this.label2.Location = new System.Drawing.Point(192, 280);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Permission Rank:";
+            this.label2.Text = "Rank:";
             // 
             // btnHarvestTimetable
             // 
@@ -146,12 +148,23 @@
             this.btnHarvestTimetable.Text = "Harvest Timetable";
             this.btnHarvestTimetable.UseVisualStyleBackColor = false;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(335, 274);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(81, 23);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(425, 297);
+            this.ClientSize = new System.Drawing.Size(425, 303);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -162,7 +175,7 @@
             this.Controls.Add(this.btnFertilizer);
             this.Controls.Add(this.btnCrops);
             this.Controls.Add(this.btnHarvestTimetable);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             this.ResumeLayout(false);
@@ -182,5 +195,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
