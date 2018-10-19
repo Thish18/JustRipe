@@ -86,58 +86,39 @@ namespace JustRipeProjectOfficial
         public bool unCheckExist(string un) {
 
             string query = "SELECT username FROM users WHERE username = '"+ un +"'";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            MySqlDataReader dR = new MySqlDataReader();
-            //create reader for this to output cmd data.
-            dR = cmd.ExecuteReader();
+            MySqlCommand cmd = new MySqlCommand(query, conn);           
 
-            //compare the username
-            if(){
-                
-                //if username is exist
-                return true;
-        
-            } else {
-            
-                //if username is not exist
-                return false;
-        
-            }
-
-        }
-
+        }*/
+        /*
         //not tested yet
         public bool pwCheck(string pw){
 
             string query = "SELECT Password FROM users WHERE username = '"+ pw +"'";
             MySqlCommand cmd = new MySqlCommand(query, conn);
-            MySqlDataReader dR = new MySqlDataReader();
-            //create reader for this to output cmd data.
-            dR = cmd.ExecuteReader();
 
-            //compare the password
-            if(){
-                
-                //if password is correct
-                return true;
-        
-            } else {
-            
-                //if password is incorrect
-                return false;
-        
-            }
+        }*/
 
-        }
-
+        //damn, finally it works
+        /*
         public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw) {
 
-            //is it something like this
-            string query = "INSERT INTO users (firstname, lastname, username, Password, ContactNum) " +
-                           "VALUES ('"+ fn +"', '"+ ln +"', '"+ un +"', '"+ pw +"', '"+ no +"');";
-            //dunno will it work or not,  but probably means like (<what you wanna do with query>, <the database and server you connect>)
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            
+            //this one works, but i have to figure out how to use the initialize
+            string connStr = "Server=" + server + ";database=" + database +
+                ";UID=" + uid + ";Password=" + password + ";" + "sslmode=" + sslmode + ";";
+            //connection query for SQL.
+            conn = new MySqlConnection(connStr);
+            conn.Open();
+
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "INSERT INTO users (firstname, lastname, username, Password, ContactNum) " +
+                           "VALUES (@firstname, @lastname, @username, @Password, @ContactNum);";
+            comm.Parameters.AddWithValue("@firstname", fn);
+            comm.Parameters.AddWithValue("@lastname", ln);
+            comm.Parameters.AddWithValue("@username", un);
+            comm.Parameters.AddWithValue("@Password", pw);
+            comm.Parameters.AddWithValue("@ContactNum", no);
+            comm.ExecuteNonQuery();
+
 
         }*/
 

@@ -15,6 +15,7 @@ namespace JustRipeProjectOfficial
         public Register()
         {
             InitializeComponent();
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -26,12 +27,12 @@ namespace JustRipeProjectOfficial
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            /*
+            
             DBConnect dbconn = new DBConnect();
-            
-            
-            
-            if (dbconn.unCheck(tBUN.Text).Equals(false))
+
+
+            /*
+            if (dbconn.unCheckExist(tBUN.Text).Equals(false))
             {
                 //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
                 dbconn.userCreate(tBFirstName.Text, tBLastName.Text, tBDoB.Text,
@@ -52,7 +53,13 @@ namespace JustRipeProjectOfficial
             }*/
 
             //DEMO, NO ACTUAL DATA SAVED
-            MessageBox.Show("DEMO: User created.[working in progress, no actual data saved]");
+            /*
+            //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
+            dbconn.userCreate(tBFirstName.Text, tBLastName.Text, tBDoB.Text,
+                          tBGender.Text, tBAddress1.Text, tBAddress2.Text,
+                          tBContactNo.Text, tBUN.Text, tBPW.Text);*/
+
+            MessageBox.Show("DEMO: User created.");
             login lgin = new login();
             lgin.Show();
             Close();
