@@ -37,24 +37,6 @@ namespace JustRipeProjectOfficial
 
         }
 
-        //once MYSQL Connected. I believe this will actually try to connet to the database server.
-        public bool OpenConn(){
-
-            try {
-
-                conn.Open();
-                return true;
-                
-            }
-            catch (MySqlException ex) {
-
-                MessageBox.Show(ex.Message);
-                return false;
-
-            }
-
-        }
-
         //this will close the connection to the database server once the program closed.
         public bool CloseConn() {
 
@@ -74,9 +56,8 @@ namespace JustRipeProjectOfficial
         }
 
         /*[WORKING IN PROGRESS]*/
-        /*-DO NOT UN COMMENT OR DELETE THIS AREA BELOW-*/
         
-        //not tested yet
+        //[TEST SUCCESS] it used to check if username existed or not.
         public bool unCheckExist(string un) {
 
             Initialize();
@@ -109,8 +90,8 @@ namespace JustRipeProjectOfficial
             }
 
         }
-        
-        //not tested yet
+
+        //[TEST SUCCESS] it used to check if password correct or not.
         public bool pwCheck(string un, string pw){
 
             Initialize();
