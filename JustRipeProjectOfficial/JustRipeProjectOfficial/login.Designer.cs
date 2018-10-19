@@ -78,6 +78,7 @@
             this.btnCreateUser.TabIndex = 32;
             this.btnCreateUser.Text = "Create User ";
             this.btnCreateUser.UseVisualStyleBackColor = true;
+            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
             // 
             // pictureBox1
             // 

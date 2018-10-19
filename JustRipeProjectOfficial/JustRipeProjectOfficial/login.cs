@@ -43,6 +43,11 @@ namespace JustRipeProjectOfficial
             
         }
 
-
+        private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+            Register rg = new Register();
+            rg.Show();
+            Hide();
+        }
     }
 }

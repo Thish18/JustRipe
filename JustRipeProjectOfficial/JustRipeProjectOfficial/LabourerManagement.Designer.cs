@@ -53,6 +53,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cBRank = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +90,7 @@
             // 
             // btnTimetable
             // 
-            this.btnTimetable.Location = new System.Drawing.Point(161, 197);
+            this.btnTimetable.Location = new System.Drawing.Point(161, 253);
             this.btnTimetable.Name = "btnTimetable";
             this.btnTimetable.Size = new System.Drawing.Size(302, 33);
             this.btnTimetable.TabIndex = 8;
@@ -146,13 +148,15 @@
             // 
             this.groupBox1.Location = new System.Drawing.Point(599, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(140, 302);
+            this.groupBox1.Size = new System.Drawing.Size(140, 274);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Assign Summary";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.cBRank);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.textBox3);
@@ -168,7 +172,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(161, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 179);
+            this.groupBox2.Size = new System.Drawing.Size(302, 204);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Labourer Information";
@@ -278,13 +282,32 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(336, 292);
+            this.btnBack.Location = new System.Drawing.Point(599, 292);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(121, 23);
+            this.btnBack.Size = new System.Drawing.Size(140, 23);
             this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Back to main menu";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // cBRank
+            // 
+            this.cBRank.FormattingEnabled = true;
+            this.cBRank.Items.AddRange(new object[] {
+            "[If this shows up database not working]"});
+            this.cBRank.Location = new System.Drawing.Point(85, 177);
+            this.cBRank.Name = "cBRank";
+            this.cBRank.Size = new System.Drawing.Size(104, 21);
+            this.cBRank.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(40, 180);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Rank: ";
             // 
             // LabourerManagement
             // 
@@ -340,5 +363,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cBRank;
+        private System.Windows.Forms.Label label10;
     }
 }

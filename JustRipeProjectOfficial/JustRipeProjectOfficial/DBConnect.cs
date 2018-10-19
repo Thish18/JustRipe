@@ -103,7 +103,7 @@ namespace JustRipeProjectOfficial
         /*not tested yet*/
         public bool pwCheck(string pw){
 
-            string query = "SELECT Password FROM Users WHERE username = " + un + ";";
+            string query = "SELECT Password FROM Users WHERE username = " + pw + ";";
             /*dunno will it work or not,  but probably means like (<what you wanna do with query>, <the database and server you connect>)*/
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
