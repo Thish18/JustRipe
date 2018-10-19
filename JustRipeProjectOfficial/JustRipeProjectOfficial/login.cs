@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace JustRipeProjectOfficial
 {
@@ -15,17 +16,29 @@ namespace JustRipeProjectOfficial
         public login()
         {
             InitializeComponent();
+           
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MainMenu frm = new MainMenu();
+            DBConnect dbconn = new DBConnect();
+
 
             /*if statement with sql function uncheck and pwcheck*/
+            if (dbconn.unCheckExist(txtUsername.Text).Equals(true))
+            {
 
-            /*do it when the username and password are correct.*/
-            frm.Show();
-            this.Hide();
+                /*do it when the username and password are correct.*/
+                frm.Show();
+                this.Hide();
+
+            }
+            else {
+
+                MessageBox.Show("Username / Password Incorrect.");
+
+            }
 
         }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace JustRipeProjectOfficial
 {
@@ -28,37 +29,14 @@ namespace JustRipeProjectOfficial
         private void btnCreate_Click(object sender, EventArgs e)
         {
             
+
+
             DBConnect dbconn = new DBConnect();
-
-
-            /*
-            if (dbconn.unCheckExist(tBUN.Text).Equals(false))
-            {
-                //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
-                dbconn.userCreate(tBFirstName.Text, tBLastName.Text, tBDoB.Text,
-                              tBGender.Text, tBAddress1.Text, tBAddress2.Text,
-                              tBContactNo.Text, tBUN.Text, tBPW.Text);
-
-                //if success, output messagebox and login screen, then close the register window.
-                MessageBox.Show("User created.");
-                login lgin = new login();
-                lgin.Show();
-                Close();
-
-            }
-            else {
-
-                MessageBox.Show("Username already existed.");
-
-            }*/
-
-            //DEMO, NO ACTUAL DATA SAVED
-            /*
             //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
             dbconn.userCreate(tBFirstName.Text, tBLastName.Text, tBDoB.Text,
                           tBGender.Text, tBAddress1.Text, tBAddress2.Text,
-                          tBContactNo.Text, tBUN.Text, tBPW.Text);*/
-
+                          tBContactNo.Text, tBUN.Text, tBPW.Text);
+            
             MessageBox.Show("DEMO: User created.");
             login lgin = new login();
             lgin.Show();

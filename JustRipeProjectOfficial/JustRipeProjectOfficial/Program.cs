@@ -17,9 +17,8 @@ namespace JustRipeProjectOfficial
         {
 
             DBConnect dbconn = new DBConnect();
-            dbconn.DBInitialize();
+            dbconn.Initialize();
             dbconn.OpenConn();
-
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

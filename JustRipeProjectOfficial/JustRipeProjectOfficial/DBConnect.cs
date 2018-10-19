@@ -25,14 +25,8 @@ namespace JustRipeProjectOfficial
 
         /*Using information given above to fill in the gaps in connection string
          the use it for the actual SQL connection query.*/
-        public void DBInitialize() {
 
-            Initialize();
-
-        }
-
-
-        private void Initialize() {
+        public void Initialize() {
 
             //using information given above.
             string connStr = "Server=" + server + ";database=" + database +
@@ -81,14 +75,40 @@ namespace JustRipeProjectOfficial
 
         /*[WORKING IN PROGRESS]*/
         /*-DO NOT UN COMMENT OR DELETE THIS AREA BELOW-*/
-        /*
+        
         //not tested yet
         public bool unCheckExist(string un) {
 
-            string query = "SELECT username FROM users WHERE username = '"+ un +"'";
-            MySqlCommand cmd = new MySqlCommand(query, conn);           
+            Initialize();
+            conn.Open();
 
-        }*/
+            string query = "SELECT username FROM users WHERE username = '"+ un +"'";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            /*important code to export data read from sql database.*/
+            MySqlDataReader mdr = cmd.ExecuteReader();
+
+            string dataUN = "";
+
+            while (mdr.Read()) {
+
+                dataUN = (string)mdr["username"];
+
+            }
+
+            if (dataUN == un)
+            {
+
+                return true;
+
+            }
+            else {
+
+                return false;
+
+            }
+
+        }
         /*
         //not tested yet
         public bool pwCheck(string pw){
@@ -99,28 +119,17 @@ namespace JustRipeProjectOfficial
         }*/
 
         //damn, finally it works
-        /*
+        
         public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw) {
 
             //this one works, but i have to figure out how to use the initialize
-            string connStr = "Server=" + server + ";database=" + database +
-                ";UID=" + uid + ";Password=" + password + ";" + "sslmode=" + sslmode + ";";
+            
             //connection query for SQL.
+            /*
             conn = new MySqlConnection(connStr);
             conn.Open();
-
-            MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO users (firstname, lastname, username, Password, ContactNum) " +
-                           "VALUES (@firstname, @lastname, @username, @Password, @ContactNum);";
-            comm.Parameters.AddWithValue("@firstname", fn);
-            comm.Parameters.AddWithValue("@lastname", ln);
-            comm.Parameters.AddWithValue("@username", un);
-            comm.Parameters.AddWithValue("@Password", pw);
-            comm.Parameters.AddWithValue("@ContactNum", no);
-            comm.ExecuteNonQuery();
-
-
-        }*/
+            */
+        }
 
     }
 }
