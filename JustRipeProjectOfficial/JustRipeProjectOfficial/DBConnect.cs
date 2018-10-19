@@ -16,25 +16,20 @@ namespace JustRipeProjectOfficial
         /*Setup for connection to the MYSQL Server*/
         private MySqlConnection conn;
         //fill in information needed for connection.
-        private string server = "";
-        private string database = "";
-        private string uid = "";
+        private string server = "localhost";
+        private string database = "justripe";
+        private string uid = "root";
         private string password = "";
-
-        public DBConnect() {
-
-            //calling the function to start connection.
-            Initialize();
-
-        }
+        //solve the server doesnt support ssl connection error.
+        private string sslmode = "none";
 
         /*Using information given above to fill in the gaps in connection string
          the use it for the actual SQL connection query.*/
-        private void Initialize() {
+        public void Initialize() {
 
             //using information given above.
-            string connStr = "Server=" + server + "database=" + database +
-                ";UID=" + uid + ";Password=" + password + ";";
+            string connStr = "Server=" + server + ";database=" + database +
+                ";UID=" + uid + ";Password=" + password + ";" + "sslmode=" + sslmode + ";";
 
             //connection query for SQL.
             conn = new MySqlConnection(connStr);
@@ -42,7 +37,7 @@ namespace JustRipeProjectOfficial
         }
 
         //once MYSQL Connected. I believe this will actually try to connet to the database server.
-        private bool OpenConn(){
+        public bool OpenConn(){
 
             try {
 
@@ -52,15 +47,7 @@ namespace JustRipeProjectOfficial
             }
             catch (MySqlException ex) {
 
-                switch (ex.Number) {
-
-                    case 0:
-                        MessageBox.Show("Cannot connection to the database server.");
-                        break;
-                    case 1:
-                        MessageBox.Show("Invalid login, please try again.");
-                        break;
-                }
+                MessageBox.Show(ex.Message);
                 return false;
 
             }
@@ -68,7 +55,7 @@ namespace JustRipeProjectOfficial
         }
 
         //this will close the connection to the database server once the program closed.
-        private bool CloseConn() {
+        public bool CloseConn() {
 
             try {
 
