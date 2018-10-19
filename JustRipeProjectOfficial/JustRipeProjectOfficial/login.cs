@@ -24,9 +24,11 @@ namespace JustRipeProjectOfficial
             MainMenu frm = new MainMenu();
             DBConnect dbconn = new DBConnect();
 
+            string un = txtUsername.Text;
+            string pw = txtPassword.Text;
 
             /*if statement with sql function uncheck and pwcheck*/
-            if (dbconn.unCheckExist(txtUsername.Text).Equals(true))
+            if (dbconn.unCheckExist(un).Equals(true) && dbconn.pwCheck(un,pw).Equals(true))
             {
 
                 /*do it when the username and password are correct.*/

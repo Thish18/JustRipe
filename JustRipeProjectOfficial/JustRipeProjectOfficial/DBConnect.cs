@@ -109,14 +109,44 @@ namespace JustRipeProjectOfficial
             }
 
         }
-        /*
+        
         //not tested yet
-        public bool pwCheck(string pw){
+        public bool pwCheck(string un, string pw){
 
-            string query = "SELECT Password FROM users WHERE username = '"+ pw +"'";
+            Initialize();
+            conn.Open();
+
+            string query = "SELECT username, Password FROM users WHERE username = '" + un + "'";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
-        }*/
+            /*important code to export data read from sql database.*/
+            MySqlDataReader mdr = cmd.ExecuteReader();
+
+            string dataUN = "";
+            string datapw = "";
+
+            while (mdr.Read())
+            {
+
+                dataUN = (string)mdr["username"];
+                datapw = (string)mdr["Password"];
+
+            }
+
+            if (datapw == pw)
+            {
+
+                return true;
+
+            }
+            else
+            {
+
+                return false;
+
+            }
+
+        }
 
         //damn, finally it works
         
