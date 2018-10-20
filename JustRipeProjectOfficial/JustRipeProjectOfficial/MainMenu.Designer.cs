@@ -34,8 +34,8 @@
             this.btnLabourManagement = new System.Windows.Forms.Button();
             this.btnWorkSchedule = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tBName = new System.Windows.Forms.TextBox();
+            this.tbRank = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnHarvestTimetable = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -107,21 +107,21 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Name:";
             // 
-            // textBox1
+            // tBName
             // 
-            this.textBox1.Location = new System.Drawing.Point(53, 277);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 7;
+            this.tBName.Location = new System.Drawing.Point(53, 277);
+            this.tBName.Margin = new System.Windows.Forms.Padding(2);
+            this.tBName.Name = "tBName";
+            this.tBName.Size = new System.Drawing.Size(135, 20);
+            this.tBName.TabIndex = 7;
             // 
-            // textBox2
+            // tbRank
             // 
-            this.textBox2.Location = new System.Drawing.Point(232, 277);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(98, 20);
-            this.textBox2.TabIndex = 9;
+            this.tbRank.Location = new System.Drawing.Point(232, 277);
+            this.tbRank.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRank.Name = "tbRank";
+            this.tbRank.Size = new System.Drawing.Size(98, 20);
+            this.tbRank.TabIndex = 9;
             // 
             // label2
             // 
@@ -165,9 +165,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(425, 303);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbRank);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tBName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnWorkSchedule);
             this.Controls.Add(this.btnLabourManagement);
@@ -178,6 +178,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,8 +193,8 @@
         private System.Windows.Forms.Button btnLabourManagement;
         private System.Windows.Forms.Button btnWorkSchedule;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tBName;
+        private System.Windows.Forms.TextBox tbRank;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogout;
     }

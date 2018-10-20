@@ -23,5 +23,10 @@ namespace JustRipeProjectOfficial
             mm.Show();
             this.Close();
         }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,6 +39,8 @@
             this.cbWeek = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cBRank = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.cBRank = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             this.btnAssign.TabIndex = 5;
             this.btnAssign.Text = "Assign";
             this.btnAssign.UseVisualStyleBackColor = true;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
             // btnTimetable
             // 
@@ -176,6 +177,25 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Labourer Information";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(40, 180);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Rank: ";
+            // 
+            // cBRank
+            // 
+            this.cBRank.FormattingEnabled = true;
+            this.cBRank.Items.AddRange(new object[] {
+            "[If this shows up database not working]"});
+            this.cBRank.Location = new System.Drawing.Point(85, 177);
+            this.cBRank.Name = "cBRank";
+            this.cBRank.Size = new System.Drawing.Size(104, 21);
+            this.cBRank.TabIndex = 17;
             // 
             // textBox4
             // 
@@ -289,25 +309,6 @@
             this.btnBack.Text = "Back to main menu";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // cBRank
-            // 
-            this.cBRank.FormattingEnabled = true;
-            this.cBRank.Items.AddRange(new object[] {
-            "[If this shows up database not working]"});
-            this.cBRank.Location = new System.Drawing.Point(85, 177);
-            this.cBRank.Name = "cBRank";
-            this.cBRank.Size = new System.Drawing.Size(104, 21);
-            this.cBRank.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(40, 180);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Rank: ";
             // 
             // LabourerManagement
             // 

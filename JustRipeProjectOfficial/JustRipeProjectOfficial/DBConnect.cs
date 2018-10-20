@@ -62,6 +62,7 @@ namespace JustRipeProjectOfficial
         }
 
         //this will close the connection to the database server once the program closed.
+        /*
         public bool CloseConn() {
 
             try {
@@ -77,13 +78,14 @@ namespace JustRipeProjectOfficial
 
             }
 
-        }
+        }*/
 
         /*[WORKING IN PROGRESS]*/
         
         //[TEST SUCCESS] it used to check if username existed or not.
         public bool unCheckExist(string un) {
 
+            string dataUN = "";
             Initialize();
             conn.Open();
 
@@ -93,7 +95,7 @@ namespace JustRipeProjectOfficial
             /*important code to export data read from sql database.*/
             MySqlDataReader mdr = cmd.ExecuteReader();
 
-            string dataUN = "";
+            
 
             while (mdr.Read()) {
 
@@ -104,7 +106,9 @@ namespace JustRipeProjectOfficial
             if (dataUN == un)
             {
 
+                MessageBox.Show("Username: " + dataUN + " has been used. Please with another.");
                 return true;
+                
 
             }
             else {
@@ -113,34 +117,41 @@ namespace JustRipeProjectOfficial
 
             }
 
+
         }
 
-        //[TEST SUCCESS] it used to check if password correct or not.
-        public bool pwCheck(string un, string pw){
+        //[TEST SUCCESS] it used to check if username, password correct or not.
+        public bool loginCheck(string un, string pw){
+
+            int dataID = 0;
+            string dataUN = "";
+            string datapw = "";
 
             Initialize();
             conn.Open();
 
-            string query = "SELECT username, Password FROM users WHERE username = '" + un + "'";
+            string query = "SELECT users_ID, username, Password FROM users WHERE username = '" + un + "'";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             /*important code to export data read from sql database.*/
             MySqlDataReader mdr = cmd.ExecuteReader();
 
-            string dataUN = "";
-            string datapw = "";
-
             while (mdr.Read())
             {
 
+                //use to check username and password.
                 dataUN = (string)mdr["username"];
                 datapw = (string)mdr["Password"];
+                //userID to temp store user ID.
+                dataID = (int)mdr["users_ID"];
 
             }
 
             if (datapw == pw)
             {
 
+                //saving user Id to the DBConnect.cs until next login
+                userID = dataID;
                 return true;
 
             }
@@ -153,13 +164,15 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void userInfoImport(string un)
+        //temp storage List.
+        public List<object> temp = new List<object>();
+        public void userInfoImport()
         {
 
             Initialize();
             conn.Open();
 
-            string query = "SELECT * FROM users WHERE username = '" + un + "'";
+            string query = "SELECT * FROM users WHERE users_ID = '" + userID + "'";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             /*important code to export data read from sql database.*/
@@ -167,15 +180,25 @@ namespace JustRipeProjectOfficial
 
             while (mdr.Read())
             {
-
-                userID = (int)mdr["users_ID"];
+                //leaving userID commented as we got it when the user logged in.
+                //userID = (int)mdr["users_ID"];
                 rankID = (int)mdr["rankID"];
+
+                //storing all users data to the temp list.
+                temp.Add((int)mdr["users_ID"]);
+                temp.Add((string)mdr["firstname"]);
+                temp.Add((string)mdr["lastname"]);
+                temp.Add((string)mdr["username"]);
+                temp.Add((string)mdr["Password"]);
+                temp.Add((string)mdr["ContactNum"]);
+                temp.Add((int)mdr["rankID"]);
 
             }
 
 
 
         }
+        
 
         //damn, finally it works
 

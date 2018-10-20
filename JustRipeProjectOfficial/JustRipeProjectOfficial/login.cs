@@ -18,30 +18,56 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
            
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MainMenu frm = new MainMenu();
-            DBConnect dbconn = new DBConnect();
+            //[SQL]
+            //DBConnect dbconn = new DBConnect();
+
 
             string un = txtUsername.Text;
             string pw = txtPassword.Text;
 
-            /*if statement with sql function uncheck and pwcheck*/
-            if (dbconn.unCheckExist(un).Equals(true) && dbconn.pwCheck(un,pw).Equals(true))
+            //[SQL]
+            /*
+            if (un != "" && pw != "") {
+
+                //if statement with sql function uncheck and pwcheck
+                
+                if (dbconn.loginCheck(un, pw).Equals(true))
+                {
+
+                    //do it when the username and password are correct.
+                    
+                    dbconn.userInfoImport();
+                    frm.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Username / Password Incorrect.");
+
+                }
+
+            }//SOMEONE TRY TO SQL INJECT TO THE LOGIN PLZ, thanks
+            else if (un.Contains("-").Equals(true) || un.Contains(";").Equals(true) || un.Contains(" ").Equals(true)
+                     || pw.Contains("-").Equals(true) || pw.Contains(";").Equals(true) || pw.Contains(" ").Equals(true))
             {
+                //check if username or password contain these 2 main symbol for sql injection.
+                MessageBox.Show("SQL INJECTION IS ILLEGAL.");
 
-                /*do it when the username and password are correct.*/
-                dbconn.userInfoImport(un);
-                frm.Show();
-                this.Hide();
+            } else {
 
-            }
-            else {
+                MessageBox.Show("Please Enter Username and Password.");
 
-                MessageBox.Show("Username / Password Incorrect.");
 
-            }
+            }*/
+
+            //TEMP Link between windows.
+            frm.Show();
+            Hide();
 
         }
 
@@ -58,7 +84,7 @@ namespace JustRipeProjectOfficial
         {
             
         }
-
+        //DONT DELETE THIS ONE
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
             Register rg = new Register();

@@ -15,10 +15,12 @@ namespace JustRipeProjectOfficial
         [STAThread]
         static void Main()
         {
-
+            //[SQL]
+            /*
             DBConnect dbconn = new DBConnect();
             dbconn.Initialize();
             dbconn.OpenConn();
+            */
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
