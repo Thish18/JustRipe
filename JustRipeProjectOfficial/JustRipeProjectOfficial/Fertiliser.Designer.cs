@@ -36,21 +36,20 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(541, 375);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(406, 305);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(187, 28);
+            this.btnBack.Size = new System.Drawing.Size(140, 23);
             this.btnBack.TabIndex = 17;
             this.btnBack.Text = "Back to main menu";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 17);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(14, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 17);
+            this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 20;
             this.label10.Text = "Fertilisers:";
             // 
@@ -59,33 +58,31 @@
             this.cBRank.FormattingEnabled = true;
             this.cBRank.Items.AddRange(new object[] {
             "[If this shows up database not working]"});
-            this.cBRank.Location = new System.Drawing.Point(22, 38);
-            this.cBRank.Margin = new System.Windows.Forms.Padding(4);
+            this.cBRank.Location = new System.Drawing.Point(16, 31);
             this.cBRank.Name = "cBRank";
-            this.cBRank.Size = new System.Drawing.Size(192, 24);
+            this.cBRank.Size = new System.Drawing.Size(145, 21);
             this.cBRank.TabIndex = 21;
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(252, 17);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(189, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(476, 337);
+            this.groupBox1.Size = new System.Drawing.Size(357, 274);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fertiliser Information";
             // 
             // Fertiliser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(751, 426);
+            this.ClientSize = new System.Drawing.Size(563, 346);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cBRank);
             this.Controls.Add(this.btnBack);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Fertiliser";
             this.Text = "Fertiliser";
             this.Load += new System.EventHandler(this.Fertiliser_Load);

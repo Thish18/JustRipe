@@ -165,7 +165,7 @@ namespace JustRipeProjectOfficial
         }
 
         //temp storage List.
-        public List<object> temp = new List<object>();
+        public List<object> tempUserInfo = new List<object>();
         public void userInfoImport()
         {
 
@@ -185,13 +185,13 @@ namespace JustRipeProjectOfficial
                 rankID = (int)mdr["rankID"];
 
                 //storing all users data to the temp list.
-                temp.Add((int)mdr["users_ID"]);
-                temp.Add((string)mdr["firstname"]);
-                temp.Add((string)mdr["lastname"]);
-                temp.Add((string)mdr["username"]);
-                temp.Add((string)mdr["Password"]);
-                temp.Add((string)mdr["ContactNum"]);
-                temp.Add((int)mdr["rankID"]);
+                tempUserInfo.Add((int)mdr["users_ID"]);
+                tempUserInfo.Add((string)mdr["firstname"]);
+                tempUserInfo.Add((string)mdr["lastname"]);
+                tempUserInfo.Add((string)mdr["username"]);
+                tempUserInfo.Add((string)mdr["Password"]);
+                tempUserInfo.Add((string)mdr["ContactNum"]);
+                tempUserInfo.Add((int)mdr["rankID"]);
 
             }
 

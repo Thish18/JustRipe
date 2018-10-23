@@ -64,5 +64,14 @@ namespace JustRipeProjectOfficial
         {
 
         }
+
+        private void btnFertilizer_Click(object sender, EventArgs e)
+        {
+
+            Fertiliser ftr = new Fertiliser();
+            ftr.Show();
+            Hide();
+
+        }
     }
 }
