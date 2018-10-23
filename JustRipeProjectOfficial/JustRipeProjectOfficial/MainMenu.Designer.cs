@@ -51,6 +51,7 @@
             this.btnCrops.TabIndex = 1;
             this.btnCrops.Text = "Crops";
             this.btnCrops.UseVisualStyleBackColor = true;
+            this.btnCrops.Click += new System.EventHandler(this.btnCrops_Click);
             // 
             // btnFertilizer
             // 

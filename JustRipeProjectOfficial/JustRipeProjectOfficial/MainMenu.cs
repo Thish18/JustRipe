@@ -73,5 +73,14 @@ namespace JustRipeProjectOfficial
             Hide();
 
         }
+
+        private void btnCrops_Click(object sender, EventArgs e)
+        {
+
+            Crops cps = new Crops();
+            cps.Show();
+            Hide();
+
+        }
     }
 }

@@ -37,21 +37,20 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(539, 473);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(404, 384);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(187, 28);
+            this.btnBack.Size = new System.Drawing.Size(140, 23);
             this.btnBack.TabIndex = 17;
             this.btnBack.Text = "Back to main menu";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 19);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(16, 15);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 17);
+            this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 18;
             this.label10.Text = "Crops:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -61,45 +60,41 @@
             this.cBRank.FormattingEnabled = true;
             this.cBRank.Items.AddRange(new object[] {
             "[If this shows up database not working]"});
-            this.cBRank.Location = new System.Drawing.Point(25, 40);
-            this.cBRank.Margin = new System.Windows.Forms.Padding(4);
+            this.cBRank.Location = new System.Drawing.Point(19, 32);
             this.cBRank.Name = "cBRank";
-            this.cBRank.Size = new System.Drawing.Size(192, 24);
+            this.cBRank.Size = new System.Drawing.Size(145, 21);
             this.cBRank.TabIndex = 19;
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(250, 19);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(188, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(476, 204);
+            this.groupBox1.Size = new System.Drawing.Size(357, 166);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crops Information";
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(250, 246);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(188, 200);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(476, 204);
+            this.groupBox2.Size = new System.Drawing.Size(357, 166);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Crops Stock";
             // 
             // Crops
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(744, 520);
+            this.ClientSize = new System.Drawing.Size(558, 422);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cBRank);
             this.Controls.Add(this.btnBack);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Crops";
             this.Text = "Crops";
             this.ResumeLayout(false);
