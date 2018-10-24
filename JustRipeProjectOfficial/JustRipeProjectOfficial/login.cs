@@ -22,7 +22,7 @@ namespace JustRipeProjectOfficial
         {
             MainMenu frm = new MainMenu();
             //[SQL]
-            DBConnect dbconn = new DBConnect();
+            
 
 
             string un = txtUsername.Text;
@@ -33,7 +33,7 @@ namespace JustRipeProjectOfficial
             if (un != "" && pw != "") {
 
                 //if statement with sql function uncheck and pwcheck
-                
+                DBConnect dbconn = new DBConnect();
                 if (dbconn.loginCheck(un, pw).Equals(true))
                 {
 
@@ -66,10 +66,15 @@ namespace JustRipeProjectOfficial
             }
 
             //TEMP Link between windows.
+<<<<<<< HEAD
+            //frm.Show();
+            //Hide();
+=======
             /*
             frm.Show();
             Hide();
             */
+>>>>>>> f7721fd44349f3c1c2aaf17771257d006ad25d27
 
         }
 
