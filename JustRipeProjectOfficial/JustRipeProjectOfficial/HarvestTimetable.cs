@@ -18,6 +18,7 @@ namespace JustRipeProjectOfficial
         public HarvestTimetable(int ID)
         {
             InitializeComponent();
+            userID = ID;
         }
 
         private void HarvestTimetable_Load(object sender, EventArgs e)

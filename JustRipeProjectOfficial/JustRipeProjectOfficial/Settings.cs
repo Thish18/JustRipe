@@ -18,6 +18,7 @@ namespace JustRipeProjectOfficial
         public Settings(int ID)
         {
             InitializeComponent();
+            userID = ID;
         }
 
         private void Settings_Load(object sender, EventArgs e)

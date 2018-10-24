@@ -18,6 +18,7 @@ namespace JustRipeProjectOfficial
         public Fertiliser(int ID)
         {
             InitializeComponent();
+            userID = ID;
         }
 
         private void Fertiliser_Load(object sender, EventArgs e)

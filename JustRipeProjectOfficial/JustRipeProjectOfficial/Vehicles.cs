@@ -18,6 +18,7 @@ namespace JustRipeProjectOfficial
         public Vehicles(int ID)
         {
             InitializeComponent();
+            userID = ID;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

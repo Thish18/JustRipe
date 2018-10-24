@@ -18,6 +18,7 @@ namespace JustRipeProjectOfficial
         public LabourerManagement(int ID)
         {
             InitializeComponent();
+            userID = ID;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

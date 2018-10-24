@@ -18,6 +18,7 @@ namespace JustRipeProjectOfficial
         public WorkSchedule(int ID)
         {
             InitializeComponent();
+            userID = ID;
         }
 
         private void button1_Click(object sender, EventArgs e)
