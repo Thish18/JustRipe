@@ -65,17 +65,6 @@ namespace JustRipeProjectOfficial
 
             }
 
-            //TEMP Link between windows.
-<<<<<<< HEAD
-            //frm.Show();
-            //Hide();
-=======
-            /*
-            frm.Show();
-            Hide();
-            */
->>>>>>> f7721fd44349f3c1c2aaf17771257d006ad25d27
-
         }
 
         /*someone please delete it without crashing the program, 
