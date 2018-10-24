@@ -99,6 +99,7 @@
             this.btnWorkSchedule.TabIndex = 5;
             this.btnWorkSchedule.Text = "Work Schedule";
             this.btnWorkSchedule.UseVisualStyleBackColor = true;
+            this.btnWorkSchedule.Click += new System.EventHandler(this.btnWorkSchedule_Click);
             // 
             // label1
             // 
@@ -112,6 +113,7 @@
             // 
             // tBName
             // 
+            this.tBName.Enabled = false;
             this.tBName.Location = new System.Drawing.Point(53, 277);
             this.tBName.Margin = new System.Windows.Forms.Padding(2);
             this.tBName.Name = "tBName";
@@ -121,6 +123,7 @@
             // 
             // tbRank
             // 
+            this.tbRank.Enabled = false;
             this.tbRank.Location = new System.Drawing.Point(232, 277);
             this.tbRank.Margin = new System.Windows.Forms.Padding(2);
             this.tbRank.Name = "tbRank";
@@ -155,9 +158,9 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(335, 274);
+            this.btnLogout.Location = new System.Drawing.Point(335, 277);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(81, 23);
+            this.btnLogout.Size = new System.Drawing.Size(81, 20);
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;

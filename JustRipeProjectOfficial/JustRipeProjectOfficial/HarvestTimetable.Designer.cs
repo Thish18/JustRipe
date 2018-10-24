@@ -33,6 +33,7 @@
             this.dtpHarvest = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HarvestTxt = new System.Windows.Forms.TextBox();
+            this.btnMainMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(390, 150);
             this.dataGridView1.TabIndex = 41;
             // 
             // dtpHarvest
@@ -86,11 +87,24 @@
             this.HarvestTxt.Size = new System.Drawing.Size(263, 84);
             this.HarvestTxt.TabIndex = 44;
             // 
+            // btnMainMenu
+            // 
+            this.btnMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainMenu.Location = new System.Drawing.Point(292, 277);
+            this.btnMainMenu.Name = "btnMainMenu";
+            this.btnMainMenu.Size = new System.Drawing.Size(109, 24);
+            this.btnMainMenu.TabIndex = 45;
+            this.btnMainMenu.Text = "Back To Main Menu";
+            this.btnMainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
+            // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 301);
+            this.ClientSize = new System.Drawing.Size(414, 305);
+            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.HarvestTxt);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.pictureBox1);
@@ -113,5 +127,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dtpHarvest;
         private System.Windows.Forms.TextBox HarvestTxt;
+        private System.Windows.Forms.Button btnMainMenu;
     }
 }

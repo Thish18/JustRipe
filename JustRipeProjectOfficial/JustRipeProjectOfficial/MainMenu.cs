@@ -95,5 +95,12 @@ namespace JustRipeProjectOfficial
         {
 
         }
+
+        private void btnWorkSchedule_Click(object sender, EventArgs e)
+        {
+            WorkSchedule ws = new WorkSchedule(userID);
+            ws.Show();
+            Hide();
+        }
     }
 }

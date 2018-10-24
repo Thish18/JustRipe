@@ -25,5 +25,12 @@ namespace JustRipeProjectOfficial
         {
 
         }
+
+        private void btnMainMenu_Click(object sender, EventArgs e)
+        {
+            MainMenu mm = new MainMenu(userID);
+            mm.Show();
+            Hide();
+        }
     }
 }
