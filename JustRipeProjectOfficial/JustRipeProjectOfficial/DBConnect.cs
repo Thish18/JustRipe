@@ -43,7 +43,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        //once MYSQL Connected. I believe this will actually try to connet to the database server.
+        //once MYSQL Connected. I believe this will actually try to connect to the database server.
         public bool OpenConn(){
 
             try {

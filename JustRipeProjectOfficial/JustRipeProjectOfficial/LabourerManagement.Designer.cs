@@ -330,6 +330,7 @@
             this.Controls.Add(this.lBLabourerList);
             this.Name = "LabourerManagement";
             this.Text = "Labourer Management";
+            this.Load += new System.EventHandler(this.LabourerManagement_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
