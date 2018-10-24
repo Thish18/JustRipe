@@ -163,8 +163,6 @@ namespace JustRipeProjectOfficial
 
             }
 
-            conn.Close();
-
         }
 
         //temp storage List.
