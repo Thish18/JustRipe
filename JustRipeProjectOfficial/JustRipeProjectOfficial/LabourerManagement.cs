@@ -28,5 +28,10 @@ namespace JustRipeProjectOfficial
         {
 
         }
+
+        private void LabourerManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
