@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace JustRipeProjectOfficial
 {
-    public partial class Vehicles : Form
+    public partial class WorkSchedule : Form
     {
-        public Vehicles()
+        public WorkSchedule()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
