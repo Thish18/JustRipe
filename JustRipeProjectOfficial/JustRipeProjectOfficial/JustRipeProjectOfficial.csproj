@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Crops.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="Fertiliser.Designer.cs">
       <DependentUpon>Fertiliser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HarvestTimetable.Designer.cs">
+      <DependentUpon>HarvestTimetable.cs</DependentUpon>
     </Compile>
     <Compile Include="LabourerManagement.cs">
       <SubType>Form</SubType>
@@ -113,11 +125,11 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vehicles.cs">
+    <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vehicles.Designer.cs">
-      <DependentUpon>Vehicles.cs</DependentUpon>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkSchedule.cs">
       <SubType>Form</SubType>
@@ -130,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fertiliser.resx">
       <DependentUpon>Fertiliser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HarvestTimetable.resx">
+      <DependentUpon>HarvestTimetable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LabourerManagement.resx">
       <DependentUpon>LabourerManagement.cs</DependentUpon>
@@ -153,8 +168,8 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vehicles.resx">
-      <DependentUpon>Vehicles.cs</DependentUpon>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkSchedule.resx">
       <DependentUpon>WorkSchedule.cs</DependentUpon>
