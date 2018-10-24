@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnChangePasssword = new System.Windows.Forms.Button();
+            this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,60 +52,60 @@
             this.dataGridView1.Size = new System.Drawing.Size(335, 188);
             this.dataGridView1.TabIndex = 49;
             // 
-            // button5
+            // btnEdit
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(473, 294);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(77, 24);
-            this.button5.TabIndex = 48;
-            this.button5.Text = "Edit";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(473, 294);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(77, 24);
+            this.btnEdit.TabIndex = 48;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnUpdate
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(390, 294);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 24);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Update Information";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(390, 294);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(77, 24);
+            this.btnUpdate.TabIndex = 47;
+            this.btnUpdate.Text = "Update Information";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnReport
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(11, 286);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(186, 32);
-            this.button3.TabIndex = 44;
-            this.button3.Text = "Report";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(11, 286);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(186, 32);
+            this.btnReport.TabIndex = 44;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnChangePasssword
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(11, 248);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 32);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "Change Password";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnChangePasssword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnChangePasssword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePasssword.Location = new System.Drawing.Point(11, 248);
+            this.btnChangePasssword.Name = "btnChangePasssword";
+            this.btnChangePasssword.Size = new System.Drawing.Size(186, 32);
+            this.btnChangePasssword.TabIndex = 43;
+            this.btnChangePasssword.Text = "Change Password";
+            this.btnChangePasssword.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnUpdateInfo
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(11, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 32);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Update Information";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdateInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnUpdateInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateInfo.Location = new System.Drawing.Point(11, 210);
+            this.btnUpdateInfo.Name = "btnUpdateInfo";
+            this.btnUpdateInfo.Size = new System.Drawing.Size(186, 32);
+            this.btnUpdateInfo.TabIndex = 42;
+            this.btnUpdateInfo.Text = "Update Information";
+            this.btnUpdateInfo.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -131,6 +131,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.just_ripe;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(11, 11);
@@ -147,13 +148,13 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(560, 326);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReport);
+            this.Controls.Add(this.btnChangePasssword);
+            this.Controls.Add(this.btnUpdateInfo);
             this.Controls.Add(this.label5);
             this.Name = "Settings";
             this.Text = "Settings";
@@ -167,13 +168,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnChangePasssword;
+        private System.Windows.Forms.Button btnUpdateInfo;
         private System.Windows.Forms.Label label5;
     }
 }
