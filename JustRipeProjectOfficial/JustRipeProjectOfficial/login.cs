@@ -87,5 +87,11 @@ namespace JustRipeProjectOfficial
             rg.Show();
             Hide();
         }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            ChangePassword frm = new ChangePassword();
+            frm.ShowDialog();
+        }
     }
 }

@@ -85,5 +85,10 @@ namespace JustRipeProjectOfficial
             // frm = new ();
             //frm.ShowDialog();
         }
+
+        private void tBName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

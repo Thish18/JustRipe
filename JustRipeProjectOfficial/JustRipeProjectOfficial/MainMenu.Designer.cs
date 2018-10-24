@@ -117,6 +117,7 @@
             this.tBName.Name = "tBName";
             this.tBName.Size = new System.Drawing.Size(135, 20);
             this.tBName.TabIndex = 7;
+            this.tBName.TextChanged += new System.EventHandler(this.tBName_TextChanged);
             // 
             // tbRank
             // 
@@ -182,7 +183,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
