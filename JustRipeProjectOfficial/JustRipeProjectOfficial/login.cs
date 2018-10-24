@@ -22,14 +22,14 @@ namespace JustRipeProjectOfficial
         {
             MainMenu frm = new MainMenu();
             //[SQL]
-            //DBConnect dbconn = new DBConnect();
+            DBConnect dbconn = new DBConnect();
 
 
             string un = txtUsername.Text;
             string pw = txtPassword.Text;
 
             //[SQL]
-            /*
+            
             if (un != "" && pw != "") {
 
                 //if statement with sql function uncheck and pwcheck
@@ -63,7 +63,7 @@ namespace JustRipeProjectOfficial
                 MessageBox.Show("Please Enter Username and Password.");
 
 
-            }*/
+            }
 
             //TEMP Link between windows.
             frm.Show();
