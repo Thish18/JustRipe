@@ -63,6 +63,7 @@
             this.btnFertilizer.TabIndex = 2;
             this.btnFertilizer.Text = "Fertlizer";
             this.btnFertilizer.UseVisualStyleBackColor = true;
+            this.btnFertilizer.Click += new System.EventHandler(this.btnFertilizer_Click_1);
             // 
             // btnVehicle
             // 
@@ -74,6 +75,7 @@
             this.btnVehicle.TabIndex = 3;
             this.btnVehicle.Text = "Vehicle";
             this.btnVehicle.UseVisualStyleBackColor = true;
+            this.btnVehicle.Click += new System.EventHandler(this.btnVehicle_Click);
             // 
             // btnLabourManagement
             // 
@@ -148,6 +150,7 @@
             this.btnHarvestTimetable.TabIndex = 0;
             this.btnHarvestTimetable.Text = "Harvest Timetable";
             this.btnHarvestTimetable.UseVisualStyleBackColor = false;
+            this.btnHarvestTimetable.Click += new System.EventHandler(this.btnHarvestTimetable_Click);
             // 
             // btnLogout
             // 

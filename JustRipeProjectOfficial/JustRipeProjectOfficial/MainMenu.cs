@@ -56,24 +56,9 @@ namespace JustRipeProjectOfficial
 
             //DBConnect DBConn = new DBConnect();
             //DBConn.CloseConn();
-            
+
 
         }
-
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFertilizer_Click(object sender, EventArgs e)
-        {
-
-            Fertiliser ftr = new Fertiliser();
-            ftr.Show();
-            Hide();
-
-        }
-
         private void btnCrops_Click(object sender, EventArgs e)
         {
 
@@ -81,6 +66,24 @@ namespace JustRipeProjectOfficial
             cps.Show();
             Hide();
 
+        }
+
+        private void btnHarvestTimetable_Click(object sender, EventArgs e)
+        {
+            HarvestTimetable frm = new HarvestTimetable();
+            frm.ShowDialog();
+        }
+
+        private void btnFertilizer_Click_1(object sender, EventArgs e)
+        {
+            Fertiliser frm = new Fertiliser();
+            frm.ShowDialog();
+        }
+
+        private void btnVehicle_Click(object sender, EventArgs e)
+        {
+            // frm = new ();
+            //frm.ShowDialog();
         }
     }
 }
