@@ -20,15 +20,15 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
             //[SQL]
-            /*
+            
             DBConnect DBConn = new DBConnect();
             DBConn.userInfoImport();
             
             //firstname lastname combined
-            tBName.Text = DBConn.temp[1].ToString() + " " + DBConn.temp[2].ToString();
-            users_ID = (int)DBConn.temp[0];
-            rank_ID = (int)DBConn.temp[6];
-            */
+            tBName.Text = DBConn.tempUserInfo[1].ToString() + " " + DBConn.tempUserInfo[2].ToString();
+            users_ID = (int)DBConn.tempUserInfo[0];
+            rank_ID = (int)DBConn.tempUserInfo[6];
+            
 
         }
 

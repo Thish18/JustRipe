@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace JustRipeProjectOfficial
 {
@@ -16,11 +15,11 @@ namespace JustRipeProjectOfficial
         static void Main()
         {
             //[SQL]
-            /*
+            
             DBConnect dbconn = new DBConnect();
             dbconn.Initialize();
             dbconn.OpenConn();
-            */
+            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
