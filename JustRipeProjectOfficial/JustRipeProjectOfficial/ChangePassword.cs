@@ -16,5 +16,24 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DBConnect dbconn = new DBConnect();
+
+            if (dbconn.unCheckExist(txtUsername.Text).Equals(true))
+            {
+
+                MessageBox.Show("yah");
+
+            }
+            else {
+
+                MessageBox.Show("Incorrect username/password.");
+
+
+            }
+
+        }
     }
 }

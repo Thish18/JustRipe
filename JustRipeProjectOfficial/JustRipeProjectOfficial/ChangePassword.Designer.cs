@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
@@ -40,17 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 32);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 21);
-            this.comboBox1.TabIndex = 49;
             // 
             // txtConfirmPassword
             // 
@@ -108,6 +99,7 @@
             this.btnUpdate.TabIndex = 43;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
@@ -159,13 +151,20 @@
             this.pictureBox1.TabIndex = 50;
             this.pictureBox1.TabStop = false;
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(125, 33);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(165, 20);
+            this.txtUsername.TabIndex = 51;
+            // 
             // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(307, 193);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNewPassword);
@@ -186,8 +185,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNewPassword;
@@ -199,5 +196,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }

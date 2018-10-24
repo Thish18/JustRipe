@@ -106,7 +106,7 @@ namespace JustRipeProjectOfficial
             if (dataUN == un)
             {
 
-                MessageBox.Show("Username: " + dataUN + " has been used. Please with another.");
+                
                 return true;
                 
 
@@ -211,6 +211,8 @@ namespace JustRipeProjectOfficial
             conn = new MySqlConnection(connStr);
             conn.Open();
             */
+
+
         }
 
     }

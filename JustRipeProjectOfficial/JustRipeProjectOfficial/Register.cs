@@ -29,6 +29,7 @@ namespace JustRipeProjectOfficial
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
+            MessageBox.Show("Username: " + tBUN + " has been used. Please with another.");
 
             //[SQL]
             /*
@@ -38,6 +39,7 @@ namespace JustRipeProjectOfficial
                           tBGender.Text, tBAddress1.Text, tBAddress2.Text,
                           tBContactNo.Text, tBUN.Text, tBPW.Text);
             */
+
             MessageBox.Show("DEMO: User created.");
             login lgin = new login();
             lgin.Show();
