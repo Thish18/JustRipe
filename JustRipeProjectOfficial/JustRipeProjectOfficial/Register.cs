@@ -32,13 +32,13 @@ namespace JustRipeProjectOfficial
             MessageBox.Show("Username: " + tBUN + " has been used. Please with another.");
 
             //[SQL]
-            /*
+            
             DBConnect dbconn = new DBConnect();
             //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
             dbconn.userCreate(tBFirstName.Text, tBLastName.Text, tBDoB.Text,
                           tBGender.Text, tBAddress1.Text, tBAddress2.Text,
                           tBContactNo.Text, tBUN.Text, tBPW.Text);
-            */
+      
 
             MessageBox.Show("DEMO: User created.");
             login lgin = new login();

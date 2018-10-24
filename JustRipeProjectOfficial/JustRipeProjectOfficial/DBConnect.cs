@@ -166,6 +166,8 @@ namespace JustRipeProjectOfficial
 
         //temp storage List.
         public List<object> tempUserInfo = new List<object>();
+        private object comm;
+
         public void userInfoImport()
         {
 
@@ -205,13 +207,21 @@ namespace JustRipeProjectOfficial
         public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw) {
 
             //this one works, but i have to figure out how to use the initialize
-            
+
             //connection query for SQL.
-            /*
+
             conn = new MySqlConnection(connStr);
             conn.Open();
-            */
 
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "INSERT INTO users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+            comm.Parameters.Add("@firstname", fn);
+            comm.Parameters.Add("@lastname", ln);
+            comm.Parameters.Add("@username", un);
+            comm.Parameters.Add("@Password", pw);
+            comm.Parameters.Add("@ContactNum", no);
+            comm.Parameters.Add("@rankID", "0");
+            comm.ExecuteNonQuery();
 
         }
 
