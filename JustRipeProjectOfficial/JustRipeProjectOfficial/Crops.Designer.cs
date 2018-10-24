@@ -97,6 +97,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Crops";
             this.Text = "Crops";
+            this.Load += new System.EventHandler(this.Crops_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

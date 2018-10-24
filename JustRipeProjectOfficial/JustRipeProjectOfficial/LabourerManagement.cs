@@ -12,14 +12,17 @@ namespace JustRipeProjectOfficial
 {
     public partial class LabourerManagement : Form
     {
-        public LabourerManagement()
+
+        private int userID;
+
+        public LabourerManagement(int ID)
         {
             InitializeComponent();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu();
+            MainMenu mm = new MainMenu(userID);
             mm.Show();
             this.Close();
         }

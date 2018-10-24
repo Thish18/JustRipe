@@ -13,6 +13,9 @@ namespace JustRipeProjectOfficial
 {
     public partial class login : Form
     {
+
+        private int userID;
+
         public login()
         {
             InitializeComponent();
@@ -20,10 +23,6 @@ namespace JustRipeProjectOfficial
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu();
-            //[SQL]
-            
-
 
             string un = txtUsername.Text;
             string pw = txtPassword.Text;
@@ -37,9 +36,10 @@ namespace JustRipeProjectOfficial
                 if (dbconn.loginCheck(un, pw).Equals(true))
                 {
 
-                    //do it when the username and password are correct.
-                    
                     dbconn.userInfoImport();
+                    userID = Convert.ToInt32(dbconn.tempUserInfo[0].ToString());
+                    //do it when the username and password are correct.
+                    MainMenu frm = new MainMenu(userID);
                     frm.Show();
                     this.Hide();
 
@@ -92,6 +92,11 @@ namespace JustRipeProjectOfficial
         {
             ChangePassword frm = new ChangePassword();
             frm.ShowDialog();
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

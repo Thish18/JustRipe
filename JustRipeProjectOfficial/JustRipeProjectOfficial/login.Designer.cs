@@ -171,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -124,7 +124,6 @@ namespace JustRipeProjectOfficial
         //[TEST SUCCESS] it used to check if username, password correct or not.
         public bool loginCheck(string un, string pw){
 
-            int dataID = 0;
             string dataUN = "";
             string datapw = "";
 
@@ -144,7 +143,7 @@ namespace JustRipeProjectOfficial
                 dataUN = (string)mdr["username"];
                 datapw = (string)mdr["Password"];
                 //userID to temp store user ID.
-                dataID = (int)mdr["users_ID"];
+                userID = (int)mdr["users_ID"];
 
             }
 
@@ -152,7 +151,6 @@ namespace JustRipeProjectOfficial
             {
 
                 //saving user Id to the DBConnect.cs until next login
-                userID = dataID;
                 return true;
 
             }
@@ -167,13 +165,14 @@ namespace JustRipeProjectOfficial
 
         //temp storage List.
         public List<object> tempUserInfo = new List<object>();
-        public void userInfoImport()
-        {
+
+        //use to import ONLY.
+        public void userInfoImport() {
 
             Initialize();
             conn.Open();
 
-            string query = "SELECT * FROM users WHERE users_ID = '" + userID + "'";
+            string query = "SELECT * FROM users WHERE users_ID = " + userID + "";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             /*important code to export data read from sql database.*/
@@ -196,10 +195,38 @@ namespace JustRipeProjectOfficial
 
             }
 
-            conn.Close();
+        }
+        //export ONLY
+        public void userInfoExport(int userID)
+        {
+
+            Initialize();
+            conn.Open();
+
+            string query = "SELECT * FROM users WHERE users_ID = " + userID + "";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            /*important code to export data read from sql database.*/
+            MySqlDataReader mdr = cmd.ExecuteReader();
+
+            while (mdr.Read())
+            {
+                //leaving userID commented as we got it when the user logged in.
+                //userID = (int)mdr["users_ID"];
+                rankID = (int)mdr["rankID"];
+
+                //storing all users data to the temp list.
+                tempUserInfo.Add((int)mdr["users_ID"]);
+                tempUserInfo.Add((string)mdr["firstname"]);
+                tempUserInfo.Add((string)mdr["lastname"]);
+                tempUserInfo.Add((string)mdr["username"]);
+                tempUserInfo.Add((string)mdr["Password"]);
+                tempUserInfo.Add((string)mdr["ContactNum"]);
+                tempUserInfo.Add((int)mdr["rankID"]);
+
+            }
 
         }
-        
 
         //damn, finally it works
 

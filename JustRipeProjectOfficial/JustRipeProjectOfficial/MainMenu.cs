@@ -12,23 +12,19 @@ namespace JustRipeProjectOfficial
 {
     public partial class MainMenu : Form
     {
-        //storing temp users info
-        private int users_ID;
-        private int rank_ID;
 
-        public MainMenu()
+        private int userID;
+
+        public MainMenu(int ID)
         {
             InitializeComponent();
             //[SQL]
             
             DBConnect DBConn = new DBConnect();
-            DBConn.userInfoImport();
-            
-            //firstname lastname combined
+            userID = ID;
+            DBConn.userInfoExport(userID);
             tBName.Text = DBConn.tempUserInfo[1].ToString() + " " + DBConn.tempUserInfo[2].ToString();
-            users_ID = (int)DBConn.tempUserInfo[0];
-            rank_ID = (int)DBConn.tempUserInfo[6];
-            
+            tbRank.Text = DBConn.tempUserInfo[6].ToString();
 
         }
 
@@ -36,10 +32,9 @@ namespace JustRipeProjectOfficial
         {
 
             /*show the labourer management window and close the main menu window.*/
-            LabourerManagement LM = new LabourerManagement();
+            LabourerManagement LM = new LabourerManagement(userID);
             LM.Show();
             this.Hide();
-
 
         }
 
@@ -62,7 +57,7 @@ namespace JustRipeProjectOfficial
         private void btnCrops_Click(object sender, EventArgs e)
         {
 
-            Crops cps = new Crops();
+            Crops cps = new Crops(userID);
             cps.Show();
             Hide();
 
@@ -70,23 +65,33 @@ namespace JustRipeProjectOfficial
 
         private void btnHarvestTimetable_Click(object sender, EventArgs e)
         {
-            HarvestTimetable frm = new HarvestTimetable();
-            frm.ShowDialog();
+            HarvestTimetable ht = new HarvestTimetable(userID);
+            ht.Show();
+            Hide();
+
         }
 
         private void btnFertilizer_Click_1(object sender, EventArgs e)
         {
-            Fertiliser frm = new Fertiliser();
-            frm.ShowDialog();
+            Fertiliser ftr = new Fertiliser(userID);
+            ftr.Show();
+            Hide();
+
         }
 
         private void btnVehicle_Click(object sender, EventArgs e)
         {
-            // frm = new ();
-            //frm.ShowDialog();
+            Vehicles vhc = new Vehicles(userID);
+            vhc.Show();
+            Hide();
         }
 
         private void tBName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
         {
 
         }

@@ -12,7 +12,10 @@ namespace JustRipeProjectOfficial
 {
     public partial class Crops : Form
     {
-        public Crops()
+
+        private int userID;
+
+        public Crops(int ID)
         {
             InitializeComponent();
         }
@@ -24,9 +27,14 @@ namespace JustRipeProjectOfficial
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu();
+            MainMenu mm = new MainMenu(userID);
             mm.Show();
             Hide();
+        }
+
+        private void Crops_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

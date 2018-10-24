@@ -12,9 +12,17 @@ namespace JustRipeProjectOfficial
 {
     public partial class HarvestTimetable : Form
     {
-        public HarvestTimetable()
+
+        private int userID;
+
+        public HarvestTimetable(int ID)
         {
             InitializeComponent();
+        }
+
+        private void HarvestTimetable_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

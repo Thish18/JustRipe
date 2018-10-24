@@ -12,7 +12,10 @@ namespace JustRipeProjectOfficial
 {
     public partial class Vehicles : Form
     {
-        public Vehicles()
+
+        private int userID;
+
+        public Vehicles(int ID)
         {
             InitializeComponent();
         }
@@ -24,9 +27,14 @@ namespace JustRipeProjectOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu();
+            MainMenu mm = new MainMenu(userID);
             mm.Show();
             Hide();
+        }
+
+        private void Vehicles_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

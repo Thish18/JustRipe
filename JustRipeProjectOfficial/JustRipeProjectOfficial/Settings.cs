@@ -12,9 +12,17 @@ namespace JustRipeProjectOfficial
 {
     public partial class Settings : Form
     {
-        public Settings()
+
+        private int userID;
+
+        public Settings(int ID)
         {
             InitializeComponent();
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

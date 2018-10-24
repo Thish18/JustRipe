@@ -82,6 +82,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "Vehicles";
             this.Text = "Vehicles:";
+            this.Load += new System.EventHandler(this.Vehicles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

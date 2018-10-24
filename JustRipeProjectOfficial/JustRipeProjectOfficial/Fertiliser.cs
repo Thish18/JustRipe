@@ -12,7 +12,10 @@ namespace JustRipeProjectOfficial
 {
     public partial class Fertiliser : Form
     {
-        public Fertiliser()
+
+        private int userID;
+
+        public Fertiliser(int ID)
         {
             InitializeComponent();
         }
@@ -25,7 +28,7 @@ namespace JustRipeProjectOfficial
         private void btnBack_Click(object sender, EventArgs e)
         {
 
-            MainMenu mm = new MainMenu();
+            MainMenu mm = new MainMenu(userID);
             mm.Show();
             Hide();
 
