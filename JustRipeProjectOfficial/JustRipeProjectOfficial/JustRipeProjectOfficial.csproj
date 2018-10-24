@@ -143,6 +143,9 @@
     <Compile Include="WorkSchedule.Designer.cs">
       <DependentUpon>WorkSchedule.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crops.resx">
       <DependentUpon>Crops.cs</DependentUpon>
     </EmbeddedResource>
