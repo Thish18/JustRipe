@@ -46,7 +46,7 @@
             // 
             // btnCreateUser
             // 
-            this.btnCreateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCreateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(137)))), ((int)(((byte)(251)))));
             this.btnCreateUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCreateUser.FlatAppearance.BorderSize = 0;
             this.btnCreateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -74,7 +74,7 @@
             // 
             // btnChange
             // 
-            this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(137)))), ((int)(((byte)(251)))));
             this.btnChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnChange.FlatAppearance.BorderSize = 0;
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -91,7 +91,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(137)))), ((int)(((byte)(251)))));
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -149,7 +149,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(137)))), ((int)(((byte)(251)))));
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.btnChange);
             this.panel1.Controls.Add(this.btnCreateUser);
@@ -165,7 +165,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(137)))), ((int)(((byte)(251)))));
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(270, 0);
@@ -175,7 +175,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -183,7 +183,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(315, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 28);
+            this.button1.Size = new System.Drawing.Size(36, 28);
             this.button1.TabIndex = 33;
             this.button1.TabStop = false;
             this.button1.Text = "x";
