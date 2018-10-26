@@ -31,7 +31,8 @@ namespace JustRipeProjectOfficial
         /*Using information given above to fill in the gaps in connection string
          the use it for the actual SQL connection query.*/
 
-        public void Initialize() {
+        public void Initialize()
+        {
 
             //using information given above.
             string connStr = "Server=" + server + ";database=" + database +
@@ -43,15 +44,18 @@ namespace JustRipeProjectOfficial
         }
 
         //once MYSQL Connected. I believe this will actually try to connect to the database server.
-        public bool OpenConn(){
+        public bool OpenConn()
+        {
 
-            try {
+            try
+            {
 
                 conn.Open();
                 return true;
-                
+
             }
-            catch (MySqlException ex) {
+            catch (MySqlException ex)
+            {
 
                 MessageBox.Show(ex.Message);
                 return false;
@@ -80,23 +84,25 @@ namespace JustRipeProjectOfficial
         }*/
 
         /*[WORKING IN PROGRESS]*/
-        
+
         //[TEST SUCCESS] it used to check if username existed or not.
-        public bool unCheckExist(string un) {
+        public bool unCheckExist(string un)
+        {
 
             string dataUN = "";
             Initialize();
             conn.Open();
 
-            string query = "SELECT username FROM users WHERE username = '"+ un +"'";
+            string query = "SELECT username FROM users WHERE username = '" + un + "'";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             /*important code to export data read from sql database.*/
             MySqlDataReader mdr = cmd.ExecuteReader();
 
-            
 
-            while (mdr.Read()) {
+
+            while (mdr.Read())
+            {
 
                 dataUN = (string)mdr["username"];
 
@@ -109,19 +115,21 @@ namespace JustRipeProjectOfficial
                 return true;
 
             }
-            else {
+            else
+            {
 
                 conn.Close();
                 return false;
 
             }
 
-            
+
 
         }
 
         //[TEST SUCCESS] it used to check if username, password correct or not.
-        public bool loginCheck(string un, string pw){
+        public bool loginCheck(string un, string pw)
+        {
 
             string dataUN = "";
             string datapw = "";
@@ -166,7 +174,8 @@ namespace JustRipeProjectOfficial
         public List<object> tempUserInfo = new List<object>();
 
         //use to import ONLY.
-        public void userInfoImport() {
+        public void userInfoImport()
+        {
 
             Initialize();
             conn.Open();
@@ -193,7 +202,8 @@ namespace JustRipeProjectOfficial
 
         }
         //export ONLY
-        public void userInfoExport(int userID){
+        public void userInfoExport(int userID)
+        {
 
             Initialize();
             conn.Open();
@@ -222,7 +232,8 @@ namespace JustRipeProjectOfficial
 
         //damn, finally it works
 
-        public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw) {
+        public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw)
+        {
 
             Initialize();
             conn.Open();

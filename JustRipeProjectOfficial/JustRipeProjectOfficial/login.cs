@@ -37,7 +37,9 @@ namespace JustRipeProjectOfficial
                 {
 
                     dbconn.userInfoImport();
+                    //Original one (weird error) Only accept Direct input record but not C# input record.
                     userID = Convert.ToInt32(dbconn.tempUserInfo[0].ToString());
+
                     //do it when the username and password are correct.
                     MainMenu frm = new MainMenu(userID);
                     frm.Show();
