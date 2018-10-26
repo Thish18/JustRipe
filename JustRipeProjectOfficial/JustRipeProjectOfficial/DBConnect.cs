@@ -27,7 +27,6 @@ namespace JustRipeProjectOfficial
 
         //setup logged in info.
         private int userID;
-        private int rankID;
 
         /*Using information given above to fill in the gaps in connection string
          the use it for the actual SQL connection query.*/
@@ -156,7 +155,6 @@ namespace JustRipeProjectOfficial
             }
             else
             {
-
                 return false;
 
             }
@@ -192,6 +190,8 @@ namespace JustRipeProjectOfficial
 
             }
 
+            conn.Close();
+
         }
         //export ONLY
         public void userInfoExport(int userID)
@@ -219,6 +219,8 @@ namespace JustRipeProjectOfficial
                 tempUserInfo.Add((string)mdr["Type"]);
 
             }
+
+            conn.Close();
 
         }
 
