@@ -13,6 +13,8 @@ namespace JustRipeProjectOfficial
 {
     class DBConnect
     {
+
+        /*===============================================================[Database Connection Setup]===============================================================================================*/
         /*Setup for connection to the MYSQL Server*/
         private MySqlConnection conn;
 
@@ -83,8 +85,8 @@ namespace JustRipeProjectOfficial
 
         }*/
 
-        /*[WORKING IN PROGRESS]*/
 
+        /*===============================================================[LogIn/Register Functions]===============================================================================================*/
         //[TEST SUCCESS] it used to check if username existed or not.
         public bool unCheckExist(string un)
         {
@@ -256,6 +258,24 @@ namespace JustRipeProjectOfficial
             conn.Close();
 
         }
+
+        /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
+
+        public void getCropsData() { }
+
+        public void getVehicleData() { }
+
+        public void getfertilizerData() { }
+
+        /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
+
+        public void getLabourersList() { }
+
+        public void getLabourerData() { }
+
+        public void getHarvestTimeTable() { }
+
+        public void getWorkSchedule() { }
 
     }
 }
