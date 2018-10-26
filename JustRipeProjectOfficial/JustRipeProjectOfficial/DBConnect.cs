@@ -18,7 +18,7 @@ namespace JustRipeProjectOfficial
 
         //fill in information needed for connection.
         private string server = "localhost";
-        private string database = "justripe";
+        private string database = "mydb";
         private string uid = "root";
         private string password = "";
 
@@ -172,7 +172,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             conn.Open();
 
-            string query = "SELECT * FROM users WHERE users_ID = " + userID + "";
+            string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             /*important code to export data read from sql database.*/
@@ -180,9 +180,6 @@ namespace JustRipeProjectOfficial
 
             while (mdr.Read())
             {
-                //leaving userID commented as we got it when the user logged in.
-                //userID = (int)mdr["users_ID"];
-                rankID = (int)mdr["rankID"];
 
                 //storing all users data to the temp list.
                 tempUserInfo.Add((int)mdr["users_ID"]);
@@ -191,7 +188,7 @@ namespace JustRipeProjectOfficial
                 tempUserInfo.Add((string)mdr["username"]);
                 tempUserInfo.Add((string)mdr["Password"]);
                 tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((int)mdr["rankID"]);
+                tempUserInfo.Add((string)mdr["Type"]);
 
             }
 
@@ -203,7 +200,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             conn.Open();
 
-            string query = "SELECT * FROM users WHERE users_ID = " + userID + "";
+            string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             /*important code to export data read from sql database.*/
@@ -211,9 +208,6 @@ namespace JustRipeProjectOfficial
 
             while (mdr.Read())
             {
-                //leaving userID commented as we got it when the user logged in.
-                //userID = (int)mdr["users_ID"];
-                rankID = (int)mdr["rankID"];
 
                 //storing all users data to the temp list.
                 tempUserInfo.Add((int)mdr["users_ID"]);
@@ -222,7 +216,7 @@ namespace JustRipeProjectOfficial
                 tempUserInfo.Add((string)mdr["username"]);
                 tempUserInfo.Add((string)mdr["Password"]);
                 tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((int)mdr["rankID"]);
+                tempUserInfo.Add((string)mdr["Type"]);
 
             }
 
