@@ -42,9 +42,15 @@ namespace JustRipeProjectOfficial
         {
 
             /*Logout, leave the main menu and back to the log in screen*/
-            login lgin = new login();
-            lgin.Show();
-            this.Close();
+            foreach (Form form in Application.OpenForms)
+                if (form is login)
+                {
+
+                    form.Show();
+                    break;
+
+                }
+            Close();
 
             /*disconnect from the database server
              leave it commented unless you are connected to the database.*/
