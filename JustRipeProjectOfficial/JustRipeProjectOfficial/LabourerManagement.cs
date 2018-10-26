@@ -23,9 +23,16 @@ namespace JustRipeProjectOfficial
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu(userID);
-            mm.Show();
-            this.Close();
+            foreach (Form f in Application.OpenForms)
+                if (f is MainMenu)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
         }
 
         private void btnAssign_Click(object sender, EventArgs e)

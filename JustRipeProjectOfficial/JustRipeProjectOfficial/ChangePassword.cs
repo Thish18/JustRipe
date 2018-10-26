@@ -35,5 +35,19 @@ namespace JustRipeProjectOfficial
             }
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+                if (f is login)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
+        }
     }
 }

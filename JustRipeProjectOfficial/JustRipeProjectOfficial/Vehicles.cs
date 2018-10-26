@@ -28,9 +28,16 @@ namespace JustRipeProjectOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu(userID);
-            mm.Show();
-            Hide();
+            foreach (Form f in Application.OpenForms)
+                if (f is MainMenu)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
         }
 
         private void Vehicles_Load(object sender, EventArgs e)

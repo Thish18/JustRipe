@@ -21,8 +21,15 @@ namespace JustRipeProjectOfficial
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            login lgin = new login();
-            lgin.Show();
+
+            foreach (Form f in Application.OpenForms)
+                if (f is login) {
+
+                    f.Show();
+                    break;
+
+                }
+
             Close();
         }
 

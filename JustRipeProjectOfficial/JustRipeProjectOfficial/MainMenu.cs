@@ -23,8 +23,8 @@ namespace JustRipeProjectOfficial
             DBConnect DBConn = new DBConnect();
             userID = ID;
             DBConn.userInfoExport(userID);
-            tBName.Text = DBConn.tempUserInfo[1].ToString() + " " + DBConn.tempUserInfo[2].ToString();
-            tbRank.Text = DBConn.tempUserInfo[6].ToString();
+            lbName.Text = DBConn.tempUserInfo[1].ToString() + " " + DBConn.tempUserInfo[2].ToString();
+            lbRank.Text = DBConn.tempUserInfo[6].ToString();
 
         }
 
@@ -42,9 +42,16 @@ namespace JustRipeProjectOfficial
         {
 
             /*Logout, leave the main menu and back to the log in screen*/
-            login lgin = new login();
-            lgin.Show();
-            this.Close();
+            foreach (Form f in Application.OpenForms)
+                if (f is login)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
 
             /*disconnect from the database server
              leave it commented unless you are connected to the database.*/

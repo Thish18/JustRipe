@@ -21,16 +21,23 @@ namespace JustRipeProjectOfficial
             userID = ID;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MainMenu mm = new MainMenu(userID);
-            mm.Show();
-            Hide();
-        }
-
         private void WorkSchedule_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+                if (f is MainMenu)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
         }
     }
 }
