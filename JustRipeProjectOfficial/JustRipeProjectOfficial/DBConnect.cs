@@ -186,7 +186,7 @@ namespace JustRipeProjectOfficial
                 tempUserInfo.Add((string)mdr["username"]);
                 tempUserInfo.Add((string)mdr["Password"]);
                 tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((string)mdr["Type"]);
+                tempUserInfo.Add((string)mdr["rankType"]);
 
             }
 
@@ -216,7 +216,7 @@ namespace JustRipeProjectOfficial
                 tempUserInfo.Add((string)mdr["username"]);
                 tempUserInfo.Add((string)mdr["Password"]);
                 tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((string)mdr["Type"]);
+                tempUserInfo.Add((string)mdr["rankType"]);
 
             }
 
