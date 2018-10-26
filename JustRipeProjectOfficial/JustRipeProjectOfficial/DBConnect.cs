@@ -180,7 +180,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             conn.Open();
 
-            string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
+            string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = '" + userID + "';";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             /*important code to export data read from sql database.*/
@@ -196,7 +196,7 @@ namespace JustRipeProjectOfficial
                 tempUserInfo.Add((string)mdr["username"]);
                 tempUserInfo.Add((string)mdr["Password"]);
                 tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((string)mdr["Type"]);
+                tempUserInfo.Add((string)mdr["rankType"]);
 
             }
 
@@ -224,7 +224,7 @@ namespace JustRipeProjectOfficial
                 tempUserInfo.Add((string)mdr["username"]);
                 tempUserInfo.Add((string)mdr["Password"]);
                 tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((string)mdr["Type"]);
+                tempUserInfo.Add((string)mdr["rankType"]);
 
             }
 
