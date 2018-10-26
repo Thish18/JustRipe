@@ -241,7 +241,7 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@username", un);
             comm.Parameters.AddWithValue("@Password", pw);
             comm.Parameters.AddWithValue("@ContactNum", no);
-            comm.Parameters.AddWithValue("@rankID", "0");
+            comm.Parameters.AddWithValue("@rankID", "1");
             comm.ExecuteNonQuery();
 
             MessageBox.Show("User Created.");
