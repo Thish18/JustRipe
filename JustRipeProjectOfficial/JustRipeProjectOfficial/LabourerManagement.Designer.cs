@@ -485,6 +485,7 @@
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LabourerManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Labourer Management";
             this.Load += new System.EventHandler(this.LabourerManagement_Load);
             this.panel1.ResumeLayout(false);

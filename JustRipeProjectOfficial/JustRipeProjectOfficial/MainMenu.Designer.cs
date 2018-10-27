@@ -38,9 +38,9 @@
             this.btnHarvestTimetable = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbName = new System.Windows.Forms.Label();
             this.lbRank = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.btnFertilizer.Name = "btnFertilizer";
             this.btnFertilizer.Size = new System.Drawing.Size(383, 130);
             this.btnFertilizer.TabIndex = 2;
-            this.btnFertilizer.Text = "Fertlizer";
+            this.btnFertilizer.Text = "Fertilizer";
             this.btnFertilizer.UseVisualStyleBackColor = false;
             this.btnFertilizer.Click += new System.EventHandler(this.btnFertilizer_Click_1);
             // 
@@ -197,6 +197,16 @@
             this.panel1.Size = new System.Drawing.Size(805, 73);
             this.panel1.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.JustRipeLogo_NoText_1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbName
             // 
             this.lbName.AutoSize = true;
@@ -220,16 +230,6 @@
             this.lbRank.Size = new System.Drawing.Size(105, 20);
             this.lbRank.TabIndex = 12;
             this.lbRank.Text = "[Rank Data]";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.JustRipeLogo_NoText_1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
             // 
             // MainMenu
             // 
