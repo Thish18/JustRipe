@@ -66,9 +66,9 @@
             // 
             // tBDoB
             // 
-            this.tBDoB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBDoB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBDoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBDoB.ForeColor = System.Drawing.Color.White;
+            this.tBDoB.ForeColor = System.Drawing.Color.Black;
             this.tBDoB.Location = new System.Drawing.Point(195, 77);
             this.tBDoB.Name = "tBDoB";
             this.tBDoB.Size = new System.Drawing.Size(211, 26);
@@ -87,9 +87,9 @@
             // 
             // tBLastName
             // 
-            this.tBLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBLastName.ForeColor = System.Drawing.Color.White;
+            this.tBLastName.ForeColor = System.Drawing.Color.Black;
             this.tBLastName.Location = new System.Drawing.Point(195, 49);
             this.tBLastName.Name = "tBLastName";
             this.tBLastName.Size = new System.Drawing.Size(211, 26);
@@ -108,9 +108,9 @@
             // 
             // tBContactNo
             // 
-            this.tBContactNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBContactNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBContactNo.ForeColor = System.Drawing.Color.White;
+            this.tBContactNo.ForeColor = System.Drawing.Color.Black;
             this.tBContactNo.Location = new System.Drawing.Point(195, 197);
             this.tBContactNo.Name = "tBContactNo";
             this.tBContactNo.Size = new System.Drawing.Size(211, 26);
@@ -129,9 +129,9 @@
             // 
             // tBAddress2
             // 
-            this.tBAddress2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBAddress2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBAddress2.ForeColor = System.Drawing.Color.White;
+            this.tBAddress2.ForeColor = System.Drawing.Color.Black;
             this.tBAddress2.Location = new System.Drawing.Point(195, 169);
             this.tBAddress2.Name = "tBAddress2";
             this.tBAddress2.Size = new System.Drawing.Size(211, 26);
@@ -139,9 +139,9 @@
             // 
             // tBAddress1
             // 
-            this.tBAddress1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBAddress1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBAddress1.ForeColor = System.Drawing.Color.White;
+            this.tBAddress1.ForeColor = System.Drawing.Color.Black;
             this.tBAddress1.Location = new System.Drawing.Point(195, 141);
             this.tBAddress1.Name = "tBAddress1";
             this.tBAddress1.Size = new System.Drawing.Size(211, 26);
@@ -160,9 +160,9 @@
             // 
             // tBFirstName
             // 
-            this.tBFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBFirstName.ForeColor = System.Drawing.Color.White;
+            this.tBFirstName.ForeColor = System.Drawing.Color.Black;
             this.tBFirstName.Location = new System.Drawing.Point(195, 21);
             this.tBFirstName.Name = "tBFirstName";
             this.tBFirstName.Size = new System.Drawing.Size(211, 26);
@@ -181,7 +181,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(165)))), ((int)(((byte)(217)))));
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,7 +196,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(165)))), ((int)(((byte)(217)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(168)))));
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,9 +211,9 @@
             // 
             // tBUN
             // 
-            this.tBUN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBUN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBUN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBUN.ForeColor = System.Drawing.Color.White;
+            this.tBUN.ForeColor = System.Drawing.Color.Black;
             this.tBUN.Location = new System.Drawing.Point(195, 225);
             this.tBUN.Name = "tBUN";
             this.tBUN.Size = new System.Drawing.Size(211, 26);
@@ -232,9 +232,9 @@
             // 
             // tBPW
             // 
-            this.tBPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBPW.ForeColor = System.Drawing.Color.White;
+            this.tBPW.ForeColor = System.Drawing.Color.Black;
             this.tBPW.Location = new System.Drawing.Point(195, 253);
             this.tBPW.Name = "tBPW";
             this.tBPW.Size = new System.Drawing.Size(211, 26);
@@ -253,9 +253,9 @@
             // 
             // textBox10
             // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.Color.White;
+            this.textBox10.ForeColor = System.Drawing.Color.Black;
             this.textBox10.Location = new System.Drawing.Point(196, 281);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(210, 26);
@@ -274,7 +274,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(75)))), ((int)(((byte)(182)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label5);
@@ -292,9 +292,9 @@
             // 
             // tBGender
             // 
-            this.tBGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.tBGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.tBGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBGender.ForeColor = System.Drawing.Color.White;
+            this.tBGender.ForeColor = System.Drawing.Color.Black;
             this.tBGender.FormattingEnabled = true;
             this.tBGender.Items.AddRange(new object[] {
             "Male",
@@ -309,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(37)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(412, 459);
             this.Controls.Add(this.tBGender);
             this.Controls.Add(this.btnCancel);

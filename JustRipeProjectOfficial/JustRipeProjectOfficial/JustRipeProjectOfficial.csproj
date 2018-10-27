@@ -228,5 +228,14 @@
   <ItemGroup>
     <None Include="Resources\JustRipeLogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JustRipeLogo%28NoText%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JustRipeTitle%28Green%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JustRipeLogo%28NoText%291.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

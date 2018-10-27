@@ -121,17 +121,26 @@
   <data name="addUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="JustRipeLogo(NoText)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JustRipeLogo(NoText).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JustRipeTitle(Green)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JustRipeTitle(Green).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Harvest Timetable Icon " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Harvest Timetable Icon .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Crops" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="management" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\management.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Harvest Timetable Icon 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Harvest Timetable Icon 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JustRipeLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JustRipeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="In" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\In.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +160,11 @@
   <data name="Minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Crops" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="just-ripe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\just-ripe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Harvest Timetable Icon " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Harvest Timetable Icon .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,16 +175,13 @@
   <data name="In1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\In1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="just-ripe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\just-ripe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="TimeTable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TimeTable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fertilizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fertilizer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="JustRipeLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\JustRipeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="JustRipeLogo(NoText)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JustRipeLogo(NoText)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
