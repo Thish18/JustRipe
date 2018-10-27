@@ -40,7 +40,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbName = new System.Windows.Forms.Label();
             this.lbRank = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCrops
@@ -167,7 +169,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(165)))), ((int)(((byte)(217)))));
+            this.btnLogout.BackColor = System.Drawing.Color.Firebrick;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,6 +185,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(75)))), ((int)(((byte)(182)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lbName);
             this.panel1.Controls.Add(this.label1);
@@ -218,6 +221,16 @@
             this.lbRank.TabIndex = 12;
             this.lbRank.Text = "[Rank Data]";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.JustRipeLogo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +252,7 @@
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +271,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbRank;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
