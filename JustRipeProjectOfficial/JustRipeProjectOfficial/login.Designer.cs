@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCreateUser = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -39,33 +38,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateUser
             // 
+            this.btnCreateUser.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnCreateUser.FlatAppearance.BorderSize = 0;
+            this.btnCreateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateUser.Location = new System.Drawing.Point(25, 402);
             this.btnCreateUser.Name = "btnCreateUser";
             this.btnCreateUser.Size = new System.Drawing.Size(241, 23);
             this.btnCreateUser.TabIndex = 32;
             this.btnCreateUser.Text = "Create User ";
-            this.btnCreateUser.UseVisualStyleBackColor = true;
+            this.btnCreateUser.UseVisualStyleBackColor = false;
             this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.just_ripe;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 238);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
             // 
             // btnChange
             // 
-            this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnChange.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnChange.FlatAppearance.BorderSize = 0;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.Location = new System.Drawing.Point(25, 335);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(241, 21);
@@ -76,7 +70,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Location = new System.Drawing.Point(25, 306);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(241, 21);
@@ -151,6 +147,16 @@
             this.label3.Size = new System.Drawing.Size(111, 14);
             this.label3.TabIndex = 33;
             this.label3.Text = "-------------------------------------\r\n";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.JustRipeLogo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(245, 238);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
             // 
             // login
             // 
