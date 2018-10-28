@@ -113,6 +113,16 @@ namespace JustRipeProjectOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Crop_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Crop Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Crops {
             get {
                 object obj = ResourceManager.GetObject("Crops", resourceCulture);
@@ -126,6 +136,26 @@ namespace JustRipeProjectOfficial.Properties {
         internal static System.Drawing.Bitmap Fertilizer {
             get {
                 object obj = ResourceManager.GetObject("Fertilizer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fertilizer_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Fertilizer Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fertlizer {
+            get {
+                object obj = ResourceManager.GetObject("Fertlizer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +263,16 @@ namespace JustRipeProjectOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap management_icon {
+            get {
+                object obj = ResourceManager.GetObject("management icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Minus {
             get {
                 object obj = ResourceManager.GetObject("Minus", resourceCulture);
@@ -273,9 +313,29 @@ namespace JustRipeProjectOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Vehicle_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Vehicle Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Work {
             get {
                 object obj = ResourceManager.GetObject("Work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Work_Schedule_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Work Schedule Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

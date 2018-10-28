@@ -28,6 +28,10 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public MainMenu()
+        {
+        }
+
         private void btnLabourManagement_Click(object sender, EventArgs e)
         {
 

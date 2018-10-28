@@ -69,19 +69,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        /*someone please delete it without crashing the program, 
-         like IF YOU KNOW WHAT YOU DOING AND KNOW WHAT WILL HAPPEN,
-         PLEASE DELETE THESE " USELESS CODES. thanks*/
-        //this one
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-        //and this one
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
         //DONT DELETE THIS ONE
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
