@@ -237,5 +237,23 @@
   <ItemGroup>
     <None Include="Resources\JustRipeLogo%28NoText%291.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crop Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fertilizer Icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fertlizer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\management icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Work Schedule Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
