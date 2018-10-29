@@ -65,7 +65,7 @@
             this.btnCrops.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrops.ForeColor = System.Drawing.Color.White;
             this.btnCrops.Location = new System.Drawing.Point(11, 227);
-            this.btnCrops.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrops.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrops.Name = "btnCrops";
             this.btnCrops.Size = new System.Drawing.Size(383, 130);
             this.btnCrops.TabIndex = 1;
@@ -82,7 +82,7 @@
             this.btnFertilizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFertilizer.ForeColor = System.Drawing.Color.White;
             this.btnFertilizer.Location = new System.Drawing.Point(411, 93);
-            this.btnFertilizer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFertilizer.Margin = new System.Windows.Forms.Padding(2);
             this.btnFertilizer.Name = "btnFertilizer";
             this.btnFertilizer.Size = new System.Drawing.Size(383, 130);
             this.btnFertilizer.TabIndex = 2;
@@ -99,7 +99,7 @@
             this.btnVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicle.ForeColor = System.Drawing.Color.White;
             this.btnVehicle.Location = new System.Drawing.Point(11, 361);
-            this.btnVehicle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVehicle.Margin = new System.Windows.Forms.Padding(2);
             this.btnVehicle.Name = "btnVehicle";
             this.btnVehicle.Size = new System.Drawing.Size(383, 130);
             this.btnVehicle.TabIndex = 3;
@@ -116,7 +116,7 @@
             this.btnLabourManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLabourManagement.ForeColor = System.Drawing.Color.White;
             this.btnLabourManagement.Location = new System.Drawing.Point(411, 227);
-            this.btnLabourManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLabourManagement.Margin = new System.Windows.Forms.Padding(2);
             this.btnLabourManagement.Name = "btnLabourManagement";
             this.btnLabourManagement.Size = new System.Drawing.Size(383, 130);
             this.btnLabourManagement.TabIndex = 4;
@@ -133,7 +133,7 @@
             this.btnWorkSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWorkSchedule.ForeColor = System.Drawing.Color.White;
             this.btnWorkSchedule.Location = new System.Drawing.Point(411, 361);
-            this.btnWorkSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWorkSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.btnWorkSchedule.Name = "btnWorkSchedule";
             this.btnWorkSchedule.Size = new System.Drawing.Size(383, 130);
             this.btnWorkSchedule.TabIndex = 5;
@@ -176,7 +176,7 @@
             this.btnHarvestTimetable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHarvestTimetable.ForeColor = System.Drawing.Color.White;
             this.btnHarvestTimetable.Location = new System.Drawing.Point(11, 93);
-            this.btnHarvestTimetable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHarvestTimetable.Margin = new System.Windows.Forms.Padding(2);
             this.btnHarvestTimetable.Name = "btnHarvestTimetable";
             this.btnHarvestTimetable.Size = new System.Drawing.Size(383, 130);
             this.btnHarvestTimetable.TabIndex = 0;
@@ -214,6 +214,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(805, 73);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -255,7 +256,7 @@
             this.pictureBox6.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.management_icon;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Location = new System.Drawing.Point(560, 264);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(84, 76);
             this.pictureBox6.TabIndex = 15;
@@ -267,7 +268,7 @@
             this.pictureBox5.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.Fertlizer;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(560, 128);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(84, 76);
             this.pictureBox5.TabIndex = 14;
@@ -279,7 +280,7 @@
             this.pictureBox4.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.Vehicle_Icon;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(160, 401);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(84, 76);
             this.pictureBox4.TabIndex = 13;
@@ -291,7 +292,7 @@
             this.pictureBox3.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.Crop_Icon;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(160, 264);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(84, 76);
             this.pictureBox3.TabIndex = 12;
@@ -303,7 +304,7 @@
             this.pictureBox2.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.Harvest_Timetable_Icon_1;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(160, 128);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(84, 76);
             this.pictureBox2.TabIndex = 0;
@@ -315,7 +316,7 @@
             this.pictureBox7.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.Work_Schedule_Icon;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Location = new System.Drawing.Point(560, 401);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(84, 76);
             this.pictureBox7.TabIndex = 16;
@@ -341,7 +342,7 @@
             this.Controls.Add(this.btnCrops);
             this.Controls.Add(this.btnHarvestTimetable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
