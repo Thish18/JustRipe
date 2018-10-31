@@ -280,14 +280,16 @@ namespace JustRipeProjectOfficial
 
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
+        //functiosn for getting crops data
         public void getCropsData() { }
-
+        //functiosn for getting vehicles data
         public void getVehicleData() { }
-
+        //functiosn for getting fertilizers data
         public void getfertilizerData() { }
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
+        //for the list on the left hand side of the Labourer Management
         private List<object[]> labourerList = new List<object[]> { };
         public void getLabourersList() {
 
@@ -315,10 +317,11 @@ namespace JustRipeProjectOfficial
 
         }
 
+        //get the single data selected from the labourer list
         public void getLabourerData() { }
-
+        //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
-
+        //get the work schedule for the specific user
         public void getWorkSchedule() { }
 
     }
