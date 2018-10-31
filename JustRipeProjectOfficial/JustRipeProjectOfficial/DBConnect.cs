@@ -18,6 +18,7 @@ namespace JustRipeProjectOfficial
         /*Setup for connection to the MYSQL Server*/
         private MySqlConnection conn;
 
+        private string DBConnStr;
         //fill in information needed for connection.
         private string server = "localhost";
         private string database = "mydb";
@@ -35,6 +36,9 @@ namespace JustRipeProjectOfficial
 
         public void Initialize()
         {
+            string connectionString = Properties.Settings.Default.DBJustRipeConnStr;
+
+
 
             //using information given above.
             string connStr = "Server=" + server + ";database=" + database +
