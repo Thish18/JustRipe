@@ -259,6 +259,25 @@ namespace JustRipeProjectOfficial
 
         }
 
+        /*
+        public void userUpdate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string pw, int rank) {
+
+            Initialize();
+            conn.Open();
+
+            string connstr = "";
+
+            MySqlCommand comm = new MySqlCommand(connstr, conn);
+            //comm.CommandText = "";
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+
+        }*/
+
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
         public void getCropsData() { }
@@ -269,7 +288,32 @@ namespace JustRipeProjectOfficial
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
-        public void getLabourersList() { }
+        private List<object[]> labourerList = new List<object[]> { };
+        public void getLabourersList() {
+
+            Initialize();
+            conn.Open();
+
+            string query = "SELECT  users_ID, firstname, lastname FROM users;";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            MySqlDataReader mdr = cmd.ExecuteReader();
+
+            object[] labourerListInfo = new object[3];
+            while (mdr.Read())
+            {
+
+                labourerListInfo[0] = (int)mdr["users_ID"];
+                labourerListInfo[1] = (string)mdr["firstname"];
+                labourerListInfo[2] = (string)mdr["lastname"];
+
+                
+
+            }
+
+            labourerList.Add(labourerListInfo);
+
+        }
 
         public void getLabourerData() { }
 

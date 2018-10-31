@@ -19,6 +19,11 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
             userID = ID;
+
+
+
+            lBLabourerList.Text = "";
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
