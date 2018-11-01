@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //use for mysql commands and functions.
 using System.Data.SqlClient;
+using System.Data;
 
 namespace JustRipeProjectOfficial
 {
@@ -23,6 +24,7 @@ namespace JustRipeProjectOfficial
         SqlConnection connToDB;
         private SqlDataAdapter dataAdap;
 
+        //Initialize (Probably)
         public DBConnect(string connStr)
         {
 
@@ -58,6 +60,8 @@ namespace JustRipeProjectOfficial
 
 
             string query = "SELECT username FROM users WHERE username = '" + un + "'";
+
+            dataAdap = new SqlDataAdapter(query, connToDB);
 
             /*Missing functions*/
 
