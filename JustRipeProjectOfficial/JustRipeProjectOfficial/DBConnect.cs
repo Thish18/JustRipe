@@ -9,6 +9,7 @@ using System.Windows.Forms;
 //use for sql commands and functions.
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace JustRipeProjectOfficial
 {
@@ -32,10 +33,9 @@ namespace JustRipeProjectOfficial
 
         public void Initialize() {
 
-            string mdfPath = "DBJustRipe.mdf";
-            string dsPath = "MSSQLLocalDB";
+            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf") ;
 
-            connStr = "Data Source="+dsPath+";AttachDbFilename="+mdfPath+";Integrated Security=True;Connect Timeout=30";
+            connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
 
         }
 
