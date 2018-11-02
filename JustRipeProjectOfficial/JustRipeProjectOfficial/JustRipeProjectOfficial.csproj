@@ -263,6 +263,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DBJustRipe.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\cornfield-isolated-on-white-background1.jpg" />
+    <None Include="Resources\cornfield-isolated-on-white-background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

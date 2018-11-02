@@ -113,6 +113,26 @@ namespace JustRipeProjectOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cornfield_isolated_on_white_background {
+            get {
+                object obj = ResourceManager.GetObject("cornfield-isolated-on-white-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cornfield_isolated_on_white_background1 {
+            get {
+                object obj = ResourceManager.GetObject("cornfield-isolated-on-white-background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Crop_Icon {
             get {
                 object obj = ResourceManager.GetObject("Crop Icon", resourceCulture);
