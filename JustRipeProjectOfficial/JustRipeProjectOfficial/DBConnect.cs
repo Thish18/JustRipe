@@ -24,6 +24,7 @@ namespace JustRipeProjectOfficial
         private string connStr;
         SqlConnection connToDB;
         private SqlDataAdapter dataAdap;
+        SqlCommand comm;
 
         //Initialize (Probably)
         public DBConnect(/*string connStr*/)
@@ -150,10 +151,19 @@ namespace JustRipeProjectOfficial
         {
 
             //connection query for SQL.
-            string query = "INSERT INTO users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+            string query = "INSERT INTO Users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+
+            /*IT DOESNT WORRRKKK*/
+            comm.Parameters.AddWithValue("@firstname",fn);
+            comm.Parameters.AddWithValue("@lastname", ln);
+            comm.Parameters.AddWithValue("@username", un);
+            comm.Parameters.AddWithValue("@Password", pw);
+            comm.Parameters.AddWithValue("@ContactNum", no);
+            comm.Parameters.AddWithValue("@rankID", 1);
 
             /*Missing Functions*/
             dataAdap = new SqlDataAdapter(query, connToDB);
+            
 
             MessageBox.Show("User Created.");
 
