@@ -168,8 +168,6 @@ namespace JustRipeProjectOfficial
             dataAdap = new SqlDataAdapter(query, connToDB);
             /*Missing Functions*/
 
-
-
             MessageBox.Show("User Created.");
 
 

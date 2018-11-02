@@ -263,6 +263,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DBJustRipe.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\JRBG.png" />
     <None Include="Resources\cornfield-isolated-on-white-background1.jpg" />
     <None Include="Resources\cornfield-isolated-on-white-background.jpg" />
   </ItemGroup>
