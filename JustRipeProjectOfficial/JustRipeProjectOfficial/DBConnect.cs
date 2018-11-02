@@ -29,7 +29,7 @@ namespace JustRipeProjectOfficial
         //Initialize (Probably)
         public DBConnect(/*string connStr*/)
         {
-
+            Initialize();
         }
 
         public void Initialize() {
@@ -152,7 +152,8 @@ namespace JustRipeProjectOfficial
 
             //connection query for SQL.
             string query = "INSERT INTO Users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
-
+            OpenConn();
+            comm = new SqlCommand(query, connToDB);
             /*IT DOESNT WORRRKKK*/
             comm.Parameters.AddWithValue("@firstname",fn);
             comm.Parameters.AddWithValue("@lastname", ln);
@@ -161,9 +162,13 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@ContactNum", no);
             comm.Parameters.AddWithValue("@rankID", 1);
 
-            /*Missing Functions*/
+            comm.ExecuteNonQuery();
+            CloseConn();
+
             dataAdap = new SqlDataAdapter(query, connToDB);
-            
+            /*Missing Functions*/
+
+
 
             MessageBox.Show("User Created.");
 
