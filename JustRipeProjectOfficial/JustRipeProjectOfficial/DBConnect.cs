@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 /*addition namespace needed.*/
 //use for messagebox in this case.
 using System.Windows.Forms;
-//use for mysql commands and functions.
+//use for sql commands and functions.
 using System.Data.SqlClient;
 using System.Data;
 
@@ -19,16 +19,23 @@ namespace JustRipeProjectOfficial
 
         //setup logged in info.
         private int userID;
-
-        private string conn;
+        
+        private string connStr;
         SqlConnection connToDB;
         private SqlDataAdapter dataAdap;
 
         //Initialize (Probably)
-        public DBConnect(string connStr)
+        public DBConnect(/*string connStr*/)
         {
 
-            conn = connStr;
+        }
+
+        public void Initialize() {
+
+            string mdfPath = "DBJustRipe.mdf";
+            string dsPath = "MSSQLLocalDB";
+
+            connStr = "Data Source="+dsPath+";AttachDbFilename="+mdfPath+";Integrated Security=True;Connect Timeout=30";
 
         }
 
@@ -36,7 +43,7 @@ namespace JustRipeProjectOfficial
         public void OpenConn()
         {
 
-            connToDB = new SqlConnection(conn);
+            connToDB = new SqlConnection(connStr);
 
             connToDB.Open();
 
@@ -53,6 +60,9 @@ namespace JustRipeProjectOfficial
 
         /*===============================================================[LogIn/Register Functions]===============================================================================================*/
         //[TEST SUCCESS] it used to check if username existed or not.
+
+        private DataSet tempDataSet;
+
         public bool unCheckExist(string un)
         {
 
@@ -60,10 +70,13 @@ namespace JustRipeProjectOfficial
 
 
             string query = "SELECT username FROM users WHERE username = '" + un + "'";
-
+            
             dataAdap = new SqlDataAdapter(query, connToDB);
 
             /*Missing functions*/
+
+            tempDataSet = new DataSet();
+
 
             if (dataUN == un)
             {
@@ -133,15 +146,14 @@ namespace JustRipeProjectOfficial
 
         }
 
-        //damn, finally it works
-
         public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw)
         {
 
             //connection query for SQL.
-            string connstr = "INSERT INTO users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+            string query = "INSERT INTO users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
 
             /*Missing Functions*/
+            dataAdap = new SqlDataAdapter(query, connToDB);
 
             MessageBox.Show("User Created.");
 
