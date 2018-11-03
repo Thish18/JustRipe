@@ -154,6 +154,9 @@
   <data name="Fertilizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fertilizer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Background for JustRipe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background for JustRipe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="addUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,6 +193,9 @@
   <data name="Fertilizer Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fertilizer Icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cornfield-isolated-on-white-background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cornfield-isolated-on-white-background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,7 +211,7 @@
   <data name="JustRipeLogo(NoText)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JustRipeLogo(NoText)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cornfield-isolated-on-white-background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cornfield-isolated-on-white-background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Background for JustRipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background for JustRipe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -190,12 +190,12 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.JustRipeLogo;
+            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.Background_for_JustRipe1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(552, 139);
+            this.pictureBox1.Location = new System.Drawing.Point(384, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(401, 370);
+            this.pictureBox1.Size = new System.Drawing.Size(712, 661);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
@@ -204,11 +204,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.cornfield_isolated_on_white_background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1095, 661);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "login";
@@ -225,7 +225,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnCreateUser;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtUsername;
@@ -235,6 +234,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
