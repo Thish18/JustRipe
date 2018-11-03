@@ -180,20 +180,20 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< HEAD
-            this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.Background_for_JustRipe1;
+
+          
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(384, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(712, 661);
-=======
+
             this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.JRBG;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(293, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(530, 537);
->>>>>>> 45cdac1537666a7f7683baeb10e57ed1c015f117
+
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
