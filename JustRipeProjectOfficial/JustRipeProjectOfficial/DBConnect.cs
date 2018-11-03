@@ -155,7 +155,7 @@ namespace JustRipeProjectOfficial
             OpenConn();
             comm = new SqlCommand(query, connToDB);
             /*IT DOESNT WORRRKKK*/
-            comm.Parameters.AddWithValue("@firstname",fn);
+            comm.Parameters.AddWithValue("@firstname", fn);
             comm.Parameters.AddWithValue("@lastname", ln);
             comm.Parameters.AddWithValue("@username", un);
             comm.Parameters.AddWithValue("@Password", pw);
@@ -171,6 +171,7 @@ namespace JustRipeProjectOfficial
 
 
             MessageBox.Show("User Created.");
+            //test
 
 
         }
