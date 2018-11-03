@@ -151,7 +151,7 @@ namespace JustRipeProjectOfficial
         {
 
             //connection query for SQL.
-            string query = "INSERT INTO Users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
             OpenConn();
             comm = new SqlCommand(query, connToDB);
             /*IT DOESNT WORRRKKK*/
