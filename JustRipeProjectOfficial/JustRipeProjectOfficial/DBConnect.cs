@@ -149,12 +149,14 @@ namespace JustRipeProjectOfficial
 
         public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw)
         {
-
+            Initialize();
             //connection query for SQL.
-            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
             OpenConn();
+            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+      
             comm = new SqlCommand(query, connToDB);
             /*IT DOESNT WORRRKKK*/
+            // Test/
             comm.Parameters.AddWithValue("@firstname", fn);
             comm.Parameters.AddWithValue("@lastname", ln);
             comm.Parameters.AddWithValue("@username", un);
@@ -163,13 +165,10 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@rankID", 1);
 
             comm.ExecuteNonQuery();
-            CloseConn();
-
             dataAdap = new SqlDataAdapter(query, connToDB);
             /*Missing Functions*/
-
+            CloseConn();
             MessageBox.Show("User Created.");
-            //test
 
 
         }
