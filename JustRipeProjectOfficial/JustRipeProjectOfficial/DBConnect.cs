@@ -211,24 +211,33 @@ namespace JustRipeProjectOfficial
         }
 
         //get the single data selected from the labourer list
-        public void getLabourerData() {
-            //labourers first name
+        public void getLabourerData(string username) {
 
-            //labourers last name
+            string fn, ln, un, gender, address, rank;
+            int dob, contact;
 
-            //labourers username
-
-            //labourers DOB
-
-            //labourers gender
-
-            //labourers address
-
-            //labourers contact no.
-
-            //labourers rank
-                       
-
+            for (int i = 0; i < labourerList.Count; i++)
+            {
+                if(labourerList.username == username)
+                {
+                    //labourers first name
+                    fn = labourerList[i].firstname;
+                    //labourers last name
+                    ln = labourerList[i].lastname;
+                    //labourers username
+                    un = labourerList[i].username;
+                    //labourers DOB
+                    dob = labourerList[i].dob;
+                    //labourers gender
+                    gender = labourerList[i].gender;
+                    //labourers address
+                    address = labourerList[i].address;
+                    //labourers contact no.
+                    contact = labourerList[i].contact;
+                    //labourers rank
+                    rank = labourerList[i].rank;
+                }
+            }
         }
         //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
