@@ -207,11 +207,29 @@ namespace JustRipeProjectOfficial
         private List<object[]> labourerList = new List<object[]> { };
         public void getLabourersList() {
 
-
+            
         }
 
         //get the single data selected from the labourer list
-        public void getLabourerData() { }
+        public void getLabourerData() {
+            //labourers first name
+
+            //labourers last name
+
+            //labourers username
+
+            //labourers DOB
+
+            //labourers gender
+
+            //labourers address
+
+            //labourers contact no.
+
+            //labourers rank
+                       
+
+        }
         //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
         //get the work schedule for the specific user
