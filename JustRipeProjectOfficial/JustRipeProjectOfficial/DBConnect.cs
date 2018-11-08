@@ -155,8 +155,7 @@ namespace JustRipeProjectOfficial
             string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
       
             comm = new SqlCommand(query, connToDB);
-            /*IT DOESNT WORRRKKK*/
-            // Test/
+      
             comm.Parameters.AddWithValue("@firstname", fn);
             comm.Parameters.AddWithValue("@lastname", ln);
             comm.Parameters.AddWithValue("@username", un);
@@ -216,28 +215,28 @@ namespace JustRipeProjectOfficial
             string fn, ln, un, gender, address, rank;
             int dob, contact;
 
-            for (int i = 0; i < labourerList.Count; i++)
-            {
-                if(labourerList.username == username)
-                {
-                    //labourers first name
-                    fn = labourerList[i].firstname;
-                    //labourers last name
-                    ln = labourerList[i].lastname;
-                    //labourers username
-                    un = labourerList[i].username;
-                    //labourers DOB
-                    dob = labourerList[i].dob;
-                    //labourers gender
-                    gender = labourerList[i].gender;
-                    //labourers address
-                    address = labourerList[i].address;
-                    //labourers contact no.
-                    contact = labourerList[i].contact;
-                    //labourers rank
-                    rank = labourerList[i].rank;
-                }
-            }
+            //for (int i = 0; i < labourerList.Count; i++)
+            //{
+            //    if(labourerList.un == username)
+            //    {
+            //        //labourers first name
+            //        fn = labourerList[i].firstname;
+            //        //labourers last name
+            //        ln = labourerList[i].lastname;
+            //        //labourers username
+            //        un = labourerList[i].username;
+            //        //labourers DOB
+            //        dob = labourerList[i].dob;
+            //        //labourers gender
+            //        gender = labourerList[i].gender;
+            //        //labourers address
+            //        address = labourerList[i].address;
+            //        //labourers contact no.
+            //        contact = labourerList[i].contact;
+            //        //labourers rank
+            //        rank = labourerList[i].rank;
+            //    }
+            //}
         }
         //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }

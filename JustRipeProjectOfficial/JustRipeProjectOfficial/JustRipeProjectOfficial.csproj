@@ -257,11 +257,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBJustRipe.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DBJustRipe_log.ldf">
       <DependentUpon>DBJustRipe.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Background for JustRipe1.png" />
     <None Include="Resources\Background for JustRipe.png" />
