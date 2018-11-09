@@ -209,7 +209,16 @@ namespace JustRipeProjectOfficial
 
 
         //functions for getting vehicles data.
-        public void getVehicleData() { }
+        public void getVehicleData() {
+
+            Initialize();
+            //connection query for SQL for the types of crops.
+            OpenConn();
+            string query = "INSERT vehicles_ID, type FROM Vehicles";
+
+            comm = new SqlCommand(query, connToDB);
+
+        }
         //getting details for the selected vehicle.
         public void getVehicleDetails() { }
 
