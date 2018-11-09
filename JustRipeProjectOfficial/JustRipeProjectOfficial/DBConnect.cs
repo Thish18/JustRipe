@@ -24,6 +24,7 @@ namespace JustRipeProjectOfficial
         private string connStr;
         SqlConnection connToDB;
         private SqlDataAdapter dataAdap;
+        private SqlDataReader dataRead;
         SqlCommand comm;
 
         //Initialize (Probably)
@@ -62,22 +63,29 @@ namespace JustRipeProjectOfficial
         /*===============================================================[LogIn/Register Functions]===============================================================================================*/
         //[TEST SUCCESS] it used to check if username existed or not.
 
-        private DataSet tempDataSet;
-
         public bool unCheckExist(string un)
         {
 
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
             string dataUN = "";
 
-
             string query = "SELECT username FROM users WHERE username = '" + un + "'";
-            
-            dataAdap = new SqlDataAdapter(query, connToDB);
 
-            /*Missing functions*/
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
 
-            tempDataSet = new DataSet();
+            using (dataRead) {
 
+                while (dataRead.Read()) {
+
+                    dataUN = dataRead["username"].ToString();
+
+                }
+
+            }
 
             if (dataUN == un)
             {
@@ -88,7 +96,6 @@ namespace JustRipeProjectOfficial
             }
             else
             {
-
 
                 return false;
 
@@ -102,12 +109,30 @@ namespace JustRipeProjectOfficial
         public bool loginCheck(string un, string pw)
         {
 
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
             string dataUN = "";
             string datapw = "";
 
             string query = "SELECT users_ID, username, Password FROM users WHERE username = '" + un + "'";
 
-            /*Missing Functions*/
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    userID = Convert.ToInt32(dataRead["users_ID"]);
+                    dataUN = dataRead["username"].ToString();
+                    datapw = dataRead["Password"].ToString();
+
+                }
+
+            }
 
             if (datapw == pw)
             {
@@ -126,7 +151,7 @@ namespace JustRipeProjectOfficial
         }
 
         //temp storage List.
-        public List<object> tempUserInfo = new List<object>();
+        public List<object> tempUserInfo;
 
         //use to import ONLY.
         public void userInfoImport()
@@ -134,16 +159,60 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = '" + userID + "';";
 
-            /*Missing Functions*/
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempUserInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
+                    tempUserInfo.Add(dataRead["firstName"].ToString());
+                    tempUserInfo.Add(dataRead["lastName"].ToString());
+                    tempUserInfo.Add(dataRead["username"].ToString());
+                    tempUserInfo.Add(dataRead["Password"].ToString());
+                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
+                    tempUserInfo.Add(dataRead["rankID"].ToString());
+
+                }
+
+            }
 
         }
         //export ONLY
         public void userInfoExport(int userID)
         {
 
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
 
-            /*Missing Functions*/
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempUserInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
+                    tempUserInfo.Add(dataRead["firstName"].ToString());
+                    tempUserInfo.Add(dataRead["lastName"].ToString());
+                    tempUserInfo.Add(dataRead["username"].ToString());
+                    tempUserInfo.Add(dataRead["Password"].ToString());
+                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
+                    tempUserInfo.Add(dataRead["Type"].ToString());
+
+                }
+
+            }
 
         }
 
@@ -230,8 +299,8 @@ namespace JustRipeProjectOfficial
         //get the single data selected from the labourer list
         public void getLabourerData(string username) {
 
-            string fn, ln, un, gender, address, rank;
-            int dob, contact;
+            //string fn, ln, un, gender, address, rank;
+            //int dob, contact;
 
             //for (int i = 0; i < labourerList.Count; i++)
             //{
