@@ -221,7 +221,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL.
             OpenConn();
-            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID,DateOfBirth) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID,@DateOfBirth)";
       
             comm = new SqlCommand(query, connToDB);
       
@@ -231,10 +231,10 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@Password", pw);
             comm.Parameters.AddWithValue("@ContactNum", no);
             comm.Parameters.AddWithValue("@rankID", 1);
+            comm.Parameters.AddWithValue("@DateOfBirth", dob);
 
             comm.ExecuteNonQuery();
             dataAdap = new SqlDataAdapter(query, connToDB);
-            /*Missing Functions*/
             CloseConn();
             MessageBox.Show("User Created.");
 

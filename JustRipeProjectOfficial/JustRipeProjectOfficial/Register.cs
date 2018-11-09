@@ -44,7 +44,7 @@ namespace JustRipeProjectOfficial
 
                 DBConnect dbconn = new DBConnect();
                 //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
-                dbconn.userCreate(tBFirstName.Text, tBLastName.Text, tBDoB.Text,
+                dbconn.userCreate(tBFirstName.Text, tBLastName.Text, dtpDoB.Text,
                               tBGender.Text, tBAddress1.Text, tBAddress2.Text,
                               tBContactNo.Text, tBUN.Text, tBPW.Text);
 
