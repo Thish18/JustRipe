@@ -212,7 +212,7 @@ namespace JustRipeProjectOfficial
         public void getVehicleData() {
 
             Initialize();
-            //connection query for SQL for the types of crops.
+            //connection query for SQL for the types of Vehicles.
             OpenConn();
             string query = "INSERT vehicles_ID, type FROM Vehicles";
 
@@ -223,7 +223,16 @@ namespace JustRipeProjectOfficial
         public void getVehicleDetails() { }
 
         //functions for getting fertilizers data.
-        public void getfertilizerData() { }
+        public void getfertilizerData() {
+
+            Initialize();
+            //connection query for SQL for the types of fertilizers.
+            OpenConn();
+            string query = "INSERT fertilizer_ID, type FROM fertilizers";
+
+            comm = new SqlCommand(query, connToDB);
+
+        }
         //getting the details for the selected fertilizer.
         public void getfertilizerDetails() { }
 
