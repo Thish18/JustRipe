@@ -40,7 +40,9 @@ namespace JustRipeProjectOfficial
 
                 MessageBox.Show("Username: " + tBUN.Text + " has been used. Please with another.");
 
-            } else {
+            }
+            else
+            {
 
                 DBConnect dbconn = new DBConnect();
                 //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
