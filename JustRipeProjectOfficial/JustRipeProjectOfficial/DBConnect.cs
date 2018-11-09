@@ -193,21 +193,30 @@ namespace JustRipeProjectOfficial
 
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
-        //functiosn for getting crops data
+        //functions for getting crops data
         public void getCropsData() {
 
             Initialize();
-            //connection query for SQL.
+            //connection query for SQL for the types of crops.
             OpenConn();
             string query = "INSERT crops_ID, type FROM Crops";
 
             comm = new SqlCommand(query, connToDB);
 
         }
-        //functiosn for getting vehicles data
+        // getting detials for the selected crop.
+        public void getCropsDetails() { }
+
+
+        //functions for getting vehicles data.
         public void getVehicleData() { }
-        //functiosn for getting fertilizers data
+        //getting details for the selected vehicle.
+        public void getVehicleDetails() { }
+
+        //functions for getting fertilizers data.
         public void getfertilizerData() { }
+        //getting the details for the selected fertilizer.
+        public void getfertilizerDetails() { }
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
