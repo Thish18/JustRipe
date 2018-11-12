@@ -315,8 +315,39 @@ namespace JustRipeProjectOfficial
             
         }
 
+        //temp storage List.
+        public List<object> tempLabourerInfo;
+        
         //get the single data selected from the labourer list
-        public void getLabourerData(string username) {
+        public void getLabourerData() {
+
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempLabourerInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempLabourerInfo.Add(dataRead["firstName"].ToString());
+                    tempLabourerInfo.Add(dataRead["lastName"].ToString());
+                    tempLabourerInfo.Add(dataRead["username"].ToString());
+                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["dob"].ToString()));
+                    tempLabourerInfo.Add(dataRead["gender"].ToString());
+                    tempLabourerInfo.Add(dataRead["address"].ToString());
+                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["contact"].ToString()));
+                    tempLabourerInfo.Add(dataRead["rank"].ToString());
+                }
+
+            }
 
             //string fn, ln, un, gender, address, rank;
             //int dob, contact;
@@ -346,8 +377,41 @@ namespace JustRipeProjectOfficial
         }
         //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
+
+
+        //temp storage List.
+        public List<object> tempScheduleInfo;
+
         //get the work schedule for the specific user
-        public void getWorkSchedule() { }
+        public void getWorkSchedule() {
+
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempScheduleInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["fertiliserRequired"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsHarvested"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsCultivated"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["storageLevel"].ToString()));
+                }
+
+            }
+
+
+
+        }
 
     }
 }

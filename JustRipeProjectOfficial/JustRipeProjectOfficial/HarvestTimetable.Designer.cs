@@ -42,9 +42,10 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(292, 6);
+            this.btnUpdate.Location = new System.Drawing.Point(389, 7);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(109, 24);
+            this.btnUpdate.Size = new System.Drawing.Size(145, 30);
             this.btnUpdate.TabIndex = 43;
             this.btnUpdate.Text = "Update Information";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -52,19 +53,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 122);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 150);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(520, 185);
             this.dataGridView1.TabIndex = 41;
             // 
             // dtpHarvest
             // 
-            this.dtpHarvest.Location = new System.Drawing.Point(138, 8);
-            this.dtpHarvest.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpHarvest.Location = new System.Drawing.Point(184, 10);
+            this.dtpHarvest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpHarvest.Name = "dtpHarvest";
-            this.dtpHarvest.Size = new System.Drawing.Size(151, 20);
+            this.dtpHarvest.Size = new System.Drawing.Size(200, 22);
             this.dtpHarvest.TabIndex = 40;
             // 
             // pictureBox1
@@ -72,28 +73,31 @@
             this.pictureBox1.BackgroundImage = global::JustRipeProjectOfficial.Properties.Resources.just_ripe;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(153, 136);
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
             // HarvestTxt
             // 
-            this.HarvestTxt.Location = new System.Drawing.Point(138, 33);
+            this.HarvestTxt.Location = new System.Drawing.Point(184, 41);
+            this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HarvestTxt.Multiline = true;
             this.HarvestTxt.Name = "HarvestTxt";
-            this.HarvestTxt.Size = new System.Drawing.Size(263, 84);
+            this.HarvestTxt.Size = new System.Drawing.Size(349, 102);
             this.HarvestTxt.TabIndex = 44;
+            this.HarvestTxt.TextChanged += new System.EventHandler(this.HarvestTxt_TextChanged);
             // 
             // btnMainMenu
             // 
             this.btnMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMainMenu.Location = new System.Drawing.Point(292, 277);
+            this.btnMainMenu.Location = new System.Drawing.Point(389, 341);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMainMenu.Name = "btnMainMenu";
-            this.btnMainMenu.Size = new System.Drawing.Size(109, 24);
+            this.btnMainMenu.Size = new System.Drawing.Size(145, 30);
             this.btnMainMenu.TabIndex = 45;
             this.btnMainMenu.Text = "Back To Main Menu";
             this.btnMainMenu.UseVisualStyleBackColor = false;
@@ -101,15 +105,16 @@
             // 
             // HarvestTimetable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 305);
+            this.ClientSize = new System.Drawing.Size(552, 375);
             this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.HarvestTxt);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dtpHarvest);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HarvestTimetable";
             this.Text = "HarvestTimetable";
             this.Load += new System.EventHandler(this.HarvestTimetable_Load);

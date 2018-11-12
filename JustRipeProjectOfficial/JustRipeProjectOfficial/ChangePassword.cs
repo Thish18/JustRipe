@@ -116,5 +116,10 @@ namespace JustRipeProjectOfficial
 
             Close();
         }
+
+        private void txtNewPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
