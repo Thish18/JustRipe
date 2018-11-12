@@ -232,7 +232,7 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@ContactNum", no);
             comm.Parameters.AddWithValue("@rankID", 1);
             comm.Parameters.AddWithValue("@DateOfBirth", dob);
-            comm.Parameters.AddWithValue("@Gender", g)
+            comm.Parameters.AddWithValue("@Gender", g);
 
             comm.ExecuteNonQuery();
             dataAdap = new SqlDataAdapter(query, connToDB);
@@ -315,8 +315,39 @@ namespace JustRipeProjectOfficial
             
         }
 
+        //temp storage List.
+        public List<object> tempLabourerInfo;
+        
         //get the single data selected from the labourer list
-        public void getLabourerData(string username) {
+        public void getLabourerData() {
+
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
+            string query = "Get labourers first name, last name, username, dob, gender, address, contact and rank";
+
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempLabourerInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempLabourerInfo.Add(dataRead["firstName"].ToString());
+                    tempLabourerInfo.Add(dataRead["lastName"].ToString());
+                    tempLabourerInfo.Add(dataRead["username"].ToString());
+                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["dob"].ToString()));
+                    tempLabourerInfo.Add(dataRead["gender"].ToString());
+                    tempLabourerInfo.Add(dataRead["address"].ToString());
+                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["contact"].ToString()));
+                    tempLabourerInfo.Add(dataRead["rank"].ToString());
+                }
+
+            }
 
             //string fn, ln, un, gender, address, rank;
             //int dob, contact;
