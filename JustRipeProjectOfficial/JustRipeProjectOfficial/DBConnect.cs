@@ -377,8 +377,41 @@ namespace JustRipeProjectOfficial
         }
         //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
+
+
+        //temp storage List.
+        public List<object> tempScheduleInfo;
+
         //get the work schedule for the specific user
-        public void getWorkSchedule() { }
+        public void getWorkSchedule() {
+
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempScheduleInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["fertiliserRequired"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsHarvested"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsCultivated"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["storageLevel"].ToString()));
+                }
+
+            }
+
+
+
+        }
 
     }
 }
