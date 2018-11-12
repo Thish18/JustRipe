@@ -39,5 +39,10 @@ namespace JustRipeProjectOfficial
 
             Close();
         }
+
+        private void HarvestTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

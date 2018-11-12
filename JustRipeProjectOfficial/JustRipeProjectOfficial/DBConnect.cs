@@ -325,7 +325,7 @@ namespace JustRipeProjectOfficial
             //connection query for SQL.
             OpenConn();
 
-            string query = "Get labourers first name, last name, username, dob, gender, address, contact and rank";
+            string query = "";
 
             comm = new SqlCommand(query, connToDB);
             dataRead = comm.ExecuteReader();
