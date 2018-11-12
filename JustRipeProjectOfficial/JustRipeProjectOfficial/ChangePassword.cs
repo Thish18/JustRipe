@@ -48,7 +48,7 @@ namespace JustRipeProjectOfficial
             if (txtUsername.Text != "" && txtPassword.Text != "" && txtNewPassword.Text != "" && txtConfirmPassword.Text != "")
             {
                 
-                string query = "SELECT Users.firstname = Users.Password " +
+                string query = "SELECT Users.username = Users.Password " +
                 "FROM Users " +
                 "WHERE Password = @UserEnteredPassword ";
                 comm = new SqlCommand(query, connToDB);
@@ -66,13 +66,13 @@ namespace JustRipeProjectOfficial
                         DialogResult Answer = MessageBox.Show("Are you sure you wish to change your current login password?", "Password change confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (Answer == DialogResult.Yes)
                         {
-                            string query2 = "UPDATE [User] " +
+                            string query2 = "UPDATE [Users] " +
                             "SET [Password] = @NewPassword " +
-                            "WHERE [Users].[firstname] = @firstname";
+                            "WHERE [Users].[username] = @username";
                             comm = new SqlCommand(query, connToDB);
 
                             comm.Parameters.Add("@NewPassword", SqlDbType.VarChar).Value = txtNewPassword.Text;
-                            comm.Parameters.Add("@firstname", SqlDbType.VarChar).Value = txtUsername.Text;
+                            comm.Parameters.Add("@username", SqlDbType.VarChar).Value = txtUsername.Text;
                             comm.ExecuteNonQuery();
 
                             MessageBox.Show("The password has been changed.", "Password changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -100,16 +100,6 @@ namespace JustRipeProjectOfficial
                 MessageBox.Show("Not all required fields have data in them.", "Password change failure", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             CloseConn();
-            
-            //if (dbconn.unCheckExist(txtUsername.Text).Equals(true))
-            //{
-            //    MessageBox.Show("yah");
-            //}
-            //else {
-            //    MessageBox.Show("Incorrect username/password.");
-        
-
-            //}
 
         }
 
