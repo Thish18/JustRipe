@@ -26,7 +26,12 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void btnMainMenu_Click(object sender, EventArgs e)
+        private void HarvestTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             foreach (Form f in Application.OpenForms)
                 if (f is MainMenu)
@@ -40,7 +45,7 @@ namespace JustRipeProjectOfficial
             Close();
         }
 
-        private void HarvestTxt_TextChanged(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
 
         }
