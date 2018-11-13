@@ -36,12 +36,22 @@ namespace JustRipeProjectOfficial
         {
             connToDB.Close();
         }
- /// <summary>
- /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- /// </summary>
+        public void Initialize()
+        {
+
+            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf");
+
+            connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
+
+        }
+        /// <summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
         static BindingSource bs;
+        private DataTable datatable = new DataTable();
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            Initialize();
             OpenConn();
             DBConnect dbconn = new DBConnect();
 
@@ -57,9 +67,10 @@ namespace JustRipeProjectOfficial
                 DataTable dt = new DataTable();
                 dataAdap.Fill(dt);
                 bs = new BindingSource(dt, null);
+                dataRead = comm.ExecuteReader();
                 comm.ExecuteNonQuery();
 
-                if (dt.Rows.Count == 1) //Old Password is correct.
+                if (dt.Columns.Count == 4) //Old Password is correct.
                 {
                     if (txtNewPassword.Text == txtConfirmPassword.Text) //Checking that the new password was typed correctly.
                     {
