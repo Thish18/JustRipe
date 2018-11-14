@@ -41,8 +41,7 @@ namespace JustRipeProjectOfficial
                     {
                         DialogResult Answer = MessageBox.Show("Are you sure you wish to change your current login password?", "Password change confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (Answer == DialogResult.Yes)
-                        {
-
+                        {                                  
                             dbconn.passwordUpdate(un,pw,npw);
 
                             MessageBox.Show("The password has been changed.", "Password changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -99,6 +98,14 @@ namespace JustRipeProjectOfficial
         private void txtNewPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtNewPassword.Text = "";
+            txtConfirmPassword.Text= "";
         }
     }
 }

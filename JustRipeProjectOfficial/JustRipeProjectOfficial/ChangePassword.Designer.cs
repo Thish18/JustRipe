@@ -50,12 +50,14 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(0, 228);
+            this.btnReset.Location = new System.Drawing.Point(0, 281);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(152, 42);
+            this.btnReset.Size = new System.Drawing.Size(203, 52);
             this.btnReset.TabIndex = 44;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnUpdate
             // 
@@ -64,9 +66,10 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(0, 186);
+            this.btnUpdate.Location = new System.Drawing.Point(0, 229);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(152, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(203, 52);
             this.btnUpdate.TabIndex = 43;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -79,9 +82,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(0, 270);
+            this.btnCancel.Location = new System.Drawing.Point(0, 332);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(152, 42);
+            this.btnCancel.Size = new System.Drawing.Size(203, 52);
             this.btnCancel.TabIndex = 42;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -95,17 +99,19 @@
             this.panel1.Controls.Add(this.btnReset);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(152, 312);
+            this.panel1.Size = new System.Drawing.Size(203, 384);
             this.panel1.TabIndex = 52;
             // 
             // lblUsername
             // 
             this.lblUsername.BackColor = System.Drawing.Color.White;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(155, 11);
+            this.lblUsername.Location = new System.Drawing.Point(207, 14);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(87, 21);
+            this.lblUsername.Size = new System.Drawing.Size(116, 26);
             this.lblUsername.TabIndex = 39;
             this.lblUsername.Text = "Username: ";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,38 +120,42 @@
             // 
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(155, 58);
+            this.label2.Location = new System.Drawing.Point(207, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 21);
+            this.label2.Size = new System.Drawing.Size(177, 26);
             this.label2.TabIndex = 40;
             this.label2.Text = "Current Password:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(158, 82);
+            this.txtPassword.Location = new System.Drawing.Point(211, 101);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(262, 20);
+            this.txtPassword.Size = new System.Drawing.Size(348, 22);
             this.txtPassword.TabIndex = 41;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(158, 149);
+            this.label3.Location = new System.Drawing.Point(211, 183);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 21);
+            this.label3.Size = new System.Drawing.Size(61, 26);
             this.label3.TabIndex = 45;
             this.label3.Text = "New: ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Location = new System.Drawing.Point(158, 173);
+            this.txtNewPassword.Location = new System.Drawing.Point(211, 213);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(262, 20);
+            this.txtNewPassword.Size = new System.Drawing.Size(348, 22);
             this.txtNewPassword.TabIndex = 46;
             this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
@@ -153,34 +163,37 @@
             // 
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(152, 195);
+            this.label4.Location = new System.Drawing.Point(203, 240);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 21);
+            this.label4.Size = new System.Drawing.Size(100, 26);
             this.label4.TabIndex = 47;
             this.label4.Text = "Confirm: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(158, 219);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(211, 270);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(262, 20);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(348, 22);
             this.txtConfirmPassword.TabIndex = 48;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(158, 35);
+            this.txtUsername.Location = new System.Drawing.Point(211, 43);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(262, 20);
+            this.txtUsername.Size = new System.Drawing.Size(348, 22);
             this.txtUsername.TabIndex = 51;
             // 
             // ChangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(432, 312);
+            this.ClientSize = new System.Drawing.Size(576, 384);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtConfirmPassword);
@@ -191,6 +204,7 @@
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
