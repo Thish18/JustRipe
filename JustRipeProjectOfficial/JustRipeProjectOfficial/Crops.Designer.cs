@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnMenu = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lBCropsList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,16 +52,17 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listBox1
+            // lBCropsList
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 52);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(227, 342);
-            this.listBox1.TabIndex = 4;
+            this.lBCropsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
+            this.lBCropsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBCropsList.ForeColor = System.Drawing.Color.White;
+            this.lBCropsList.FormattingEnabled = true;
+            this.lBCropsList.Location = new System.Drawing.Point(0, 52);
+            this.lBCropsList.Name = "lBCropsList";
+            this.lBCropsList.Size = new System.Drawing.Size(227, 342);
+            this.lBCropsList.TabIndex = 4;
+            this.lBCropsList.SelectedIndexChanged += new System.EventHandler(this.lBCropsList_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -87,7 +88,7 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.lBCropsList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -117,7 +118,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lBCropsList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;

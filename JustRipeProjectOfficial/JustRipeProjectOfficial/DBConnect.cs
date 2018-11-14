@@ -268,7 +268,7 @@ namespace JustRipeProjectOfficial
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
         //functions for getting crops data
-        public List<object> cropsList;
+        public DataTable cropsList;
         public void getCropsData() {
 
             Initialize();
@@ -276,59 +276,30 @@ namespace JustRipeProjectOfficial
             OpenConn();
             string query = "SELCET crops_ID, type FROM Crops";
 
-            comm = new SqlCommand(query, connToDB);
+            
 
-            dataRead = comm.ExecuteReader();
 
-            using (dataRead) {
-
-                while (dataRead.Read()) {
-
-                    cropsList.Add(dataRead["type"].ToString());
-
-                }
-
-            }
 
 
         }
         // getting detials for the selected crop.
-        public List<object> cropsDetail;
-        public void getCropsDetails(string type) {
+        public DataTable cropsDetail;
+        public void getCropsDetails(int crops_ID) {
 
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELECT * FROM Crops WHERE type = "+ type;
+            string query = "SELECT * FROM Crops WHERE crops_ID = "+ crops_ID;
 
-            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(query, connToDB);
 
-            dataRead = comm.ExecuteReader();
-
-            using (dataRead)
-            {
-
-                while (dataRead.Read())
-                {
-
-                    cropsList.Add(dataRead["crops_ID"]);
-                    cropsList.Add(dataRead["type"].ToString());
-                    cropsList.Add(dataRead["Quantity"]);
-                    cropsList.Add(dataRead["PeriodNeeded"]);
-                    cropsList.Add(dataRead["miniTemp"]);
-                    cropsList.Add(dataRead["maxTemp"]);
-                    cropsList.Add(dataRead["miniTemp"]);
-
-
-                }
-
-            }
+            dataAdap.Fill(cropsDetail);
 
         }
 
 
         //functions for getting vehicles data.
-        public List<object> vehicleList;
+        public DataTable vehicleList;
         public void getVehicleData() {
 
             Initialize();
@@ -336,14 +307,14 @@ namespace JustRipeProjectOfficial
             OpenConn();
             string query = "SELECT vehicles_ID, type FROM Vehicles";
 
-            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(query, connToDB);
 
         }
         //getting details for the selected vehicle.
         public void getVehicleDetails() { }
 
         //functions for getting fertilizers data.
-        public List<object> fertilizersList;
+        public DataTable fertilizersList;
         public void getfertilizerData() {
 
             Initialize();
@@ -351,7 +322,7 @@ namespace JustRipeProjectOfficial
             OpenConn();
             string query = "SELECT fertilizer_ID, type FROM fertilizers";
 
-            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(query, connToDB);
 
         }
         //getting the details for the selected fertilizer.
@@ -360,14 +331,14 @@ namespace JustRipeProjectOfficial
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
-        private List<object[]> labourerList = new List<object[]> { };
+        private DataTable labourerList = new DataTable { };
         public void getLabourersList() {
 
             
         }
 
         //temp storage List.
-        public List<object> tempLabourerInfo;
+        public DataTable tempLabourerInfo;
         
         //get the single data selected from the labourer list
         public void getLabourerData(int id) {
@@ -380,8 +351,13 @@ namespace JustRipeProjectOfficial
             query = "SELECT users.*, ranktype.* FROM users" +
                 " INNER JOIN ranktype ON users.rankID = ranktype.rank_ID" +
                 " WHERE users_ID = " + id;
+
+            dataAdap = new SqlDataAdapter(query, connToDB);
+
+            /*
             comm = new SqlCommand(query, connToDB);
 
+            
             dataRead = comm.ExecuteReader();
 
             tempLabourerInfo = new List<object>();
@@ -404,6 +380,7 @@ namespace JustRipeProjectOfficial
 
             }
             comm.ExecuteNonQuery();
+            */
             CloseConn();
 
         }
@@ -412,7 +389,7 @@ namespace JustRipeProjectOfficial
 
 
         //temp storage List.
-        public List<object> tempScheduleInfo;
+        public DataTable tempScheduleInfo;
 
         //get the work schedule for the specific user
         public void getWorkSchedule() {
@@ -423,6 +400,9 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID!=''";
 
+            dataAdap = new SqlDataAdapter(query, connToDB);
+
+            /*
             comm = new SqlCommand(query, connToDB);
             dataRead = comm.ExecuteReader();
 
@@ -440,7 +420,7 @@ namespace JustRipeProjectOfficial
                 }
 
             }
-
+            */
 
 
         }

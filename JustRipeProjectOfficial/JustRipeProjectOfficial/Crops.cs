@@ -13,12 +13,20 @@ namespace JustRipeProjectOfficial
     public partial class Crops : Form
     {
 
+        DBConnect dbconn = new DBConnect();
         private int userID;
 
         public Crops(int ID)
         {
             InitializeComponent();
             userID = ID;
+
+            dbconn.getCropsData();
+            lBCropsList.DataSource = dbconn.cropsList;
+            lBCropsList.DisplayMember = "type";
+            lBCropsList.ValueMember = "crops_ID";
+
+
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -43,6 +51,18 @@ namespace JustRipeProjectOfficial
                 }
 
             Close();
+        }
+
+        private void lBCropsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int crops_ID = Convert.ToInt32(lBCropsList.SelectedValue);
+
+            dbconn.getCropsDetails(crops_ID);
+
+            /*import data get from the getcropsdetails with cropsDetails*/
+
+
         }
     }
 }
