@@ -261,7 +261,7 @@ namespace JustRipeProjectOfficial
              comm.Parameters.Add("@NewPassword", SqlDbType.VarChar).Value = newPW;
              comm.Parameters.Add("@username", SqlDbType.VarChar).Value = un;
              comm.ExecuteNonQuery();
-
+            CloseConn();
         }
 
         /*
