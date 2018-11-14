@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 /*addition namespace needed.*/
 //use for messagebox in this case.
 using System.Windows.Forms;
-//use for mysql commands and functions.
-using MySql.Data.MySqlClient;
+//use for sql commands and functions.
+using System.Data.SqlClient;
+using System.Data;
+using System.IO;
 
 namespace JustRipeProjectOfficial
 {
@@ -15,112 +17,86 @@ namespace JustRipeProjectOfficial
     {
 
         /*===============================================================[Database Connection Setup]===============================================================================================*/
-        /*Setup for connection to the MYSQL Server*/
-        private MySqlConnection conn;
-
-        //fill in information needed for connection.
-        private string server = "localhost";
-        private string database = "mydb";
-        private string uid = "root";
-        private string password = "";
-
-        //solve the server doesnt support ssl connection error.
-        private string sslmode = "none";
 
         //setup logged in info.
         private int userID;
+        
+        private string connStr;
+        SqlConnection connToDB;
+        private SqlDataAdapter dataAdap;
+        private SqlDataReader dataRead;
+        SqlCommand comm;
 
-        /*Using information given above to fill in the gaps in connection string
-         the use it for the actual SQL connection query.*/
-
-        public void Initialize()
+        //Initialize (Probably)
+        public DBConnect(/*string connStr*/)
         {
+            Initialize();
+        }
 
-            //using information given above.
-            string connStr = "Server=" + server + ";database=" + database +
-                ";UID=" + uid + ";Password=" + password + ";" + "sslmode=" + sslmode + ";";
+        public void Initialize() {
 
-            //connection query for SQL.
-            conn = new MySqlConnection(connStr);
+            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf") ;
+
+            connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
 
         }
 
         //once MYSQL Connected. I believe this will actually try to connect to the database server.
-        public bool OpenConn()
+        public void OpenConn()
         {
 
-            try
-            {
+            connToDB = new SqlConnection(connStr);
 
-                conn.Open();
-                return true;
-
-            }
-            catch (MySqlException ex)
-            {
-
-                MessageBox.Show(ex.Message);
-                return false;
-
-            }
+            connToDB.Open();
 
         }
 
         //this will close the connection to the database server once the program closed.
-        /*
-        public bool CloseConn() {
+        
+        public void CloseConn() {
 
-            try {
+            connToDB.Close();
 
-                conn.Close();
-                return true;
-
-            }
-            catch (MySqlException ex) {
-
-                MessageBox.Show(ex.Message);
-                return false;
-
-            }
-
-        }*/
+        }
 
 
         /*===============================================================[LogIn/Register Functions]===============================================================================================*/
         //[TEST SUCCESS] it used to check if username existed or not.
+
         public bool unCheckExist(string un)
         {
 
-            string dataUN = "";
             Initialize();
-            conn.Open();
+            //connection query for SQL.
+            OpenConn();
+
+            string dataUN = "";
 
             string query = "SELECT username FROM users WHERE username = '" + un + "'";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
 
-            /*important code to export data read from sql database.*/
-            MySqlDataReader mdr = cmd.ExecuteReader();
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
 
+            using (dataRead) {
 
+                while (dataRead.Read()) {
 
-            while (mdr.Read())
-            {
+                    dataUN = dataRead["username"].ToString();
 
-                dataUN = (string)mdr["username"];
+                }
 
             }
 
             if (dataUN == un)
             {
 
-                conn.Close();
+
                 return true;
 
             }
             else
             {
 
-                conn.Close();
                 return false;
 
             }
@@ -129,30 +105,34 @@ namespace JustRipeProjectOfficial
 
         }
 
+
+
         //[TEST SUCCESS] it used to check if username, password correct or not.
         public bool loginCheck(string un, string pw)
         {
 
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
             string dataUN = "";
             string datapw = "";
 
-            Initialize();
-            conn.Open();
-
             string query = "SELECT users_ID, username, Password FROM users WHERE username = '" + un + "'";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
 
-            /*important code to export data read from sql database.*/
-            MySqlDataReader mdr = cmd.ExecuteReader();
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
 
-            while (mdr.Read())
+            using (dataRead)
             {
 
-                //use to check username and password.
-                dataUN = (string)mdr["username"];
-                datapw = (string)mdr["Password"];
-                //userID to temp store user ID.
-                userID = (int)mdr["users_ID"];
+                while (dataRead.Read())
+                {
+                    userID = Convert.ToInt32(dataRead["users_ID"]);
+                    dataUN = dataRead["username"].ToString();
+                    datapw = dataRead["Password"].ToString();
+
+                }
 
             }
 
@@ -173,32 +153,33 @@ namespace JustRipeProjectOfficial
         }
 
         //temp storage List.
-        public List<object> tempUserInfo = new List<object>();
+        public List<object> tempUserInfo;
 
         //use to import ONLY.
         public void userInfoImport()
         {
 
-            Initialize();
-            conn.Open();
-
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = '" + userID + "';";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
 
-            /*important code to export data read from sql database.*/
-            MySqlDataReader mdr = cmd.ExecuteReader();
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
 
-            while (mdr.Read())
+            tempUserInfo = new List<object>();
+
+            using (dataRead)
             {
 
-                //storing all users data to the temp list.
-                tempUserInfo.Add((int)mdr["users_ID"]);
-                tempUserInfo.Add((string)mdr["firstname"]);
-                tempUserInfo.Add((string)mdr["lastname"]);
-                tempUserInfo.Add((string)mdr["username"]);
-                tempUserInfo.Add((string)mdr["Password"]);
-                tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((string)mdr["rankType"]);
+                while (dataRead.Read())
+                {
+                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
+                    tempUserInfo.Add(dataRead["firstName"].ToString());
+                    tempUserInfo.Add(dataRead["lastName"].ToString());
+                    tempUserInfo.Add(dataRead["username"].ToString());
+                    tempUserInfo.Add(dataRead["Password"].ToString());
+                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
+                    tempUserInfo.Add(dataRead["rankID"].ToString());
+
+                }
 
             }
 
@@ -208,74 +189,251 @@ namespace JustRipeProjectOfficial
         {
 
             Initialize();
-            conn.Open();
+            //connection query for SQL.
+            OpenConn();
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
 
-            /*important code to export data read from sql database.*/
-            MySqlDataReader mdr = cmd.ExecuteReader();
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
 
-            while (mdr.Read())
+            tempUserInfo = new List<object>();
+
+            using (dataRead)
             {
 
-                //storing all users data to the temp list.
-                tempUserInfo.Add((int)mdr["users_ID"]);
-                tempUserInfo.Add((string)mdr["firstname"]);
-                tempUserInfo.Add((string)mdr["lastname"]);
-                tempUserInfo.Add((string)mdr["username"]);
-                tempUserInfo.Add((string)mdr["Password"]);
-                tempUserInfo.Add((string)mdr["ContactNum"]);
-                tempUserInfo.Add((string)mdr["rankType"]);
+                while (dataRead.Read())
+                {
+                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
+                    tempUserInfo.Add(dataRead["firstName"].ToString());
+                    tempUserInfo.Add(dataRead["lastName"].ToString());
+                    tempUserInfo.Add(dataRead["username"].ToString());
+                    tempUserInfo.Add(dataRead["Password"].ToString());
+                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
+                    tempUserInfo.Add(dataRead["Type"].ToString());
+
+                }
 
             }
 
         }
 
-        //damn, finally it works
-
         public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw)
         {
-
             Initialize();
-            conn.Open();
-
             //connection query for SQL.
-            string connstr = "INSERT INTO users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
-
-            MySqlCommand comm = new MySqlCommand(connstr, conn);
-            //comm.CommandText = "INSERT INTO users(firstname, lastname,username,Password,ContactNum,rankID) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID)";
+            OpenConn();
+            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID,DateOfBirth,Gender) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID,@DateOfBirth,@Gender)";
+      
+            comm = new SqlCommand(query, connToDB);
+      
             comm.Parameters.AddWithValue("@firstname", fn);
             comm.Parameters.AddWithValue("@lastname", ln);
             comm.Parameters.AddWithValue("@username", un);
             comm.Parameters.AddWithValue("@Password", pw);
             comm.Parameters.AddWithValue("@ContactNum", no);
-            comm.Parameters.AddWithValue("@rankID", "1");
-            comm.ExecuteNonQuery();
+            comm.Parameters.AddWithValue("@rankID", 1);
+            comm.Parameters.AddWithValue("@DateOfBirth", dob);
+            comm.Parameters.AddWithValue("@Gender", g);
 
+            comm.ExecuteNonQuery();
+            dataAdap = new SqlDataAdapter(query, connToDB);
+            CloseConn();
             MessageBox.Show("User Created.");
 
-            conn.Close();
 
         }
 
+        static BindingSource bs;
+        private DataTable datatable = new DataTable();
+
+        public void passwordUpdate(string un, string pw, string newPW) {
+
+            Initialize();
+            OpenConn();
+            DBConnect dbconn = new DBConnect();
+
+            string query = "UPDATE [Users] " +
+            "SET [Password] = @NewPassword " +
+            "WHERE [Users].[username] = @username";
+            comm = new SqlCommand(query, connToDB);
+
+             comm.Parameters.Add("@NewPassword", SqlDbType.VarChar).Value = newPW;
+             comm.Parameters.Add("@username", SqlDbType.VarChar).Value = un;
+             comm.ExecuteNonQuery();
+
+        }
+
+        /*
+        public void userUpdate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string pw, int rank) {
+
+            Initialize();
+            conn.Open();
+
+            string connstr = "";
+
+            MySqlCommand comm = new MySqlCommand(connstr, conn);
+            //comm.CommandText = "";
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+            comm.Parameters.AddWithValue("@", "");
+
+        }*/
+
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
-        public void getCropsData() { }
+        //functions for getting crops data
+        public void getCropsData() {
 
-        public void getVehicleData() { }
+            Initialize();
+            //connection query for SQL for the types of crops.
+            OpenConn();
+            string query = "INSERT crops_ID, type FROM Crops";
 
-        public void getfertilizerData() { }
+            comm = new SqlCommand(query, connToDB);
+
+        }
+        // getting detials for the selected crop.
+        public void getCropsDetails() { }
+
+
+        //functions for getting vehicles data.
+        public void getVehicleData() {
+
+            Initialize();
+            //connection query for SQL for the types of Vehicles.
+            OpenConn();
+            string query = "INSERT vehicles_ID, type FROM Vehicles";
+
+            comm = new SqlCommand(query, connToDB);
+
+        }
+        //getting details for the selected vehicle.
+        public void getVehicleDetails() { }
+
+        //functions for getting fertilizers data.
+        public void getfertilizerData() {
+
+            Initialize();
+            //connection query for SQL for the types of fertilizers.
+            OpenConn();
+            string query = "INSERT fertilizer_ID, type FROM fertilizers";
+
+            comm = new SqlCommand(query, connToDB);
+
+        }
+        //getting the details for the selected fertilizer.
+        public void getfertilizerDetails() { }
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
-        public void getLabourersList() { }
+        //for the list on the left hand side of the Labourer Management
+        private List<object[]> labourerList = new List<object[]> { };
+        public void getLabourersList() {
 
-        public void getLabourerData() { }
+            
+        }
 
+        //temp storage List.
+        public List<object> tempLabourerInfo;
+        
+        //get the single data selected from the labourer list
+        public void getLabourerData() {
+
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempLabourerInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempLabourerInfo.Add(dataRead["firstName"].ToString());
+                    tempLabourerInfo.Add(dataRead["lastName"].ToString());
+                    tempLabourerInfo.Add(dataRead["username"].ToString());
+                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["dob"].ToString()));
+                    tempLabourerInfo.Add(dataRead["gender"].ToString());
+                    tempLabourerInfo.Add(dataRead["address"].ToString());
+                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["contact"].ToString()));
+                    tempLabourerInfo.Add(dataRead["rank"].ToString());
+                }
+
+            }
+
+            //string fn, ln, un, gender, address, rank;
+            //int dob, contact;
+
+            //for (int i = 0; i < labourerList.Count; i++)
+            //{
+            //    if(labourerList.un == username)
+            //    {
+            //        //labourers first name
+            //        fn = labourerList[i].firstname;
+            //        //labourers last name
+            //        ln = labourerList[i].lastname;
+            //        //labourers username
+            //        un = labourerList[i].username;
+            //        //labourers DOB
+            //        dob = labourerList[i].dob;
+            //        //labourers gender
+            //        gender = labourerList[i].gender;
+            //        //labourers address
+            //        address = labourerList[i].address;
+            //        //labourers contact no.
+            //        contact = labourerList[i].contact;
+            //        //labourers rank
+            //        rank = labourerList[i].rank;
+            //    }
+            //}
+        }
+        //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
 
-        public void getWorkSchedule() { }
+
+        //temp storage List.
+        public List<object> tempScheduleInfo;
+
+        //get the work schedule for the specific user
+        public void getWorkSchedule() {
+
+            Initialize();
+            //connection query for SQL.
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            tempScheduleInfo = new List<object>();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["fertiliserRequired"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsHarvested"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsCultivated"].ToString()));
+                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["storageLevel"].ToString()));
+                }
+
+            }
+
+
+
+        }
 
     }
 }

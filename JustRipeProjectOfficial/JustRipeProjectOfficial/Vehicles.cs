@@ -28,14 +28,15 @@ namespace JustRipeProjectOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
-                if (form is MainMenu)
+            foreach (Form f in Application.OpenForms)
+                if (f is MainMenu)
                 {
 
-                    form.Show();
+                    f.Show();
                     break;
 
                 }
+
             Close();
         }
 

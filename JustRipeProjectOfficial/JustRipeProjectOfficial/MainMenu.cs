@@ -23,9 +23,13 @@ namespace JustRipeProjectOfficial
             DBConnect DBConn = new DBConnect();
             userID = ID;
             DBConn.userInfoExport(userID);
-            tBName.Text = DBConn.tempUserInfo[1].ToString() + " " + DBConn.tempUserInfo[2].ToString();
-            tbRank.Text = DBConn.tempUserInfo[6].ToString();
+            lbName.Text = DBConn.tempUserInfo[1].ToString() + " " + DBConn.tempUserInfo[2].ToString();
+            lbRank.Text = DBConn.tempUserInfo[6].ToString();
 
+        }
+
+        public MainMenu()
+        {
         }
 
         private void btnLabourManagement_Click(object sender, EventArgs e)
@@ -42,14 +46,15 @@ namespace JustRipeProjectOfficial
         {
 
             /*Logout, leave the main menu and back to the log in screen*/
-            foreach (Form form in Application.OpenForms)
-                if (form is login)
+            foreach (Form f in Application.OpenForms)
+                if (f is login)
                 {
 
-                    form.Show();
+                    f.Show();
                     break;
 
                 }
+
             Close();
 
             /*disconnect from the database server
@@ -107,6 +112,11 @@ namespace JustRipeProjectOfficial
             WorkSchedule ws = new WorkSchedule(userID);
             ws.Show();
             Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+               
         }
     }
 }

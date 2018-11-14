@@ -26,22 +26,23 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms)
-                if (form is MainMenu)
-                {
-
-                    form.Show();
-                    break;
-
-                }
-            Close();
-        }
-
         private void Crops_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+                if (f is MainMenu)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
         }
     }
 }

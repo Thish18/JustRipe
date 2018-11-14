@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace JustRipeProjectOfficial
 {
@@ -38,6 +37,7 @@ namespace JustRipeProjectOfficial
 
                     dbconn.userInfoImport();
                     userID = Convert.ToInt32(dbconn.tempUserInfo[0].ToString());
+
                     //do it when the username and password are correct.
                     MainMenu frm = new MainMenu(userID);
                     frm.Show();
@@ -67,19 +67,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        /*someone please delete it without crashing the program, 
-         like IF YOU KNOW WHAT YOU DOING AND KNOW WHAT WILL HAPPEN,
-         PLEASE DELETE THESE " USELESS CODES. thanks*/
-        //this one
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-        //and this one
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
         //DONT DELETE THIS ONE
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
@@ -99,9 +87,14 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

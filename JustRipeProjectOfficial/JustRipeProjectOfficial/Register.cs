@@ -22,36 +22,39 @@ namespace JustRipeProjectOfficial
         private void btnCancel_Click(object sender, EventArgs e)
         {
 
-            foreach (Form form in Application.OpenForms)
-                if (form is login) {
+            foreach (Form f in Application.OpenForms)
+                if (f is login) {
 
-                    form.Show();
+                    f.Show();
                     break;
 
                 }
-            Close();
 
+            Close();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Username: " + tBUN.Text + " has been used. Please with another.");
+            if ("x" == "y") {
 
-            //MySqlConnection conn = new MySqlConnection();
-            //conn.Open();
+                MessageBox.Show("Username: " + tBUN.Text + " has been used. Please with another.");
 
-            //[SQL]
+            }
+            else
+            {
 
-            DBConnect dbconn = new DBConnect();
-            //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
-            dbconn.userCreate(tBFirstName.Text, tBLastName.Text, tBDoB.Text,
-                          tBGender.Text, tBAddress1.Text, tBAddress2.Text,
-                          tBContactNo.Text, tBUN.Text, tBPW.Text);
-      
-            login lgin = new login();
-            lgin.Show();
-            Close();
+                DBConnect dbconn = new DBConnect();
+                //(firstname, lastname, doB, gender, address1, address2, contactno, username, password)
+                dbconn.userCreate(tBFirstName.Text, tBLastName.Text, dtpDoB.Text,
+                              tBGender.Text, tBAddress1.Text, tBAddress2.Text,
+                              tBContactNo.Text, tBUN.Text, tBPW.Text);
+
+                login lgin = new login();
+                lgin.Show();
+                Close();
+
+            }
 
         }
     }

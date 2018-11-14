@@ -26,17 +26,28 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void btnMainMenu_Click(object sender, EventArgs e)
+        private void HarvestTxt_TextChanged(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
-                if (form is MainMenu)
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+                if (f is MainMenu)
                 {
 
-                    form.Show();
+                    f.Show();
                     break;
 
                 }
+
             Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

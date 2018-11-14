@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -227,6 +227,47 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\JustRipeLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JustRipeLogo%28NoText%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JustRipeTitle%28Green%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JustRipeLogo%28NoText%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crop Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fertilizer Icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fertlizer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\management icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Work Schedule Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBJustRipe.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DBJustRipe_log.ldf">
+      <DependentUpon>DBJustRipe.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Background for JustRipe1.png" />
+    <None Include="Resources\Background for JustRipe.png" />
+    <None Include="Resources\JRBG.png" />
+    <None Include="Resources\cornfield-isolated-on-white-background1.jpg" />
+    <None Include="Resources\cornfield-isolated-on-white-background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

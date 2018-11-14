@@ -26,19 +26,18 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-
-            foreach (Form form in Application.OpenForms)
-                if (form is MainMenu)
+            foreach (Form f in Application.OpenForms)
+                if (f is MainMenu)
                 {
 
-                    form.Show();
+                    f.Show();
                     break;
 
                 }
-            Close();
 
+            Close();
         }
     }
 }
