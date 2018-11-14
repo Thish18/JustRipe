@@ -341,61 +341,41 @@ namespace JustRipeProjectOfficial
         public List<object> tempLabourerInfo;
         
         //get the single data selected from the labourer list
-        public void getLabourerData() {
+        public void getLabourerData(int id) {
 
             Initialize();
-            //connection query for SQL.
             OpenConn();
+            DBConnect dbconn = new DBConnect();
 
-            string query = "";
-
+            string query;
+            query = "SELECT users.*, ranktype.* FROM users" +
+                " INNER JOIN ranktype ON users.rankID = ranktype.rank_ID" +
+                " WHERE users_ID = " + id;
             comm = new SqlCommand(query, connToDB);
+
             dataRead = comm.ExecuteReader();
 
-            tempLabourerInfo = new List<object>();
+            comm.ExecuteNonQuery();
 
-            using (dataRead)
-            {
+            using (dataRead) {
 
-                while (dataRead.Read())
-                {
-                    tempLabourerInfo.Add(dataRead["firstName"].ToString());
-                    tempLabourerInfo.Add(dataRead["lastName"].ToString());
+                while (dataRead.Read()) {
+
+                    tempLabourerInfo.Add(dataRead["firstname"].ToString());
+                    tempLabourerInfo.Add(dataRead["lastname"].ToString());
                     tempLabourerInfo.Add(dataRead["username"].ToString());
-                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["dob"].ToString()));
-                    tempLabourerInfo.Add(dataRead["gender"].ToString());
-                    tempLabourerInfo.Add(dataRead["address"].ToString());
-                    tempLabourerInfo.Add(Convert.ToInt32(dataRead["contact"].ToString()));
-                    tempLabourerInfo.Add(dataRead["rank"].ToString());
+                    tempLabourerInfo.Add(dataRead["DateOfBirth"]);
+                    tempLabourerInfo.Add(dataRead["Gender"].ToString());
+                    tempLabourerInfo.Add(dataRead["address1"].ToString());
+                    tempLabourerInfo.Add(dataRead["address2"].ToString());
+                    tempLabourerInfo.Add(dataRead["ContactNum"].ToString());
+
                 }
 
             }
 
-            //string fn, ln, un, gender, address, rank;
-            //int dob, contact;
+            CloseConn();
 
-            //for (int i = 0; i < labourerList.Count; i++)
-            //{
-            //    if(labourerList.un == username)
-            //    {
-            //        //labourers first name
-            //        fn = labourerList[i].firstname;
-            //        //labourers last name
-            //        ln = labourerList[i].lastname;
-            //        //labourers username
-            //        un = labourerList[i].username;
-            //        //labourers DOB
-            //        dob = labourerList[i].dob;
-            //        //labourers gender
-            //        gender = labourerList[i].gender;
-            //        //labourers address
-            //        address = labourerList[i].address;
-            //        //labourers contact no.
-            //        contact = labourerList[i].contact;
-            //        //labourers rank
-            //        rank = labourerList[i].rank;
-            //    }
-            //}
         }
         //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
