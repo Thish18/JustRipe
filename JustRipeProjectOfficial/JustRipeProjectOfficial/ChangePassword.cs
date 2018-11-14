@@ -15,81 +15,49 @@ namespace JustRipeProjectOfficial
     public partial class ChangePassword : Form
     {
 
-        private string connStr;
-        SqlConnection connToDB;
-        private SqlDataAdapter dataAdap;
-        private SqlDataReader dataRead;
-        SqlCommand comm;
+        DBConnect dbconn = new DBConnect();
 
         public ChangePassword()
         {
             InitializeComponent();
         }
 
-        public void OpenConn()
-        {
-            connToDB = new SqlConnection(connStr);        
-            connToDB.Open();
-        }
-        //this will close the connection to the database server once the program closed
-        public void CloseConn()
-        {
-            connToDB.Close();
-        }
-        public void Initialize()
-        {
-
-            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf");
-
-            connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
-
-        }
         /// <summary>
         /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// </summary>
-        static BindingSource bs;
-        private DataTable datatable = new DataTable();
+        
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Initialize();
-            OpenConn();
-            DBConnect dbconn = new DBConnect();
+            if (txtUsername.Text != "" && txtPassword.Text != "" && txtNewPassword.Text != "" && txtConfirmPassword.Text != "") {
 
-            if (txtUsername.Text != "" && txtPassword.Text != "" && txtNewPassword.Text != "" && txtConfirmPassword.Text != "")
-            {
-                
-                string query = "SELECT Users.username = Users.Password " +
-                "FROM Users " +
-                "WHERE Password = @UserEnteredPassword ";
-                comm = new SqlCommand(query, connToDB);
-                comm.Parameters.Add("@UserEnteredPassword", SqlDbType.VarChar).Value = txtPassword.Text;
-                dataAdap = new SqlDataAdapter(query, connToDB);
-                DataTable dt = new DataTable();
-                dataAdap.Fill(dt);
-                bs = new BindingSource(dt, null);
-                dataRead = comm.ExecuteReader();
-                comm.ExecuteNonQuery();
+                string un = txtUsername.Text;
+                string pw = txtPassword.Text;
+                string npw = txtNewPassword.Text;
+                string pwCorr = txtConfirmPassword.Text;
 
-                if (dt.Columns.Count == 4) //Old Password is correct.
+                if (dbconn.loginCheck(un, pw)) //Old Password is correct.
                 {
-                    if (txtNewPassword.Text == txtConfirmPassword.Text) //Checking that the new password was typed correctly.
+                    if (npw == pwCorr) //Checking that the new password was typed correctly.
                     {
                         DialogResult Answer = MessageBox.Show("Are you sure you wish to change your current login password?", "Password change confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (Answer == DialogResult.Yes)
                         {
-                            string query2 = "UPDATE [Users] " +
-                            "SET [Password] = @NewPassword " +
-                            "WHERE [Users].[username] = @username";
-                            comm = new SqlCommand(query, connToDB);
 
-                            comm.Parameters.Add("@NewPassword", SqlDbType.VarChar).Value = txtNewPassword.Text;
-                            comm.Parameters.Add("@username", SqlDbType.VarChar).Value = txtUsername.Text;
-                            comm.ExecuteNonQuery();
+                            dbconn.passwordUpdate(un,pw,npw);
 
                             MessageBox.Show("The password has been changed.", "Password changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Hide();
-                            login frm = new login();
-                            frm.ShowDialog();
+
+                            foreach (Form f in Application.OpenForms)
+                                if (f is login)
+                                {
+
+                                    f.Show();
+                                    break;
+
+                                }
+
+                            Close();
+
                         }
                         else
                         {
@@ -105,12 +73,12 @@ namespace JustRipeProjectOfficial
                 {
                     MessageBox.Show("The old password you entered is incorrect.", "Password change failure", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
             }
             else
             {
                 MessageBox.Show("Not all required fields have data in them.", "Password change failure", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            CloseConn();
 
         }
 

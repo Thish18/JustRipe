@@ -105,6 +105,8 @@ namespace JustRipeProjectOfficial
 
         }
 
+
+
         //[TEST SUCCESS] it used to check if username, password correct or not.
         public bool loginCheck(string un, string pw)
         {
@@ -239,6 +241,26 @@ namespace JustRipeProjectOfficial
             CloseConn();
             MessageBox.Show("User Created.");
 
+
+        }
+
+        static BindingSource bs;
+        private DataTable datatable = new DataTable();
+
+        public void passwordUpdate(string un, string pw, string newPW) {
+
+            Initialize();
+            OpenConn();
+            DBConnect dbconn = new DBConnect();
+
+            string query = "UPDATE [Users] " +
+            "SET [Password] = @NewPassword " +
+            "WHERE [Users].[username] = @username";
+            comm = new SqlCommand(query, connToDB);
+
+             comm.Parameters.Add("@NewPassword", SqlDbType.VarChar).Value = newPW;
+             comm.Parameters.Add("@username", SqlDbType.VarChar).Value = un;
+             comm.ExecuteNonQuery();
 
         }
 
