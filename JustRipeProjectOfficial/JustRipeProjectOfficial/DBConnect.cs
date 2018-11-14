@@ -264,49 +264,77 @@ namespace JustRipeProjectOfficial
             CloseConn();
         }
 
-        /*
-        public void userUpdate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string pw, int rank) {
-
-            Initialize();
-            conn.Open();
-
-            string connstr = "";
-
-            MySqlCommand comm = new MySqlCommand(connstr, conn);
-            //comm.CommandText = "";
-            comm.Parameters.AddWithValue("@", "");
-            comm.Parameters.AddWithValue("@", "");
-            comm.Parameters.AddWithValue("@", "");
-            comm.Parameters.AddWithValue("@", "");
-            comm.Parameters.AddWithValue("@", "");
-            comm.Parameters.AddWithValue("@", "");
-
-        }*/
 
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
         //functions for getting crops data
+        public List<object> cropsList;
         public void getCropsData() {
 
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "INSERT crops_ID, type FROM Crops";
+            string query = "SELCET crops_ID, type FROM Crops";
 
             comm = new SqlCommand(query, connToDB);
 
+            dataRead = comm.ExecuteReader();
+
+            using (dataRead) {
+
+                while (dataRead.Read()) {
+
+                    cropsList.Add(dataRead["type"].ToString());
+
+                }
+
+            }
+
+
         }
         // getting detials for the selected crop.
-        public void getCropsDetails() { }
+        public List<object> cropsDetail;
+        public void getCropsDetails(string type) {
+
+            Initialize();
+            //connection query for SQL for the types of crops.
+            OpenConn();
+            string query = "SELECT * FROM Crops WHERE type = "+ type;
+
+            comm = new SqlCommand(query, connToDB);
+
+            dataRead = comm.ExecuteReader();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+
+                    cropsList.Add(dataRead["crops_ID"]);
+                    cropsList.Add(dataRead["type"].ToString());
+                    cropsList.Add(dataRead["Quantity"]);
+                    cropsList.Add(dataRead["PeriodNeeded"]);
+                    cropsList.Add(dataRead["miniTemp"]);
+                    cropsList.Add(dataRead["maxTemp"]);
+                    cropsList.Add(dataRead["miniTemp"]);
+
+
+                }
+
+            }
+
+        }
 
 
         //functions for getting vehicles data.
+        public List<object> vehicleList;
         public void getVehicleData() {
 
             Initialize();
             //connection query for SQL for the types of Vehicles.
             OpenConn();
-            string query = "INSERT vehicles_ID, type FROM Vehicles";
+            string query = "SELECT vehicles_ID, type FROM Vehicles";
 
             comm = new SqlCommand(query, connToDB);
 
@@ -315,12 +343,13 @@ namespace JustRipeProjectOfficial
         public void getVehicleDetails() { }
 
         //functions for getting fertilizers data.
+        public List<object> fertilizersList;
         public void getfertilizerData() {
 
             Initialize();
             //connection query for SQL for the types of fertilizers.
             OpenConn();
-            string query = "INSERT fertilizer_ID, type FROM fertilizers";
+            string query = "SELECT fertilizer_ID, type FROM fertilizers";
 
             comm = new SqlCommand(query, connToDB);
 
