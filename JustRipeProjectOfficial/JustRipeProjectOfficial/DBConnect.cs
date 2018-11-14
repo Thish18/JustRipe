@@ -392,7 +392,7 @@ namespace JustRipeProjectOfficial
             //connection query for SQL.
             OpenConn();
 
-            string query = "";
+            string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID!=''";
 
             comm = new SqlCommand(query, connToDB);
             dataRead = comm.ExecuteReader();
