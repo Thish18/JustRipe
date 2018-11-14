@@ -355,12 +355,13 @@ namespace JustRipeProjectOfficial
 
             dataRead = comm.ExecuteReader();
 
-            comm.ExecuteNonQuery();
+            tempLabourerInfo = new List<object>();
 
             using (dataRead) {
 
                 while (dataRead.Read()) {
 
+                    
                     tempLabourerInfo.Add(dataRead["firstname"].ToString());
                     tempLabourerInfo.Add(dataRead["lastname"].ToString());
                     tempLabourerInfo.Add(dataRead["username"].ToString());
@@ -373,7 +374,7 @@ namespace JustRipeProjectOfficial
                 }
 
             }
-
+            comm.ExecuteNonQuery();
             CloseConn();
 
         }

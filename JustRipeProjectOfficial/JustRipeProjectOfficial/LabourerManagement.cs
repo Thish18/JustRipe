@@ -48,10 +48,25 @@ namespace JustRipeProjectOfficial
         private void cboLabRank_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*not finished*/
-            int id = 0;
+            
+
+        }
+
+        private void lBLabourerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int id = userID;
 
             dbconn.getLabourerData(id);
             txtLabFirstName.Text = dbconn.tempLabourerInfo[0].ToString();
+            txtLabLastName.Text = dbconn.tempLabourerInfo[1].ToString();
+            txtLabUsername.Text = dbconn.tempLabourerInfo[2].ToString();
+            txtLabDoB.Text = dbconn.tempLabourerInfo[3].ToString();
+            txtLabGender.Text = dbconn.tempLabourerInfo[4].ToString();
+            txtLabAddress.Text = dbconn.tempLabourerInfo[5].ToString();
+            txtLabAddress1.Text = dbconn.tempLabourerInfo[6].ToString();
+            txtLabContactNum.Text = dbconn.tempLabourerInfo[7].ToString();
+
 
         }
     }
