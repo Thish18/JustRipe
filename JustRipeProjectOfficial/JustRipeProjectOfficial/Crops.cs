@@ -23,7 +23,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
-            lBCropsList.DisplayMember = "name";
+            lBCropsList.DisplayMember = "type";
             lBCropsList.ValueMember = "crops_ID";
 
 
