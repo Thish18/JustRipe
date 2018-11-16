@@ -274,10 +274,17 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELCET crops_ID, type FROM Crops";
+            string query = "SELECT crops_ID, type FROM Crops";
 
-            
+            cropsList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
 
+            using (dataAdap) {
+
+                dataAdap.Fill(cropsList);
+
+            }
 
 
 
@@ -291,9 +298,16 @@ namespace JustRipeProjectOfficial
             OpenConn();
             string query = "SELECT * FROM Crops WHERE crops_ID = "+ crops_ID;
 
-            dataAdap = new SqlDataAdapter(query, connToDB);
+            cropsDetail = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
 
-            dataAdap.Fill(cropsDetail);
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(cropsDetail);
+
+            }
 
         }
 

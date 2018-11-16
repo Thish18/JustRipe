@@ -56,7 +56,7 @@ namespace JustRipeProjectOfficial
         {
 
             int id = userID;
-
+            /*
             dbconn.getLabourerData(id);
             txtLabFirstName.Text = dbconn.tempLabourerInfo[0].ToString();
             txtLabLastName.Text = dbconn.tempLabourerInfo[1].ToString();
@@ -66,7 +66,7 @@ namespace JustRipeProjectOfficial
             txtLabAddress.Text = dbconn.tempLabourerInfo[5].ToString();
             txtLabAddress1.Text = dbconn.tempLabourerInfo[6].ToString();
             txtLabContactNum.Text = dbconn.tempLabourerInfo[7].ToString();
-
+            */
 
         }
     }

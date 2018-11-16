@@ -23,7 +23,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
-            lBCropsList.DisplayMember = "type";
+            lBCropsList.DisplayMember = "name";
             lBCropsList.ValueMember = "crops_ID";
 
 
@@ -55,10 +55,6 @@ namespace JustRipeProjectOfficial
 
         private void lBCropsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            int crops_ID = Convert.ToInt32(lBCropsList.SelectedValue);
-
-            dbconn.getCropsDetails(crops_ID);
 
             /*import data get from the getcropsdetails with cropsDetails*/
 
