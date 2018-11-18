@@ -13,12 +13,31 @@ namespace JustRipeProjectOfficial
     public partial class Vehicles : Form
     {
 
+        DBConnect dbconn = new DBConnect();
+
         private int userID;
+        private int rankID;
 
         public Vehicles(int ID)
         {
+
             InitializeComponent();
             userID = ID;
+
+            dbconn.userInfoExport(userID);
+
+            rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
+
+            if (rankID == 1)
+            {
+
+                btnCreate.Enabled = false;
+                btnUpdate.Enabled = false;
+
+            }
+
+            /*More Code here*/
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

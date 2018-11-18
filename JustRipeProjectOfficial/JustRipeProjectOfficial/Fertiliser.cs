@@ -13,12 +13,30 @@ namespace JustRipeProjectOfficial
     public partial class Fertiliser : Form
     {
 
+        DBConnect dbconn = new DBConnect();
+
         private int userID;
+        private int rankID;
 
         public Fertiliser(int ID)
         {
             InitializeComponent();
             userID = ID;
+
+            dbconn.userInfoExport(userID);
+
+            rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
+
+            if (rankID == 1)
+            {
+
+                btnCreate.Enabled = false;
+                btnUpdate.Enabled = false;
+
+            }
+
+            /*More Code here*/
+
         }
 
         private void Fertiliser_Load(object sender, EventArgs e)
