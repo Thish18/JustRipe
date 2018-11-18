@@ -24,7 +24,7 @@ namespace JustRipeProjectOfficial
             userID = ID;
             DBConn.userInfoExport(userID);
             lbName.Text = DBConn.tempUserInfo[1].ToString() + " " + DBConn.tempUserInfo[2].ToString();
-            lbRank.Text = DBConn.tempUserInfo[6].ToString();
+            lbRank.Text = DBConn.tempUserInfo[7].ToString();
 
         }
 

@@ -210,6 +210,7 @@ namespace JustRipeProjectOfficial
                     tempUserInfo.Add(dataRead["username"].ToString());
                     tempUserInfo.Add(dataRead["Password"].ToString());
                     tempUserInfo.Add(dataRead["ContactNum"].ToString());
+                    tempUserInfo.Add(dataRead["rankID"].ToString());
                     tempUserInfo.Add(dataRead["Type"].ToString());
 
                 }

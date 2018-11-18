@@ -100,6 +100,7 @@
             this.btnMenu.TabIndex = 6;
             this.btnMenu.Text = "Back to main menu";
             this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // lBVehiclesList
             // 
