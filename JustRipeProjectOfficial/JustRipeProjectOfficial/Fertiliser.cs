@@ -26,8 +26,9 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
+
             foreach (Form f in Application.OpenForms)
                 if (f is MainMenu)
                 {
@@ -38,6 +39,7 @@ namespace JustRipeProjectOfficial
                 }
 
             Close();
+
         }
     }
 }
