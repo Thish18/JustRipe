@@ -67,11 +67,10 @@ namespace JustRipeProjectOfficial
             Close();
         }
 
-        private void lBCropsList_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, EventArgs e)
         {
-            
-            int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
 
+            int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
 
             txtName.Text = dbconn.cropsDetail.Rows[0]["type"].ToString();
@@ -79,8 +78,9 @@ namespace JustRipeProjectOfficial
             txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
             txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
             txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
-            
+
         }
+
 
     }
 }

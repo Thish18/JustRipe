@@ -44,7 +44,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void btnMenu_Click_1(object sender, EventArgs e)
         {
 
             foreach (Form f in Application.OpenForms)
