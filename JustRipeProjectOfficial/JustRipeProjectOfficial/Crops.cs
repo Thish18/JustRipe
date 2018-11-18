@@ -20,7 +20,14 @@ namespace JustRipeProjectOfficial
 
         public Crops(int ID)
         {
+
             InitializeComponent();
+
+            dbconn.getCropsData();
+            lBCropsList.DataSource = dbconn.cropsList;
+            lBCropsList.DisplayMember = "type";
+            lBCropsList.ValueMember = "crops_ID";
+
             userID = ID;
 
             dbconn.userInfoExport(userID);
@@ -33,12 +40,6 @@ namespace JustRipeProjectOfficial
                 btnUpdate.Enabled = false;
 
             }
-
-            dbconn.getCropsData();
-            lBCropsList.DataSource = dbconn.cropsList;
-            lBCropsList.DisplayMember = "type";
-            lBCropsList.ValueMember = "crops_ID";
-
 
         }
 
@@ -68,10 +69,18 @@ namespace JustRipeProjectOfficial
 
         private void lBCropsList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
 
-            /*import data get from the getcropsdetails with cropsDetails*/
+            dbconn.getCropsDetails(id);
 
-
+            txtName.Text = dbconn.cropsDetail.Rows[0]["type"].ToString();
+            txtQuantity.Text = dbconn.cropsDetail.Rows[0]["Quantity"].ToString();
+            txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
+            txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
+            txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
+            
         }
+
     }
 }

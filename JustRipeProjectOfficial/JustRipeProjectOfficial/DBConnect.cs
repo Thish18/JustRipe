@@ -297,7 +297,18 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELECT * FROM Crops WHERE crops_ID = "+ crops_ID;
+            string query = "SELECT Crops.crops_ID, Crops.type, Crops.PeriodNeeded, Crops.miniTemp, Crops.MaxTemp, " +
+                "fertilizers.Type,  sowingMethods.Type, sowingMethods.TimeNeeded, " +
+                "HarvestMethod.Type, harvestMethod.TimeNeeded, " +
+                "Vehicles.plateNum, " +
+                "specialTreatment.Type, specialTreatment.Description FROM Crops " +
+                "INNER JOIN fertilizers ON Crops.fertilizer_ID = fertilizers.fertilizer_ID " +
+                "INNER JOIN sowingMethods ON Crops.sowingM_ID = sowingMethods.sowingM_ID " +
+                "INNER JOIN HarvestMethod ON Crops.HarvestM_ID = HarvestMethod.harvestM_ID " +
+                "INNER JOIN Vehicles ON Crops.vehicles_ID = Vehicles.vehicles_ID " +
+                "INNER JOIN specialTreatment ON Crops.specialT_ID = specialTreatment.specialT_ID" +
+                "WHERE crops_ID =" +
+                " "+ crops_ID;
 
             cropsDetail = new DataTable();
             comm = new SqlCommand(query, connToDB);
