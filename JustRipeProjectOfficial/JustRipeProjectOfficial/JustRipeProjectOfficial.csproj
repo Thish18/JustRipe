@@ -105,6 +105,12 @@
     <Compile Include="LabourerManagement.Designer.cs">
       <DependentUpon>LabourerManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabourersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabourersList.Designer.cs">
+      <DependentUpon>LabourersList.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LabourerManagement.resx">
       <DependentUpon>LabourerManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabourersList.resx">
+      <DependentUpon>LabourersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

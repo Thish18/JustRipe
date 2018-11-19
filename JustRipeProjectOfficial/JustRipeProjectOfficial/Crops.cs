@@ -38,6 +38,7 @@ namespace JustRipeProjectOfficial
 
                 btnCreate.Enabled = false;
                 btnUpdate.Enabled = false;
+                btnAssignedList.Enabled = false;
 
             }
 
@@ -81,6 +82,13 @@ namespace JustRipeProjectOfficial
 
         }
 
+        private void btnAssignedList_Click(object sender, EventArgs e)
+        {
 
+            LabourersList ll = new LabourersList();
+            ll.Show();
+            Hide();
+
+        }
     }
 }

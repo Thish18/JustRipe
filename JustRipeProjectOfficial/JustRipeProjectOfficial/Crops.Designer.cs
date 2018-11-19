@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -76,7 +77,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnAssignedList = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -148,6 +149,21 @@
             this.panel1.Size = new System.Drawing.Size(227, 459);
             this.panel1.TabIndex = 8;
             // 
+            // btnSelect
+            // 
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnSelect.FlatAppearance.BorderSize = 0;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(0, 264);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(227, 65);
+            this.btnSelect.TabIndex = 8;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // btnCreate
             // 
             this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
@@ -164,6 +180,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.btnAssignedList);
             this.panel6.Controls.Add(this.groupBox7);
             this.panel6.Controls.Add(this.groupBox6);
             this.panel6.Controls.Add(this.groupBox5);
@@ -502,7 +519,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(285, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(185, 120);
+            this.groupBox2.Size = new System.Drawing.Size(185, 61);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fertilizer Control";
@@ -558,20 +575,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Crops Information";
             // 
-            // btnSelect
+            // btnAssignedList
             // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnSelect.FlatAppearance.BorderSize = 0;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.ForeColor = System.Drawing.Color.White;
-            this.btnSelect.Location = new System.Drawing.Point(0, 264);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(227, 65);
-            this.btnSelect.TabIndex = 8;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            this.btnAssignedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnAssignedList.FlatAppearance.BorderSize = 0;
+            this.btnAssignedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignedList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignedList.ForeColor = System.Drawing.Color.White;
+            this.btnAssignedList.Location = new System.Drawing.Point(286, 134);
+            this.btnAssignedList.Name = "btnAssignedList";
+            this.btnAssignedList.Size = new System.Drawing.Size(184, 53);
+            this.btnAssignedList.TabIndex = 9;
+            this.btnAssignedList.Text = "Labourer Assigned List";
+            this.btnAssignedList.UseVisualStyleBackColor = false;
+            this.btnAssignedList.Click += new System.EventHandler(this.btnAssignedList_Click);
             // 
             // Crops
             // 
@@ -660,5 +677,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnAssignedList;
     }
 }
