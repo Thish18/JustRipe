@@ -90,5 +90,10 @@ namespace JustRipeProjectOfficial
             Hide();
 
         }
+
+        private void cBVehicleEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
