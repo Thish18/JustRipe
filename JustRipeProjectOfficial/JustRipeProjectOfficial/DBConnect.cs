@@ -346,7 +346,39 @@ namespace JustRipeProjectOfficial
         }
         //getting details for the selected vehicle.
         public DataTable vehicleDetail;
-        public void getVehicleDetails() { }
+        public void getVehicleDetails(int vehicles_ID) {
+
+
+            Initialize();
+            //connection query for SQL for the types of crops.
+            OpenConn();
+            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum." +
+                "fuelType.Type " +
+                "vheicleType.Type " +
+                "INNER JOIN fuelType ON Vehicles.fuelType_ID = fuelType.fuelType_ID " +
+                "INNER JOIN vheicleType ON Vehicles.vehicleType_ID = vehicleType.vehicleType_ID " +
+                "WHERE vehicles_ID =" +
+                " '" + vehicles_ID + "';";
+
+            vehicleDetail = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(vehicleDetail);
+
+            }
+
+        }
+
+
+
+
+
+
+    }
 
         //functions for getting fertilizers data.
         public DataTable fertilizersList;
