@@ -245,7 +245,6 @@ namespace JustRipeProjectOfficial
 
         }
 
-        static BindingSource bs;
         private DataTable datatable = new DataTable();
 
         public void passwordUpdate(string un, string pw, string newPW) {
@@ -333,10 +332,20 @@ namespace JustRipeProjectOfficial
             OpenConn();
             string query = "SELECT vehicles_ID, type FROM Vehicles";
 
-            dataAdap = new SqlDataAdapter(query, connToDB);
+            vehicleList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(vehicleList);
+
+            }
 
         }
         //getting details for the selected vehicle.
+        public DataTable vehicleDetail;
         public void getVehicleDetails() { }
 
         //functions for getting fertilizers data.
@@ -348,10 +357,20 @@ namespace JustRipeProjectOfficial
             OpenConn();
             string query = "SELECT fertilizer_ID, type FROM fertilizers";
 
-            dataAdap = new SqlDataAdapter(query, connToDB);
+            fertilizersList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(fertilizersList);
+
+            }
 
         }
         //getting the details for the selected fertilizer.
+        public DataTable fertilizerDetail;
         public void getfertilizerDetails() { }
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
@@ -364,7 +383,7 @@ namespace JustRipeProjectOfficial
         }
 
         //temp storage List.
-        public DataTable tempLabourerInfo;
+        public DataTable labourerInfo;
         
         //get the single data selected from the labourer list
         public void getLabourerData(int id) {
@@ -378,46 +397,25 @@ namespace JustRipeProjectOfficial
                 " INNER JOIN ranktype ON users.rankID = ranktype.rank_ID" +
                 " WHERE users_ID = " + id;
 
-            dataAdap = new SqlDataAdapter(query, connToDB);
-
-            /*
+            labourerInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
 
-            
-            dataRead = comm.ExecuteReader();
+            using (dataAdap)
+            {
 
-            tempLabourerInfo = new List<object>();
-
-            using (dataRead) {
-
-                while (dataRead.Read()) {
-
-                    
-                    tempLabourerInfo.Add(dataRead["firstname"].ToString());
-                    tempLabourerInfo.Add(dataRead["lastname"].ToString());
-                    tempLabourerInfo.Add(dataRead["username"].ToString());
-                    tempLabourerInfo.Add(dataRead["DateOfBirth"]);
-                    tempLabourerInfo.Add(dataRead["Gender"].ToString());
-                    tempLabourerInfo.Add(dataRead["address1"].ToString());
-                    tempLabourerInfo.Add(dataRead["address2"].ToString());
-                    tempLabourerInfo.Add(dataRead["ContactNum"].ToString());
-
-                }
+                dataAdap.Fill(labourerInfo);
 
             }
-            comm.ExecuteNonQuery();
-            */
+
+
             CloseConn();
 
         }
         //get the harvesttimetable for the specific user
         public void getHarvestTimeTable() { }
 
-
-        //temp storage List.
-        public DataTable tempScheduleInfo;
-
-        //get the work schedule for the specific user
+        public DataTable scheduleInfo;
         public void getWorkSchedule() {
 
             Initialize();
@@ -426,27 +424,19 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID!=''";
 
-            dataAdap = new SqlDataAdapter(query, connToDB);
-
-            /*
+            scheduleInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
-            dataRead = comm.ExecuteReader();
+            dataAdap = new SqlDataAdapter(comm);
 
-            tempScheduleInfo = new List<object>();
-
-            using (dataRead)
+            using (dataAdap)
             {
 
-                while (dataRead.Read())
-                {
-                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["fertiliserRequired"].ToString()));
-                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsHarvested"].ToString()));
-                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["cropsCultivated"].ToString()));
-                    tempScheduleInfo.Add(Convert.ToInt32(dataRead["storageLevel"].ToString()));
-                }
+                dataAdap.Fill(scheduleInfo);
 
             }
-            */
+
+
+            CloseConn();
 
 
         }
