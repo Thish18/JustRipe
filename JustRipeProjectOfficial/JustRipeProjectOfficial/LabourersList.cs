@@ -30,5 +30,10 @@ namespace JustRipeProjectOfficial
 
             Close();
         }
+
+        private void lBLabourerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

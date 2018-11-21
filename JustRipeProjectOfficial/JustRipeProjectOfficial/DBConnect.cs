@@ -51,8 +51,13 @@ namespace JustRipeProjectOfficial
 
         }
 
+        internal void getLabourerData(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         //this will close the connection to the database server once the program closed.
-        
+
         public void CloseConn() {
 
             connToDB.Close();
@@ -382,7 +387,8 @@ namespace JustRipeProjectOfficial
 
         //functions for getting fertilizers data.
         public DataTable fertilizersList;
-        public void getfertilizerData() {
+        public void getfertilizerData()
+        {
 
             Initialize();
             //connection query for SQL for the types of fertilizers.
