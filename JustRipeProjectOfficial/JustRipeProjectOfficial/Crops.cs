@@ -34,11 +34,14 @@ namespace JustRipeProjectOfficial
 
             rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
 
+            //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {
 
                 btnCreate.Enabled = false;
                 btnUpdate.Enabled = false;
                 btnAssignedList.Enabled = false;
+                btnVehicle.Enabled = false;
+                btnFertilizer.Enabled = false;
 
             }
 
