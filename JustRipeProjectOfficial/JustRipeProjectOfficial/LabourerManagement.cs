@@ -62,7 +62,7 @@ namespace JustRipeProjectOfficial
 
         private void cbCrops_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
+
             Initialize();
             OpenConn();
             DBConnect dbconn = new DBConnect();
@@ -72,12 +72,12 @@ namespace JustRipeProjectOfficial
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
-            */
+
         }
 
         private void cbFertilizer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
+
             Initialize();
             OpenConn();
             DBConnect dbconn = new DBConnect();
@@ -87,7 +87,7 @@ namespace JustRipeProjectOfficial
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
-            */
+
         }
     }
 }
