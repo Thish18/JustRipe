@@ -55,6 +55,7 @@
             this.txtTreatmentType = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cBVehicleEnable = new System.Windows.Forms.CheckBox();
             this.txtFuel = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPlateNo = new System.Windows.Forms.TextBox();
@@ -77,7 +78,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnVehicles = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -366,7 +366,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnVehicles);
+            this.groupBox5.Controls.Add(this.cBVehicleEnable);
             this.groupBox5.Controls.Add(this.txtFuel);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.txtPlateNo);
@@ -379,6 +379,17 @@
             this.groupBox5.TabIndex = 24;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehicles Control";
+            // 
+            // cBVehicleEnable
+            // 
+            this.cBVehicleEnable.AutoSize = true;
+            this.cBVehicleEnable.Location = new System.Drawing.Point(9, 19);
+            this.cBVehicleEnable.Name = "cBVehicleEnable";
+            this.cBVehicleEnable.Size = new System.Drawing.Size(107, 17);
+            this.cBVehicleEnable.TabIndex = 23;
+            this.cBVehicleEnable.Text = "Vehicle Required";
+            this.cBVehicleEnable.UseVisualStyleBackColor = true;
+            this.cBVehicleEnable.CheckedChanged += new System.EventHandler(this.cBVehicleEnable_CheckedChanged);
             // 
             // txtFuel
             // 
@@ -580,21 +591,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Crops Information";
             // 
-            // btnVehicles
-            // 
-            this.btnVehicles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnVehicles.FlatAppearance.BorderSize = 0;
-            this.btnVehicles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehicles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehicles.ForeColor = System.Drawing.Color.White;
-            this.btnVehicles.Location = new System.Drawing.Point(87, 11);
-            this.btnVehicles.Name = "btnVehicles";
-            this.btnVehicles.Size = new System.Drawing.Size(132, 25);
-            this.btnVehicles.TabIndex = 27;
-            this.btnVehicles.Text = "Select Vehicle";
-            this.btnVehicles.UseVisualStyleBackColor = false;
-            this.btnVehicles.Click += new System.EventHandler(this.btnVehicles_Click);
-            // 
             // Crops
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,6 +678,6 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnAssignedList;
         private System.Windows.Forms.CheckBox cBSTEnable;
-        private System.Windows.Forms.Button btnVehicles;
+        private System.Windows.Forms.CheckBox cBVehicleEnable;
     }
 }
