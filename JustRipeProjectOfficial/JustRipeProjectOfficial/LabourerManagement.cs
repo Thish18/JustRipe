@@ -98,6 +98,8 @@ namespace JustRipeProjectOfficial
 
         private void cbCrops_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //what is it doing
+
             Initialize();
             OpenConn();
             DBConnect dbconn = new DBConnect();
