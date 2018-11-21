@@ -20,7 +20,7 @@ namespace JustRipeProjectOfficial
 
         //setup logged in info.
         private int userID;
-        
+
         private string connStr;
         SqlConnection connToDB;
         private SqlDataAdapter dataAdap;
@@ -35,7 +35,7 @@ namespace JustRipeProjectOfficial
 
         public void Initialize() {
 
-            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf") ;
+            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf");
 
             connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
 
@@ -49,11 +49,6 @@ namespace JustRipeProjectOfficial
 
             connToDB.Open();
 
-        }
-
-        internal void getLabourerData(int id)
-        {
-            throw new NotImplementedException();
         }
 
         //this will close the connection to the database server once the program closed.
@@ -230,9 +225,9 @@ namespace JustRipeProjectOfficial
             //connection query for SQL.
             OpenConn();
             string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID,DateOfBirth,Gender) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID,@DateOfBirth,@Gender)";
-      
+
             comm = new SqlCommand(query, connToDB);
-      
+
             comm.Parameters.AddWithValue("@firstname", fn);
             comm.Parameters.AddWithValue("@lastname", ln);
             comm.Parameters.AddWithValue("@username", un);
@@ -263,9 +258,9 @@ namespace JustRipeProjectOfficial
             "WHERE [Users].[username] = @username";
             comm = new SqlCommand(query, connToDB);
 
-             comm.Parameters.Add("@NewPassword", SqlDbType.VarChar).Value = newPW;
-             comm.Parameters.Add("@username", SqlDbType.VarChar).Value = un;
-             comm.ExecuteNonQuery();
+            comm.Parameters.Add("@NewPassword", SqlDbType.VarChar).Value = newPW;
+            comm.Parameters.Add("@username", SqlDbType.VarChar).Value = un;
+            comm.ExecuteNonQuery();
             CloseConn();
         }
 
@@ -312,7 +307,7 @@ namespace JustRipeProjectOfficial
                 "INNER JOIN Vehicles ON Crops.vehicles_ID = Vehicles.vehicles_ID " +
                 "INNER JOIN specialTreatment ON Crops.specialT_ID = specialTreatment.specialT_ID " +
                 "WHERE crops_ID =" +
-                " '"+ crops_ID+"';";
+                " '" + crops_ID + "';";
 
             cropsDetail = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -357,7 +352,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum." +
+            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum" +
                 "fuelType.Type " +
                 "vheicleType.Type FROM Vehicles" +
                 "INNER JOIN fuelType ON Vehicles.fuelType_ID = fuelType.fuelType_ID " +
@@ -378,12 +373,6 @@ namespace JustRipeProjectOfficial
 
         }
 
-
-
-
-
-
-    }
 
         //functions for getting fertilizers data.
         public DataTable fertilizersList;
@@ -411,29 +400,29 @@ namespace JustRipeProjectOfficial
         public DataTable fertilizerDetail;
         public void getfertilizerDetails(int id) {
 
-        Initialize();
-        OpenConn();
-        DBConnect dbconn = new DBConnect();
+            Initialize();
+            OpenConn();
+            DBConnect dbconn = new DBConnect();
 
-        string query;
-        query = "SELECT type.* FROM fertilizers" +            
-            " WHERE fertilizer_ID = " + id;
+            string query;
+            query = "SELECT type.* FROM fertilizers" +
+                " WHERE fertilizer_ID = " + id;
 
-        fertilizerDetail = new DataTable();
-        comm = new SqlCommand(query, connToDB);
-        dataAdap = new SqlDataAdapter(comm);
+            fertilizerDetail = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
 
-        using (dataAdap)
-        {
+            using (dataAdap)
+            {
 
-            dataAdap.Fill(labourerInfo);
+                dataAdap.Fill(labourerInfo);
+
+            }
+
+
+            CloseConn();
 
         }
-
-
-        CloseConn();
-
-    }
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
@@ -441,12 +430,12 @@ namespace JustRipeProjectOfficial
         private DataTable labourerList = new DataTable { };
         public void getLabourersList() {
 
-            
+
         }
 
         //temp storage List.
         public DataTable labourerInfo;
-        
+
         //get the single data selected from the labourer list
         public void getLabourerData(int id) {
 
@@ -502,6 +491,6 @@ namespace JustRipeProjectOfficial
 
 
         }
-
+    
     }
 }
