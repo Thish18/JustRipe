@@ -49,11 +49,13 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cBSTEnable = new System.Windows.Forms.CheckBox();
             this.txtTreatmentExtra = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTreatmentType = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cBVehicleEnable = new System.Windows.Forms.CheckBox();
             this.txtFuel = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPlateNo = new System.Windows.Forms.TextBox();
@@ -76,8 +78,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cBVehicleEnable = new System.Windows.Forms.CheckBox();
-            this.cBSTEnable = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -321,6 +321,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Special Treatment Control";
             // 
+            // cBSTEnable
+            // 
+            this.cBSTEnable.AutoSize = true;
+            this.cBSTEnable.Location = new System.Drawing.Point(9, 19);
+            this.cBSTEnable.Name = "cBSTEnable";
+            this.cBSTEnable.Size = new System.Drawing.Size(158, 17);
+            this.cBSTEnable.TabIndex = 23;
+            this.cBSTEnable.Text = "Special Treatment Required";
+            this.cBSTEnable.UseVisualStyleBackColor = true;
+            // 
             // txtTreatmentExtra
             // 
             this.txtTreatmentExtra.Location = new System.Drawing.Point(100, 67);
@@ -369,6 +379,17 @@
             this.groupBox5.TabIndex = 24;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehicles Control";
+            // 
+            // cBVehicleEnable
+            // 
+            this.cBVehicleEnable.AutoSize = true;
+            this.cBVehicleEnable.Location = new System.Drawing.Point(9, 19);
+            this.cBVehicleEnable.Name = "cBVehicleEnable";
+            this.cBVehicleEnable.Size = new System.Drawing.Size(107, 17);
+            this.cBVehicleEnable.TabIndex = 23;
+            this.cBVehicleEnable.Text = "Vehicle Required";
+            this.cBVehicleEnable.UseVisualStyleBackColor = true;
+            this.cBVehicleEnable.CheckedChanged += new System.EventHandler(this.cBVehicleEnable_CheckedChanged);
             // 
             // txtFuel
             // 
@@ -569,27 +590,6 @@
             this.label3.Size = new System.Drawing.Size(220, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Crops Information";
-            // 
-            // cBVehicleEnable
-            // 
-            this.cBVehicleEnable.AutoSize = true;
-            this.cBVehicleEnable.Location = new System.Drawing.Point(9, 19);
-            this.cBVehicleEnable.Name = "cBVehicleEnable";
-            this.cBVehicleEnable.Size = new System.Drawing.Size(107, 17);
-            this.cBVehicleEnable.TabIndex = 23;
-            this.cBVehicleEnable.Text = "Vehicle Required";
-            this.cBVehicleEnable.UseVisualStyleBackColor = true;
-            this.cBVehicleEnable.CheckedChanged += new System.EventHandler(this.cBVehicleEnable_CheckedChanged);
-            // 
-            // cBSTEnable
-            // 
-            this.cBSTEnable.AutoSize = true;
-            this.cBSTEnable.Location = new System.Drawing.Point(9, 19);
-            this.cBSTEnable.Name = "cBSTEnable";
-            this.cBSTEnable.Size = new System.Drawing.Size(158, 17);
-            this.cBSTEnable.TabIndex = 23;
-            this.cBSTEnable.Text = "Special Treatment Required";
-            this.cBSTEnable.UseVisualStyleBackColor = true;
             // 
             // Crops
             // 
