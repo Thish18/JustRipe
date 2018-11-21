@@ -54,7 +54,7 @@ namespace JustRipeProjectOfficial
         {
 
             foreach (Form f in Application.OpenForms)
-                if (f is MainMenu)
+                if (f is Crops)
                 {
 
                     f.Show();
