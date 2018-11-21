@@ -427,9 +427,14 @@ namespace JustRipeProjectOfficial
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
-        private DataTable labourerList = new DataTable { };
+        private DataTable labourerList;
         public void getLabourersList() {
 
+            Initialize();
+            OpenConn();
+
+            /*we need a new table call [AssignedList] with assigned_ID, crops_ID and users_ID*/
+            string query = "SELECT ";
 
         }
 
@@ -441,7 +446,6 @@ namespace JustRipeProjectOfficial
 
             Initialize();
             OpenConn();
-            DBConnect dbconn = new DBConnect();
 
             string query;
             query = "SELECT users.*, ranktype.* FROM users" +

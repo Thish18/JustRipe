@@ -55,7 +55,7 @@
             this.txtTreatmentType = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.cBVehicleEnable = new System.Windows.Forms.CheckBox();
+            this.btnVehicle = new System.Windows.Forms.Button();
             this.txtFuel = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPlateNo = new System.Windows.Forms.TextBox();
@@ -78,6 +78,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnFertilizer = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -200,9 +201,9 @@
             this.btnAssignedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignedList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssignedList.ForeColor = System.Drawing.Color.White;
-            this.btnAssignedList.Location = new System.Drawing.Point(286, 134);
+            this.btnAssignedList.Location = new System.Drawing.Point(286, 149);
             this.btnAssignedList.Name = "btnAssignedList";
-            this.btnAssignedList.Size = new System.Drawing.Size(184, 53);
+            this.btnAssignedList.Size = new System.Drawing.Size(184, 24);
             this.btnAssignedList.TabIndex = 9;
             this.btnAssignedList.Text = "Labourer Assigned List";
             this.btnAssignedList.UseVisualStyleBackColor = false;
@@ -366,7 +367,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.cBVehicleEnable);
+            this.groupBox5.Controls.Add(this.btnVehicle);
             this.groupBox5.Controls.Add(this.txtFuel);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.txtPlateNo);
@@ -380,16 +381,20 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehicles Control";
             // 
-            // cBVehicleEnable
+            // btnVehicle
             // 
-            this.cBVehicleEnable.AutoSize = true;
-            this.cBVehicleEnable.Location = new System.Drawing.Point(9, 19);
-            this.cBVehicleEnable.Name = "cBVehicleEnable";
-            this.cBVehicleEnable.Size = new System.Drawing.Size(107, 17);
-            this.cBVehicleEnable.TabIndex = 23;
-            this.cBVehicleEnable.Text = "Vehicle Required";
-            this.cBVehicleEnable.UseVisualStyleBackColor = true;
-            this.cBVehicleEnable.CheckedChanged += new System.EventHandler(this.cBVehicleEnable_CheckedChanged);
+            this.btnVehicle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnVehicle.FlatAppearance.BorderSize = 0;
+            this.btnVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnVehicle.Location = new System.Drawing.Point(87, 12);
+            this.btnVehicle.Name = "btnVehicle";
+            this.btnVehicle.Size = new System.Drawing.Size(132, 24);
+            this.btnVehicle.TabIndex = 27;
+            this.btnVehicle.Text = "Select Vehicle";
+            this.btnVehicle.UseVisualStyleBackColor = false;
+            this.btnVehicle.Click += new System.EventHandler(this.btnVehicle_Click);
             // 
             // txtFuel
             // 
@@ -531,11 +536,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnFertilizer);
             this.groupBox2.Controls.Add(this.txtFertilizer);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(285, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(185, 61);
+            this.groupBox2.Size = new System.Drawing.Size(185, 76);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fertilizer Control";
@@ -590,6 +596,21 @@
             this.label3.Size = new System.Drawing.Size(220, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Crops Information";
+            // 
+            // btnFertilizer
+            // 
+            this.btnFertilizer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnFertilizer.FlatAppearance.BorderSize = 0;
+            this.btnFertilizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFertilizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFertilizer.ForeColor = System.Drawing.Color.White;
+            this.btnFertilizer.Location = new System.Drawing.Point(0, 48);
+            this.btnFertilizer.Name = "btnFertilizer";
+            this.btnFertilizer.Size = new System.Drawing.Size(185, 24);
+            this.btnFertilizer.TabIndex = 27;
+            this.btnFertilizer.Text = "Select Fertilizers";
+            this.btnFertilizer.UseVisualStyleBackColor = false;
+            this.btnFertilizer.Click += new System.EventHandler(this.btnFertilizer_Click);
             // 
             // Crops
             // 
@@ -678,6 +699,7 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnAssignedList;
         private System.Windows.Forms.CheckBox cBSTEnable;
-        private System.Windows.Forms.CheckBox cBVehicleEnable;
+        private System.Windows.Forms.Button btnVehicle;
+        private System.Windows.Forms.Button btnFertilizer;
     }
 }
