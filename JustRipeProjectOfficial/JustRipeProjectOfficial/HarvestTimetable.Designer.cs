@@ -40,6 +40,14 @@
             this.harvest_id_label = new System.Windows.Forms.Label();
             this.harvest_type_label = new System.Windows.Forms.Label();
             this.harvest_type_textbox = new System.Windows.Forms.TextBox();
+            this.labour_required = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.time_needed = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labourers_required = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.harvest_expected = new System.Windows.Forms.Label();
+            this.harvest_expected_textbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -48,7 +56,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(332, 151);
+            this.dataGridView1.Location = new System.Drawing.Point(280, 227);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
@@ -169,11 +177,86 @@
             this.harvest_type_textbox.Size = new System.Drawing.Size(100, 20);
             this.harvest_type_textbox.TabIndex = 49;
             // 
+            // labour_required
+            // 
+            this.labour_required.AutoSize = true;
+            this.labour_required.Location = new System.Drawing.Point(332, 135);
+            this.labour_required.Name = "labour_required";
+            this.labour_required.Size = new System.Drawing.Size(86, 13);
+            this.labour_required.TabIndex = 54;
+            this.labour_required.Text = "Labour Required";
+            this.labour_required.Click += new System.EventHandler(this.label2_Click_2);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(332, 151);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 53;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // time_needed
+            // 
+            this.time_needed.AutoSize = true;
+            this.time_needed.Location = new System.Drawing.Point(590, 72);
+            this.time_needed.Name = "time_needed";
+            this.time_needed.Size = new System.Drawing.Size(71, 13);
+            this.time_needed.TabIndex = 52;
+            this.time_needed.Text = "Time Needed";
+            this.time_needed.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(590, 88);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 51;
+            // 
+            // labourers_required
+            // 
+            this.labourers_required.AutoSize = true;
+            this.labourers_required.Location = new System.Drawing.Point(463, 135);
+            this.labourers_required.Name = "labourers_required";
+            this.labourers_required.Size = new System.Drawing.Size(100, 13);
+            this.labourers_required.TabIndex = 56;
+            this.labourers_required.Text = "Labourers Required";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(463, 151);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 55;
+            // 
+            // harvest_expected
+            // 
+            this.harvest_expected.AutoSize = true;
+            this.harvest_expected.Location = new System.Drawing.Point(590, 135);
+            this.harvest_expected.Name = "harvest_expected";
+            this.harvest_expected.Size = new System.Drawing.Size(124, 13);
+            this.harvest_expected.TabIndex = 58;
+            this.harvest_expected.Text = "When Harvest Expected";
+            // 
+            // harvest_expected_textbox
+            // 
+            this.harvest_expected_textbox.Location = new System.Drawing.Point(590, 151);
+            this.harvest_expected_textbox.Name = "harvest_expected_textbox";
+            this.harvest_expected_textbox.Size = new System.Drawing.Size(100, 20);
+            this.harvest_expected_textbox.TabIndex = 57;
+            // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 498);
+            this.Controls.Add(this.harvest_expected);
+            this.Controls.Add(this.harvest_expected_textbox);
+            this.Controls.Add(this.labourers_required);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.labour_required);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.time_needed);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.harvest_type_label);
             this.Controls.Add(this.harvest_type_textbox);
             this.Controls.Add(this.harvest_id_label);
@@ -208,5 +291,13 @@
         private System.Windows.Forms.Label harvest_id_label;
         private System.Windows.Forms.Label harvest_type_label;
         private System.Windows.Forms.TextBox harvest_type_textbox;
+        private System.Windows.Forms.Label labour_required;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label time_needed;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label labourers_required;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label harvest_expected;
+        private System.Windows.Forms.TextBox harvest_expected_textbox;
     }
 }
