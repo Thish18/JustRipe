@@ -354,7 +354,7 @@ namespace JustRipeProjectOfficial
             OpenConn();
             string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum." +
                 "fuelType.Type " +
-                "vheicleType.Type " +
+                "vheicleType.Type FROM Vehicles" +
                 "INNER JOIN fuelType ON Vehicles.fuelType_ID = fuelType.fuelType_ID " +
                 "INNER JOIN vheicleType ON Vehicles.vehicleType_ID = vehicleType.vehicleType_ID " +
                 "WHERE vehicles_ID =" +
