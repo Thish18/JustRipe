@@ -102,5 +102,17 @@ namespace JustRipeProjectOfficial
             vhc.Show();
             Hide();
         }
+
+        private void btnVehicle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFertilizer_Click(object sender, EventArgs e)
+        {
+            Fertiliser ftr = new Fertiliser(userID);
+            ftr.Show();
+            Hide();
+        }
     }
 }
