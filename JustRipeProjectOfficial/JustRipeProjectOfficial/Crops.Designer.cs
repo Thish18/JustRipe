@@ -49,6 +49,7 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cBSTEnable = new System.Windows.Forms.CheckBox();
             this.txtTreatmentExtra = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTreatmentType = new System.Windows.Forms.TextBox();
@@ -76,8 +77,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cBVehicleEnable = new System.Windows.Forms.CheckBox();
-            this.cBSTEnable = new System.Windows.Forms.CheckBox();
+            this.btnVehicles = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -321,6 +321,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Special Treatment Control";
             // 
+            // cBSTEnable
+            // 
+            this.cBSTEnable.AutoSize = true;
+            this.cBSTEnable.Location = new System.Drawing.Point(9, 19);
+            this.cBSTEnable.Name = "cBSTEnable";
+            this.cBSTEnable.Size = new System.Drawing.Size(158, 17);
+            this.cBSTEnable.TabIndex = 23;
+            this.cBSTEnable.Text = "Special Treatment Required";
+            this.cBSTEnable.UseVisualStyleBackColor = true;
+            // 
             // txtTreatmentExtra
             // 
             this.txtTreatmentExtra.Location = new System.Drawing.Point(100, 67);
@@ -356,7 +366,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.cBVehicleEnable);
+            this.groupBox5.Controls.Add(this.btnVehicles);
             this.groupBox5.Controls.Add(this.txtFuel);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.txtPlateNo);
@@ -570,26 +580,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Crops Information";
             // 
-            // cBVehicleEnable
+            // btnVehicles
             // 
-            this.cBVehicleEnable.AutoSize = true;
-            this.cBVehicleEnable.Location = new System.Drawing.Point(9, 19);
-            this.cBVehicleEnable.Name = "cBVehicleEnable";
-            this.cBVehicleEnable.Size = new System.Drawing.Size(107, 17);
-            this.cBVehicleEnable.TabIndex = 23;
-            this.cBVehicleEnable.Text = "Vehicle Required";
-            this.cBVehicleEnable.UseVisualStyleBackColor = true;
-            this.cBVehicleEnable.CheckedChanged += new System.EventHandler(this.cBVehicleEnable_CheckedChanged);
-            // 
-            // cBSTEnable
-            // 
-            this.cBSTEnable.AutoSize = true;
-            this.cBSTEnable.Location = new System.Drawing.Point(9, 19);
-            this.cBSTEnable.Name = "cBSTEnable";
-            this.cBSTEnable.Size = new System.Drawing.Size(158, 17);
-            this.cBSTEnable.TabIndex = 23;
-            this.cBSTEnable.Text = "Special Treatment Required";
-            this.cBSTEnable.UseVisualStyleBackColor = true;
+            this.btnVehicles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnVehicles.FlatAppearance.BorderSize = 0;
+            this.btnVehicles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicles.ForeColor = System.Drawing.Color.White;
+            this.btnVehicles.Location = new System.Drawing.Point(87, 11);
+            this.btnVehicles.Name = "btnVehicles";
+            this.btnVehicles.Size = new System.Drawing.Size(132, 25);
+            this.btnVehicles.TabIndex = 27;
+            this.btnVehicles.Text = "Select Vehicle";
+            this.btnVehicles.UseVisualStyleBackColor = false;
+            this.btnVehicles.Click += new System.EventHandler(this.btnVehicles_Click);
             // 
             // Crops
             // 
@@ -678,6 +682,6 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnAssignedList;
         private System.Windows.Forms.CheckBox cBSTEnable;
-        private System.Windows.Forms.CheckBox cBVehicleEnable;
+        private System.Windows.Forms.Button btnVehicles;
     }
 }
