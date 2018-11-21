@@ -24,6 +24,16 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
             userID = ID;
 
+            dbconn.getCropsData();
+            cbCrops.DataSource = dbconn.cropsList;
+            cbCrops.DisplayMember = "type";
+            cbCrops.ValueMember = "crops_ID";
+
+            dbconn.getfertilizerData();
+            cbFertilizer.DataSource = dbconn.fertilizersList;
+            cbFertilizer.DisplayMember = "type";
+            cbFertilizer.ValueMember = "fertilizer_ID";
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -63,30 +73,14 @@ namespace JustRipeProjectOfficial
         private void cbCrops_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            Initialize();
-            OpenConn();
-            DBConnect dbconn = new DBConnect();
 
-            string query;
-            query = "SELECT Crops*, FROM Crops*";
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
 
         }
 
         private void cbFertilizer_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            Initialize();
-            OpenConn();
-            DBConnect dbconn = new DBConnect();
-
-            string query;
-            query = "SELECT Crops*, FROM Fertlizer*";
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
+            
 
         }
 
