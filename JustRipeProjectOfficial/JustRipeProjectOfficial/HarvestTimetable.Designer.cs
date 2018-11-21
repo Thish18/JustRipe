@@ -36,6 +36,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.harvest_id_textbox = new System.Windows.Forms.TextBox();
+            this.harvest_id_label = new System.Windows.Forms.Label();
+            this.harvest_type_label = new System.Windows.Forms.Label();
+            this.harvest_type_textbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -131,11 +135,49 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // harvest_id_textbox
+            // 
+            this.harvest_id_textbox.Location = new System.Drawing.Point(332, 88);
+            this.harvest_id_textbox.Name = "harvest_id_textbox";
+            this.harvest_id_textbox.Size = new System.Drawing.Size(100, 20);
+            this.harvest_id_textbox.TabIndex = 47;
+            // 
+            // harvest_id_label
+            // 
+            this.harvest_id_label.AutoSize = true;
+            this.harvest_id_label.Location = new System.Drawing.Point(332, 72);
+            this.harvest_id_label.Name = "harvest_id_label";
+            this.harvest_id_label.Size = new System.Drawing.Size(58, 13);
+            this.harvest_id_label.TabIndex = 48;
+            this.harvest_id_label.Text = "Harvest ID";
+            this.harvest_id_label.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // harvest_type_label
+            // 
+            this.harvest_type_label.AutoSize = true;
+            this.harvest_type_label.Location = new System.Drawing.Point(463, 72);
+            this.harvest_type_label.Name = "harvest_type_label";
+            this.harvest_type_label.Size = new System.Drawing.Size(71, 13);
+            this.harvest_type_label.TabIndex = 50;
+            this.harvest_type_label.Text = "Harvest Type";
+            this.harvest_type_label.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // harvest_type_textbox
+            // 
+            this.harvest_type_textbox.Location = new System.Drawing.Point(463, 88);
+            this.harvest_type_textbox.Name = "harvest_type_textbox";
+            this.harvest_type_textbox.Size = new System.Drawing.Size(100, 20);
+            this.harvest_type_textbox.TabIndex = 49;
+            // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 498);
+            this.Controls.Add(this.harvest_type_label);
+            this.Controls.Add(this.harvest_type_textbox);
+            this.Controls.Add(this.harvest_id_label);
+            this.Controls.Add(this.harvest_id_textbox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -149,6 +191,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,5 +204,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox harvest_id_textbox;
+        private System.Windows.Forms.Label harvest_id_label;
+        private System.Windows.Forms.Label harvest_type_label;
+        private System.Windows.Forms.TextBox harvest_type_textbox;
     }
 }
