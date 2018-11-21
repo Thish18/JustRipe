@@ -89,5 +89,10 @@ namespace JustRipeProjectOfficial
             dataAdap = new SqlDataAdapter(comm);
 
         }
+
+        private void txtLabFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
