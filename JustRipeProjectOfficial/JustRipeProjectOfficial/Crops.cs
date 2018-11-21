@@ -82,6 +82,12 @@ namespace JustRipeProjectOfficial
             txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
             txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
             txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
+            txtFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
+            txtSowingType.Text = dbconn.cropsDetail.Rows[0]["sowingType"].ToString();
+            txtHarvestType.Text = dbconn.cropsDetail.Rows[0]["harvestType"].ToString();
+            txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
+            txtTreatmentType.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
+            txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
 
         }
 
