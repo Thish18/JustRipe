@@ -295,12 +295,13 @@ namespace JustRipeProjectOfficial
 
             Initialize();
             //connection query for displaying Crops info.
+            //if any errors happened check the query.
             OpenConn();
             string query = "SELECT Crops.crops_ID, Crops.Quantity,Crops.type, Crops.PeriodNeeded, Crops.miniTemp, Crops.MaxTemp, " +
-                "fertilizers.Type,  sowingMethods.Type, sowingMethods.TimeNeeded, " +
-                "HarvestMethod.Type, harvestMethod.TimeNeeded, " +
+                "fertilizers.fertilizerType,  sowingMethods.sowingType, sowingMethods.TimeNeeded, " +
+                "HarvestMethod.harvestType, harvestMethod.TimeNeeded, " +
                 "Vehicles.plateNum, " +
-                "specialTreatment.Type, specialTreatment.Description FROM Crops " +
+                "specialTreatment.specialType, specialTreatment.Description FROM Crops " +
                 "INNER JOIN fertilizers ON Crops.fertilizer_ID = fertilizers.fertilizer_ID " +
                 "INNER JOIN sowingMethods ON Crops.sowingM_ID = sowingMethods.sowingM_ID " +
                 "INNER JOIN HarvestMethod ON Crops.HarvestM_ID = HarvestMethod.harvestM_ID " +
