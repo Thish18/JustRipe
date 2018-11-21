@@ -22,6 +22,14 @@ namespace JustRipeProjectOfficial
         {
 
             InitializeComponent();
+
+            dbconn.getVehicleData();
+            lBVehiclesList.DataSource = dbconn.vehicleList;
+            lBVehiclesList.DisplayMember = "type";
+            lBVehiclesList.ValueMember = "vehicle_ID";
+
+
+
             userID = ID;
 
             dbconn.userInfoExport(userID);
@@ -66,13 +74,14 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void groupBox7_Enter(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(lBVehiclesList.SelectedValue.ToString());
+            dbconn.getCropsDetails(id);
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
+            txtName.Text = dbconn.vehicleDetail.Rows[0]["Type"].ToString();
+            txtPlateNumber.Text = dbconn.vehicleDetail.Rows[0]["plateNum"].ToString();
+            txtFuelType.Text = dbconn.vehicleDetail.Rows[0]["Type"].ToString();
 
         }
     }

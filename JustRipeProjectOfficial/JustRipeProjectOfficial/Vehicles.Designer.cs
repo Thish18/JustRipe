@@ -30,6 +30,13 @@
         {
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtFuelType = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPlateNumber = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,18 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.lBVehiclesList = new System.Windows.Forms.ListBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtTimeNeeded = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -76,6 +76,69 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(248, 441);
             this.panel6.TabIndex = 14;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label15);
+            this.groupBox7.Controls.Add(this.txtFuelType);
+            this.groupBox7.Controls.Add(this.label2);
+            this.groupBox7.Controls.Add(this.txtName);
+            this.groupBox7.Controls.Add(this.txtPlateNumber);
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.Location = new System.Drawing.Point(3, 60);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(242, 325);
+            this.groupBox7.TabIndex = 27;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Vehicle Information";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(-3, 119);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 13);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Fuel Type: ";
+            // 
+            // txtFuelType
+            // 
+            this.txtFuelType.Location = new System.Drawing.Point(57, 116);
+            this.txtFuelType.Name = "txtFuelType";
+            this.txtFuelType.Size = new System.Drawing.Size(131, 20);
+            this.txtFuelType.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-3, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Vehicle: ";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(57, 35);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(131, 20);
+            this.txtName.TabIndex = 13;
+            // 
+            // txtPlateNumber
+            // 
+            this.txtPlateNumber.Location = new System.Drawing.Point(57, 73);
+            this.txtPlateNumber.Name = "txtPlateNumber";
+            this.txtPlateNumber.Size = new System.Drawing.Size(131, 20);
+            this.txtPlateNumber.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(-3, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Plate No: ";
             // 
             // panel5
             // 
@@ -123,6 +186,7 @@
             this.btnSelect.TabIndex = 8;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnCreate
             // 
@@ -184,71 +248,6 @@
             this.lBVehiclesList.Size = new System.Drawing.Size(227, 212);
             this.lBVehiclesList.TabIndex = 4;
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.label15);
-            this.groupBox7.Controls.Add(this.txtTimeNeeded);
-            this.groupBox7.Controls.Add(this.label2);
-            this.groupBox7.Controls.Add(this.txtName);
-            this.groupBox7.Controls.Add(this.txtQuantity);
-            this.groupBox7.Controls.Add(this.label4);
-            this.groupBox7.Location = new System.Drawing.Point(3, 60);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(242, 325);
-            this.groupBox7.TabIndex = 27;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Vehicle Information";
-            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(-3, 119);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Fuel Type: ";
-            // 
-            // txtTimeNeeded
-            // 
-            this.txtTimeNeeded.Location = new System.Drawing.Point(57, 116);
-            this.txtTimeNeeded.Name = "txtTimeNeeded";
-            this.txtTimeNeeded.Size = new System.Drawing.Size(131, 20);
-            this.txtTimeNeeded.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-3, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Vehicle: ";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(57, 35);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(131, 20);
-            this.txtName.TabIndex = 13;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(57, 73);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(131, 20);
-            this.txtQuantity.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(-3, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Plate No: ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // Vehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,13 +262,13 @@
             this.Text = "Vehicles:";
             this.Load += new System.EventHandler(this.Vehicles_Load);
             this.panel6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -289,10 +288,10 @@
         private System.Windows.Forms.ListBox lBVehiclesList;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtTimeNeeded;
+        private System.Windows.Forms.TextBox txtFuelType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.TextBox txtPlateNumber;
         private System.Windows.Forms.Label label4;
     }
 }
