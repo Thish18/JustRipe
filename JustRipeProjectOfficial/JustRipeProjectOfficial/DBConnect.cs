@@ -403,7 +403,31 @@ namespace JustRipeProjectOfficial
         }
         //getting the details for the selected fertilizer.
         public DataTable fertilizerDetail;
-        public void getfertilizerDetails() { }
+        public void getfertilizerDetails(int id) {
+
+        Initialize();
+        OpenConn();
+        DBConnect dbconn = new DBConnect();
+
+        string query;
+        query = "SELECT type.* FROM fertilizers" +            
+            " WHERE fertilizer_ID = " + id;
+
+        fertilizerDetail = new DataTable();
+        comm = new SqlCommand(query, connToDB);
+        dataAdap = new SqlDataAdapter(comm);
+
+        using (dataAdap)
+        {
+
+            dataAdap.Fill(labourerInfo);
+
+        }
+
+
+        CloseConn();
+
+    }
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
