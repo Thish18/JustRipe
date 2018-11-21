@@ -294,7 +294,7 @@ namespace JustRipeProjectOfficial
         public void getCropsDetails(int crops_ID) {
 
             Initialize();
-            //connection query for SQL for the types of crops.
+            //connection query for displaying Crops info.
             OpenConn();
             string query = "SELECT Crops.crops_ID, Crops.Quantity,Crops.type, Crops.PeriodNeeded, Crops.miniTemp, Crops.MaxTemp, " +
                 "fertilizers.Type,  sowingMethods.Type, sowingMethods.TimeNeeded, " +
@@ -350,7 +350,7 @@ namespace JustRipeProjectOfficial
 
 
             Initialize();
-            //connection query for SQL for the types of crops.
+            //connection query for displaying Vehicle info.
             OpenConn();
             string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum" +
                 "fuelType.Type " +
