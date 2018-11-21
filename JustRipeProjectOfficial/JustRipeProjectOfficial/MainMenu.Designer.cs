@@ -77,6 +77,7 @@
             // btnFertilizer
             // 
             this.btnFertilizer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
+            this.btnFertilizer.Enabled = false;
             this.btnFertilizer.FlatAppearance.BorderSize = 0;
             this.btnFertilizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFertilizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,6 +95,7 @@
             // btnVehicle
             // 
             this.btnVehicle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnVehicle.Enabled = false;
             this.btnVehicle.FlatAppearance.BorderSize = 0;
             this.btnVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

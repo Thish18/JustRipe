@@ -96,16 +96,12 @@ namespace JustRipeProjectOfficial
             
         }
 
-        private void btnVehicles_Click(object sender, EventArgs e)
+
+        private void btnVehicle_Click(object sender, EventArgs e)
         {
             Vehicles vhc = new Vehicles(userID);
             vhc.Show();
             Hide();
-        }
-
-        private void btnVehicle_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnFertilizer_Click(object sender, EventArgs e)
