@@ -70,23 +70,6 @@ namespace JustRipeProjectOfficial
 
         }
 
-        private void cbCrops_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void cbFertilizer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            
-
-        }
-
-        private void txtLabFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

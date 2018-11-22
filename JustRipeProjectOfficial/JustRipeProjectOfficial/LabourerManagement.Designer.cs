@@ -95,7 +95,6 @@
             this.cbCrops.Name = "cbCrops";
             this.cbCrops.Size = new System.Drawing.Size(200, 21);
             this.cbCrops.TabIndex = 2;
-            this.cbCrops.SelectedIndexChanged += new System.EventHandler(this.cbCrops_SelectedIndexChanged);
             // 
             // btnAssign
             // 
@@ -154,7 +153,6 @@
             this.cbFertilizer.Name = "cbFertilizer";
             this.cbFertilizer.Size = new System.Drawing.Size(200, 21);
             this.cbFertilizer.TabIndex = 10;
-            this.cbFertilizer.SelectedIndexChanged += new System.EventHandler(this.cbFertilizer_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -315,7 +313,6 @@
             this.txtLabFirstName.Name = "txtLabFirstName";
             this.txtLabFirstName.Size = new System.Drawing.Size(211, 22);
             this.txtLabFirstName.TabIndex = 1;
-            this.txtLabFirstName.TextChanged += new System.EventHandler(this.txtLabFirstName_TextChanged);
             // 
             // label4
             // 
