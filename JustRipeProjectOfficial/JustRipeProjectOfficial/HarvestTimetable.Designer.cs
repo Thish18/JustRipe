@@ -329,6 +329,7 @@
             this.btnManagerHavTime.TabIndex = 60;
             this.btnManagerHavTime.Text = "Manager Timetable overview \r\nLogin Required\r\n";
             this.btnManagerHavTime.UseVisualStyleBackColor = true;
+            this.btnManagerHavTime.Click += new System.EventHandler(this.btnManagerHavTime_Click);
             // 
             // HarvestTimetable
             // 

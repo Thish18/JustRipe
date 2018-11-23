@@ -304,15 +304,14 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@Quantity", quantity);
             comm.Parameters.AddWithValue("@miniTemp", mini);
             comm.Parameters.AddWithValue("@maxTemp", max);
-            comm.Parameters.AddWithValue("@fertilizer_ID", max);
-            comm.Parameters.AddWithValue("@sowingM_ID", max);
-            comm.Parameters.AddWithValue("@harvestM_ID", max);
-            comm.Parameters.AddWithValue("@storage_ID", max);
-            comm.Parameters.AddWithValue("@vehicles_ID", max);
-            comm.Parameters.AddWithValue("@specialT_ID", max);
+            comm.Parameters.AddWithValue("@fertilizer_ID", ferID);
+            comm.Parameters.AddWithValue("@sowingM_ID", sMID);
+            comm.Parameters.AddWithValue("@harvestM_ID", hMID);
+            comm.Parameters.AddWithValue("@storage_ID", sID);
+            comm.Parameters.AddWithValue("@vehicles_ID", vID);
+            comm.Parameters.AddWithValue("@specialT_ID", sTID);
 
             comm.ExecuteNonQuery();
-            dataAdap = new SqlDataAdapter(query, connToDB);
 
             CloseConn();
             MessageBox.Show("Crops Created.");
@@ -474,9 +473,31 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createfertilizer() {
+        public void createfertilizer(string type, int quantity) {
+
+            Initialize();
+            OpenConn();
+
+            string query = "INSERT INTO fertilizers (fertilizerType)" +
+                "VALUES (@fertilizerType";
+
+            comm = new SqlCommand(query, connToDB);
+                       
+            comm.Parameters.AddWithValue("@fertilizerType", type);
+            comm.ExecuteNonQuery();
 
 
+
+            query = "INSERT INTO FertiliserQuantity (quantity)" +
+                "VALUES (@fertilizerType";
+
+            comm = new SqlCommand(query, connToDB);
+                       
+            comm.Parameters.AddWithValue("@quantity", quantity);
+            comm.ExecuteNonQuery();
+            
+            CloseConn();
+            MessageBox.Show("Fertiliser Created.");
 
         }
 
