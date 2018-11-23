@@ -435,8 +435,11 @@ namespace JustRipeProjectOfficial
             DBConnect dbconn = new DBConnect();
 
             string query;
-            query = "SELECT type.* FROM fertilizers" +
-                " WHERE fertilizer_ID = " + id;
+            query = "SELECT fertilizers.*" +
+                "FertiliserQuantity.*" +
+                "FROM FertiliserQuantity" +
+                "INNER JOIN fertilizers ON FertiliserQuantity.fertiliser_ID = fertilizers.fertilizer_ID" +
+                "WHERE FertiliserRequired_ID = ";
 
             fertilizerDetail = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -445,7 +448,7 @@ namespace JustRipeProjectOfficial
             using (dataAdap)
             {
 
-                dataAdap.Fill(labourerInfo);
+                dataAdap.Fill(fertilizerDetail);
 
             }
 
