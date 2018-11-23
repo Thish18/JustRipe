@@ -289,6 +289,28 @@ namespace JustRipeProjectOfficial
 
 
         }
+
+        public void createCrop(string name, int quantity, int mini, int max) {
+
+            Initialize();
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@type", name);
+            comm.Parameters.AddWithValue("@quantity", quantity);
+            comm.Parameters.AddWithValue("@miniTemp", name);
+            comm.Parameters.AddWithValue("@maxTemp", name);
+
+            comm.ExecuteNonQuery();
+            dataAdap = new SqlDataAdapter(query, connToDB);
+            CloseConn();
+            MessageBox.Show("Crops Created.");
+
+        }
+
         // getting detials for the selected crop.
         public DataTable cropsDetail;
         public void getCropsDetails(int crops_ID) {
@@ -397,6 +419,13 @@ namespace JustRipeProjectOfficial
             }
 
         }
+
+        public void createfertilizer() {
+
+
+
+        }
+
         //getting the details for the selected fertilizer.
         public DataTable fertilizerDetail;
         public void getfertilizerDetails(int id) {
