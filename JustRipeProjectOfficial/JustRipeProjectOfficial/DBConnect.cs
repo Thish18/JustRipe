@@ -447,7 +447,7 @@ namespace JustRipeProjectOfficial
                 "FertiliserQuantity.*" +
                 "FROM FertiliserQuantity" +
                 "INNER JOIN fertilizers ON FertiliserQuantity.fertiliser_ID = fertilizers.fertilizer_ID" +
-                "WHERE FertiliserRequired_ID = ";
+                "WHERE FertiliserRequired_ID = " + id;
 
             fertilizerDetail = new DataTable();
             comm = new SqlCommand(query, connToDB);
