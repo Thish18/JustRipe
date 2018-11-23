@@ -312,7 +312,6 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@specialT_ID", max);
 
             comm.ExecuteNonQuery();
-            dataAdap = new SqlDataAdapter(query, connToDB);
 
             CloseConn();
             MessageBox.Show("Crops Created.");
@@ -441,6 +440,8 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@fertilizerType", type);
             comm.ExecuteNonQuery();
 
+
+
             query = "INSERT INTO FertiliserQuantity (quantity)" +
                 "VALUES (@fertilizerType";
 
@@ -448,9 +449,7 @@ namespace JustRipeProjectOfficial
                        
             comm.Parameters.AddWithValue("@quantity", quantity);
             comm.ExecuteNonQuery();
-
-            dataAdap = new SqlDataAdapter(query, connToDB);
-
+            
             CloseConn();
             MessageBox.Show("Fertiliser Created.");
 
