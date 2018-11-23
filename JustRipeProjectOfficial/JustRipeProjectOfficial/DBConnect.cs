@@ -290,22 +290,30 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createCrop(string name, int quantity, int mini, int max) {
+        public void createCrop(string name, int quantity, int mini, int max, int ferID, int sMID, int hMID, int sID, int vID, int sTID) {
 
             Initialize();
             OpenConn();
 
-            string query = "";
+            string query = "INSERT INTO Crops (cropsType, Quantity, miniTemp, maxTemp, fertilizer_ID, sowingM_ID, harvestM_ID, storage_ID, vehicles_ID, specialT_ID) " +
+                "VALUES (@cropsType, @Quantity, @miniTemp, @maxTemp, @fertilizer_ID, @sowingM_ID, @harvestM_ID, @storage_ID, @vehicles_ID, @specialT_ID)";
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@type", name);
-            comm.Parameters.AddWithValue("@quantity", quantity);
-            comm.Parameters.AddWithValue("@miniTemp", name);
-            comm.Parameters.AddWithValue("@maxTemp", name);
+            comm.Parameters.AddWithValue("@cropsType", name);
+            comm.Parameters.AddWithValue("@Quantity", quantity);
+            comm.Parameters.AddWithValue("@miniTemp", mini);
+            comm.Parameters.AddWithValue("@maxTemp", max);
+            comm.Parameters.AddWithValue("@fertilizer_ID", max);
+            comm.Parameters.AddWithValue("@sowingM_ID", max);
+            comm.Parameters.AddWithValue("@harvestM_ID", max);
+            comm.Parameters.AddWithValue("@storage_ID", max);
+            comm.Parameters.AddWithValue("@vehicles_ID", max);
+            comm.Parameters.AddWithValue("@specialT_ID", max);
 
             comm.ExecuteNonQuery();
             dataAdap = new SqlDataAdapter(query, connToDB);
+
             CloseConn();
             MessageBox.Show("Crops Created.");
 
@@ -376,10 +384,10 @@ namespace JustRipeProjectOfficial
             //connection query for displaying Vehicle info.
             OpenConn();
             string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum" +
-                "fuelType.Type " +
-                "vheicleType.Type FROM Vehicles" +
-                "INNER JOIN fuelType ON Vehicles.fuelType_ID = fuelType.fuelType_ID " +
-                "INNER JOIN vheicleType ON Vehicles.vehicleType_ID = vehicleType.vehicleType_ID " +
+                "fuelType.fuelType " +
+                "vehicleType.vehicleType FROM Vehicles" +
+                "INNER JOIN fuelType ON Vehicles.fuelTypeID = fuelType.fuel_ID " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
                 "WHERE vehicles_ID =" +
                 " '" + vehicles_ID + "';";
 
