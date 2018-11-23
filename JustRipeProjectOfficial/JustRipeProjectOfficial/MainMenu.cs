@@ -84,16 +84,16 @@ namespace JustRipeProjectOfficial
 
         private void btnFertilizer_Click_1(object sender, EventArgs e)
         {
-            Fertiliser ftr = new Fertiliser(userID);
-            ftr.Show();
-            Hide();
+            //Fertiliser strg = new Fertiliser(userID);
+            //strg.Show();
+            //Hide();
 
         }
 
         private void btnVehicle_Click(object sender, EventArgs e)
         {
-            Vehicles vhc = new Vehicles(userID);
-            vhc.Show();
+            //Vehicles sh = new Vehicles(userID);
+            //sh.Show();
             Hide();
         }
 

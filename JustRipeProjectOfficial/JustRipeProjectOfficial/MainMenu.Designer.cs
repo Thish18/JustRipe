@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnCrops = new System.Windows.Forms.Button();
-            this.btnFertilizer = new System.Windows.Forms.Button();
-            this.btnVehicle = new System.Windows.Forms.Button();
+            this.btnStorage = new System.Windows.Forms.Button();
+            this.btnPlaceHolder = new System.Windows.Forms.Button();
             this.btnLabourManagement = new System.Windows.Forms.Button();
             this.btnWorkSchedule = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,41 +74,41 @@
             this.btnCrops.UseVisualStyleBackColor = false;
             this.btnCrops.Click += new System.EventHandler(this.btnCrops_Click);
             // 
-            // btnFertilizer
+            // btnStorage
             // 
-            this.btnFertilizer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
-            this.btnFertilizer.Enabled = false;
-            this.btnFertilizer.FlatAppearance.BorderSize = 0;
-            this.btnFertilizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFertilizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFertilizer.ForeColor = System.Drawing.Color.White;
-            this.btnFertilizer.Location = new System.Drawing.Point(411, 93);
-            this.btnFertilizer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFertilizer.Name = "btnFertilizer";
-            this.btnFertilizer.Size = new System.Drawing.Size(383, 130);
-            this.btnFertilizer.TabIndex = 2;
-            this.btnFertilizer.Text = "Fertilizer";
-            this.btnFertilizer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFertilizer.UseVisualStyleBackColor = false;
-            this.btnFertilizer.Click += new System.EventHandler(this.btnFertilizer_Click_1);
+            this.btnStorage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
+            this.btnStorage.Enabled = false;
+            this.btnStorage.FlatAppearance.BorderSize = 0;
+            this.btnStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStorage.ForeColor = System.Drawing.Color.White;
+            this.btnStorage.Location = new System.Drawing.Point(411, 93);
+            this.btnStorage.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStorage.Name = "btnStorage";
+            this.btnStorage.Size = new System.Drawing.Size(383, 130);
+            this.btnStorage.TabIndex = 2;
+            this.btnStorage.Text = "Storage";
+            this.btnStorage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnStorage.UseVisualStyleBackColor = false;
+            this.btnStorage.Click += new System.EventHandler(this.btnFertilizer_Click_1);
             // 
-            // btnVehicle
+            // btnPlaceHolder
             // 
-            this.btnVehicle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnVehicle.Enabled = false;
-            this.btnVehicle.FlatAppearance.BorderSize = 0;
-            this.btnVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnVehicle.Location = new System.Drawing.Point(11, 361);
-            this.btnVehicle.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVehicle.Name = "btnVehicle";
-            this.btnVehicle.Size = new System.Drawing.Size(383, 130);
-            this.btnVehicle.TabIndex = 3;
-            this.btnVehicle.Text = "Vehicle";
-            this.btnVehicle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVehicle.UseVisualStyleBackColor = false;
-            this.btnVehicle.Click += new System.EventHandler(this.btnVehicle_Click);
+            this.btnPlaceHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnPlaceHolder.Enabled = false;
+            this.btnPlaceHolder.FlatAppearance.BorderSize = 0;
+            this.btnPlaceHolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaceHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlaceHolder.ForeColor = System.Drawing.Color.White;
+            this.btnPlaceHolder.Location = new System.Drawing.Point(11, 361);
+            this.btnPlaceHolder.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPlaceHolder.Name = "btnPlaceHolder";
+            this.btnPlaceHolder.Size = new System.Drawing.Size(383, 130);
+            this.btnPlaceHolder.TabIndex = 3;
+            this.btnPlaceHolder.Text = "PlaceHolder";
+            this.btnPlaceHolder.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPlaceHolder.UseVisualStyleBackColor = false;
+            this.btnPlaceHolder.Click += new System.EventHandler(this.btnVehicle_Click);
             // 
             // btnLabourManagement
             // 
@@ -339,8 +339,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnWorkSchedule);
             this.Controls.Add(this.btnLabourManagement);
-            this.Controls.Add(this.btnVehicle);
-            this.Controls.Add(this.btnFertilizer);
+            this.Controls.Add(this.btnPlaceHolder);
+            this.Controls.Add(this.btnStorage);
             this.Controls.Add(this.btnCrops);
             this.Controls.Add(this.btnHarvestTimetable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -366,8 +366,8 @@
 
         private System.Windows.Forms.Button btnHarvestTimetable;
         private System.Windows.Forms.Button btnCrops;
-        private System.Windows.Forms.Button btnFertilizer;
-        private System.Windows.Forms.Button btnVehicle;
+        private System.Windows.Forms.Button btnStorage;
+        private System.Windows.Forms.Button btnPlaceHolder;
         private System.Windows.Forms.Button btnLabourManagement;
         private System.Windows.Forms.Button btnWorkSchedule;
         private System.Windows.Forms.Label label1;
