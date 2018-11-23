@@ -376,10 +376,10 @@ namespace JustRipeProjectOfficial
             //connection query for displaying Vehicle info.
             OpenConn();
             string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum" +
-                "fuelType.Type " +
-                "vheicleType.Type FROM Vehicles" +
-                "INNER JOIN fuelType ON Vehicles.fuelType_ID = fuelType.fuelType_ID " +
-                "INNER JOIN vheicleType ON Vehicles.vehicleType_ID = vehicleType.vehicleType_ID " +
+                "fuelType.fuelType " +
+                "vehicleType.vehicleType FROM Vehicles" +
+                "INNER JOIN fuelType ON Vehicles.fuelTypeID = fuelType.fuel_ID " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
                 "WHERE vehicles_ID =" +
                 " '" + vehicles_ID + "';";
 
