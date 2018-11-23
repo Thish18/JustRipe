@@ -173,7 +173,6 @@
             this.harvest_id_label.Size = new System.Drawing.Size(74, 17);
             this.harvest_id_label.TabIndex = 48;
             this.harvest_id_label.Text = "Harvest ID";
-            this.harvest_id_label.Click += new System.EventHandler(this.label2_Click);
             // 
             // harvest_type_label
             // 
@@ -184,7 +183,6 @@
             this.harvest_type_label.Size = new System.Drawing.Size(93, 17);
             this.harvest_type_label.TabIndex = 50;
             this.harvest_type_label.Text = "Harvest Type";
-            this.harvest_type_label.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // harvest_type_textbox
             // 
@@ -203,7 +201,6 @@
             this.labour_required.Size = new System.Drawing.Size(115, 17);
             this.labour_required.TabIndex = 54;
             this.labour_required.Text = "Labour Required";
-            this.labour_required.Click += new System.EventHandler(this.label2_Click_2);
             // 
             // textBox1
             // 
@@ -212,7 +209,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 22);
             this.textBox1.TabIndex = 53;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // time_needed
             // 
@@ -223,7 +219,6 @@
             this.time_needed.Size = new System.Drawing.Size(93, 17);
             this.time_needed.TabIndex = 52;
             this.time_needed.Text = "Time Needed";
-            this.time_needed.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox2
             // 
@@ -334,6 +329,7 @@
             this.btnManagerHavTime.TabIndex = 60;
             this.btnManagerHavTime.Text = "Manager Timetable overview \r\nLogin Required\r\n";
             this.btnManagerHavTime.UseVisualStyleBackColor = true;
+            this.btnManagerHavTime.Click += new System.EventHandler(this.btnManagerHavTime_Click);
             // 
             // HarvestTimetable
             // 

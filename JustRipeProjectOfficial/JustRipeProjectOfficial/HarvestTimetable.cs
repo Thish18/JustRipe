@@ -12,13 +12,33 @@ namespace JustRipeProjectOfficial
 {
     public partial class HarvestTimetable : Form
     {
-
+        DBConnect dbconn = new DBConnect();
         private int userID;
+        private int rankID;
+
 
         public HarvestTimetable(int ID)
         {
             InitializeComponent();
             userID = ID;
+
+            dbconn.userInfoExport(userID);
+
+            rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
+
+            //If rank is 1 (staff) they are not allow to access to these area.
+            if (rankID == 1)
+            {
+                btnManagerHavTime.Enabled = false;
+            }
+            else if(rankID == 2 )
+            {
+                btnManagerHavTime.Enabled = true;
+            }
+            else if(rankID == 3)
+            {
+                btnManagerHavTime.Enabled = true; 
+            }
         }
 
         private void HarvestTimetable_Load(object sender, EventArgs e)
@@ -45,32 +65,7 @@ namespace JustRipeProjectOfficial
             Close();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void btnManagerHavTime_Click(object sender, EventArgs e)
         {
 
         }
