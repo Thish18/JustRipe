@@ -12,13 +12,27 @@ namespace JustRipeProjectOfficial
 {
     public partial class HarvestTimetable : Form
     {
-
+        DBConnect dbconn = new DBConnect();
         private int userID;
+        private int rankID;
+
 
         public HarvestTimetable(int ID)
         {
             InitializeComponent();
             userID = ID;
+
+            dbconn.userInfoExport(userID);
+
+            rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
+
+            //If rank is 1 (staff) they are not allow to access to these area.
+            if (rankID == 1)
+            {
+
+                btnManagerHavTime.Enabled = false;
+
+            }
         }
 
         private void HarvestTimetable_Load(object sender, EventArgs e)
