@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRank = new System.Windows.Forms.Label();
+            this.btnManagerHavTime = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,7 +63,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(347, 231);
+            this.dataGridView1.Location = new System.Drawing.Point(347, 178);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
@@ -80,10 +81,10 @@
             // HarvestTxt
             // 
             this.HarvestTxt.Location = new System.Drawing.Point(0, 169);
-            this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4);
             this.HarvestTxt.Multiline = true;
             this.HarvestTxt.Name = "HarvestTxt";
-            this.HarvestTxt.Size = new System.Drawing.Size(301, 366);
+            this.HarvestTxt.Size = new System.Drawing.Size(303, 366);
             this.HarvestTxt.TabIndex = 44;
             this.HarvestTxt.TextChanged += new System.EventHandler(this.HarvestTxt_TextChanged);
             // 
@@ -97,7 +98,7 @@
             this.panel1.Controls.Add(this.dtpHarvest);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(303, 613);
             this.panel1.TabIndex = 46;
@@ -110,7 +111,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(0, 89);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(303, 80);
             this.btnUpdate.TabIndex = 45;
@@ -122,7 +123,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(89)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 68);
             this.panel2.TabIndex = 2;
@@ -147,7 +148,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Location = new System.Drawing.Point(0, 533);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(303, 80);
             this.btnMenu.TabIndex = 3;
@@ -157,8 +158,8 @@
             // 
             // harvest_id_textbox
             // 
-            this.harvest_id_textbox.Location = new System.Drawing.Point(348, 108);
-            this.harvest_id_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.harvest_id_textbox.Location = new System.Drawing.Point(348, 91);
+            this.harvest_id_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.harvest_id_textbox.Name = "harvest_id_textbox";
             this.harvest_id_textbox.Size = new System.Drawing.Size(164, 22);
             this.harvest_id_textbox.TabIndex = 47;
@@ -166,7 +167,7 @@
             // harvest_id_label
             // 
             this.harvest_id_label.AutoSize = true;
-            this.harvest_id_label.Location = new System.Drawing.Point(348, 89);
+            this.harvest_id_label.Location = new System.Drawing.Point(348, 72);
             this.harvest_id_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.harvest_id_label.Name = "harvest_id_label";
             this.harvest_id_label.Size = new System.Drawing.Size(74, 17);
@@ -177,7 +178,7 @@
             // harvest_type_label
             // 
             this.harvest_type_label.AutoSize = true;
-            this.harvest_type_label.Location = new System.Drawing.Point(600, 89);
+            this.harvest_type_label.Location = new System.Drawing.Point(600, 72);
             this.harvest_type_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.harvest_type_label.Name = "harvest_type_label";
             this.harvest_type_label.Size = new System.Drawing.Size(93, 17);
@@ -187,8 +188,8 @@
             // 
             // harvest_type_textbox
             // 
-            this.harvest_type_textbox.Location = new System.Drawing.Point(600, 108);
-            this.harvest_type_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.harvest_type_textbox.Location = new System.Drawing.Point(600, 91);
+            this.harvest_type_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.harvest_type_textbox.Name = "harvest_type_textbox";
             this.harvest_type_textbox.Size = new System.Drawing.Size(164, 22);
             this.harvest_type_textbox.TabIndex = 49;
@@ -196,7 +197,7 @@
             // labour_required
             // 
             this.labour_required.AutoSize = true;
-            this.labour_required.Location = new System.Drawing.Point(348, 166);
+            this.labour_required.Location = new System.Drawing.Point(348, 121);
             this.labour_required.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labour_required.Name = "labour_required";
             this.labour_required.Size = new System.Drawing.Size(115, 17);
@@ -206,8 +207,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(348, 186);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(348, 141);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 22);
             this.textBox1.TabIndex = 53;
@@ -216,7 +217,7 @@
             // time_needed
             // 
             this.time_needed.AutoSize = true;
-            this.time_needed.Location = new System.Drawing.Point(860, 89);
+            this.time_needed.Location = new System.Drawing.Point(860, 72);
             this.time_needed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.time_needed.Name = "time_needed";
             this.time_needed.Size = new System.Drawing.Size(93, 17);
@@ -226,8 +227,8 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(860, 108);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(860, 91);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 22);
             this.textBox2.TabIndex = 51;
@@ -235,7 +236,7 @@
             // labourers_required
             // 
             this.labourers_required.AutoSize = true;
-            this.labourers_required.Location = new System.Drawing.Point(600, 166);
+            this.labourers_required.Location = new System.Drawing.Point(600, 121);
             this.labourers_required.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labourers_required.Name = "labourers_required";
             this.labourers_required.Size = new System.Drawing.Size(135, 17);
@@ -244,8 +245,8 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(600, 186);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Location = new System.Drawing.Point(600, 141);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(164, 22);
             this.textBox3.TabIndex = 55;
@@ -253,7 +254,7 @@
             // harvest_expected
             // 
             this.harvest_expected.AutoSize = true;
-            this.harvest_expected.Location = new System.Drawing.Point(860, 166);
+            this.harvest_expected.Location = new System.Drawing.Point(860, 121);
             this.harvest_expected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.harvest_expected.Name = "harvest_expected";
             this.harvest_expected.Size = new System.Drawing.Size(160, 17);
@@ -262,8 +263,8 @@
             // 
             // harvest_expected_textbox
             // 
-            this.harvest_expected_textbox.Location = new System.Drawing.Point(860, 186);
-            this.harvest_expected_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.harvest_expected_textbox.Location = new System.Drawing.Point(860, 141);
+            this.harvest_expected_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.harvest_expected_textbox.Name = "harvest_expected_textbox";
             this.harvest_expected_textbox.Size = new System.Drawing.Size(164, 22);
             this.harvest_expected_textbox.TabIndex = 57;
@@ -276,7 +277,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.lbRank);
             this.panel3.Location = new System.Drawing.Point(301, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(773, 68);
             this.panel3.TabIndex = 59;
@@ -325,11 +326,21 @@
             this.lbRank.TabIndex = 63;
             this.lbRank.Text = "[Rank Data]";
             // 
+            // btnManagerHavTime
+            // 
+            this.btnManagerHavTime.Location = new System.Drawing.Point(738, 560);
+            this.btnManagerHavTime.Name = "btnManagerHavTime";
+            this.btnManagerHavTime.Size = new System.Drawing.Size(286, 46);
+            this.btnManagerHavTime.TabIndex = 60;
+            this.btnManagerHavTime.Text = "Manager Timetable overview \r\nLogin Required\r\n";
+            this.btnManagerHavTime.UseVisualStyleBackColor = true;
+            // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1073, 613);
+            this.ClientSize = new System.Drawing.Size(1038, 613);
+            this.Controls.Add(this.btnManagerHavTime);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.harvest_expected);
             this.Controls.Add(this.harvest_expected_textbox);
@@ -346,7 +357,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HarvestTimetable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HarvestTimetable";
@@ -389,5 +400,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbRank;
+        private System.Windows.Forms.Button btnManagerHavTime;
     }
 }
