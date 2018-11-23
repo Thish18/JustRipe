@@ -428,9 +428,31 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createfertilizer() {
+        public void createfertilizer(string type, int quantity) {
 
+            Initialize();
+            OpenConn();
 
+            string query = "INSERT INTO fertilizers (fertilizerType)" +
+                "VALUES (@fertilizerType";
+
+            comm = new SqlCommand(query, connToDB);
+                       
+            comm.Parameters.AddWithValue("@fertilizerType", type);
+            comm.ExecuteNonQuery();
+
+            query = "INSERT INTO FertiliserQuantity (quantity)" +
+                "VALUES (@fertilizerType";
+
+            comm = new SqlCommand(query, connToDB);
+                       
+            comm.Parameters.AddWithValue("@quantity", quantity);
+            comm.ExecuteNonQuery();
+
+            dataAdap = new SqlDataAdapter(query, connToDB);
+
+            CloseConn();
+            MessageBox.Show("Fertiliser Created.");
 
         }
 
