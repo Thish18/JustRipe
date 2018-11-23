@@ -77,7 +77,7 @@ namespace JustRipeProjectOfficial
         private void btnSelect_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(lBVehiclesList.SelectedValue.ToString());
-            dbconn.getCropsDetails(id);
+            dbconn.getVehicleDetails(id);
 
             txtName.Text = dbconn.vehicleDetail.Rows[0]["Type"].ToString();
             txtPlateNumber.Text = dbconn.vehicleDetail.Rows[0]["plateNum"].ToString();
