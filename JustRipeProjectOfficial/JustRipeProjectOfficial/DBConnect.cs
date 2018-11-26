@@ -383,6 +383,52 @@ namespace JustRipeProjectOfficial
             }
 
         }
+
+        public void newVehicle(string vt, string pn, string ft)
+        {
+            Initialize();
+            // connection query for SQL.
+            OpenConn();
+            // adding the vehicles name.
+            string query = "INSERT INTO vheicleType (Type) VALUES(@vehicleName)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@vehicleName", vt);
+
+            comm.ExecuteNonQuery();
+            
+            // adding the plate number.
+            query = "INSERT INTO Vehicles (plateNum) VALUES(@plateNumber)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@plateNumber", pn);
+
+            comm.ExecuteNonQuery();
+
+            // adding the fuel type.
+            query = "INSERT INTO fuelType (Type) VALUES(@fuelType)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@fuelType", ft);
+
+            comm.ExecuteNonQuery();
+
+
+            dataAdap = new SqlDataAdapter(query, connToDB);
+            CloseConn();
+            // Message to show once new vehicle has been created.
+            MessageBox.Show("New Vehicle Created");
+
+
+        }
+
+
+
+
+
         //getting details for the selected vehicle.
         public DataTable vehicleDetail;
         public void getVehicleDetails(int vehicles_ID) {
