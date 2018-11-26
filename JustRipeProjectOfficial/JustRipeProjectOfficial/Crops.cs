@@ -88,6 +88,8 @@ namespace JustRipeProjectOfficial
             txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
             txtTreatmentType.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
             txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
+            //txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
+            //txtVehicleType.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
 
         }
 
