@@ -369,7 +369,8 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of Vehicles.
             OpenConn();
-            string query = "SELECT vehicles_ID, type FROM Vehicles";
+            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum, vehicleType.vehicleType FROM Vehicles " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID";
 
             vehicleList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -390,25 +391,25 @@ namespace JustRipeProjectOfficial
             // connection query for SQL.
             OpenConn();
             // adding the vehicles name.
-            string query = "INSERT INTO vheicleType (Type) VALUES(@vehicleName)";
+            string query = "INSERT INTO vehicleType (vehicleType) VALUES(@vehicleType)";
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@vehicleName", vt);
+            comm.Parameters.AddWithValue("@vehicleType", vt);
 
             comm.ExecuteNonQuery();
             
             // adding the plate number.
-            query = "INSERT INTO Vehicles (plateNum) VALUES(@plateNumber)";
+            query = "INSERT INTO Vehicles (plateNum) VALUES(@plateNum)";
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@plateNumber", pn);
+            comm.Parameters.AddWithValue("@plateNum", pn);
 
             comm.ExecuteNonQuery();
 
             // adding the fuel type.
-            query = "INSERT INTO fuelType (Type) VALUES(@fuelType)";
+            query = "INSERT INTO fuelType (fuelType) VALUES(@fuelType)";
 
             comm = new SqlCommand(query, connToDB);
 
@@ -437,12 +438,12 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for displaying Vehicle info.
             OpenConn();
-            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum" +
+            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum " +
                 "fuelType.fuelType " +
-                "vehicleType.vehicleType FROM Vehicles" +
+                "vehicleType.vehicleType FROM Vehicles " +
                 "INNER JOIN fuelType ON Vehicles.fuelTypeID = fuelType.fuel_ID " +
                 "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
-                "WHERE vehicles_ID =" +
+                "WHERE vehicles_ID = " +
                 " '" + vehicles_ID + "';";
 
             vehicleDetail = new DataTable();
@@ -467,7 +468,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of fertilizers.
             OpenConn();
-            string query = "SELECT fertilizer_ID, type FROM fertilizers";
+            string query = "SELECT fertilizer_ID, fertilizerType FROM fertilizers";
 
             fertilizersList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -488,7 +489,7 @@ namespace JustRipeProjectOfficial
             OpenConn();
 
             string query = "INSERT INTO fertilizers (fertilizerType)" +
-                "VALUES (@fertilizerType";
+                "VALUES (@fertilizerType)";
 
             comm = new SqlCommand(query, connToDB);
                        
@@ -498,7 +499,7 @@ namespace JustRipeProjectOfficial
 
 
             query = "INSERT INTO FertiliserQuantity (quantity)" +
-                "VALUES (@fertilizerType";
+                "VALUES (@fertilizerType)";
 
             comm = new SqlCommand(query, connToDB);
                        
