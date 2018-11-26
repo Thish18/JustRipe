@@ -25,14 +25,14 @@ namespace JustRipeProjectOfficial
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
-            lBCropsList.DisplayMember = "type";
+            lBCropsList.DisplayMember = "cropsType";
             lBCropsList.ValueMember = "crops_ID";
 
             userID = ID;
 
             dbconn.userInfoExport(userID);
 
-            rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
+            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"]);
 
             //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {
@@ -77,7 +77,7 @@ namespace JustRipeProjectOfficial
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
 
-            txtName.Text = dbconn.cropsDetail.Rows[0]["type"].ToString();
+            txtName.Text = dbconn.cropsDetail.Rows[0]["cropsType"].ToString();
             txtQuantity.Text = dbconn.cropsDetail.Rows[0]["Quantity"].ToString();
             txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
             txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
@@ -88,6 +88,8 @@ namespace JustRipeProjectOfficial
             txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
             txtTreatmentType.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
             txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
+            //txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
+            //txtVehicleType.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
 
         }
 

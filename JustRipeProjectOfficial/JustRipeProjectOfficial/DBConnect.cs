@@ -153,7 +153,8 @@ namespace JustRipeProjectOfficial
         }
 
         //temp storage List.
-        public List<object> tempUserInfo;
+
+        public DataTable tempUserInfo;
 
         //use to import ONLY.
         public void userInfoImport()
@@ -161,25 +162,14 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = '" + userID + "';";
 
+            tempUserInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
-            dataRead = comm.ExecuteReader();
+            dataAdap = new SqlDataAdapter(comm);
 
-            tempUserInfo = new List<object>();
-
-            using (dataRead)
+            using (dataAdap)
             {
 
-                while (dataRead.Read())
-                {
-                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
-                    tempUserInfo.Add(dataRead["firstName"].ToString());
-                    tempUserInfo.Add(dataRead["lastName"].ToString());
-                    tempUserInfo.Add(dataRead["username"].ToString());
-                    tempUserInfo.Add(dataRead["Password"].ToString());
-                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
-                    tempUserInfo.Add(dataRead["rankID"].ToString());
-
-                }
+                dataAdap.Fill(tempUserInfo);
 
             }
 
@@ -194,26 +184,14 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
 
+            tempUserInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
-            dataRead = comm.ExecuteReader();
+            dataAdap = new SqlDataAdapter(comm);
 
-            tempUserInfo = new List<object>();
-
-            using (dataRead)
+            using (dataAdap)
             {
 
-                while (dataRead.Read())
-                {
-                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
-                    tempUserInfo.Add(dataRead["firstName"].ToString());
-                    tempUserInfo.Add(dataRead["lastName"].ToString());
-                    tempUserInfo.Add(dataRead["username"].ToString());
-                    tempUserInfo.Add(dataRead["Password"].ToString());
-                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
-                    tempUserInfo.Add(dataRead["rankID"].ToString());
-                    tempUserInfo.Add(dataRead["Type"].ToString());
-
-                }
+                dataAdap.Fill(tempUserInfo);
 
             }
 
@@ -338,12 +316,14 @@ namespace JustRipeProjectOfficial
             string query = "SELECT Crops.crops_ID, Crops.Quantity, Crops.cropsType, Crops.PeriodNeeded, Crops.miniTemp, Crops.MaxTemp, " +
                 "fertilizers.fertilizerType,  sowingMethods.sowingType, sowingMethods.TimeNeeded, " +
                 "HarvestMethod.harvestType, harvestMethod.TimeNeeded, " +
-                "Vehicles.plateNum, " +
+                "Vehicles.plateNum, vehicleType.vehicleType, fuelType.fuelType, " +
                 "specialTreatment.specialType, specialTreatment.Description FROM Crops " +
                 "INNER JOIN fertilizers ON Crops.fertilizer_ID = fertilizers.fertilizer_ID " +
                 "INNER JOIN sowingMethods ON Crops.sowingM_ID = sowingMethods.sowingM_ID " +
                 "INNER JOIN HarvestMethod ON Crops.HarvestM_ID = HarvestMethod.harvestM_ID " +
                 "INNER JOIN Vehicles ON Crops.vehicles_ID = Vehicles.vehicles_ID " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
+                "INNER JOIN fuelType ON Vehicles.fuelTypeID = fuelType.fuel_ID " +
                 "INNER JOIN specialTreatment ON Crops.specialT_ID = specialTreatment.specialT_ID " +
                 "WHERE crops_ID =" +
                 " '" + crops_ID + "';";

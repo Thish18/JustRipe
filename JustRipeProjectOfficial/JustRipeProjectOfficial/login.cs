@@ -36,7 +36,7 @@ namespace JustRipeProjectOfficial
                 {
 
                     dbconn.userInfoImport();
-                    userID = Convert.ToInt32(dbconn.tempUserInfo[0].ToString());
+                    userID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["users_ID"]);
 
                     //do it when the username and password are correct.
                     MainMenu frm = new MainMenu(userID);

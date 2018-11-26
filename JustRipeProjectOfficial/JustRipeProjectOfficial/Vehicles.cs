@@ -34,7 +34,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.userInfoExport(userID);
 
-            rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
+            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"].ToString());
 
             if (rankID == 1)
             {
