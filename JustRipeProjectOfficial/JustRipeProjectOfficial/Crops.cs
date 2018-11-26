@@ -77,7 +77,7 @@ namespace JustRipeProjectOfficial
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
 
-            txtName.Text = dbconn.cropsDetail.Rows[0]["type"].ToString();
+            txtName.Text = dbconn.cropsDetail.Rows[0]["cropsType"].ToString();
             txtQuantity.Text = dbconn.cropsDetail.Rows[0]["Quantity"].ToString();
             txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
             txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
