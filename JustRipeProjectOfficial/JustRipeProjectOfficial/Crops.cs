@@ -25,14 +25,14 @@ namespace JustRipeProjectOfficial
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
-            lBCropsList.DisplayMember = "type";
+            lBCropsList.DisplayMember = "cropsType";
             lBCropsList.ValueMember = "crops_ID";
 
             userID = ID;
 
             dbconn.userInfoExport(userID);
 
-            rankID = Convert.ToInt32(dbconn.tempUserInfo[6]);
+            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"]);
 
             //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {

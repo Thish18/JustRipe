@@ -153,7 +153,8 @@ namespace JustRipeProjectOfficial
         }
 
         //temp storage List.
-        public List<object> tempUserInfo;
+
+        public DataTable tempUserInfo;
 
         //use to import ONLY.
         public void userInfoImport()
@@ -161,25 +162,14 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = '" + userID + "';";
 
+            tempUserInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
-            dataRead = comm.ExecuteReader();
+            dataAdap = new SqlDataAdapter(comm);
 
-            tempUserInfo = new List<object>();
-
-            using (dataRead)
+            using (dataAdap)
             {
 
-                while (dataRead.Read())
-                {
-                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
-                    tempUserInfo.Add(dataRead["firstName"].ToString());
-                    tempUserInfo.Add(dataRead["lastName"].ToString());
-                    tempUserInfo.Add(dataRead["username"].ToString());
-                    tempUserInfo.Add(dataRead["Password"].ToString());
-                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
-                    tempUserInfo.Add(dataRead["rankID"].ToString());
-
-                }
+                dataAdap.Fill(tempUserInfo);
 
             }
 
@@ -194,26 +184,14 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
 
+            tempUserInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
-            dataRead = comm.ExecuteReader();
+            dataAdap = new SqlDataAdapter(comm);
 
-            tempUserInfo = new List<object>();
-
-            using (dataRead)
+            using (dataAdap)
             {
 
-                while (dataRead.Read())
-                {
-                    tempUserInfo.Add(Convert.ToInt32(dataRead["users_ID"]));
-                    tempUserInfo.Add(dataRead["firstName"].ToString());
-                    tempUserInfo.Add(dataRead["lastName"].ToString());
-                    tempUserInfo.Add(dataRead["username"].ToString());
-                    tempUserInfo.Add(dataRead["Password"].ToString());
-                    tempUserInfo.Add(dataRead["ContactNum"].ToString());
-                    tempUserInfo.Add(dataRead["rankID"].ToString());
-                    tempUserInfo.Add(dataRead["Type"].ToString());
-
-                }
+                dataAdap.Fill(tempUserInfo);
 
             }
 
