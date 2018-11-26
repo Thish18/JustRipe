@@ -21,8 +21,8 @@ namespace JustRipeProjectOfficial
             //[SQL]
             
             DBConnect DBConn = new DBConnect();
-            userID = ID;
-            DBConn.userInfoExport(userID);
+
+            DBConn.userInfoExport(ID);
             lbName.Text = DBConn.tempUserInfo.Rows[0]["firstname"].ToString() + " " + DBConn.tempUserInfo.Rows[0]["lastname"].ToString();
             lbRank.Text = DBConn.tempUserInfo.Rows[0]["Type"].ToString();
 

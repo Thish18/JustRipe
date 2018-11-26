@@ -32,7 +32,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.userInfoExport(userID);
 
-            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"]);
+            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"].ToString());
 
             //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {
@@ -88,8 +88,8 @@ namespace JustRipeProjectOfficial
             txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
             txtTreatmentType.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
             txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
-            //txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
-            //txtVehicleType.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
+            txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
+            txtVehicleType.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
 
         }
 

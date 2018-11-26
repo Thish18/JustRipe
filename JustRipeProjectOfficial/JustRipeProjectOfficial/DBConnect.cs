@@ -160,6 +160,8 @@ namespace JustRipeProjectOfficial
         public void userInfoImport()
         {
 
+            tempUserInfo = new DataTable();
+
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = '" + userID + "';";
 
             tempUserInfo = new DataTable();
@@ -177,6 +179,8 @@ namespace JustRipeProjectOfficial
         //export ONLY
         public void userInfoExport(int userID)
         {
+
+            tempUserInfo = new DataTable();
 
             Initialize();
             //connection query for SQL.
@@ -249,6 +253,8 @@ namespace JustRipeProjectOfficial
         public DataTable cropsList;
         public void getCropsData() {
 
+            cropsList = new DataTable();
+
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
@@ -313,6 +319,9 @@ namespace JustRipeProjectOfficial
             //connection query for displaying Crops info.
             //if any errors happened check the query.
             OpenConn();
+
+            cropsDetail = new DataTable();
+
             string query = "SELECT Crops.crops_ID, Crops.Quantity, Crops.cropsType, Crops.PeriodNeeded, Crops.miniTemp, Crops.MaxTemp, " +
                 "fertilizers.fertilizerType,  sowingMethods.sowingType, sowingMethods.TimeNeeded, " +
                 "HarvestMethod.harvestType, harvestMethod.TimeNeeded, " +
@@ -349,6 +358,9 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of Vehicles.
             OpenConn();
+
+            vehicleList = new DataTable();
+
             string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum, vehicleType.vehicleType FROM Vehicles " +
                 "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID";
 
@@ -418,6 +430,9 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for displaying Vehicle info.
             OpenConn();
+
+            vehicleDetail = new DataTable();
+
             string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum " +
                 "fuelType.fuelType " +
                 "vehicleType.vehicleType FROM Vehicles " +
@@ -448,6 +463,9 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of fertilizers.
             OpenConn();
+
+            fertilizersList = new DataTable();
+
             string query = "SELECT fertilizer_ID, fertilizerType FROM fertilizers";
 
             fertilizersList = new DataTable();
@@ -497,7 +515,8 @@ namespace JustRipeProjectOfficial
 
             Initialize();
             OpenConn();
-            DBConnect dbconn = new DBConnect();
+
+            fertilizerDetail = new DataTable();
 
             string query;
             query = "SELECT fertilizers.*" +
