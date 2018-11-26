@@ -274,7 +274,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELECT crops_ID, type FROM Crops";
+            string query = "SELECT crops_ID, cropsType FROM Crops";
 
             cropsList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -285,6 +285,15 @@ namespace JustRipeProjectOfficial
                 dataAdap.Fill(cropsList);
 
             }
+
+
+
+        }
+
+        public void updateCrop(int cropID, string name, int quantity, int mini, int max, int ferID, int sMID, int hMID, int sID, int vID, int sTID) {
+
+            Initialize();
+            OpenConn();
 
 
 
@@ -326,7 +335,7 @@ namespace JustRipeProjectOfficial
             //connection query for displaying Crops info.
             //if any errors happened check the query.
             OpenConn();
-            string query = "SELECT Crops.crops_ID, Crops.Quantity,Crops.type, Crops.PeriodNeeded, Crops.miniTemp, Crops.MaxTemp, " +
+            string query = "SELECT Crops.crops_ID, Crops.Quantity, Crops.cropsType, Crops.PeriodNeeded, Crops.miniTemp, Crops.MaxTemp, " +
                 "fertilizers.fertilizerType,  sowingMethods.sowingType, sowingMethods.TimeNeeded, " +
                 "HarvestMethod.harvestType, harvestMethod.TimeNeeded, " +
                 "Vehicles.plateNum, " +
