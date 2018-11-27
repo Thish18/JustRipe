@@ -22,6 +22,11 @@ namespace JustRipeProjectOfficial
         private SqlDataReader dataRead;
         SqlCommand comm;
 
+        SqlCommand comm1;
+        private SqlDataAdapter dataAdap1;
+
+
+
         public ManagerHarvestTimetable()
         {
             InitializeComponent();
@@ -66,55 +71,33 @@ namespace JustRipeProjectOfficial
 
         private void btnHarvTimetable_Click(object sender, EventArgs e)
         {
-            Initialize();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM HarvestMethod";
-            string query2 = "SELECT * FROM Harvest";
+            using (SqlConnection Conn = new SqlConnection(connStr))
+            {
+                Initialize();
+                //connection query for SQL for the types of crops.
+                OpenConn();
+                string query = "SELECT * FROM HarvestMethod";
+                string query1 = "SELECT * FROM Harvest";
 
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            CloseConn();
-            DataTable dt = new DataTable();
-            // use adapter to flood above table
-            dataAdap.Fill(dt);
-            // create binding source object to manipulate data
-            BindingSource bs = new BindingSource(dt, null);
-        }
+                comm = new SqlCommand(query, connToDB);
+                comm1 = new SqlCommand(query1, connToDB);
+                dataAdap = new SqlDataAdapter(comm);
+                dataAdap1 = new SqlDataAdapter(comm1);
 
-        private void dgvManagerHavTime_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Initialize();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM HarvestMethod";
+                
+                DataTable dt = new DataTable();
+                DataTable dt1 = new DataTable();
+                // use adapter to flood above table
+                dataAdap.Fill(dt);
+                dataAdap1.Fill(dt1);
 
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            CloseConn();
-            DataTable dt = new DataTable();
-            // use adapter to flood above table
-            dataAdap.Fill(dt);
-            // create binding source object to manipulate data
-            BindingSource bs = new BindingSource(dt, null);
+                dgvHarvestMethod.DataSource = dt;
+                dgvHarvest.DataSource = dt1;
 
-        }
+                CloseConn();
+            }
 
-        private void dgvHarvest_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Initialize();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM Harvest";
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            CloseConn();
-            DataTable dt = new DataTable();
-            // use adapter to flood above table
-            dataAdap.Fill(dt);
-            // create binding source object to manipulate data
-            BindingSource bs = new BindingSource(dt, null);
+          
         }
     }
 }
