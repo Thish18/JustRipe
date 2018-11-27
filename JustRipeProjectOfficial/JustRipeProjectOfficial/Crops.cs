@@ -22,7 +22,6 @@ namespace JustRipeProjectOfficial
         private string DefUpdateText = "Update Information";
         private string DefCreateText = "Create New Crops";
 
-
         private string newUpdateText = "Create New";
         private string newCreateText = "select existed crops to exit";
 
@@ -31,8 +30,10 @@ namespace JustRipeProjectOfficial
         {
 
             InitializeComponent();
+
             btnCreate.Enabled = true;
             createEnable = false;
+
             btnUpdate.Text = DefUpdateText;
             btnCreate.Text = DefCreateText;
 
@@ -194,6 +195,7 @@ namespace JustRipeProjectOfficial
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
             btnCreate.Enabled = true;
 
             string name = txtName.Text;

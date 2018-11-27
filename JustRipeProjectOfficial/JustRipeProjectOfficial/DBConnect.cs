@@ -356,15 +356,13 @@ namespace JustRipeProjectOfficial
         public void getVehicleData() {
 
             Initialize();
-            //connection query for SQL for the types of Vehicles.
+
             OpenConn();
 
             vehicleList = new DataTable();
 
-            string query = "SELECT '[' + vehicleType.vehicleType + '] ' + Vehicles.plateNum + ' [' + assignState.state + ']' AS TypeNumState, Vehicles.*, vehicleType.*, assignState.* FROM Vehicles " +
-                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
-                "INNER JOIN assignState ON Vehicles.vehicleStateID = assignState_ID " +
-                "ORDER BY plateNum ASC";
+            string query = "SELECT Vehicles.*, vehicleType.* FROM Vehicles " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID ";
 
             vehicleList = new DataTable();
             comm = new SqlCommand(query, connToDB);
