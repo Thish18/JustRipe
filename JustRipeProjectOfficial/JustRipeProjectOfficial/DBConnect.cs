@@ -183,7 +183,7 @@ namespace JustRipeProjectOfficial
             tempUserInfo = new DataTable();
 
             Initialize();
-            //connection query for SQL.
+            
             OpenConn();
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
