@@ -88,7 +88,7 @@ namespace JustRipeProjectOfficial
         {
             /*place holder*/
 
-            
+
 
         }
 
@@ -97,40 +97,35 @@ namespace JustRipeProjectOfficial
             dbconn.getLabourerData(tempID);
         }
 
-        void FillCombo()
+        private void btnSelect_Click(object sender, EventArgs e)
         {
-            /*InitializeComponent();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM Users";
-
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            SqlDataReader dataReader;
-            try
             {
+                Initialize();
+                //connection query for SQL for the types of crops.
                 OpenConn();
-                dataReader = comm.ExecuteReader();
+                string query = "SELECT * FROM Users";
 
-                while (dataReader.Read())
+
+                comm = new SqlCommand(query, connToDB);
+                dataAdap = new SqlDataAdapter(comm);
+                SqlDataReader dataReader;
+                try
                 {
-                    //  string sfirstname = dataReader.GetString("firstname");
+                    OpenConn();
+                    dataReader = comm.ExecuteReader();
 
+                    while (dataReader.Read())
+                    {
+                        string sfirstname = dataReader.GetString("firstname");
+
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                CloseConn();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            CloseConn();*/
-
-            
-
         }
-
-
-
-
     }
 }

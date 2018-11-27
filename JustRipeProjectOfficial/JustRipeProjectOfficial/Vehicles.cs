@@ -17,6 +17,7 @@ namespace JustRipeProjectOfficial
 
         private int userID;
         private int rankID;
+        private bool createEnable;
 
         public Vehicles(int ID)
         {
@@ -82,6 +83,46 @@ namespace JustRipeProjectOfficial
             txtName.Text = dbconn.vehicleDetail.Rows[0]["vehicleType"].ToString();
             txtPlateNumber.Text = dbconn.vehicleDetail.Rows[0]["plateNum"].ToString();
             txtFuelType.Text = dbconn.vehicleDetail.Rows[0]["fuelType"].ToString();
+
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+            createEnable = true;
+
+            txtName.Text = null;
+            txtPlateNumber.Text = null;
+            txtFuelType.Text = null;
+
+            btnCreate.Enabled = false;
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            btnCreate.Enabled = true;
+
+            string name = txtName.Text;
+            int plateNumber = Convert.ToInt32(txtPlateNumber.Text);
+            string fuelType = txtFuelType.Text;
+
+
+            if(createEnable)
+            {
+                //dbconn.createVehicle(name, plateNumber, fuelType);
+            }
+            else
+            {
+
+            }
+
+            //auto updates list after creating vehicle
+            dbconn.getVehicleData();
+            lBVehiclesList.DataSource = dbconn.vehicleList;
+            lBVehiclesList.DisplayMember = "plateNum";
+            lBVehiclesList.ValueMember = "vehicles_ID";
 
         }
     }
