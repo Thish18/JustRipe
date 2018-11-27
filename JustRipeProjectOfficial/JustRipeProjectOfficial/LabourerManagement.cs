@@ -16,6 +16,12 @@ namespace JustRipeProjectOfficial
     {
 
         DBConnect dbconn = new DBConnect();
+        //private string connStr;
+        //SqlConnection connToDB;
+        //private SqlDataAdapter dataAdap;
+        //private SqlDataReader dataRead;
+        //SqlCommand comm;
+
         private int userID;
         private int tempID;
 
@@ -64,12 +70,11 @@ namespace JustRipeProjectOfficial
 
         private void lBLabourerList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             dbconn.getLabourerData(tempID);
-
-
         }
 
-       
+        
+
+
     }
 }
