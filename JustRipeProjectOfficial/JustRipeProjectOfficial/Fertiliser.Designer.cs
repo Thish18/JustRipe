@@ -30,6 +30,12 @@
         {
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.maxQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.quantityTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.typeTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,12 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.lBFertilizersList = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,9 +58,10 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(0, 384);
+            this.btnUpdate.Location = new System.Drawing.Point(0, 473);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(281, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(375, 66);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update Information";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -68,25 +69,81 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.maxQuantityTextBox);
+            this.panel6.Controls.Add(this.quantityTextBox);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.typeTextBox);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.btnUpdate);
             this.panel6.Controls.Add(this.panel5);
-            this.panel6.Location = new System.Drawing.Point(233, 9);
+            this.panel6.Location = new System.Drawing.Point(311, 11);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(281, 438);
+            this.panel6.Size = new System.Drawing.Size(375, 539);
             this.panel6.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(231, 126);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(12, 17);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "/";
+            // 
+            // maxQuantityTextBox
+            // 
+            this.maxQuantityTextBox.Location = new System.Drawing.Point(255, 122);
+            this.maxQuantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maxQuantityTextBox.Name = "maxQuantityTextBox";
+            this.maxQuantityTextBox.Size = new System.Drawing.Size(109, 22);
+            this.maxQuantityTextBox.TabIndex = 16;
+            // 
+            // quantityTextBox
+            // 
+            this.quantityTextBox.Location = new System.Drawing.Point(96, 122);
+            this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityTextBox.Name = "quantityTextBox";
+            this.quantityTextBox.Size = new System.Drawing.Size(125, 22);
+            this.quantityTextBox.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Quantity: ";
+            // 
+            // typeTextBox
+            // 
+            this.typeTextBox.Location = new System.Drawing.Point(96, 86);
+            this.typeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeTextBox.Name = "typeTextBox";
+            this.typeTextBox.Size = new System.Drawing.Size(268, 22);
+            this.typeTextBox.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 90);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Type: ";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(544, 54);
+            this.panel5.Size = new System.Drawing.Size(725, 66);
             this.panel5.TabIndex = 11;
             // 
             // label3
@@ -94,9 +151,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 11);
+            this.label3.Location = new System.Drawing.Point(16, 14);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(267, 29);
+            this.label3.Size = new System.Drawing.Size(323, 36);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fertilizers Information";
             // 
@@ -109,8 +167,9 @@
             this.panel1.Controls.Add(this.lBFertilizersList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 459);
+            this.panel1.Size = new System.Drawing.Size(303, 565);
             this.panel1.TabIndex = 15;
             // 
             // btnSelect
@@ -120,12 +179,14 @@
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.ForeColor = System.Drawing.Color.White;
-            this.btnSelect.Location = new System.Drawing.Point(0, 264);
+            this.btnSelect.Location = new System.Drawing.Point(0, 325);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(227, 65);
+            this.btnSelect.Size = new System.Drawing.Size(303, 80);
             this.btnSelect.TabIndex = 8;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnCreate
             // 
@@ -134,9 +195,10 @@
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(0, 329);
+            this.btnCreate.Location = new System.Drawing.Point(0, 405);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(227, 65);
+            this.btnCreate.Size = new System.Drawing.Size(303, 80);
             this.btnCreate.TabIndex = 7;
             this.btnCreate.Text = "Create New";
             this.btnCreate.UseVisualStyleBackColor = false;
@@ -146,8 +208,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(89)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 52);
+            this.panel2.Size = new System.Drawing.Size(303, 64);
             this.panel2.TabIndex = 5;
             // 
             // label1
@@ -155,9 +218,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 29);
+            this.label1.Size = new System.Drawing.Size(157, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "Fertilizer: ";
             // 
@@ -168,9 +232,10 @@
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(0, 394);
+            this.btnMenu.Location = new System.Drawing.Point(0, 485);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(227, 65);
+            this.btnMenu.Size = new System.Drawing.Size(303, 80);
             this.btnMenu.TabIndex = 6;
             this.btnMenu.Text = "Back to main menu";
             this.btnMenu.UseVisualStyleBackColor = false;
@@ -182,69 +247,23 @@
             this.lBFertilizersList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBFertilizersList.ForeColor = System.Drawing.Color.White;
             this.lBFertilizersList.FormattingEnabled = true;
-            this.lBFertilizersList.Location = new System.Drawing.Point(0, 52);
+            this.lBFertilizersList.ItemHeight = 17;
+            this.lBFertilizersList.Location = new System.Drawing.Point(0, 64);
+            this.lBFertilizersList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lBFertilizersList.Name = "lBFertilizersList";
-            this.lBFertilizersList.Size = new System.Drawing.Size(227, 212);
+            this.lBFertilizersList.Size = new System.Drawing.Size(301, 259);
             this.lBFertilizersList.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Type: ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(72, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 20);
-            this.textBox1.TabIndex = 13;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(72, 99);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(95, 20);
-            this.textBox2.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Quantity: ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(191, 99);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(83, 20);
-            this.textBox3.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(173, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "/";
             // 
             // Fertiliser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(519, 459);
+            this.ClientSize = new System.Drawing.Size(692, 565);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Fertiliser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fertiliser";
@@ -273,11 +292,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.ListBox lBFertilizersList;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox typeTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox maxQuantityTextBox;
+        private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.Label label4;
     }
 }
