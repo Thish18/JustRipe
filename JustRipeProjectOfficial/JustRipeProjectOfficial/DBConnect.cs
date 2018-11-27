@@ -201,12 +201,12 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void userCreate(string fn, string ln, string dob, string g, string ad1, string ad2, string no, string un, string pw)
+        public void userCreate(string fn, string ln, DateTime dob, string g, string ad1, string ad2, string no, string un, string pw)
         {
             Initialize();
             //connection query for SQL.
             OpenConn();
-            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID,DateOfBirth,Gender) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID,@DateOfBirth,@Gender)";
+            string query = "INSERT INTO Users (firstname,lastname,username,Password,ContactNum,rankID,userStatusID,DateOfBirth,Gender) VALUES(@firstname, @lastname,@username,@Password,@ContactNum,@rankID,@userStatusID,@DateOfBirth,@Gender)";
 
             comm = new SqlCommand(query, connToDB);
 
@@ -216,6 +216,7 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@Password", pw);
             comm.Parameters.AddWithValue("@ContactNum", no);
             comm.Parameters.AddWithValue("@rankID", 1);
+            comm.Parameters.AddWithValue("userStatusID", 1);
             comm.Parameters.AddWithValue("@DateOfBirth", dob);
             comm.Parameters.AddWithValue("@Gender", g);
 
@@ -269,8 +270,6 @@ namespace JustRipeProjectOfficial
                 dataAdap.Fill(cropsList);
 
             }
-
-
 
         }
 
