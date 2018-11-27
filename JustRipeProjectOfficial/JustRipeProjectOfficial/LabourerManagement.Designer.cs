@@ -132,6 +132,7 @@
             this.btnTimetable.TabIndex = 8;
             this.btnTimetable.Text = "Timetable";
             this.btnTimetable.UseVisualStyleBackColor = false;
+            this.btnTimetable.Click += new System.EventHandler(this.btnTimetable_Click);
             // 
             // label1
             // 

@@ -120,7 +120,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELECT * FROM Users WHERE Users_ID " + cboLabUserID.SelectedItem.ToString();
+            string query = "SELECT * FROM Users WHERE Users_ID = " + cboLabUserID.SelectedItem.ToString();
             comm = new SqlCommand(query, connToDB);
 
             comm = new SqlCommand(query, connToDB);
@@ -135,14 +135,35 @@ namespace JustRipeProjectOfficial
                 txtLabFirstName.Text = dr["firstname"].ToString();
                 txtLabLastName.Text = dr["lastname"].ToString();
                 txtLabUsername.Text = dr["username"].ToString();
-                txtLabDoB.Text = dr["DateOfBirth"].ToString();
-                txtLabGender.Text = dr["Gender"].ToString();
+                //txtLabDoB.Text = dr["DateOfBirth"].ToString();
+                //txtLabGender.Text = dr["Gender"].ToString();
                 txtLabAddress.Text = dr["address1"].ToString();
                 txtLabAddress1.Text = dr["address2"].ToString();
                 txtLabContactNum.Text = dr["ContactNum"].ToString();
                 txtLabRankID.Text = dr["rankID"].ToString();
             }
             CloseConn();
+        }
+
+        private void btnTimetable_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection Conn = new SqlConnection(connStr))
+            {
+                InitializeComponent();
+                //connection query for SQL for the types of crops.
+                OpenConn();
+                string query = "SELECT * FROM WorkSchedule";
+
+                comm = new SqlCommand(query, connToDB);
+                dataAdap = new SqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                // use adapter to flood above table
+                dataAdap.Fill(dt);
+
+                dgvTimeTable.DataSource = dt;
+
+                CloseConn();
+            }
         }
     }
 }
