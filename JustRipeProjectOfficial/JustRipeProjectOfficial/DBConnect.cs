@@ -488,7 +488,7 @@ namespace JustRipeProjectOfficial
 
 
             query = "INSERT INTO FertiliserQuantity (quantity)" +
-                "VALUES (@fertilizerType)";
+                "VALUES (@quantity)";
 
             comm = new SqlCommand(query, connToDB);
                        
