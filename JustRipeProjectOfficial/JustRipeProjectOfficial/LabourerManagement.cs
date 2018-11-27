@@ -50,9 +50,9 @@ namespace JustRipeProjectOfficial
             userID = ID;
 
             dbconn.getLabourersList();
-            cbCrops.DataSource = dbconn.labourerList;
-            cbCrops.DisplayMember = "firstname";
-            cbCrops.ValueMember = "users_ID";
+            lBLabourerList.DataSource = dbconn.labourerList;
+            lBLabourerList.DisplayMember = "firstname";
+            lBLabourerList.ValueMember = "users_ID";
 
             dbconn.getCropsData();
             cbCrops.DataSource = dbconn.cropsList;
