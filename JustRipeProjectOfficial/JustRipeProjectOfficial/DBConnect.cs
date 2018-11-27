@@ -510,10 +510,10 @@ namespace JustRipeProjectOfficial
             fertilizerDetail = new DataTable();
 
             string query;
-            query = "SELECT fertilizers.*" +
-                "FertiliserQuantity.*" +
-                "FROM FertiliserQuantity" +
-                "INNER JOIN fertilizers ON FertiliserQuantity.fertiliser_ID = fertilizers.fertilizer_ID" +
+            query = "SELECT fertilizers.*, " +
+                "FertiliserQuantity.* " +
+                "FROM FertiliserQuantity " +
+                "INNER JOIN fertilizers ON FertiliserQuantity.fertiliser_ID = fertilizers.fertilizer_ID " +
                 "WHERE FertiliserRequired_ID = " + id;
 
             fertilizerDetail = new DataTable();
