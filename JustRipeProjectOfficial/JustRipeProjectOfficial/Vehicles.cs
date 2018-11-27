@@ -25,7 +25,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.getVehicleData();
             lBVehiclesList.DataSource = dbconn.vehicleList;
-            lBVehiclesList.DisplayMember = "plateNum";
+            lBVehiclesList.DisplayMember = "typeNumState";
             lBVehiclesList.ValueMember = "vehicles_ID";
 
 
