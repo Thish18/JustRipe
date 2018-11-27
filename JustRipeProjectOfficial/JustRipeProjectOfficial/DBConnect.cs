@@ -361,8 +361,10 @@ namespace JustRipeProjectOfficial
 
             vehicleList = new DataTable();
 
-            string query = "SELECT Vehicles.*, vehicleType.* FROM Vehicles " +
-                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID ORDER BY plateNum ASC";
+            string query = "SELECT '[' + vehicleType.vehicleType + '] ' + Vehicles.plateNum + ' [' + assignState.state + ']' AS TypeNumState, Vehicles.*, vehicleType.*, assignState.* FROM Vehicles " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
+                "INNER JOIN assignState ON Vehicles.vehicleStateID = assignState_ID " +
+                "ORDER BY plateNum ASC";
 
             vehicleList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -634,34 +636,8 @@ namespace JustRipeProjectOfficial
 
         }
 
-        void FillCombo()
-        {
-            Initialize();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM Users";
-
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            SqlDataReader dataReader;
-            try
-            {
-                OpenConn();
-                dataReader = comm.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    //  string sfirstname = dataReader.GetString("firstname");
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            CloseConn();
-        }
-
+        
     }
+
 }
+
