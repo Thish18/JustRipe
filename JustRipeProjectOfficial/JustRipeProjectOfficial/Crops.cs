@@ -60,8 +60,8 @@ namespace JustRipeProjectOfficial
             cbFertilizer.ValueMember = "fertilizer_ID";
             cbFertilizer.Text = null;
 
-            dbconn.getVehicleData();
-            cbVehicle.DataSource = dbconn.vehicleList;
+            dbconn.getVehicleTypeData();
+            cbVehicle.DataSource = dbconn.vehicleTypeList;
             cbVehicle.DisplayMember = "vehicleType";
             cbVehicle.ValueMember = "vehiclesT_ID";
             cbVehicle.Text = null;

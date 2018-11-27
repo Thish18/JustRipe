@@ -350,7 +350,31 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public DataTable vehicleTypeList;
+        public void getVehicleTypeData()
+        {
 
+            Initialize();
+
+            OpenConn();
+
+            vehicleList = new DataTable();
+
+            string query = "SELECT * FROM vehicleType " +
+                "ORDER BY vehicleType ASC";
+
+            vehicleTypeList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(vehicleTypeList);
+
+            }
+
+        }
         //functions for getting vehicles data.
         public DataTable vehicleList;
         public void getVehicleData() {
@@ -361,8 +385,9 @@ namespace JustRipeProjectOfficial
 
             vehicleList = new DataTable();
 
-            string query = "SELECT Vehicles.*, vehicleType.* FROM Vehicles " +
-                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID ";
+            string query = "SELECT vehicleType.vehicleType + '/' + Vehicles.plateNum AS typePlate, Vehicles.*, vehicleType.* FROM Vehicles " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
+                "ORDER BY vehicleType.vehicleType ASC";
 
             vehicleList = new DataTable();
             comm = new SqlCommand(query, connToDB);
