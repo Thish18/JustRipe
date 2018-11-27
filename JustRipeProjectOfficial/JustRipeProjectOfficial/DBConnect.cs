@@ -361,8 +361,10 @@ namespace JustRipeProjectOfficial
 
             vehicleList = new DataTable();
 
-            string query = "SELECT Vehicles.*, vehicleType.* FROM Vehicles " +
-                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID ORDER BY plateNum ASC";
+            string query = "SELECT '[' + vehicleType.vehicleType + '] ' + Vehicles.plateNum + ' [' + assignState.state + ']' AS TypeNumState, Vehicles.*, vehicleType.*, assignState.* FROM Vehicles " +
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
+                "INNER JOIN assignState ON Vehicles.vehicleStateID = assignState_ID " +
+                "ORDER BY plateNum ASC";
 
             vehicleList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -442,6 +444,22 @@ namespace JustRipeProjectOfficial
                 dataAdap.Fill(vehicleDetail);
 
             }
+
+        }
+
+        public void createVehicle(string name, int plateNumber, string fuelType)
+        {
+
+            Initialize();
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@vehicleType", name);
+            comm.Parameters.AddWithValue("@plateNum", plateNumber);
+            comm.Parameters.AddWithValue("@fuelType", fuelType);
 
         }
 
