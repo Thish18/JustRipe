@@ -65,6 +65,7 @@
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update Information";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel6
             // 
@@ -202,6 +203,7 @@
             this.btnCreate.TabIndex = 7;
             this.btnCreate.Text = "Create New";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // panel2
             // 
