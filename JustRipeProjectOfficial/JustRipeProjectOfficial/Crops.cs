@@ -17,22 +17,36 @@ namespace JustRipeProjectOfficial
         
         private int userID;
         private int rankID;
+        private bool createEnable;
 
         public Crops(int ID)
         {
 
             InitializeComponent();
+            btnCreate.Enabled = true;
+            createEnable = false;
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
             lBCropsList.DisplayMember = "cropsType";
             lBCropsList.ValueMember = "crops_ID";
 
+            //cbSowingType.DataSource = *PlaceHolder *;
+            //cbSowingType.DisplayMember = "sowingType";
+            //cbSowingType.ValueMember = "sowingM_ID";
+
+            //cbHarvestType.DataSource = *PlaceHolder *;
+            //cbHarvestType.DisplayMember = "harvestType";
+            //cbHarvestType.ValueMember = "harvestM_ID";
+                    
+            //cBSpecial.DataSource = *PlaceHolder *;
+            //cBSpecial.DisplayMember = "specialType";
+            //cBSpecial.ValueMember = "specialT_ID";
+
             userID = ID;
 
             dbconn.userInfoExport(userID);
-
-            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"].ToString());
+            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"]);
 
             //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {
@@ -74,6 +88,9 @@ namespace JustRipeProjectOfficial
         private void btnSelect_Click(object sender, EventArgs e)
         {
 
+            createEnable = false;
+            btnCreate.Enabled = true;
+
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
 
@@ -83,13 +100,13 @@ namespace JustRipeProjectOfficial
             txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
             txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
             txtFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
-            txtSowingType.Text = dbconn.cropsDetail.Rows[0]["sowingType"].ToString();
-            txtHarvestType.Text = dbconn.cropsDetail.Rows[0]["harvestType"].ToString();
+            cbSowingType.Text = dbconn.cropsDetail.Rows[0]["sowingType"].ToString();
+            cbHarvestType.Text = dbconn.cropsDetail.Rows[0]["harvestType"].ToString();
             txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
-            txtTreatmentType.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
+            cBSpecial.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
             txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
             txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
-            txtVehicleType.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
+            txtVehicle.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
 
         }
 
@@ -120,6 +137,33 @@ namespace JustRipeProjectOfficial
             Fertiliser ftr = new Fertiliser(userID);
             ftr.Show();
             Hide();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+            createEnable = true;
+
+            txtName.Text = null;
+            txtQuantity.Text = null;
+            txtTimeNeeded.Text = null;
+            txtMini.Text = null;
+            txtMax.Text = null;
+
+            txtFertilizer.Text = null;
+            cbSowingType.Text = null;
+            cbHarvestType.Text = null;
+
+            cBSpecial.Text = null;
+            txtTreatmentExtra.Text = null;
+
+            btnCreate.Enabled = false;
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            btnCreate.Enabled = true;
         }
     }
 }
