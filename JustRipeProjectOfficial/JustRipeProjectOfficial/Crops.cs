@@ -31,8 +31,7 @@ namespace JustRipeProjectOfficial
             userID = ID;
 
             dbconn.userInfoExport(userID);
-
-            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"].ToString());
+            rankID = Convert.ToInt32(dbconn.tempUserInfo.Rows[0]["rankID"]);
 
             //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {

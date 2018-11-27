@@ -19,10 +19,12 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
             //[SQL]
-            
+
             DBConnect DBConn = new DBConnect();
 
-            DBConn.userInfoExport(ID);
+            userID = ID;
+
+            DBConn.userInfoExport(userID);
             lbName.Text = DBConn.tempUserInfo.Rows[0]["firstname"].ToString() + " " + DBConn.tempUserInfo.Rows[0]["lastname"].ToString();
             lbRank.Text = DBConn.tempUserInfo.Rows[0]["Type"].ToString();
 
