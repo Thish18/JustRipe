@@ -56,12 +56,12 @@ namespace JustRipeProjectOfficial
 
             dbconn.getCropsData();
             cbCrops.DataSource = dbconn.cropsList;
-            cbCrops.DisplayMember = "type";
+            cbCrops.DisplayMember = "cropstype";
             cbCrops.ValueMember = "crops_ID";
 
             dbconn.getfertilizerData();
             cbFertilizer.DataSource = dbconn.fertilizersList;
-            cbFertilizer.DisplayMember = "type";
+            cbFertilizer.DisplayMember = "fertilizertype";
             cbFertilizer.ValueMember = "fertilizer_ID";
 
         }
