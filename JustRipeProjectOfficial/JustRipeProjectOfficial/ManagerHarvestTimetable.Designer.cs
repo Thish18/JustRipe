@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvManagerHavTime = new System.Windows.Forms.DataGridView();
+            this.dgvHarvestMethod = new System.Windows.Forms.DataGridView();
             this.btnHarvTimetable = new System.Windows.Forms.Button();
             this.btnHarvTimetbale = new System.Windows.Forms.Button();
             this.dgvHarvest = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManagerHavTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHarvestMethod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHarvest)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvManagerHavTime
+            // dgvHarvestMethod
             // 
-            this.dgvManagerHavTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManagerHavTime.Location = new System.Drawing.Point(12, 12);
-            this.dgvManagerHavTime.Name = "dgvManagerHavTime";
-            this.dgvManagerHavTime.RowTemplate.Height = 24;
-            this.dgvManagerHavTime.Size = new System.Drawing.Size(601, 192);
-            this.dgvManagerHavTime.TabIndex = 0;
-            this.dgvManagerHavTime.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManagerHavTime_CellContentClick);
+            this.dgvHarvestMethod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHarvestMethod.Location = new System.Drawing.Point(12, 12);
+            this.dgvHarvestMethod.Name = "dgvHarvestMethod";
+            this.dgvHarvestMethod.RowTemplate.Height = 24;
+            this.dgvHarvestMethod.Size = new System.Drawing.Size(601, 192);
+            this.dgvHarvestMethod.TabIndex = 0;
             // 
             // btnHarvTimetable
             // 
@@ -74,7 +73,6 @@
             this.dgvHarvest.RowTemplate.Height = 24;
             this.dgvHarvest.Size = new System.Drawing.Size(601, 192);
             this.dgvHarvest.TabIndex = 3;
-            this.dgvHarvest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHarvest_CellContentClick);
             // 
             // ManagerHarvestTimetable
             // 
@@ -84,10 +82,10 @@
             this.Controls.Add(this.dgvHarvest);
             this.Controls.Add(this.btnHarvTimetbale);
             this.Controls.Add(this.btnHarvTimetable);
-            this.Controls.Add(this.dgvManagerHavTime);
+            this.Controls.Add(this.dgvHarvestMethod);
             this.Name = "ManagerHarvestTimetable";
             this.Text = "ManagerHarvestTimetable";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManagerHavTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHarvestMethod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHarvest)).EndInit();
             this.ResumeLayout(false);
 
@@ -95,7 +93,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvManagerHavTime;
+        private System.Windows.Forms.DataGridView dgvHarvestMethod;
         private System.Windows.Forms.Button btnHarvTimetable;
         private System.Windows.Forms.Button btnHarvTimetbale;
         private System.Windows.Forms.DataGridView dgvHarvest;
