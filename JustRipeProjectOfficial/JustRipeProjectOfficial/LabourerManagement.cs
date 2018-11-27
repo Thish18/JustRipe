@@ -16,14 +16,33 @@ namespace JustRipeProjectOfficial
     {
 
         DBConnect dbconn = new DBConnect();
-        //private string connStr;
-        //SqlConnection connToDB;
-        //private SqlDataAdapter dataAdap;
-        //private SqlDataReader dataRead;
-        //SqlCommand comm;
+        private string connStr;
+        SqlConnection connToDB;
+        private SqlDataAdapter dataAdap;
+        private SqlDataReader dataRead;
+        SqlCommand comm;
 
         private int userID;
         private int tempID;
+
+        //once MYSQL Connected. I believe this will actually try to connect to the database server.
+        public void OpenConn()
+        {
+
+            connToDB = new SqlConnection(connStr);
+
+            connToDB.Open();
+
+        }
+
+        //this will close the connection to the database server once the program closed.
+
+        public void CloseConn()
+        {
+
+            connToDB.Close();
+
+        }
 
         public LabourerManagement(int ID)
         {
@@ -73,7 +92,36 @@ namespace JustRipeProjectOfficial
             dbconn.getLabourerData(tempID);
         }
 
-        
+        void FillCombo()
+        {
+            InitializeComponent();
+            //connection query for SQL for the types of crops.
+            OpenConn();
+            string query = "SELECT * FROM Users";
+
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+            SqlDataReader dataReader;
+            try
+            {
+                OpenConn();
+                dataReader = comm.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    //  string sfirstname = dataReader.GetString("firstname");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            CloseConn();
+        }
+
+
 
 
     }
