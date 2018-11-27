@@ -24,7 +24,7 @@ namespace JustRipeProjectOfficial
 
 
         private string newUpdateText = "Create New";
-        private string newCreateText = "Delete";
+        private string newCreateText = "select existed crops to exit";
 
 
         public Crops(int ID)
@@ -168,9 +168,6 @@ namespace JustRipeProjectOfficial
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-            if (createEnable == false)
-            {
-
                 createEnable = true;
 
                 //change text
@@ -192,19 +189,6 @@ namespace JustRipeProjectOfficial
                 cBSpecial.Text = null;
                 txtTreatmentExtra.Text = null;
 
-                
-
-            }
-            else {
-
-                createEnable = false;
-
-                btnUpdate.Text = DefUpdateText;
-                btnCreate.Text = DefCreateText;
-
-                btnCreate.Enabled = true;
-
-            }
 
         }
 
