@@ -409,6 +409,7 @@
             // 
             // txtFuel
             // 
+            this.txtFuel.Enabled = false;
             this.txtFuel.Location = new System.Drawing.Point(87, 93);
             this.txtFuel.Name = "txtFuel";
             this.txtFuel.Size = new System.Drawing.Size(132, 20);
@@ -425,6 +426,7 @@
             // 
             // txtPlateNo
             // 
+            this.txtPlateNo.Enabled = false;
             this.txtPlateNo.Location = new System.Drawing.Point(87, 67);
             this.txtPlateNo.Name = "txtPlateNo";
             this.txtPlateNo.Size = new System.Drawing.Size(132, 20);

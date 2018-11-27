@@ -233,7 +233,6 @@ namespace JustRipeProjectOfficial
 
             Initialize();
             OpenConn();
-            DBConnect dbconn = new DBConnect();
 
             string query = "UPDATE [Users] " +
             "SET [Password] = @NewPassword " +
@@ -249,6 +248,7 @@ namespace JustRipeProjectOfficial
 
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
+        /*=============================[Crops]=================================*/
         //functions for getting crops data
         public DataTable cropsList;
         public void getCropsData() {
@@ -279,7 +279,30 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
+            string query = "UPDATE Crops " +
+            "SET cropsType = @cropsType, " +
+            "Quantity = @quantity, " +
+            "miniTemp = @mini, " +
+            "maxTemp = @max, " +
+            "fertilizer_ID = @fid, " +
+            "sowingM_ID = @sMID, " +
+            "harvestM_ID = @hMID, " +
+            "vehicles_ID = @vID, " +
+            "specialT_ID = @sTID " +
+            "WHERE cropsID = " + cropID;
+            comm = new SqlCommand(query, connToDB);
 
+            comm.Parameters.AddWithValue("@cropsType", name);
+            comm.Parameters.AddWithValue("@quantity", quantity);
+            comm.Parameters.AddWithValue("@mini", mini);
+            comm.Parameters.AddWithValue("@max", max);
+            comm.Parameters.AddWithValue("@fid", ferID);
+            comm.Parameters.AddWithValue("@sMID", sMID);
+            comm.Parameters.AddWithValue("@hMID", hMID);
+            comm.Parameters.AddWithValue("@vID", vID);
+            comm.Parameters.AddWithValue("@sTID", sTID);
+            comm.ExecuteNonQuery();
+            CloseConn();
 
         }
 
@@ -349,7 +372,7 @@ namespace JustRipeProjectOfficial
             }
 
         }
-
+        /*=============================[Vehicles]=================================*/
         public DataTable vehicleTypeList;
         public void getVehicleTypeData()
         {
@@ -387,7 +410,7 @@ namespace JustRipeProjectOfficial
 
             string query = "SELECT vehicleType.vehicleType + '/' + Vehicles.plateNum AS typePlate, Vehicles.*, vehicleType.* FROM Vehicles " +
                 "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
-                "ORDER BY vehicleType.vehicleType ASC";
+                "ORDER BY vehicleType.vehicleType, Vehicles.plateNum ASC";
 
             vehicleList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -433,10 +456,6 @@ namespace JustRipeProjectOfficial
 
 
         }
-
-
-
-
 
         //getting details for the selected vehicle.
         public DataTable vehicleDetail;
@@ -486,6 +505,7 @@ namespace JustRipeProjectOfficial
 
         }
 
+        /*=============================[fertilizers]=================================*/
 
         //functions for getting fertilizers data.
         public DataTable fertilizersList;

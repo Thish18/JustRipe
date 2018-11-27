@@ -74,13 +74,29 @@ namespace JustRipeProjectOfficial
             //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {
 
-                btnCreate.Enabled = false;
-                btnUpdate.Enabled = false;
-                btnAssignedList.Enabled = false;
-                btnVehicle.Enabled = false;
-                btnFertilizer.Enabled = false;
+                rankAccessDisable();
 
             }
+
+        }
+
+        private void rankAccessDisable() {
+
+            btnCreate.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnAssignedList.Enabled = false;
+            btnVehicle.Enabled = false;
+            btnFertilizer.Enabled = false;
+
+            txtName.Enabled = false;
+            txtQuantity.Enabled = false;
+            txtMini.Enabled = false;
+            txtMax.Enabled = false;
+            cbFertilizer.Enabled = false;
+            cbSowingType.Enabled = false;
+            cbHarvestType.Enabled = false;
+            cbVehicle.Enabled = false;
+            cBSpecial.Enabled = false;
 
         }
 
