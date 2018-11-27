@@ -362,7 +362,7 @@ namespace JustRipeProjectOfficial
             vehicleList = new DataTable();
 
             string query = "SELECT Vehicles.*, vehicleType.* FROM Vehicles " +
-                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID";
+                "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID ORDER BY plateNum ASC";
 
             vehicleList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -424,8 +424,8 @@ namespace JustRipeProjectOfficial
 
             vehicleDetail = new DataTable();
 
-            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum " +
-                "fuelType.fuelType " +
+            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum, " +
+                "fuelType.fuelType, " +
                 "vehicleType.vehicleType FROM Vehicles " +
                 "INNER JOIN fuelType ON Vehicles.fuelTypeID = fuelType.fuel_ID " +
                 "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID " +
