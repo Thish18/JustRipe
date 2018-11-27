@@ -25,6 +25,7 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
             btnCreate.Enabled = true;
             createEnable = false;
+            btnUpdate.Text = "Update Information";
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
@@ -38,10 +39,22 @@ namespace JustRipeProjectOfficial
             //cbHarvestType.DataSource = *PlaceHolder *;
             //cbHarvestType.DisplayMember = "harvestType";
             //cbHarvestType.ValueMember = "harvestM_ID";
-                    
+
             //cBSpecial.DataSource = *PlaceHolder *;
             //cBSpecial.DisplayMember = "specialType";
             //cBSpecial.ValueMember = "specialT_ID";
+
+            dbconn.getfertilizerData();
+            cbFertilizer.DataSource = dbconn.fertilizersList;
+            cbFertilizer.DisplayMember = "fertilizerType";
+            cbFertilizer.ValueMember = "fertilizer_ID";
+            cbFertilizer.Text = null;
+
+            dbconn.getVehicleData();
+            cbVehicle.DataSource = dbconn.vehicleList;
+            cbVehicle.DisplayMember = "vehicleType";
+            cbVehicle.ValueMember = "vehiclesT_ID";
+            cbVehicle.Text = null;
 
             userID = ID;
 
@@ -90,6 +103,7 @@ namespace JustRipeProjectOfficial
 
             createEnable = false;
             btnCreate.Enabled = true;
+            btnUpdate.Text = "Update Information";
 
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
@@ -99,14 +113,14 @@ namespace JustRipeProjectOfficial
             txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
             txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
             txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
-            txtFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
+            cbFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
             cbSowingType.Text = dbconn.cropsDetail.Rows[0]["sowingType"].ToString();
             cbHarvestType.Text = dbconn.cropsDetail.Rows[0]["harvestType"].ToString();
             txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
             cBSpecial.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
             txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
             txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
-            txtVehicle.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
+            cbVehicle.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
 
         }
 
@@ -143,6 +157,7 @@ namespace JustRipeProjectOfficial
         {
 
             createEnable = true;
+            btnUpdate.Text = "Create new Crops";
 
             txtName.Text = null;
             txtQuantity.Text = null;
@@ -150,7 +165,7 @@ namespace JustRipeProjectOfficial
             txtMini.Text = null;
             txtMax.Text = null;
 
-            txtFertilizer.Text = null;
+            cbFertilizer.Text = null;
             cbSowingType.Text = null;
             cbHarvestType.Text = null;
 
@@ -164,6 +179,38 @@ namespace JustRipeProjectOfficial
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             btnCreate.Enabled = true;
+
+            string name = txtName.Text;
+            int quantity = Convert.ToInt32(txtQuantity.Text);
+            int mini = Convert.ToInt32(txtMini.Text);
+            int max = Convert.ToInt32(txtMax.Text);
+            
+            //placeHolder
+            int veh = 1;
+            //int special = Convert.ToInt32(cBSpecial.SelectedValue);
+            int special = 1;
+            int fer = Convert.ToInt32(cbFertilizer.SelectedValue);
+            //int sowing = Convert.ToInt32(cbSowingType.SelectedValue);
+            int sowing = 1;
+            //int harvest = Convert.ToInt32(cbHarvestType.SelectedValue);
+            int harvest = 1;
+
+
+            if (createEnable)
+            {
+
+                //use insert cmd.
+                dbconn.createCrop(name, quantity, mini, max, fer, sowing, harvest, veh, special);
+
+            }
+            else {
+
+                //use update cmd.
+
+            }
+
+            btnUpdate.Text = "Update Information";
+
         }
     }
 }

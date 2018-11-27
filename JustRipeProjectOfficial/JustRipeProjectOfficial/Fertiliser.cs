@@ -17,10 +17,15 @@ namespace JustRipeProjectOfficial
 
         private int userID;
         private int rankID;
+        private bool createEnable;
 
         public Fertiliser(int ID)
         {
             InitializeComponent();
+
+            btnCreate.Enabled = true;
+            createEnable = false;
+            
             userID = ID;
 
             dbconn.userInfoExport(userID);
@@ -38,7 +43,7 @@ namespace JustRipeProjectOfficial
             /*More Code here*/
             dbconn.getfertilizerData();
             lBFertilizersList.DataSource = dbconn.fertilizersList;
-            lBFertilizersList.DisplayMember = "Type";
+            lBFertilizersList.DisplayMember = "fertilizerType";
             lBFertilizersList.ValueMember = "fertilizer_ID";
 
         }
@@ -72,8 +77,41 @@ namespace JustRipeProjectOfficial
 
             typeTextBox.Text = dbconn.fertilizerDetail.Rows[0]["fertilizerType"].ToString();
             quantityTextBox.Text = dbconn.fertilizerDetail.Rows[0]["quantity"].ToString();
-            maxQuantityTextBox.Text = dbconn.fertilizerDetail.Rows[0][""].ToString();
+            //maxQuantityTextBox.Text = dbconn.fertilizerDetail.Rows[0][""].ToString();
 
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+            createEnable = true;
+
+            typeTextBox.Text = null;
+            quantityTextBox.Text = null;
+            maxQuantityTextBox = null;
+
+            btnCreate.Enabled = false;
+            
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            btnCreate.Enabled = true;
+
+            string type = typeTextBox.Text;
+            int quantity = Convert.ToInt32(quantityTextBox.Text);
+            //int maxQuantity = Convert.ToInt32(maxQuantityTextBox.Text);
+
+            
+            if(createEnable)
+            {
+                dbconn.createfertilizer(type, quantity);
+            }
+            else
+            {
+
+            }
         }
     }
 }

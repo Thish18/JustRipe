@@ -70,7 +70,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnFertilizer = new System.Windows.Forms.Button();
-            this.txtFertilizer = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -78,7 +77,8 @@
             this.cbSowingType = new System.Windows.Forms.ComboBox();
             this.cbHarvestType = new System.Windows.Forms.ComboBox();
             this.cBSpecial = new System.Windows.Forms.ComboBox();
-            this.txtVehicle = new System.Windows.Forms.TextBox();
+            this.cbFertilizer = new System.Windows.Forms.ComboBox();
+            this.cbVehicle = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -361,7 +361,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.txtVehicle);
+            this.groupBox5.Controls.Add(this.cbVehicle);
             this.groupBox5.Controls.Add(this.btnVehicle);
             this.groupBox5.Controls.Add(this.txtFuel);
             this.groupBox5.Controls.Add(this.label14);
@@ -386,7 +386,7 @@
             this.btnVehicle.Name = "btnVehicle";
             this.btnVehicle.Size = new System.Drawing.Size(132, 24);
             this.btnVehicle.TabIndex = 27;
-            this.btnVehicle.Text = "Select Vehicle";
+            this.btnVehicle.Text = "Edit Vehicle";
             this.btnVehicle.UseVisualStyleBackColor = false;
             this.btnVehicle.Click += new System.EventHandler(this.btnVehicle_Click);
             // 
@@ -513,8 +513,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbFertilizer);
             this.groupBox2.Controls.Add(this.btnFertilizer);
-            this.groupBox2.Controls.Add(this.txtFertilizer);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(285, 67);
             this.groupBox2.Name = "groupBox2";
@@ -534,17 +534,9 @@
             this.btnFertilizer.Name = "btnFertilizer";
             this.btnFertilizer.Size = new System.Drawing.Size(185, 24);
             this.btnFertilizer.TabIndex = 27;
-            this.btnFertilizer.Text = "Select Fertilizers";
+            this.btnFertilizer.Text = "Edit Fertilizers";
             this.btnFertilizer.UseVisualStyleBackColor = false;
             this.btnFertilizer.Click += new System.EventHandler(this.btnFertilizer_Click);
-            // 
-            // txtFertilizer
-            // 
-            this.txtFertilizer.Enabled = false;
-            this.txtFertilizer.Location = new System.Drawing.Point(49, 19);
-            this.txtFertilizer.Name = "txtFertilizer";
-            this.txtFertilizer.Size = new System.Drawing.Size(132, 20);
-            this.txtFertilizer.TabIndex = 18;
             // 
             // label7
             // 
@@ -615,13 +607,21 @@
             this.cBSpecial.Size = new System.Drawing.Size(132, 21);
             this.cBSpecial.TabIndex = 28;
             // 
-            // txtVehicle
+            // cbFertilizer
             // 
-            this.txtVehicle.Enabled = false;
-            this.txtVehicle.Location = new System.Drawing.Point(87, 41);
-            this.txtVehicle.Name = "txtVehicle";
-            this.txtVehicle.Size = new System.Drawing.Size(132, 20);
-            this.txtVehicle.TabIndex = 28;
+            this.cbFertilizer.FormattingEnabled = true;
+            this.cbFertilizer.Location = new System.Drawing.Point(45, 19);
+            this.cbFertilizer.Name = "cbFertilizer";
+            this.cbFertilizer.Size = new System.Drawing.Size(132, 21);
+            this.cbFertilizer.TabIndex = 22;
+            // 
+            // cbVehicle
+            // 
+            this.cbVehicle.FormattingEnabled = true;
+            this.cbVehicle.Location = new System.Drawing.Point(87, 41);
+            this.cbVehicle.Name = "cbVehicle";
+            this.cbVehicle.Size = new System.Drawing.Size(132, 21);
+            this.cbVehicle.TabIndex = 28;
             // 
             // Crops
             // 
@@ -698,7 +698,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtFertilizer;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnUpdate;
@@ -711,6 +710,7 @@
         private System.Windows.Forms.ComboBox cBSpecial;
         private System.Windows.Forms.ComboBox cbHarvestType;
         private System.Windows.Forms.ComboBox cbSowingType;
-        private System.Windows.Forms.TextBox txtVehicle;
+        private System.Windows.Forms.ComboBox cbVehicle;
+        private System.Windows.Forms.ComboBox cbFertilizer;
     }
 }

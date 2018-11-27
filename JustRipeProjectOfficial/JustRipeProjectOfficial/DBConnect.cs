@@ -283,13 +283,13 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createCrop(string name, int quantity, int mini, int max, int ferID, int sMID, int hMID, int sID, int vID, int sTID) {
+        public void createCrop(string name, int quantity, int mini, int max, int ferID, int sMID, int hMID, /*int sID, */int vID, int sTID) {
 
             Initialize();
             OpenConn();
 
-            string query = "INSERT INTO Crops (cropsType, Quantity, miniTemp, maxTemp, fertilizer_ID, sowingM_ID, harvestM_ID, storage_ID, vehicles_ID, specialT_ID) " +
-                "VALUES (@cropsType, @Quantity, @miniTemp, @maxTemp, @fertilizer_ID, @sowingM_ID, @harvestM_ID, @storage_ID, @vehicles_ID, @specialT_ID)";
+            string query = "INSERT INTO Crops (cropsType, Quantity, miniTemp, maxTemp, fertilizer_ID, sowingM_ID, harvestM_ID, storage_ID, "/*+"vehicles_ID, "*/+"specialT_ID) " +
+                "VALUES (@cropsType, @Quantity, @miniTemp, @maxTemp, @fertilizer_ID, @sowingM_ID, @harvestM_ID, "+/*"@storage_ID, "+*/"@vehicles_ID, @specialT_ID)";
 
             comm = new SqlCommand(query, connToDB);
 
@@ -300,7 +300,7 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@fertilizer_ID", ferID);
             comm.Parameters.AddWithValue("@sowingM_ID", sMID);
             comm.Parameters.AddWithValue("@harvestM_ID", hMID);
-            comm.Parameters.AddWithValue("@storage_ID", sID);
+            //comm.Parameters.AddWithValue("@storage_ID", sID);
             comm.Parameters.AddWithValue("@vehicles_ID", vID);
             comm.Parameters.AddWithValue("@specialT_ID", sTID);
 
@@ -361,7 +361,7 @@ namespace JustRipeProjectOfficial
 
             vehicleList = new DataTable();
 
-            string query = "SELECT Vehicles.vehicles_ID, Vehicles.plateNum, vehicleType.vehicleType FROM Vehicles " +
+            string query = "SELECT Vehicles.*, vehicleType.* FROM Vehicles " +
                 "INNER JOIN vehicleType ON Vehicles.vehicleTypeID = vehicleType.vehiclesT_ID";
 
             vehicleList = new DataTable();
@@ -488,7 +488,7 @@ namespace JustRipeProjectOfficial
 
 
             query = "INSERT INTO FertiliserQuantity (quantity)" +
-                "VALUES (@fertilizerType)";
+                "VALUES (@quantity)";
 
             comm = new SqlCommand(query, connToDB);
                        
@@ -510,10 +510,10 @@ namespace JustRipeProjectOfficial
             fertilizerDetail = new DataTable();
 
             string query;
-            query = "SELECT fertilizers.*" +
-                "FertiliserQuantity.*" +
-                "FROM FertiliserQuantity" +
-                "INNER JOIN fertilizers ON FertiliserQuantity.fertiliser_ID = fertilizers.fertilizer_ID" +
+            query = "SELECT fertilizers.*, " +
+                "FertiliserQuantity.* " +
+                "FROM FertiliserQuantity " +
+                "INNER JOIN fertilizers ON FertiliserQuantity.fertiliser_ID = fertilizers.fertilizer_ID " +
                 "WHERE FertiliserRequired_ID = " + id;
 
             fertilizerDetail = new DataTable();
