@@ -56,7 +56,8 @@ namespace JustRipeProjectOfficial
 
         private void btnManagerHavTime_Click(object sender, EventArgs e)
         {
-
+            ManagerHarvestTimetable frm = new ManagerHarvestTimetable();
+            frm.ShowDialog();
         }
     }
 }
