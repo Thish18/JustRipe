@@ -542,7 +542,7 @@ namespace JustRipeProjectOfficial
             OpenConn();
 
             /*we need a new table call [AssignedList] with assigned_ID, crops_ID and users_ID*/
-            string query = "SELECT * FROM users";
+            string query = "SELECT firstname + ' ' + lastname AS fullname, * FROM users";
 
             labourerList = new DataTable();
             comm = new SqlCommand(query, connToDB);
