@@ -49,11 +49,13 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cBSpecial = new System.Windows.Forms.ComboBox();
             this.cBSTEnable = new System.Windows.Forms.CheckBox();
             this.txtTreatmentExtra = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbVehicle = new System.Windows.Forms.ComboBox();
             this.btnVehicle = new System.Windows.Forms.Button();
             this.txtFuel = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -61,24 +63,23 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbHarvestType = new System.Windows.Forms.ComboBox();
             this.txtHarvestTime = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbSowingType = new System.Windows.Forms.ComboBox();
             this.txtSowingTime = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbFertilizer = new System.Windows.Forms.ComboBox();
             this.btnFertilizer = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbSowingType = new System.Windows.Forms.ComboBox();
-            this.cbHarvestType = new System.Windows.Forms.ComboBox();
-            this.cBSpecial = new System.Windows.Forms.ComboBox();
-            this.cbFertilizer = new System.Windows.Forms.ComboBox();
-            this.cbVehicle = new System.Windows.Forms.ComboBox();
+            this.btnReload = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -323,6 +324,14 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Special Treatment Control";
             // 
+            // cBSpecial
+            // 
+            this.cBSpecial.FormattingEnabled = true;
+            this.cBSpecial.Location = new System.Drawing.Point(89, 41);
+            this.cBSpecial.Name = "cBSpecial";
+            this.cBSpecial.Size = new System.Drawing.Size(132, 21);
+            this.cBSpecial.TabIndex = 28;
+            // 
             // cBSTEnable
             // 
             this.cBSTEnable.AutoSize = true;
@@ -374,6 +383,14 @@
             this.groupBox5.TabIndex = 24;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehicles Control";
+            // 
+            // cbVehicle
+            // 
+            this.cbVehicle.FormattingEnabled = true;
+            this.cbVehicle.Location = new System.Drawing.Point(87, 41);
+            this.cbVehicle.Name = "cbVehicle";
+            this.cbVehicle.Size = new System.Drawing.Size(132, 21);
+            this.cbVehicle.TabIndex = 28;
             // 
             // btnVehicle
             // 
@@ -446,6 +463,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Harvest Method";
             // 
+            // cbHarvestType
+            // 
+            this.cbHarvestType.FormattingEnabled = true;
+            this.cbHarvestType.Location = new System.Drawing.Point(89, 19);
+            this.cbHarvestType.Name = "cbHarvestType";
+            this.cbHarvestType.Size = new System.Drawing.Size(132, 21);
+            this.cbHarvestType.TabIndex = 21;
+            // 
             // txtHarvestTime
             // 
             this.txtHarvestTime.Enabled = false;
@@ -485,6 +510,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sowing Method";
             // 
+            // cbSowingType
+            // 
+            this.cbSowingType.FormattingEnabled = true;
+            this.cbSowingType.Location = new System.Drawing.Point(89, 19);
+            this.cbSowingType.Name = "cbSowingType";
+            this.cbSowingType.Size = new System.Drawing.Size(132, 21);
+            this.cbSowingType.TabIndex = 20;
+            // 
             // txtSowingTime
             // 
             this.txtSowingTime.Enabled = false;
@@ -522,6 +555,14 @@
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fertilizer Control";
+            // 
+            // cbFertilizer
+            // 
+            this.cbFertilizer.FormattingEnabled = true;
+            this.cbFertilizer.Location = new System.Drawing.Point(45, 19);
+            this.cbFertilizer.Name = "cbFertilizer";
+            this.cbFertilizer.Size = new System.Drawing.Size(132, 21);
+            this.cbFertilizer.TabIndex = 22;
             // 
             // btnFertilizer
             // 
@@ -583,45 +624,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Crops Information";
             // 
-            // cbSowingType
+            // btnReload
             // 
-            this.cbSowingType.FormattingEnabled = true;
-            this.cbSowingType.Location = new System.Drawing.Point(89, 19);
-            this.cbSowingType.Name = "cbSowingType";
-            this.cbSowingType.Size = new System.Drawing.Size(132, 21);
-            this.cbSowingType.TabIndex = 20;
-            // 
-            // cbHarvestType
-            // 
-            this.cbHarvestType.FormattingEnabled = true;
-            this.cbHarvestType.Location = new System.Drawing.Point(89, 19);
-            this.cbHarvestType.Name = "cbHarvestType";
-            this.cbHarvestType.Size = new System.Drawing.Size(132, 21);
-            this.cbHarvestType.TabIndex = 21;
-            // 
-            // cBSpecial
-            // 
-            this.cBSpecial.FormattingEnabled = true;
-            this.cBSpecial.Location = new System.Drawing.Point(89, 41);
-            this.cBSpecial.Name = "cBSpecial";
-            this.cBSpecial.Size = new System.Drawing.Size(132, 21);
-            this.cBSpecial.TabIndex = 28;
-            // 
-            // cbFertilizer
-            // 
-            this.cbFertilizer.FormattingEnabled = true;
-            this.cbFertilizer.Location = new System.Drawing.Point(45, 19);
-            this.cbFertilizer.Name = "cbFertilizer";
-            this.cbFertilizer.Size = new System.Drawing.Size(132, 21);
-            this.cbFertilizer.TabIndex = 22;
-            // 
-            // cbVehicle
-            // 
-            this.cbVehicle.FormattingEnabled = true;
-            this.cbVehicle.Location = new System.Drawing.Point(87, 41);
-            this.cbVehicle.Name = "cbVehicle";
-            this.cbVehicle.Size = new System.Drawing.Size(132, 21);
-            this.cbVehicle.TabIndex = 28;
+            this.btnReload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnReload.FlatAppearance.BorderSize = 0;
+            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.Location = new System.Drawing.Point(611, 423);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(132, 21);
+            this.btnReload.TabIndex = 9;
+            this.btnReload.Text = "Refresh";
+            this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // Crops
             // 
@@ -629,6 +645,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(789, 459);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -712,5 +729,6 @@
         private System.Windows.Forms.ComboBox cbSowingType;
         private System.Windows.Forms.ComboBox cbVehicle;
         private System.Windows.Forms.ComboBox cbFertilizer;
+        private System.Windows.Forms.Button btnReload;
     }
 }

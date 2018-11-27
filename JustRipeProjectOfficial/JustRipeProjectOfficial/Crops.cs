@@ -227,6 +227,18 @@ namespace JustRipeProjectOfficial
 
             btnUpdate.Text = "Update Information";
 
+            dbconn.getCropsData();
+            lBCropsList.DataSource = dbconn.cropsList;
+            lBCropsList.DisplayMember = "cropsType";
+            lBCropsList.ValueMember = "crops_ID";
+
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            Crops cps = new Crops(userID);
+            cps.Show();
+            Close();
         }
     }
 }
