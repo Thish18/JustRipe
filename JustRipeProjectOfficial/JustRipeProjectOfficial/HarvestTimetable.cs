@@ -40,17 +40,6 @@ namespace JustRipeProjectOfficial
                 btnManagerHavTime.Enabled = true; 
             }
         }
-
-        private void HarvestTimetable_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HarvestTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
             foreach (Form f in Application.OpenForms)

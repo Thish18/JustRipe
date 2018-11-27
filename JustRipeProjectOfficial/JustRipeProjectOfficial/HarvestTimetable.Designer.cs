@@ -86,7 +86,6 @@
             this.HarvestTxt.Name = "HarvestTxt";
             this.HarvestTxt.Size = new System.Drawing.Size(303, 366);
             this.HarvestTxt.TabIndex = 44;
-            this.HarvestTxt.TextChanged += new System.EventHandler(this.HarvestTxt_TextChanged);
             // 
             // panel1
             // 
@@ -357,7 +356,6 @@
             this.Name = "HarvestTimetable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HarvestTimetable";
-            this.Load += new System.EventHandler(this.HarvestTimetable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
