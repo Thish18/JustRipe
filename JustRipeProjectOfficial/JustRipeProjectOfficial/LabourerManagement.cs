@@ -15,6 +15,7 @@ namespace JustRipeProjectOfficial
     public partial class LabourerManagement : Form
     {
 
+
         DBConnect dbconn = new DBConnect();
         private string connStr;
         SqlConnection connToDB;
@@ -25,23 +26,23 @@ namespace JustRipeProjectOfficial
         private int userID;
         private int tempID;
 
+        public void Initialize()
+        {
+            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf");
+            connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
+        }
         //once MYSQL Connected. I believe this will actually try to connect to the database server.
         public void OpenConn()
         {
-
             connToDB = new SqlConnection(connStr);
-
             connToDB.Open();
-
         }
 
         //this will close the connection to the database server once the program closed.
 
         public void CloseConn()
         {
-
             connToDB.Close();
-
         }
 
         public LabourerManagement(int ID)
@@ -80,51 +81,68 @@ namespace JustRipeProjectOfficial
             Close();
         }
         /// <summary>
-        /// ////////////////////////////////////////////////////////////////////////
-
-        //this will close the connection to the database server once the program closed
-
-        private void cboLabRank_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                
-
-
-        }
+        /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///
 
         private void lBLabourerList_SelectedIndexChanged(object sender, EventArgs e)
         {
             dbconn.getLabourerData(tempID);
         }
 
-        private void btnSelect_Click(object sender, EventArgs e)
+        private void LabourerManagement_Load(object sender, EventArgs e)
         {
-            
-                InitializeComponent();
-                //connection query for SQL for the types of crops.
-                OpenConn();
-                string query = "SELECT * FROM Users";
+            cc();
+        }
+        public void cc()
+        {
+            cboLabUserID.Items.Clear();
+            Initialize();
+            //connection query for SQL for the types of crops.
+            OpenConn();
+            string query = "SELECT * FROM Users";
+            comm = new SqlCommand(query, connToDB);
 
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable();
+            // use adapter to flood above table
+            dataAdap.Fill(dt);
 
-                comm = new SqlCommand(query, connToDB);
-                dataAdap = new SqlDataAdapter(comm);
-                SqlDataReader dataReader;
-                try
-                {
-                    OpenConn();
-                    dataReader = comm.ExecuteReader();
+            foreach (DataRow dr in dt.Rows)
+            {
+                cboLabUserID.Items.Add(dr["Users_ID"].ToString());
+            }
+            CloseConn();
+        }
 
-                    while (dataReader.Read())
-                    {
-                        //string sfirstname = dataReader.GetString("firstname");
+        private void cboLabUserID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Initialize();
+            //connection query for SQL for the types of crops.
+            OpenConn();
+            string query = "SELECT * FROM Users WHERE Users_ID " + cboLabUserID.SelectedItem.ToString();
+            comm = new SqlCommand(query, connToDB);
 
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                CloseConn();
-            
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable();
+            // use adapter to flood above table
+            dataAdap.Fill(dt);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                txtLabID.Text = dr["users_ID"].ToString();
+                txtLabFirstName.Text = dr["firstname"].ToString();
+                txtLabLastName.Text = dr["lastname"].ToString();
+                txtLabUsername.Text = dr["username"].ToString();
+                txtLabDoB.Text = dr["DateOfBirth"].ToString();
+                txtLabGender.Text = dr["Gender"].ToString();
+                txtLabAddress.Text = dr["address1"].ToString();
+                txtLabAddress1.Text = dr["address2"].ToString();
+                txtLabContactNum.Text = dr["ContactNum"].ToString();
+                txtLabRankID.Text = dr["rankID"].ToString();
+            }
+            CloseConn();
         }
     }
 }
