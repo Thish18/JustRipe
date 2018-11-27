@@ -79,9 +79,9 @@ namespace JustRipeProjectOfficial
             int id = Convert.ToInt32(lBVehiclesList.SelectedValue.ToString());
             dbconn.getVehicleDetails(id);
 
-            txtName.Text = dbconn.vehicleDetail.Rows[0]["Type"].ToString();
+            txtName.Text = dbconn.vehicleDetail.Rows[0]["vehicleType"].ToString();
             txtPlateNumber.Text = dbconn.vehicleDetail.Rows[0]["plateNum"].ToString();
-            txtFuelType.Text = dbconn.vehicleDetail.Rows[0]["Type"].ToString();
+            txtFuelType.Text = dbconn.vehicleDetail.Rows[0]["fuelType"].ToString();
 
         }
     }
