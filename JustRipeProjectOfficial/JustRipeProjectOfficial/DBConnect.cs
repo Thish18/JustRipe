@@ -535,14 +535,28 @@ namespace JustRipeProjectOfficial
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
-        private DataTable labourerList;
+        public DataTable labourerList;
         public void getLabourersList() {
 
             Initialize();
             OpenConn();
 
             /*we need a new table call [AssignedList] with assigned_ID, crops_ID and users_ID*/
-            string query = "SELECT ";
+            string query = "SELECT firstname + ' ' + lastname AS fullname, * FROM users";
+
+            labourerList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(labourerList);
+
+            }
+
+
+            CloseConn();
 
         }
 

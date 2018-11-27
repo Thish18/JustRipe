@@ -49,14 +49,19 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
             userID = ID;
 
+            dbconn.getLabourersList();
+            lBLabourerList.DataSource = dbconn.labourerList;
+            lBLabourerList.DisplayMember = "fullname";
+            lBLabourerList.ValueMember = "users_ID";
+
             dbconn.getCropsData();
             cbCrops.DataSource = dbconn.cropsList;
-            cbCrops.DisplayMember = "type";
+            cbCrops.DisplayMember = "cropstype";
             cbCrops.ValueMember = "crops_ID";
 
             dbconn.getfertilizerData();
             cbFertilizer.DataSource = dbconn.fertilizersList;
-            cbFertilizer.DisplayMember = "type";
+            cbFertilizer.DisplayMember = "fertilizertype";
             cbFertilizer.ValueMember = "fertilizer_ID";
 
         }
@@ -94,7 +99,7 @@ namespace JustRipeProjectOfficial
 
         void FillCombo()
         {
-            InitializeComponent();
+            /*InitializeComponent();
             //connection query for SQL for the types of crops.
             OpenConn();
             string query = "SELECT * FROM Users";
@@ -118,7 +123,10 @@ namespace JustRipeProjectOfficial
             {
                 MessageBox.Show(ex.Message);
             }
-            CloseConn();
+            CloseConn();*/
+
+            
+
         }
 
 
