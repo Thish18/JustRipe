@@ -87,7 +87,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELECT * FROM HarvestMethod"; 
+            string query = "SELECT * FROM HarvestMethod";
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
