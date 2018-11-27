@@ -19,13 +19,22 @@ namespace JustRipeProjectOfficial
         private int rankID;
         private bool createEnable;
 
+        private string DefUpdateText = "Update Information";
+        private string DefCreateText = "Create New Crops";
+
+
+        private string newUpdateText = "Create New";
+        private string newCreateText = "select existed crops to exit";
+
+
         public Crops(int ID)
         {
 
             InitializeComponent();
             btnCreate.Enabled = true;
             createEnable = false;
-            btnUpdate.Text = "Update Information";
+            btnUpdate.Text = DefUpdateText;
+            btnCreate.Text = DefCreateText;
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
@@ -86,16 +95,18 @@ namespace JustRipeProjectOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             foreach (Form f in Application.OpenForms)
-                if (f is MainMenu)
+            if (f is MainMenu)
                 {
 
-                    f.Show();
-                    break;
+                f.Show();
+                break;
 
                 }
 
             Close();
+
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -103,7 +114,8 @@ namespace JustRipeProjectOfficial
 
             createEnable = false;
             btnCreate.Enabled = true;
-            btnUpdate.Text = "Update Information";
+            btnCreate.Text = DefCreateText;
+            btnUpdate.Text = DefUpdateText;
 
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
@@ -156,23 +168,27 @@ namespace JustRipeProjectOfficial
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-            createEnable = true;
-            btnUpdate.Text = "Create new Crops";
+                createEnable = true;
 
-            txtName.Text = null;
-            txtQuantity.Text = null;
-            txtTimeNeeded.Text = null;
-            txtMini.Text = null;
-            txtMax.Text = null;
+                //change text
+                btnUpdate.Text = newUpdateText;
+                btnCreate.Text = newCreateText;
 
-            cbFertilizer.Text = null;
-            cbSowingType.Text = null;
-            cbHarvestType.Text = null;
+                btnCreate.Enabled = false;
 
-            cBSpecial.Text = null;
-            txtTreatmentExtra.Text = null;
+                txtName.Text = null;
+                txtQuantity.Text = null;
+                txtTimeNeeded.Text = null;
+                txtMini.Text = null;
+                txtMax.Text = null;
 
-            btnCreate.Enabled = false;
+                cbFertilizer.Text = null;
+                cbSowingType.Text = null;
+                cbHarvestType.Text = null;
+
+                cBSpecial.Text = null;
+                txtTreatmentExtra.Text = null;
+
 
         }
 
