@@ -645,7 +645,7 @@ namespace JustRipeProjectOfficial
         //        MessageBox.Show(ex.Message);
         //    }
         //    CloseConn();
-        }
-
     }
+
 }
+
