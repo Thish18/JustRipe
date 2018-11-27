@@ -21,11 +21,11 @@ namespace JustRipeProjectOfficial
 
         private string DefUpdateText = "Update Information";
         private string DefCreateText = "Create New Crops";
-        private string DefMenuText = "Back To Main Menu";
+
 
         private string newUpdateText = "Create New";
         private string newCreateText = "Delete";
-        private string newMenuText = "Cancel";
+
 
         public Crops(int ID)
         {
@@ -35,7 +35,6 @@ namespace JustRipeProjectOfficial
             createEnable = false;
             btnUpdate.Text = DefUpdateText;
             btnCreate.Text = DefCreateText;
-            btnMenu.Text = DefMenuText;
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
@@ -97,28 +96,16 @@ namespace JustRipeProjectOfficial
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (createEnable)
-            {
+            foreach (Form f in Application.OpenForms)
+            if (f is MainMenu)
+                {
 
-                btnMenu.Text = DefMenuText;
-                btnCreate.Text = DefCreateText;
-                createEnable = false;
+                f.Show();
+                break;
 
-            }
-            else {
+                }
 
-                foreach (Form f in Application.OpenForms)
-                    if (f is MainMenu)
-                    {
-
-                        f.Show();
-                        break;
-
-                    }
-
-                Close();
-
-            }
+            Close();
 
         }
 
@@ -127,7 +114,8 @@ namespace JustRipeProjectOfficial
 
             createEnable = false;
             btnCreate.Enabled = true;
-            btnUpdate.Text = "Update Information";
+            btnCreate.Text = DefCreateText;
+            btnUpdate.Text = DefUpdateText;
 
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
@@ -180,26 +168,43 @@ namespace JustRipeProjectOfficial
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-            createEnable = true;
-            btnUpdate.Text = "Create new Crops";
+            if (createEnable == false)
+            {
 
-            btnCreate.Text = "Delete";
-            btnMenu.Text = "Cancel";
+                createEnable = true;
 
-            txtName.Text = null;
-            txtQuantity.Text = null;
-            txtTimeNeeded.Text = null;
-            txtMini.Text = null;
-            txtMax.Text = null;
+                //change text
+                btnUpdate.Text = newUpdateText;
+                btnCreate.Text = newCreateText;
 
-            cbFertilizer.Text = null;
-            cbSowingType.Text = null;
-            cbHarvestType.Text = null;
+                btnCreate.Enabled = false;
 
-            cBSpecial.Text = null;
-            txtTreatmentExtra.Text = null;
+                txtName.Text = null;
+                txtQuantity.Text = null;
+                txtTimeNeeded.Text = null;
+                txtMini.Text = null;
+                txtMax.Text = null;
 
-            btnCreate.Enabled = false;
+                cbFertilizer.Text = null;
+                cbSowingType.Text = null;
+                cbHarvestType.Text = null;
+
+                cBSpecial.Text = null;
+                txtTreatmentExtra.Text = null;
+
+                
+
+            }
+            else {
+
+                createEnable = false;
+
+                btnUpdate.Text = DefUpdateText;
+                btnCreate.Text = DefCreateText;
+
+                btnCreate.Enabled = true;
+
+            }
 
         }
 
