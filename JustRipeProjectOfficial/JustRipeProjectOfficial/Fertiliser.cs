@@ -17,10 +17,15 @@ namespace JustRipeProjectOfficial
 
         private int userID;
         private int rankID;
+        private bool createEnable;
 
         public Fertiliser(int ID)
         {
             InitializeComponent();
+
+            btnCreate.Enabled = true;
+            createEnable = false;
+            
             userID = ID;
 
             dbconn.userInfoExport(userID);
@@ -74,6 +79,39 @@ namespace JustRipeProjectOfficial
             quantityTextBox.Text = dbconn.fertilizerDetail.Rows[0]["quantity"].ToString();
             maxQuantityTextBox.Text = dbconn.fertilizerDetail.Rows[0][""].ToString();
 
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+            createEnable = true;
+
+            typeTextBox.Text = null;
+            quantityTextBox = null;
+            maxQuantityTextBox = null;
+
+            btnCreate.Enabled = false;
+            
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            btnCreate.Enabled = true;
+
+            string type = typeTextBox.Text;
+            int quantity = Convert.ToInt32(quantityTextBox);
+            int maxQuantity = Convert.ToInt32(maxQuantityTextBox);
+
+            
+            if(createEnable)
+            {
+                dbconn.createfertilizer(type, quantity);
+            }
+            else
+            {
+
+            }
         }
     }
 }
