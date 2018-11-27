@@ -22,7 +22,6 @@ namespace JustRipeProjectOfficial
         private string DefUpdateText = "Update Information";
         private string DefCreateText = "Create New Crops";
 
-
         private string newUpdateText = "Create New";
         private string newCreateText = "select existed crops to exit";
 
@@ -31,8 +30,10 @@ namespace JustRipeProjectOfficial
         {
 
             InitializeComponent();
+
             btnCreate.Enabled = true;
             createEnable = false;
+
             btnUpdate.Text = DefUpdateText;
             btnCreate.Text = DefCreateText;
 
@@ -59,8 +60,8 @@ namespace JustRipeProjectOfficial
             cbFertilizer.ValueMember = "fertilizer_ID";
             cbFertilizer.Text = null;
 
-            dbconn.getVehicleData();
-            cbVehicle.DataSource = dbconn.vehicleList;
+            dbconn.getVehicleTypeData();
+            cbVehicle.DataSource = dbconn.vehicleTypeList;
             cbVehicle.DisplayMember = "vehicleType";
             cbVehicle.ValueMember = "vehiclesT_ID";
             cbVehicle.Text = null;
@@ -73,13 +74,29 @@ namespace JustRipeProjectOfficial
             //if rank is 1 (staff) they are not allow to access to these area.
             if ( rankID == 1) {
 
-                btnCreate.Enabled = false;
-                btnUpdate.Enabled = false;
-                btnAssignedList.Enabled = false;
-                btnVehicle.Enabled = false;
-                btnFertilizer.Enabled = false;
+                rankAccessDisable();
 
             }
+
+        }
+
+        private void rankAccessDisable() {
+
+            btnCreate.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnAssignedList.Enabled = false;
+            btnVehicle.Enabled = false;
+            btnFertilizer.Enabled = false;
+
+            txtName.Enabled = false;
+            txtQuantity.Enabled = false;
+            txtMini.Enabled = false;
+            txtMax.Enabled = false;
+            cbFertilizer.Enabled = false;
+            cbSowingType.Enabled = false;
+            cbHarvestType.Enabled = false;
+            cbVehicle.Enabled = false;
+            cBSpecial.Enabled = false;
 
         }
 
@@ -194,6 +211,7 @@ namespace JustRipeProjectOfficial
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
             btnCreate.Enabled = true;
 
             string name = txtName.Text;
