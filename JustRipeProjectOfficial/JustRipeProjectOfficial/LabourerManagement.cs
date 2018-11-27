@@ -86,8 +86,7 @@ namespace JustRipeProjectOfficial
 
         private void cboLabRank_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*place holder*/
-
+                
 
 
         }
@@ -99,8 +98,8 @@ namespace JustRipeProjectOfficial
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            {
-                Initialize();
+            
+                InitializeComponent();
                 //connection query for SQL for the types of crops.
                 OpenConn();
                 string query = "SELECT * FROM Users";
@@ -116,7 +115,7 @@ namespace JustRipeProjectOfficial
 
                     while (dataReader.Read())
                     {
-                        string sfirstname = dataReader.GetString("firstname");
+                        //string sfirstname = dataReader.GetString("firstname");
 
                     }
                 }
@@ -125,7 +124,7 @@ namespace JustRipeProjectOfficial
                     MessageBox.Show(ex.Message);
                 }
                 CloseConn();
-            }
+            
         }
     }
 }

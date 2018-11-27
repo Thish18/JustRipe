@@ -445,6 +445,22 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public void createVehicle(string name, int plateNumber, string fuelType)
+        {
+
+            Initialize();
+            OpenConn();
+
+            string query = "";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@vehicleType", name);
+            comm.Parameters.AddWithValue("@plateNum", plateNumber);
+            comm.Parameters.AddWithValue("@fuelType", fuelType);
+
+        }
+
 
         //functions for getting fertilizers data.
         public DataTable fertilizersList;
