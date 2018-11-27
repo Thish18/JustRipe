@@ -32,12 +32,6 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
         }
 
-        public void Initialize()
-        {
-            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf");
-            connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
-        }
-
         //once MYSQL Connected. I believe this will actually try to connect to the database server.
         public void OpenConn()
         {
@@ -73,7 +67,7 @@ namespace JustRipeProjectOfficial
         {
             using (SqlConnection Conn = new SqlConnection(connStr))
             {
-                Initialize();
+                InitializeComponent();
                 //connection query for SQL for the types of crops.
                 OpenConn();
                 string query = "SELECT * FROM HarvestMethod";
