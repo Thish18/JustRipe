@@ -94,7 +94,7 @@ namespace JustRipeProjectOfficial
 
         void FillCombo()
         {
-            InitializeComponent();
+            /*InitializeComponent();
             //connection query for SQL for the types of crops.
             OpenConn();
             string query = "SELECT * FROM Users";
@@ -118,7 +118,10 @@ namespace JustRipeProjectOfficial
             {
                 MessageBox.Show(ex.Message);
             }
-            CloseConn();
+            CloseConn();*/
+
+            dbconn.getLabourersList();
+
         }
 
 

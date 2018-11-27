@@ -542,7 +542,21 @@ namespace JustRipeProjectOfficial
             OpenConn();
 
             /*we need a new table call [AssignedList] with assigned_ID, crops_ID and users_ID*/
-            string query = "SELECT ";
+            string query = "SELECT * FROM users";
+
+            labourerList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(labourerList);
+
+            }
+
+
+            CloseConn();
 
         }
 
