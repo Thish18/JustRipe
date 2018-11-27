@@ -25,6 +25,7 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
             btnCreate.Enabled = true;
             createEnable = false;
+            btnUpdate.Text = "Update Information";
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
@@ -102,6 +103,7 @@ namespace JustRipeProjectOfficial
 
             createEnable = false;
             btnCreate.Enabled = true;
+            btnUpdate.Text = "Update Information";
 
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
@@ -155,6 +157,7 @@ namespace JustRipeProjectOfficial
         {
 
             createEnable = true;
+            btnUpdate.Text = "Create new Crops";
 
             txtName.Text = null;
             txtQuantity.Text = null;
@@ -205,6 +208,8 @@ namespace JustRipeProjectOfficial
                 //use update cmd.
 
             }
+
+            btnUpdate.Text = "Update Information";
 
         }
     }
