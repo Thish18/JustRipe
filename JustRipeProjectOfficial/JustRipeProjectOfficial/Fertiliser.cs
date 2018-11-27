@@ -41,7 +41,6 @@ namespace JustRipeProjectOfficial
             }
 
             /*More Code here*/
-
             dbconn.getfertilizerData();
             lBFertilizersList.DataSource = dbconn.fertilizersList;
             lBFertilizersList.DisplayMember = "fertilizerType";
@@ -114,11 +113,11 @@ namespace JustRipeProjectOfficial
 
             }
 
+            //auto updates list after creating a fertiliser
             dbconn.getfertilizerData();
             lBFertilizersList.DataSource = dbconn.fertilizersList;
             lBFertilizersList.DisplayMember = "fertilizerType";
             lBFertilizersList.ValueMember = "fertilizer_ID";
-
         }
     }
 }
