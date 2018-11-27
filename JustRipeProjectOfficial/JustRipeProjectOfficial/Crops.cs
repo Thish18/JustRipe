@@ -19,13 +19,23 @@ namespace JustRipeProjectOfficial
         private int rankID;
         private bool createEnable;
 
+        private string DefUpdateText = "Update Information";
+        private string DefCreateText = "Create New Crops";
+        private string DefMenuText = "Back To Main Menu";
+
+        private string newUpdateText = "Create New";
+        private string newCreateText = "Delete";
+        private string newMenuText = "Cancel";
+
         public Crops(int ID)
         {
 
             InitializeComponent();
             btnCreate.Enabled = true;
             createEnable = false;
-            btnUpdate.Text = "Update Information";
+            btnUpdate.Text = DefUpdateText;
+            btnCreate.Text = DefCreateText;
+            btnMenu.Text = DefMenuText;
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
@@ -86,16 +96,30 @@ namespace JustRipeProjectOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Form f in Application.OpenForms)
-                if (f is MainMenu)
-                {
 
-                    f.Show();
-                    break;
+            if (createEnable)
+            {
 
-                }
+                btnMenu.Text = DefMenuText;
+                btnCreate.Text = DefCreateText;
+                createEnable = false;
 
-            Close();
+            }
+            else {
+
+                foreach (Form f in Application.OpenForms)
+                    if (f is MainMenu)
+                    {
+
+                        f.Show();
+                        break;
+
+                    }
+
+                Close();
+
+            }
+
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -158,6 +182,9 @@ namespace JustRipeProjectOfficial
 
             createEnable = true;
             btnUpdate.Text = "Create new Crops";
+
+            btnCreate.Text = "Delete";
+            btnMenu.Text = "Cancel";
 
             txtName.Text = null;
             txtQuantity.Text = null;
