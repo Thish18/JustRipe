@@ -618,33 +618,33 @@ namespace JustRipeProjectOfficial
 
         }
 
-        void FillCombo()
-        {
-            Initialize();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM Users";
+        //void FillCombo()
+        //{
+        //    Initialize();
+        //    //connection query for SQL for the types of crops.
+        //    OpenConn();
+        //    string query = "SELECT * FROM Users";
 
 
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            SqlDataReader dataReader;
-            try
-            {
-                OpenConn();
-                dataReader = comm.ExecuteReader();
+        //    comm = new SqlCommand(query, connToDB);
+        //    dataAdap = new SqlDataAdapter(comm);
+        //    SqlDataReader dataReader;
+        //    try
+        //    {
+        //        OpenConn();
+        //        dataReader = comm.ExecuteReader();
 
-                while (dataReader.Read())
-                {
-                    //  string sfirstname = dataReader.GetString("firstname");
+        //        while (dataReader.Read())
+        //        {
+        //            string sfirstname = dataReader.GetString("firstname");
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            CloseConn();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    CloseConn();
         }
 
     }

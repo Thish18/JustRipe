@@ -97,37 +97,7 @@ namespace JustRipeProjectOfficial
             dbconn.getLabourerData(tempID);
         }
 
-        void FillCombo()
-        {
-            /*InitializeComponent();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM Users";
-
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            SqlDataReader dataReader;
-            try
-            {
-                OpenConn();
-                dataReader = comm.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    //  string sfirstname = dataReader.GetString("firstname");
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            CloseConn();*/
-
-            
-
-        }
+    
 
 
 
