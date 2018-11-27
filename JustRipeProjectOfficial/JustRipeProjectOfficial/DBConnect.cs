@@ -535,7 +535,7 @@ namespace JustRipeProjectOfficial
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
-        private DataTable labourerList;
+        public DataTable labourerList;
         public void getLabourersList() {
 
             Initialize();

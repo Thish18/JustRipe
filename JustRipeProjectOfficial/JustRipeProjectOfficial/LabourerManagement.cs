@@ -49,6 +49,11 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
             userID = ID;
 
+            dbconn.getLabourersList();
+            cbCrops.DataSource = dbconn.labourerList;
+            cbCrops.DisplayMember = "firstname";
+            cbCrops.ValueMember = "users_ID";
+
             dbconn.getCropsData();
             cbCrops.DataSource = dbconn.cropsList;
             cbCrops.DisplayMember = "type";
@@ -120,7 +125,7 @@ namespace JustRipeProjectOfficial
             }
             CloseConn();*/
 
-            dbconn.getLabourersList();
+            
 
         }
 
