@@ -16,5 +16,19 @@ namespace JustRipeProjectOfficial
         {
             InitializeComponent();
         }
+
+        private void btnHarvTimetbale_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+                if (f is Crops)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
+        }
     }
 }
