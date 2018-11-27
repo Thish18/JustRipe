@@ -64,7 +64,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtLabUsername = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,7 +83,7 @@
             "[If this shows up ",
             "database not working]"});
             this.lBLabourerList.Location = new System.Drawing.Point(0, 64);
-            this.lBLabourerList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lBLabourerList.Margin = new System.Windows.Forms.Padding(4);
             this.lBLabourerList.Name = "lBLabourerList";
             this.lBLabourerList.Size = new System.Drawing.Size(265, 420);
             this.lBLabourerList.TabIndex = 0;
@@ -95,7 +95,7 @@
             this.cbCrops.Items.AddRange(new object[] {
             "[If this shows up database not working]"});
             this.cbCrops.Location = new System.Drawing.Point(0, 31);
-            this.cbCrops.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCrops.Margin = new System.Windows.Forms.Padding(4);
             this.cbCrops.Name = "cbCrops";
             this.cbCrops.Size = new System.Drawing.Size(265, 24);
             this.cbCrops.TabIndex = 2;
@@ -108,7 +108,7 @@
             this.btnAssign.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssign.ForeColor = System.Drawing.Color.White;
             this.btnAssign.Location = new System.Drawing.Point(0, 175);
-            this.btnAssign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAssign.Margin = new System.Windows.Forms.Padding(4);
             this.btnAssign.Name = "btnAssign";
             this.btnAssign.Size = new System.Drawing.Size(267, 63);
             this.btnAssign.TabIndex = 5;
@@ -123,7 +123,7 @@
             this.btnTimetable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimetable.ForeColor = System.Drawing.Color.White;
             this.btnTimetable.Location = new System.Drawing.Point(259, 484);
-            this.btnTimetable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimetable.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimetable.Name = "btnTimetable";
             this.btnTimetable.Size = new System.Drawing.Size(535, 81);
             this.btnTimetable.TabIndex = 8;
@@ -158,7 +158,7 @@
             this.cbFertilizer.Items.AddRange(new object[] {
             "[If this shows up database not working]"});
             this.cbFertilizer.Location = new System.Drawing.Point(0, 84);
-            this.cbFertilizer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFertilizer.Margin = new System.Windows.Forms.Padding(4);
             this.cbFertilizer.Name = "cbFertilizer";
             this.cbFertilizer.Size = new System.Drawing.Size(265, 24);
             this.cbFertilizer.TabIndex = 10;
@@ -195,7 +195,7 @@
             this.cboLabRank.Items.AddRange(new object[] {
             "[If this shows up database not working]"});
             this.cboLabRank.Location = new System.Drawing.Point(437, 374);
-            this.cboLabRank.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboLabRank.Margin = new System.Windows.Forms.Padding(4);
             this.cboLabRank.Name = "cboLabRank";
             this.cboLabRank.Size = new System.Drawing.Size(280, 28);
             this.cboLabRank.TabIndex = 17;
@@ -207,7 +207,7 @@
             this.txtLabGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabGender.ForeColor = System.Drawing.Color.Black;
             this.txtLabGender.Location = new System.Drawing.Point(437, 246);
-            this.txtLabGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabGender.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabGender.Name = "txtLabGender";
             this.txtLabGender.Size = new System.Drawing.Size(280, 26);
             this.txtLabGender.TabIndex = 19;
@@ -230,7 +230,7 @@
             this.txtLabDoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabDoB.ForeColor = System.Drawing.Color.Black;
             this.txtLabDoB.Location = new System.Drawing.Point(437, 214);
-            this.txtLabDoB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabDoB.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabDoB.Name = "txtLabDoB";
             this.txtLabDoB.Size = new System.Drawing.Size(280, 26);
             this.txtLabDoB.TabIndex = 17;
@@ -253,7 +253,7 @@
             this.txtLabLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabLastName.ForeColor = System.Drawing.Color.Black;
             this.txtLabLastName.Location = new System.Drawing.Point(437, 145);
-            this.txtLabLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabLastName.Name = "txtLabLastName";
             this.txtLabLastName.Size = new System.Drawing.Size(280, 26);
             this.txtLabLastName.TabIndex = 15;
@@ -276,7 +276,7 @@
             this.txtLabContactNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabContactNum.ForeColor = System.Drawing.Color.Black;
             this.txtLabContactNum.Location = new System.Drawing.Point(437, 342);
-            this.txtLabContactNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabContactNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabContactNum.Name = "txtLabContactNum";
             this.txtLabContactNum.Size = new System.Drawing.Size(280, 26);
             this.txtLabContactNum.TabIndex = 13;
@@ -299,7 +299,7 @@
             this.txtLabAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabAddress1.ForeColor = System.Drawing.Color.Black;
             this.txtLabAddress1.Location = new System.Drawing.Point(437, 310);
-            this.txtLabAddress1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabAddress1.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabAddress1.Name = "txtLabAddress1";
             this.txtLabAddress1.Size = new System.Drawing.Size(280, 26);
             this.txtLabAddress1.TabIndex = 11;
@@ -310,7 +310,7 @@
             this.txtLabAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabAddress.ForeColor = System.Drawing.Color.Black;
             this.txtLabAddress.Location = new System.Drawing.Point(437, 278);
-            this.txtLabAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabAddress.Name = "txtLabAddress";
             this.txtLabAddress.Size = new System.Drawing.Size(280, 26);
             this.txtLabAddress.TabIndex = 9;
@@ -333,7 +333,7 @@
             this.txtLabFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabFirstName.ForeColor = System.Drawing.Color.Black;
             this.txtLabFirstName.Location = new System.Drawing.Point(437, 116);
-            this.txtLabFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabFirstName.Name = "txtLabFirstName";
             this.txtLabFirstName.Size = new System.Drawing.Size(280, 26);
             this.txtLabFirstName.TabIndex = 1;
@@ -359,7 +359,7 @@
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Location = new System.Drawing.Point(0, 481);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(267, 84);
             this.btnBack.TabIndex = 16;
@@ -374,7 +374,7 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 565);
             this.panel1.TabIndex = 17;
@@ -384,7 +384,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(89)))));
             this.panel5.Controls.Add(this.label13);
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(267, 64);
             this.panel5.TabIndex = 17;
@@ -414,7 +414,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(785, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 565);
             this.panel2.TabIndex = 18;
@@ -432,7 +432,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(89)))));
             this.panel3.Controls.Add(this.dgvTimeTable);
             this.panel3.Location = new System.Drawing.Point(0, 234);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(267, 331);
             this.panel3.TabIndex = 20;
@@ -464,7 +464,7 @@
             this.panel4.Controls.Add(this.label14);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(267, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(518, 46);
             this.panel4.TabIndex = 21;
@@ -487,7 +487,7 @@
             this.txtLabUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabUsername.ForeColor = System.Drawing.Color.Black;
             this.txtLabUsername.Location = new System.Drawing.Point(437, 180);
-            this.txtLabUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabUsername.Name = "txtLabUsername";
             this.txtLabUsername.Size = new System.Drawing.Size(280, 26);
             this.txtLabUsername.TabIndex = 23;
@@ -504,20 +504,21 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Username: ";
             // 
-            // button1
+            // btnSelect
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(469, 421);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 30);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Select";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnSelect.FlatAppearance.BorderSize = 0;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(469, 421);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(212, 30);
+            this.btnSelect.TabIndex = 24;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // LabourerManagement
             // 
@@ -525,7 +526,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(1052, 565);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtLabUsername);
             this.Controls.Add(this.label12);
@@ -549,7 +550,7 @@
             this.Controls.Add(this.txtLabAddress1);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LabourerManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Labourer Management";
@@ -605,6 +606,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dgvTimeTable;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSelect;
     }
 }
