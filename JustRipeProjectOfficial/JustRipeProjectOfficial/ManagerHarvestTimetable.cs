@@ -28,7 +28,7 @@ namespace JustRipeProjectOfficial
         }
 
         public void Initialize()
-        {      
+        {
             string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf");
             connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
         }
@@ -45,11 +45,11 @@ namespace JustRipeProjectOfficial
         {
             connToDB.Close();
         }
-/// <summary>
-/// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
+        /// <summary>
+        /// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHarvTimetbale_Click(object sender, EventArgs e)
         {
             foreach (Form f in Application.OpenForms)
