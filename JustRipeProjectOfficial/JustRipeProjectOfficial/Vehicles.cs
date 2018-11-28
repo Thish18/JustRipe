@@ -17,7 +17,7 @@ namespace JustRipeProjectOfficial
 
         private int userID;
         private int rankID;
-        private bool createEnable;
+        private bool createEnable = false;
 
         public Vehicles(int ID)
         {
@@ -33,6 +33,13 @@ namespace JustRipeProjectOfficial
             cbVehicleType.DataSource = dbconn.vehicleTypeList;
             cbVehicleType.DisplayMember = "vehicleType";
             cbVehicleType.ValueMember = "vehiclesT_ID";
+
+            //getfuelTypedata
+            dbconn.getFuelTypeData();
+            cbFuelType.DataSource = dbconn.fuelTypeList;
+            cbFuelType.DisplayMember = "fuelType";
+            cbFuelType.ValueMember = "fuel_ID";
+            
 
             userID = ID;
 
@@ -85,7 +92,7 @@ namespace JustRipeProjectOfficial
 
             cbVehicleType.Text = dbconn.vehicleDetail.Rows[0]["vehicleType"].ToString();
             txtPlateNumber.Text = dbconn.vehicleDetail.Rows[0]["plateNum"].ToString();
-            txtFuelType.Text = dbconn.vehicleDetail.Rows[0]["fuelType"].ToString();
+            cbFuelType.Text = dbconn.vehicleDetail.Rows[0]["fuelType"].ToString();
 
         }
 
@@ -96,7 +103,7 @@ namespace JustRipeProjectOfficial
 
             cbVehicleType.Text = null;
             txtPlateNumber.Text = null;
-            txtFuelType.Text = null;
+            cbFuelType.Text = null;
 
             btnCreate.Enabled = false;
 
@@ -107,7 +114,24 @@ namespace JustRipeProjectOfficial
 
             btnCreate.Enabled = true;
 
+            int type = Convert.ToInt32(cbVehicleType.SelectedValue.ToString());
+            string plateNumber = txtPlateNumber.Text;
+            int fuelid = Convert.ToInt32(cbFuelType.SelectedValue.ToString());
 
+
+            if(createEnable)
+            {
+                
+                dbconn.createVehicle(type, plateNumber, fuelid);
+                MessageBox.Show("Vehicle Registered.");
+
+            }
+            else
+            {
+                MessageBox.Show("Vehicle Information Updated. ");
+            }
+
+            createEnable = false;
             //auto updates list after creating vehicle
             dbconn.getVehicleData();
             lBVehiclesList.DataSource = dbconn.vehicleList;

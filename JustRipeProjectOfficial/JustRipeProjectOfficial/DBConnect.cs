@@ -424,38 +424,6 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void newVehicle(string vt, string pn, string ft)
-        {
-            Initialize();
-            // connection query for SQL.
-            OpenConn();
-            // adding the vehicles name.
-            string query = "INSERT INTO vehicleType (vehicleType) VALUES(@vehicleType)";
-            comm = new SqlCommand(query, connToDB);
-            comm.Parameters.AddWithValue("@vehicleType", vt);
-            comm.ExecuteNonQuery();
-            
-            // adding the plate number.
-            query = "INSERT INTO Vehicles (plateNum) VALUES(@plateNum)";
-            comm = new SqlCommand(query, connToDB);
-            comm.Parameters.AddWithValue("@plateNum", pn);
-            comm.ExecuteNonQuery();
-
-            // adding the fuel type.
-            query = "INSERT INTO fuelType (fuelType) VALUES(@fuelType)";
-            comm = new SqlCommand(query, connToDB);
-            comm.Parameters.AddWithValue("@fuelType", ft);
-            comm.ExecuteNonQuery();
-
-
-            dataAdap = new SqlDataAdapter(query, connToDB);
-            CloseConn();
-            // Message to show once new vehicle has been created.
-            MessageBox.Show("New Vehicle Created");
-
-
-        }
-
         //getting details for the selected vehicle.
         public DataTable vehicleDetail;
         public void getVehicleDetails(int vehicles_ID) {
@@ -488,20 +456,19 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createVehicle(string name, int plateNumber, string fuelType)
+        public void createVehicle(int name, string plateNumber, int fuelType)
         {
-
             Initialize();
             OpenConn();
 
-            string query = "INSERT INTO vehicleType (vehicleTypeID, plateNum, fuelTypeID, vehicleStatusID) " +
+            string query = "INSERT INTO Vehicles (vehicleTypeID, plateNum, fuelTypeID, vehicleStatusID) " +
                 "VALUES(@vehicleTypeID, @plateNum, @fuelTypeID, @vehicleStatusID)";
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@vehicleType", name);
+            comm.Parameters.AddWithValue("@vehicleTypeID", name);
             comm.Parameters.AddWithValue("@plateNum", plateNumber);
-            comm.Parameters.AddWithValue("@fuelType", fuelType);
+            comm.Parameters.AddWithValue("@fuelTypeID", fuelType);
             comm.Parameters.AddWithValue("@vehicleStatusID", 1);
             comm.ExecuteNonQuery();
 
