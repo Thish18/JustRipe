@@ -107,24 +107,11 @@ namespace JustRipeProjectOfficial
 
             btnCreate.Enabled = true;
 
-            string name = cbVehicleType.Text;
-            int plateNumber = Convert.ToInt32(txtPlateNumber.Text);
-            string fuelType = txtFuelType.Text;
-
-
-            if(createEnable)
-            {
-                //dbconn.createVehicle(name, plateNumber, fuelType);
-            }
-            else
-            {
-
-            }
 
             //auto updates list after creating vehicle
             dbconn.getVehicleData();
             lBVehiclesList.DataSource = dbconn.vehicleList;
-            lBVehiclesList.DisplayMember = "plateNum";
+            lBVehiclesList.DisplayMember = "typePlate";
             lBVehiclesList.ValueMember = "vehicles_ID";
 
         }
