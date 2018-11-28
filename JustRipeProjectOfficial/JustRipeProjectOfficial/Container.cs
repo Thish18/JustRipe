@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace JustRipeProjectOfficial
 {
-    public partial class sowingMethod : Form
+    public partial class Container : Form
     {
 
         private int userID;
 
-        public sowingMethod(int id)
+        public Container(int id)
         {
             InitializeComponent();
 
@@ -27,7 +27,7 @@ namespace JustRipeProjectOfficial
         {
 
             foreach (Form f in Application.OpenForms)
-                if (f is Crops)
+                if (f is Storage)
                 {
 
                     f.Show();

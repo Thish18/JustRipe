@@ -86,9 +86,9 @@ namespace JustRipeProjectOfficial
 
         private void btnFertilizer_Click_1(object sender, EventArgs e)
         {
-            //Fertiliser strg = new Fertiliser(userID);
-            //strg.Show();
-            //Hide();
+            Storage strg = new Storage(userID);
+            strg.Show();
+            Hide();
 
         }
 

@@ -306,5 +306,23 @@ namespace JustRipeProjectOfficial
             
 
         }
+
+        private void btnSowing_Click(object sender, EventArgs e)
+        {
+
+            sowingMethod sm = new sowingMethod(userID);
+            sm.Show();
+            Hide();
+
+        }
+
+        private void btnharvest_Click(object sender, EventArgs e)
+        {
+
+            harvestMethod hm = new harvestMethod(userID);
+            hm.Show();
+            Hide();
+
+        }
     }
 }

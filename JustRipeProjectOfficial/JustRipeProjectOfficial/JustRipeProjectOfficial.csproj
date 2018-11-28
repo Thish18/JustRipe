@@ -80,6 +80,12 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Container.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Container.Designer.cs">
+      <DependentUpon>Container.cs</DependentUpon>
+    </Compile>
     <Compile Include="Crops.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,12 @@
     <Compile Include="sowingMethod.Designer.cs">
       <DependentUpon>sowingMethod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Storage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage.Designer.cs">
+      <DependentUpon>Storage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Container.resx">
+      <DependentUpon>Container.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Crops.resx">
       <DependentUpon>Crops.cs</DependentUpon>
@@ -215,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sowingMethod.resx">
       <DependentUpon>sowingMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage.resx">
+      <DependentUpon>Storage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles.resx">
       <DependentUpon>Vehicles.cs</DependentUpon>

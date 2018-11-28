@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace JustRipeProjectOfficial
 {
-    public partial class sowingMethod : Form
+    public partial class Storage : Form
     {
 
         private int userID;
 
-        public sowingMethod(int id)
+        public Storage(int id)
         {
             InitializeComponent();
 
@@ -27,7 +27,7 @@ namespace JustRipeProjectOfficial
         {
 
             foreach (Form f in Application.OpenForms)
-                if (f is Crops)
+                if (f is MainMenu)
                 {
 
                     f.Show();
@@ -36,6 +36,15 @@ namespace JustRipeProjectOfficial
                 }
 
             Close();
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            Container ctner = new Container(userID);
+            ctner.Show();
+            Hide();
 
         }
     }

@@ -206,9 +206,9 @@
             this.btnAssignedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignedList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssignedList.ForeColor = System.Drawing.Color.White;
-            this.btnAssignedList.Location = new System.Drawing.Point(330, 142);
+            this.btnAssignedList.Location = new System.Drawing.Point(285, 142);
             this.btnAssignedList.Name = "btnAssignedList";
-            this.btnAssignedList.Size = new System.Drawing.Size(132, 24);
+            this.btnAssignedList.Size = new System.Drawing.Size(177, 24);
             this.btnAssignedList.TabIndex = 9;
             this.btnAssignedList.Text = "Labourer Assigned List";
             this.btnAssignedList.UseVisualStyleBackColor = false;
@@ -320,7 +320,7 @@
             this.groupBox6.Controls.Add(this.txtTreatmentExtra);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Location = new System.Drawing.Point(241, 298);
+            this.groupBox6.Location = new System.Drawing.Point(241, 291);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(229, 122);
             this.groupBox6.TabIndex = 25;
@@ -371,7 +371,7 @@
             this.groupBox5.Controls.Add(this.txtPlateNo);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Location = new System.Drawing.Point(6, 298);
+            this.groupBox5.Location = new System.Drawing.Point(6, 291);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(229, 122);
             this.groupBox5.TabIndex = 24;
@@ -380,14 +380,14 @@
             // 
             // btnVehicleSelect
             // 
-            this.btnVehicleSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnVehicleSelect.BackColor = System.Drawing.Color.Green;
             this.btnVehicleSelect.FlatAppearance.BorderSize = 0;
             this.btnVehicleSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehicleSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicleSelect.ForeColor = System.Drawing.Color.White;
-            this.btnVehicleSelect.Location = new System.Drawing.Point(186, 41);
+            this.btnVehicleSelect.Location = new System.Drawing.Point(198, 41);
             this.btnVehicleSelect.Name = "btnVehicleSelect";
-            this.btnVehicleSelect.Size = new System.Drawing.Size(33, 21);
+            this.btnVehicleSelect.Size = new System.Drawing.Size(21, 21);
             this.btnVehicleSelect.TabIndex = 29;
             this.btnVehicleSelect.Text = "✔";
             this.btnVehicleSelect.UseVisualStyleBackColor = false;
@@ -398,7 +398,7 @@
             this.cbVehicle.FormattingEnabled = true;
             this.cbVehicle.Location = new System.Drawing.Point(87, 41);
             this.cbVehicle.Name = "cbVehicle";
-            this.cbVehicle.Size = new System.Drawing.Size(96, 21);
+            this.cbVehicle.Size = new System.Drawing.Size(105, 21);
             this.cbVehicle.TabIndex = 28;
             // 
             // btnVehicle
@@ -468,7 +468,7 @@
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Location = new System.Drawing.Point(241, 181);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(229, 111);
+            this.groupBox4.Size = new System.Drawing.Size(229, 104);
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Harvest Method";
@@ -515,7 +515,7 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(6, 181);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(229, 111);
+            this.groupBox3.Size = new System.Drawing.Size(229, 104);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sowing Method";
@@ -661,6 +661,7 @@
             this.btnSowing.TabIndex = 30;
             this.btnSowing.Text = "Edit Sowing";
             this.btnSowing.UseVisualStyleBackColor = false;
+            this.btnSowing.Click += new System.EventHandler(this.btnSowing_Click);
             // 
             // btnharvest
             // 
@@ -675,6 +676,7 @@
             this.btnharvest.TabIndex = 31;
             this.btnharvest.Text = "Edit Harvest";
             this.btnharvest.UseVisualStyleBackColor = false;
+            this.btnharvest.Click += new System.EventHandler(this.btnharvest_Click);
             // 
             // btnSpecial
             // 
