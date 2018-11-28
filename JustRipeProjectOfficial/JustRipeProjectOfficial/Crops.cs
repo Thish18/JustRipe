@@ -37,18 +37,20 @@ namespace JustRipeProjectOfficial
             lBCropsList.DisplayMember = "cropsType";
             lBCropsList.ValueMember = "crops_ID";
 
-            //cbSowingType.DataSource = *PlaceHolder *;
-            //cbSowingType.DisplayMember = "sowingType";
-            //cbSowingType.ValueMember = "sowingM_ID";
+            dbconn.getSowingData();
+            cbSowingType.DataSource = dbconn.sowingTypeList;
+            cbSowingType.DisplayMember = "sowingType";
+            cbSowingType.ValueMember = "sowingM_ID";
 
-            //cbHarvestType.DataSource = *PlaceHolder *;
-            //cbHarvestType.DisplayMember = "harvestType";
-            //cbHarvestType.ValueMember = "harvestM_ID";
+            dbconn.getHarvestData();
+            cbHarvestType.DataSource = dbconn.harvestTypeList;
+            cbHarvestType.DisplayMember = "harvestType";
+            cbHarvestType.ValueMember = "harvestM_ID";
 
-            //cBSpecial.DataSource = *PlaceHolder *;
-            //cBSpecial.DisplayMember = "specialType";
-            //cBSpecial.ValueMember = "specialT_ID";
-
+            dbconn.getSpecialData();
+            cBSpecial.DataSource = dbconn.specialTypeList;
+            cBSpecial.DisplayMember = "specialType";
+            cBSpecial.ValueMember = "specialT_ID";
 
             dbconn.getVehicleTypeData();
             cbVehicle.DataSource = dbconn.vehicleTypeList;
@@ -73,6 +75,10 @@ namespace JustRipeProjectOfficial
                 rankAccessDisable();
 
             }
+
+            dtpPeriod.MinDate = DateTime.Today;
+            dtpSowing.MinDate = DateTime.Today;
+            dtpHarvest.MinDate = DateTime.Today;
 
         }
 
@@ -134,7 +140,7 @@ namespace JustRipeProjectOfficial
 
                 txtName.Text = dbconn.cropsDetail.Rows[0]["cropsType"].ToString();
                 txtQuantity.Text = dbconn.cropsDetail.Rows[0]["Quantity"].ToString();
-                txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
+                //txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
                 txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
                 txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
                 cbFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
@@ -186,7 +192,7 @@ namespace JustRipeProjectOfficial
 
             txtName.Text = null;
             txtQuantity.Text = null;
-            txtTimeNeeded.Text = null;
+            //txtTimeNeeded.Text = null;
             txtMini.Text = null;
             txtMax.Text = null;
 

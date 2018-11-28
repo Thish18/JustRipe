@@ -41,7 +41,6 @@
             this.txtMini = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtMax = new System.Windows.Forms.TextBox();
-            this.txtTimeNeeded = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnVehicleSelect = new System.Windows.Forms.Button();
             this.cbVehicle = new System.Windows.Forms.ComboBox();
             this.btnVehicle = new System.Windows.Forms.Button();
             this.txtFuel = new System.Windows.Forms.TextBox();
@@ -64,12 +64,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbHarvestType = new System.Windows.Forms.ComboBox();
-            this.txtHarvestTime = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbSowingType = new System.Windows.Forms.ComboBox();
-            this.txtSowingTime = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -80,7 +78,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnVehicleSelect = new System.Windows.Forms.Button();
+            this.dtpPeriod = new System.Windows.Forms.DateTimePicker();
+            this.dtpSowing = new System.Windows.Forms.DateTimePicker();
+            this.dtpHarvest = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -214,10 +214,10 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.dtpPeriod);
             this.groupBox7.Controls.Add(this.txtMini);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.txtMax);
-            this.groupBox7.Controls.Add(this.txtTimeNeeded);
             this.groupBox7.Controls.Add(this.label5);
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.label2);
@@ -253,13 +253,6 @@
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(52, 20);
             this.txtMax.TabIndex = 19;
-            // 
-            // txtTimeNeeded
-            // 
-            this.txtTimeNeeded.Location = new System.Drawing.Point(100, 45);
-            this.txtTimeNeeded.Name = "txtTimeNeeded";
-            this.txtTimeNeeded.Size = new System.Drawing.Size(165, 20);
-            this.txtTimeNeeded.TabIndex = 17;
             // 
             // label5
             // 
@@ -386,6 +379,21 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehicles Control";
             // 
+            // btnVehicleSelect
+            // 
+            this.btnVehicleSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnVehicleSelect.FlatAppearance.BorderSize = 0;
+            this.btnVehicleSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicleSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicleSelect.ForeColor = System.Drawing.Color.White;
+            this.btnVehicleSelect.Location = new System.Drawing.Point(186, 41);
+            this.btnVehicleSelect.Name = "btnVehicleSelect";
+            this.btnVehicleSelect.Size = new System.Drawing.Size(33, 21);
+            this.btnVehicleSelect.TabIndex = 29;
+            this.btnVehicleSelect.Text = "✔";
+            this.btnVehicleSelect.UseVisualStyleBackColor = false;
+            this.btnVehicleSelect.Click += new System.EventHandler(this.btnVehicleSelect_Click);
+            // 
             // cbVehicle
             // 
             this.cbVehicle.FormattingEnabled = true;
@@ -393,7 +401,6 @@
             this.cbVehicle.Name = "cbVehicle";
             this.cbVehicle.Size = new System.Drawing.Size(96, 21);
             this.cbVehicle.TabIndex = 28;
-
             // 
             // btnVehicle
             // 
@@ -455,8 +462,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.dtpHarvest);
             this.groupBox4.Controls.Add(this.cbHarvestType);
-            this.groupBox4.Controls.Add(this.txtHarvestTime);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Location = new System.Drawing.Point(241, 193);
@@ -473,14 +480,6 @@
             this.cbHarvestType.Name = "cbHarvestType";
             this.cbHarvestType.Size = new System.Drawing.Size(132, 21);
             this.cbHarvestType.TabIndex = 21;
-            // 
-            // txtHarvestTime
-            // 
-            this.txtHarvestTime.Enabled = false;
-            this.txtHarvestTime.Location = new System.Drawing.Point(89, 45);
-            this.txtHarvestTime.Name = "txtHarvestTime";
-            this.txtHarvestTime.Size = new System.Drawing.Size(132, 20);
-            this.txtHarvestTime.TabIndex = 20;
             // 
             // label10
             // 
@@ -502,8 +501,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dtpSowing);
             this.groupBox3.Controls.Add(this.cbSowingType);
-            this.groupBox3.Controls.Add(this.txtSowingTime);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(6, 193);
@@ -520,14 +519,6 @@
             this.cbSowingType.Name = "cbSowingType";
             this.cbSowingType.Size = new System.Drawing.Size(132, 21);
             this.cbSowingType.TabIndex = 20;
-            // 
-            // txtSowingTime
-            // 
-            this.txtSowingTime.Enabled = false;
-            this.txtSowingTime.Location = new System.Drawing.Point(89, 45);
-            this.txtSowingTime.Name = "txtSowingTime";
-            this.txtSowingTime.Size = new System.Drawing.Size(132, 20);
-            this.txtSowingTime.TabIndex = 20;
             // 
             // label9
             // 
@@ -642,20 +633,26 @@
             this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // btnVehicleSelect
+            // dtpPeriod
             // 
-            this.btnVehicleSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnVehicleSelect.FlatAppearance.BorderSize = 0;
-            this.btnVehicleSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehicleSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehicleSelect.ForeColor = System.Drawing.Color.White;
-            this.btnVehicleSelect.Location = new System.Drawing.Point(186, 41);
-            this.btnVehicleSelect.Name = "btnVehicleSelect";
-            this.btnVehicleSelect.Size = new System.Drawing.Size(33, 21);
-            this.btnVehicleSelect.TabIndex = 29;
-            this.btnVehicleSelect.Text = "✔";
-            this.btnVehicleSelect.UseVisualStyleBackColor = false;
-            this.btnVehicleSelect.Click += new System.EventHandler(this.btnVehicleSelect_Click);
+            this.dtpPeriod.Location = new System.Drawing.Point(87, 45);
+            this.dtpPeriod.Name = "dtpPeriod";
+            this.dtpPeriod.Size = new System.Drawing.Size(178, 20);
+            this.dtpPeriod.TabIndex = 20;
+            // 
+            // dtpSowing
+            // 
+            this.dtpSowing.Location = new System.Drawing.Point(89, 42);
+            this.dtpSowing.Name = "dtpSowing";
+            this.dtpSowing.Size = new System.Drawing.Size(132, 20);
+            this.dtpSowing.TabIndex = 21;
+            // 
+            // dtpHarvest
+            // 
+            this.dtpHarvest.Location = new System.Drawing.Point(89, 42);
+            this.dtpHarvest.Name = "dtpHarvest";
+            this.dtpHarvest.Size = new System.Drawing.Size(132, 20);
+            this.dtpHarvest.TabIndex = 22;
             // 
             // Crops
             // 
@@ -707,7 +704,6 @@
         private System.Windows.Forms.TextBox txtMini;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtMax;
-        private System.Windows.Forms.TextBox txtTimeNeeded;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
@@ -725,11 +721,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtHarvestTime;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtSowingTime;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -749,5 +743,8 @@
         private System.Windows.Forms.ComboBox cbFertilizer;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnVehicleSelect;
+        private System.Windows.Forms.DateTimePicker dtpPeriod;
+        private System.Windows.Forms.DateTimePicker dtpHarvest;
+        private System.Windows.Forms.DateTimePicker dtpSowing;
     }
 }
