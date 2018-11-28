@@ -144,5 +144,43 @@ namespace JustRipeProjectOfficial
             }
             CloseConn();
         }
+
+        private void btnTimetable_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection Conn = new SqlConnection(connStr))
+            {
+                InitializeComponent();
+                //connection query for SQL for the types of crops.
+                OpenConn();
+                string query = "SELECT * FROM WorkSchedule";
+
+                comm = new SqlCommand(query, connToDB);
+                dataAdap = new SqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                // use adapter to flood above table
+                dataAdap.Fill(dt);
+
+                dgvTimeTable.DataSource = dt;
+
+                CloseConn();
+            }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lBLabourerList.SelectedValue.ToString());
+            dbconn.getLabourerData(id);
+
+            txtLabID.Text = dbconn.labourerInfo.Rows[0]["users_ID"].ToString();
+            txtLabFirstName.Text = dbconn.labourerInfo.Rows[0]["firstname"].ToString();
+            txtLabLastName.Text = dbconn.labourerInfo.Rows[0]["lastname"].ToString();
+            txtLabUsername.Text = dbconn.labourerInfo.Rows[0]["username"].ToString();
+            txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
+            txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
+            txtLabAddress.Text = dbconn.labourerInfo.Rows[0]["address1"].ToString();
+            txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
+            txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
+            
+        }
     }
 }

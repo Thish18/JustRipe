@@ -21,21 +21,17 @@ namespace JustRipeProjectOfficial
 
         private string DefUpdateText = "Update Information";
         private string DefCreateText = "Create New Crops";
+        private string DefSelectText = "Select";
 
         private string newUpdateText = "Create New";
         private string newCreateText = "select existed crops to exit";
-
 
         public Crops(int ID)
         {
 
             InitializeComponent();
 
-            btnCreate.Enabled = true;
-            createEnable = false;
-
-            btnUpdate.Text = DefUpdateText;
-            btnCreate.Text = DefCreateText;
+            AccessEnable();
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
@@ -60,11 +56,7 @@ namespace JustRipeProjectOfficial
             cbFertilizer.ValueMember = "fertilizer_ID";
             cbFertilizer.Text = null;
 
-            dbconn.getVehicleTypeData();
-            cbVehicle.DataSource = dbconn.vehicleTypeList;
-            cbVehicle.DisplayMember = "vehicleType";
-            cbVehicle.ValueMember = "vehiclesT_ID";
-            cbVehicle.Text = null;
+            
 
             userID = ID;
 
@@ -77,6 +69,12 @@ namespace JustRipeProjectOfficial
                 rankAccessDisable();
 
             }
+
+            dbconn.getVehicleTypeData();
+            cbVehicle.DataSource = dbconn.vehicleTypeList;
+            cbVehicle.DisplayMember = "vehicleType";
+            cbVehicle.ValueMember = "vehiclesT_ID";
+            cbVehicle.Text = null;
 
         }
 
@@ -129,10 +127,7 @@ namespace JustRipeProjectOfficial
         private void btnSelect_Click(object sender, EventArgs e)
         {
 
-            createEnable = false;
-            btnCreate.Enabled = true;
-            btnCreate.Text = DefCreateText;
-            btnUpdate.Text = DefUpdateText;
+            AccessEnable();
 
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
@@ -185,26 +180,20 @@ namespace JustRipeProjectOfficial
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-                createEnable = true;
+            AccessDisable();
 
-                //change text
-                btnUpdate.Text = newUpdateText;
-                btnCreate.Text = newCreateText;
+            txtName.Text = null;
+            txtQuantity.Text = null;
+            txtTimeNeeded.Text = null;
+            txtMini.Text = null;
+            txtMax.Text = null;
 
-                btnCreate.Enabled = false;
+            cbFertilizer.Text = null;
+            cbSowingType.Text = null;
+            cbHarvestType.Text = null;
 
-                txtName.Text = null;
-                txtQuantity.Text = null;
-                txtTimeNeeded.Text = null;
-                txtMini.Text = null;
-                txtMax.Text = null;
-
-                cbFertilizer.Text = null;
-                cbSowingType.Text = null;
-                cbHarvestType.Text = null;
-
-                cBSpecial.Text = null;
-                txtTreatmentExtra.Text = null;
+            cBSpecial.Text = null;
+            txtTreatmentExtra.Text = null;
 
 
         }
@@ -212,7 +201,7 @@ namespace JustRipeProjectOfficial
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            btnCreate.Enabled = true;
+            AccessEnable();
 
             string name = txtName.Text;
             int quantity = Convert.ToInt32(txtQuantity.Text);
@@ -257,6 +246,36 @@ namespace JustRipeProjectOfficial
             Crops cps = new Crops(userID);
             cps.Show();
             Close();
+        }
+
+        private void AccessEnable() {
+
+            createEnable = false;
+            btnCreate.Enabled = true;
+            btnCreate.Text = DefCreateText;
+            btnUpdate.Text = DefUpdateText;
+
+
+        }
+
+        private void AccessDisable() {
+
+            createEnable = true;
+            btnCreate.Enabled = false;
+            btnUpdate.Text = newUpdateText;
+            btnCreate.Text = newCreateText;
+
+
+        }
+
+        private void btnVehicleSelect_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cbVehicle.SelectedValue.ToString());
+            dbconn.vehicleTypeFilter(id);
+
+            txtPlateNo.Text = dbconn.vehicleTypeFilterList.Rows[0]["plateNum"].ToString();
+            txtFuel.Text = dbconn.vehicleTypeFilterList.Rows[0]["fuelType"].ToString();
+
         }
     }
 }

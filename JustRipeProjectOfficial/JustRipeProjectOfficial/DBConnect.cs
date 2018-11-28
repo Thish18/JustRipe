@@ -424,38 +424,6 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void newVehicle(string vt, string pn, string ft)
-        {
-            Initialize();
-            // connection query for SQL.
-            OpenConn();
-            // adding the vehicles name.
-            string query = "INSERT INTO vehicleType (vehicleType) VALUES(@vehicleType)";
-            comm = new SqlCommand(query, connToDB);
-            comm.Parameters.AddWithValue("@vehicleType", vt);
-            comm.ExecuteNonQuery();
-            
-            // adding the plate number.
-            query = "INSERT INTO Vehicles (plateNum) VALUES(@plateNum)";
-            comm = new SqlCommand(query, connToDB);
-            comm.Parameters.AddWithValue("@plateNum", pn);
-            comm.ExecuteNonQuery();
-
-            // adding the fuel type.
-            query = "INSERT INTO fuelType (fuelType) VALUES(@fuelType)";
-            comm = new SqlCommand(query, connToDB);
-            comm.Parameters.AddWithValue("@fuelType", ft);
-            comm.ExecuteNonQuery();
-
-
-            dataAdap = new SqlDataAdapter(query, connToDB);
-            CloseConn();
-            // Message to show once new vehicle has been created.
-            MessageBox.Show("New Vehicle Created");
-
-
-        }
-
         //getting details for the selected vehicle.
         public DataTable vehicleDetail;
         public void getVehicleDetails(int vehicles_ID) {
@@ -488,19 +456,46 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createVehicle(string name, int plateNumber, string fuelType)
+        public void createVehicle(int name, string plateNumber, int fuelType)
         {
-
             Initialize();
             OpenConn();
 
-            string query = "";
+            string query = "INSERT INTO Vehicles (vehicleTypeID, plateNum, fuelTypeID, vehicleStatusID) " +
+                "VALUES(@vehicleTypeID, @plateNum, @fuelTypeID, @vehicleStatusID)";
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@vehicleType", name);
+            comm.Parameters.AddWithValue("@vehicleTypeID", name);
             comm.Parameters.AddWithValue("@plateNum", plateNumber);
-            comm.Parameters.AddWithValue("@fuelType", fuelType);
+            comm.Parameters.AddWithValue("@fuelTypeID", fuelType);
+            comm.Parameters.AddWithValue("@vehicleStatusID", 1);
+            comm.ExecuteNonQuery();
+
+        }
+
+        public DataTable vehicleTypeFilterList;
+        public void vehicleTypeFilter(int typeid) {
+
+            Initialize();
+            OpenConn();
+            vehicleTypeFilterList = new DataTable();
+            //output the selected vehicletyped which isnt in the status "IN USE"
+            string query = "SELECT Vehicles.*, fuelType.* FROM Vehicles " +
+                "INNER JOIN fuelType ON Vehicles.fuelTypeID = fuelType.fuel_ID " +
+                "WHERE vehicleTypeID = " + typeid + " AND vehicleStatusID = 1 ORDER BY plateNum ASC";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(vehicleTypeFilterList);
+
+            }
+
+            CloseConn();
 
         }
 
@@ -592,6 +587,33 @@ namespace JustRipeProjectOfficial
 
         }
 
+        /*=============================[Fuel]=================================*/
+
+        public DataTable fuelTypeList;
+        public void getFuelTypeData() {
+
+            Initialize();
+            OpenConn();
+
+            fuelTypeList = new DataTable();
+
+            string query = "SELECT fuel_ID, fuelType FROM fuelType";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(fuelTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
@@ -622,7 +644,6 @@ namespace JustRipeProjectOfficial
 
         //temp storage List.
         public DataTable labourerInfo;
-
         //get the single data selected from the labourer list
         public void getLabourerData(int id) {
 
