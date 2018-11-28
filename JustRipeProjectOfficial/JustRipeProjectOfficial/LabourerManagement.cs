@@ -120,7 +120,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             //connection query for SQL for the types of crops.
             OpenConn();
-            string query = "SELECT * FROM Users WHERE Users_ID " + cboLabUserID.SelectedItem.ToString();
+            string query = "SELECT * FROM Users WHERE Users_ID = " + cboLabUserID.SelectedItem.ToString();
             comm = new SqlCommand(query, connToDB);
 
             comm = new SqlCommand(query, connToDB);
