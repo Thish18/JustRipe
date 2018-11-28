@@ -273,7 +273,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void updateCrop(int cropID, string name, int quantity, int mini, int max, int ferID, int sMID, int hMID, int sID, int vID, int sTID) {
+        public void updateCrop(int cropID, string name, int quantity, int mini, int max, int ferID, int sMID, int hMID,/* int sID,*/ int vID, int sTID) {
 
             Initialize();
             OpenConn();
@@ -301,6 +301,13 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@vID", vID);
             comm.Parameters.AddWithValue("@sTID", sTID);
             comm.ExecuteNonQuery();
+
+            query = "UPDATE Vehicles SET vehicleStatusID = 2 WHERE vehicles_ID = @vID";
+
+            comm = new SqlCommand(query, connToDB);
+            comm.Parameters.AddWithValue("@vID", vID);
+            comm.ExecuteNonQuery();
+
             CloseConn();
 
         }
@@ -310,11 +317,10 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "INSERT INTO Crops (cropsType, Quantity, miniTemp, maxTemp, fertilizer_ID, sowingM_ID, harvestM_ID, storage_ID, "/*+"vehicles_ID, "*/+"specialT_ID) " +
+            string query = "INSERT INTO Crops (cropsType, Quantity, miniTemp, maxTemp, fertilizer_ID, sowingM_ID, harvestM_ID, "+/*"storage_ID, "+*/ "vehicles_ID, specialT_ID) " +
                 "VALUES (@cropsType, @Quantity, @miniTemp, @maxTemp, @fertilizer_ID, @sowingM_ID, @harvestM_ID, "+/*"@storage_ID, "+*/"@vehicles_ID, @specialT_ID)";
 
             comm = new SqlCommand(query, connToDB);
-
             comm.Parameters.AddWithValue("@cropsType", name);
             comm.Parameters.AddWithValue("@Quantity", quantity);
             comm.Parameters.AddWithValue("@miniTemp", mini);
@@ -325,7 +331,12 @@ namespace JustRipeProjectOfficial
             //comm.Parameters.AddWithValue("@storage_ID", sID);
             comm.Parameters.AddWithValue("@vehicles_ID", vID);
             comm.Parameters.AddWithValue("@specialT_ID", sTID);
+            comm.ExecuteNonQuery();
 
+            query = "UPDATE Vehicles SET vehicleStatusID = 2 WHERE vehicles_ID = @vID" ;
+
+            comm = new SqlCommand(query, connToDB);
+            comm.Parameters.AddWithValue("@vID", vID);
             comm.ExecuteNonQuery();
 
             CloseConn();
