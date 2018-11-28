@@ -474,6 +474,31 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public DataTable vehicleTypeFilterList;
+        public void vehicleTypeFilter(int typeid) {
+
+            Initialize();
+            OpenConn();
+            vehicleTypeFilterList = new DataTable();
+            //output the selected vehicletyped which isnt in the status "IN USE"
+            string query = "SELECT Vehicles.*, fuelType.* FROM Vehicles " +
+                "INNER JOIN fuelType ON Vehicles.fuelTypeID = fuelType.fuel_ID " +
+                "WHERE vehicleTypeID = " + typeid + " AND vehicleStatusID = 1 ORDER BY plateNum ASC";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(vehicleTypeFilterList);
+
+            }
+
+            CloseConn();
+
+        }
+
         /*=============================[fertilizers]=================================*/
 
         //functions for getting fertilizers data.

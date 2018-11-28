@@ -80,6 +80,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnReload = new System.Windows.Forms.Button();
+            this.btnVehicleSelect = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -370,6 +371,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnVehicleSelect);
             this.groupBox5.Controls.Add(this.cbVehicle);
             this.groupBox5.Controls.Add(this.btnVehicle);
             this.groupBox5.Controls.Add(this.txtFuel);
@@ -389,8 +391,9 @@
             this.cbVehicle.FormattingEnabled = true;
             this.cbVehicle.Location = new System.Drawing.Point(87, 41);
             this.cbVehicle.Name = "cbVehicle";
-            this.cbVehicle.Size = new System.Drawing.Size(132, 21);
+            this.cbVehicle.Size = new System.Drawing.Size(96, 21);
             this.cbVehicle.TabIndex = 28;
+
             // 
             // btnVehicle
             // 
@@ -639,6 +642,21 @@
             this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
+            // btnVehicleSelect
+            // 
+            this.btnVehicleSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnVehicleSelect.FlatAppearance.BorderSize = 0;
+            this.btnVehicleSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicleSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicleSelect.ForeColor = System.Drawing.Color.White;
+            this.btnVehicleSelect.Location = new System.Drawing.Point(186, 41);
+            this.btnVehicleSelect.Name = "btnVehicleSelect";
+            this.btnVehicleSelect.Size = new System.Drawing.Size(33, 21);
+            this.btnVehicleSelect.TabIndex = 29;
+            this.btnVehicleSelect.Text = "✔";
+            this.btnVehicleSelect.UseVisualStyleBackColor = false;
+            this.btnVehicleSelect.Click += new System.EventHandler(this.btnVehicleSelect_Click);
+            // 
             // Crops
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,7 +667,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Crops";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crops";
@@ -730,5 +748,6 @@
         private System.Windows.Forms.ComboBox cbVehicle;
         private System.Windows.Forms.ComboBox cbFertilizer;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Button btnVehicleSelect;
     }
 }
