@@ -13,6 +13,8 @@ namespace JustRipeProjectOfficial
     public partial class Storage : Form
     {
 
+        DBConnect dbconn = new DBConnect();
+
         private int userID;
 
         public Storage(int id)
@@ -20,6 +22,12 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
 
             userID = id;
+
+            //dbconn.getStorageData();
+            //lBStorageList.DataSource = /*dbconn.storageList*/;
+            lBStorageList.DisplayMember = "storage_ID";
+            lBStorageList.ValueMember = "storage_ID";
+
 
         }
 

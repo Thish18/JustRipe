@@ -12,6 +12,7 @@ namespace JustRipeProjectOfficial
 {
     public partial class Container : Form
     {
+        DBConnect dbconn = new DBConnect();
 
         private int userID;
 
@@ -20,6 +21,11 @@ namespace JustRipeProjectOfficial
             InitializeComponent();
 
             userID = id;
+
+            //dbconn.getContainerData();
+            //lBContainerList.DataSource = /*dbconn.containerList*/;
+            lBContainerList.DisplayMember = "containerT_ID";
+            lBContainerList.ValueMember = "containerT_ID";
 
         }
 
