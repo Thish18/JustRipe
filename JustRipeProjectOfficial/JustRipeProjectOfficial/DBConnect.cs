@@ -592,6 +592,33 @@ namespace JustRipeProjectOfficial
 
         }
 
+        /*=============================[Fuel]=================================*/
+
+        public DataTable fuelTypeList;
+        public void getFuelTypeData() {
+
+            Initialize();
+            OpenConn();
+
+            fuelTypeList = new DataTable();
+
+            string query = "SELECT fuel_ID, fuelType FROM fuelType";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(fuelTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
