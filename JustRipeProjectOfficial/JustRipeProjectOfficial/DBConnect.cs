@@ -625,6 +625,89 @@ namespace JustRipeProjectOfficial
 
         }
 
+        /*=============================[Sowing]=================================*/
+
+        public DataTable sowingTypeList;
+        public void getSowingData() {
+
+            Initialize();
+            OpenConn();
+
+            sowingTypeList = new DataTable();
+
+            string query = "SELECT sowingM_ID, sowingType FROM sowingMethods";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(sowingTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        /*=============================[Harvest]=================================*/
+
+        public DataTable harvestTypeList;
+        public void getHarvestData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            harvestTypeList = new DataTable();
+
+            string query = "SELECT harvestM_ID, harvestType FROM HarvestMethod";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(harvestTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        /*=============================[specialTreatment]=================================*/
+
+        public DataTable specialTypeList;
+        public void getSpecialData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            specialTypeList = new DataTable();
+
+            string query = "SELECT specialT_ID, specialType FROM specialTreatment";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(specialTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
