@@ -68,6 +68,7 @@
             this.txtLabRankID = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtLabID = new System.Windows.Forms.TextBox();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,7 +89,7 @@
             this.lBLabourerList.Location = new System.Drawing.Point(0, 64);
             this.lBLabourerList.Margin = new System.Windows.Forms.Padding(4);
             this.lBLabourerList.Name = "lBLabourerList";
-            this.lBLabourerList.Size = new System.Drawing.Size(265, 420);
+            this.lBLabourerList.Size = new System.Drawing.Size(267, 372);
             this.lBLabourerList.TabIndex = 0;
             this.lBLabourerList.SelectedIndexChanged += new System.EventHandler(this.lBLabourerList_SelectedIndexChanged);
             // 
@@ -347,10 +348,10 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(0, 481);
+            this.btnBack.Location = new System.Drawing.Point(0, 484);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(267, 84);
+            this.btnBack.Size = new System.Drawing.Size(267, 81);
             this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Back to menu";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -358,6 +359,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.lBLabourerList);
             this.panel1.Controls.Add(this.btnBack);
@@ -554,6 +556,22 @@
             this.txtLabID.Size = new System.Drawing.Size(280, 26);
             this.txtLabID.TabIndex = 28;
             // 
+            // btnSelect
+            // 
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnSelect.FlatAppearance.BorderSize = 0;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(0, 433);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(267, 52);
+            this.btnSelect.TabIndex = 22;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // LabourerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -648,5 +666,6 @@
         private System.Windows.Forms.TextBox txtLabRankID;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtLabID;
+        private System.Windows.Forms.Button btnSelect;
     }
 }
