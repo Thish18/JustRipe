@@ -34,6 +34,13 @@ namespace JustRipeProjectOfficial
             cbVehicleType.DisplayMember = "vehicleType";
             cbVehicleType.ValueMember = "vehiclesT_ID";
 
+            //getfuelTypedata
+            //dbconn.
+            cbFuelType.DataSource = ;
+            cbFuelType.DisplayMember = "fuelType";
+            cbFuelType.ValueMember = "fuel_ID";
+            
+
             userID = ID;
 
             dbconn.userInfoExport(userID);
@@ -114,7 +121,8 @@ namespace JustRipeProjectOfficial
 
             if(createEnable)
             {
-                //dbconn.createVehicle(name, plateNumber, fuelType);
+                int type = Convert.ToInt32(cbVehicleType.SelectedValue.ToString());
+                dbconn.createVehicle();
             }
             else
             {
