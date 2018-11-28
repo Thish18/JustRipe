@@ -135,8 +135,8 @@ namespace JustRipeProjectOfficial
                 txtLabFirstName.Text = dr["firstname"].ToString();
                 txtLabLastName.Text = dr["lastname"].ToString();
                 txtLabUsername.Text = dr["username"].ToString();
-                //txtLabDoB.Text = dr["DateOfBirth"].ToString();
-                //txtLabGender.Text = dr["Gender"].ToString();
+                txtLabDoB.Text = dr["DateOfBirth"].ToString();
+                txtLabGender.Text = dr["Gender"].ToString();
                 txtLabAddress.Text = dr["address1"].ToString();
                 txtLabAddress1.Text = dr["address2"].ToString();
                 txtLabContactNum.Text = dr["ContactNum"].ToString();
@@ -175,8 +175,8 @@ namespace JustRipeProjectOfficial
             txtLabFirstName.Text = dbconn.cropsDetail.Rows[0]["firstname"].ToString();
             txtLabLastName.Text = dbconn.cropsDetail.Rows[0]["lastname"].ToString();
             txtLabUsername.Text = dbconn.cropsDetail.Rows[0]["username"].ToString();
-            //txtLabDoB.Text = dbconn.cropsDetail.Rows[0]["DateOfBirth"].ToString();
-            //txtLabGender.Text = dbconn.cropsDetail.Rows[0]["Gender"].ToString();
+            txtLabDoB.Text = dbconn.cropsDetail.Rows[0]["DateOfBirth"].ToString();
+            txtLabGender.Text = dbconn.cropsDetail.Rows[0]["Gender"].ToString();
             txtLabAddress.Text = dbconn.cropsDetail.Rows[0]["address1"].ToString();
             txtLabAddress1.Text = dbconn.cropsDetail.Rows[0]["address2"].ToString();
             txtLabContactNum.Text = dbconn.cropsDetail.Rows[0]["ContactNum"].ToString();
