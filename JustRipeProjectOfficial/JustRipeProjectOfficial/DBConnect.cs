@@ -494,13 +494,16 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "";
+            string query = "INSERT INTO vehicleType (vehicleTypeID, plateNum, fuelTypeID, vehicleStatusID) " +
+                "VALUES(@vehicleTypeID, @plateNum, @fuelTypeID, @vehicleStatusID)";
 
             comm = new SqlCommand(query, connToDB);
 
             comm.Parameters.AddWithValue("@vehicleType", name);
             comm.Parameters.AddWithValue("@plateNum", plateNumber);
             comm.Parameters.AddWithValue("@fuelType", fuelType);
+            comm.Parameters.AddWithValue("@vehicleStatusID", 1);
+            comm.ExecuteNonQuery();
 
         }
 
