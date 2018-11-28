@@ -89,67 +89,11 @@ namespace JustRipeProjectOfficial
             dbconn.getLabourerData(tempID);
         }
 
-        private void LabourerManagement_Load(object sender, EventArgs e)
-        {
-            cc();
-        }
-        public void cc()
-        {
-            cboLabUserID.Items.Clear();
-            Initialize();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM Users";
-            comm = new SqlCommand(query, connToDB);
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            DataTable dt = new DataTable();
-            // use adapter to flood above table
-            dataAdap.Fill(dt);
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                cboLabUserID.Items.Add(dr["Users_ID"].ToString());
-            }
-            CloseConn();
-        }
-
-        private void cboLabUserID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Initialize();
-            //connection query for SQL for the types of crops.
-            OpenConn();
-            string query = "SELECT * FROM Users WHERE Users_ID = " + cboLabUserID.SelectedItem.ToString();
-            comm = new SqlCommand(query, connToDB);
-
-            comm = new SqlCommand(query, connToDB);
-            dataAdap = new SqlDataAdapter(comm);
-            DataTable dt = new DataTable();
-            // use adapter to flood above table
-            dataAdap.Fill(dt);
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                txtLabID.Text = dr["users_ID"].ToString();
-                txtLabFirstName.Text = dr["firstname"].ToString();
-                txtLabLastName.Text = dr["lastname"].ToString();
-                txtLabUsername.Text = dr["username"].ToString();
-                txtLabDoB.Text = dr["DateOfBirth"].ToString();
-                txtLabGender.Text = dr["Gender"].ToString();
-                txtLabAddress.Text = dr["address1"].ToString();
-                txtLabAddress1.Text = dr["address2"].ToString();
-                txtLabContactNum.Text = dr["ContactNum"].ToString();
-                txtLabRankID.Text = dr["rankID"].ToString();
-            }
-            CloseConn();
-        }
-
         private void btnTimetable_Click(object sender, EventArgs e)
         {
             using (SqlConnection Conn = new SqlConnection(connStr))
             {
-                InitializeComponent();
+                Initialize();
                 //connection query for SQL for the types of crops.
                 OpenConn();
                 string query = "SELECT * FROM WorkSchedule";

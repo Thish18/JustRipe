@@ -183,7 +183,7 @@ namespace JustRipeProjectOfficial
             tempUserInfo = new DataTable();
 
             Initialize();
-            
+
             OpenConn();
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
@@ -245,7 +245,6 @@ namespace JustRipeProjectOfficial
             comm.ExecuteNonQuery();
             CloseConn();
         }
-
 
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
@@ -774,7 +773,7 @@ namespace JustRipeProjectOfficial
             //connection query for SQL.
             OpenConn();
 
-            string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID!=''";
+            string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID != ''" ;
 
             scheduleInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -792,8 +791,6 @@ namespace JustRipeProjectOfficial
 
 
         }
-
-
 
         
     }
