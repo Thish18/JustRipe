@@ -649,7 +649,6 @@ namespace JustRipeProjectOfficial
 
         //temp storage List.
         public DataTable labourerInfo;
-
         //get the single data selected from the labourer list
         public void getLabourerData(int id) {
 
