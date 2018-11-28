@@ -169,17 +169,17 @@ namespace JustRipeProjectOfficial
         private void btnSelect_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(lBLabourerList.SelectedValue.ToString());
-            dbconn.getCropsDetails(id);
+            dbconn.getLabourerData(id);
 
-            txtLabID.Text = dbconn.cropsDetail.Rows[0]["User_ID"].ToString();
-            txtLabFirstName.Text = dbconn.cropsDetail.Rows[0]["firstname"].ToString();
-            txtLabLastName.Text = dbconn.cropsDetail.Rows[0]["lastname"].ToString();
-            txtLabUsername.Text = dbconn.cropsDetail.Rows[0]["username"].ToString();
-            txtLabDoB.Text = dbconn.cropsDetail.Rows[0]["DateOfBirth"].ToString();
-            txtLabGender.Text = dbconn.cropsDetail.Rows[0]["Gender"].ToString();
-            txtLabAddress.Text = dbconn.cropsDetail.Rows[0]["address1"].ToString();
-            txtLabAddress1.Text = dbconn.cropsDetail.Rows[0]["address2"].ToString();
-            txtLabContactNum.Text = dbconn.cropsDetail.Rows[0]["ContactNum"].ToString();
+            txtLabID.Text = dbconn.labourerInfo.Rows[0]["users_ID"].ToString();
+            txtLabFirstName.Text = dbconn.labourerInfo.Rows[0]["firstname"].ToString();
+            txtLabLastName.Text = dbconn.labourerInfo.Rows[0]["lastname"].ToString();
+            txtLabUsername.Text = dbconn.labourerInfo.Rows[0]["username"].ToString();
+            txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
+            txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
+            txtLabAddress.Text = dbconn.labourerInfo.Rows[0]["address1"].ToString();
+            txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
+            txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
             
         }
     }
