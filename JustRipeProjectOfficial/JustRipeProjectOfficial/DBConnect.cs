@@ -707,6 +707,64 @@ namespace JustRipeProjectOfficial
 
         }
 
+        /*=============================[Storage]=================================*/
+
+        public DataTable storageList;
+        public void getStorageData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            storageList = new DataTable();
+
+            string query = "SELECT storage_ID FROM storages ";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(storageList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        /*=============================[Container]=================================*/
+
+        public DataTable containerList;
+        public void getContainerData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            containerList = new DataTable();
+
+            string query = "SELECT containerType.Type + '/' + containers.containers_ID AS TypeID FROM containers " +
+                "INNER JOIN containerType ON containers.containerTypeID = containerType.containerT_ID " +
+                "ORDER BY containerType.containerType.Type ASC";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
