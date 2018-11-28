@@ -38,6 +38,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAssignedList = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dtpPeriod = new System.Windows.Forms.DateTimePicker();
             this.txtMini = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtMax = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cBSpecial = new System.Windows.Forms.ComboBox();
-            this.cBSTEnable = new System.Windows.Forms.CheckBox();
             this.txtTreatmentExtra = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -63,10 +63,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dtpHarvest = new System.Windows.Forms.DateTimePicker();
             this.cbHarvestType = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtpSowing = new System.Windows.Forms.DateTimePicker();
             this.cbSowingType = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -78,9 +80,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnReload = new System.Windows.Forms.Button();
-            this.dtpPeriod = new System.Windows.Forms.DateTimePicker();
-            this.dtpSowing = new System.Windows.Forms.DateTimePicker();
-            this.dtpHarvest = new System.Windows.Forms.DateTimePicker();
+            this.btnSowing = new System.Windows.Forms.Button();
+            this.btnharvest = new System.Windows.Forms.Button();
+            this.btnSpecial = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -192,9 +194,9 @@
             this.panel6.Controls.Add(this.groupBox3);
             this.panel6.Controls.Add(this.groupBox2);
             this.panel6.Controls.Add(this.panel5);
-            this.panel6.Location = new System.Drawing.Point(267, 22);
+            this.panel6.Location = new System.Drawing.Point(268, 9);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(476, 399);
+            this.panel6.Size = new System.Drawing.Size(482, 423);
             this.panel6.TabIndex = 12;
             // 
             // btnAssignedList
@@ -204,9 +206,9 @@
             this.btnAssignedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignedList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssignedList.ForeColor = System.Drawing.Color.White;
-            this.btnAssignedList.Location = new System.Drawing.Point(286, 149);
+            this.btnAssignedList.Location = new System.Drawing.Point(330, 142);
             this.btnAssignedList.Name = "btnAssignedList";
-            this.btnAssignedList.Size = new System.Drawing.Size(184, 24);
+            this.btnAssignedList.Size = new System.Drawing.Size(132, 24);
             this.btnAssignedList.TabIndex = 9;
             this.btnAssignedList.Text = "Labourer Assigned List";
             this.btnAssignedList.UseVisualStyleBackColor = false;
@@ -224,12 +226,19 @@
             this.groupBox7.Controls.Add(this.txtName);
             this.groupBox7.Controls.Add(this.txtQuantity);
             this.groupBox7.Controls.Add(this.label4);
-            this.groupBox7.Location = new System.Drawing.Point(6, 67);
+            this.groupBox7.Location = new System.Drawing.Point(6, 60);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(273, 120);
             this.groupBox7.TabIndex = 26;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Crops Information";
+            // 
+            // dtpPeriod
+            // 
+            this.dtpPeriod.Location = new System.Drawing.Point(87, 45);
+            this.dtpPeriod.Name = "dtpPeriod";
+            this.dtpPeriod.Size = new System.Drawing.Size(178, 20);
+            this.dtpPeriod.TabIndex = 20;
             // 
             // txtMini
             // 
@@ -306,12 +315,12 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.btnSpecial);
             this.groupBox6.Controls.Add(this.cBSpecial);
-            this.groupBox6.Controls.Add(this.cBSTEnable);
             this.groupBox6.Controls.Add(this.txtTreatmentExtra);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Location = new System.Drawing.Point(241, 273);
+            this.groupBox6.Location = new System.Drawing.Point(241, 298);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(229, 122);
             this.groupBox6.TabIndex = 25;
@@ -321,33 +330,23 @@
             // cBSpecial
             // 
             this.cBSpecial.FormattingEnabled = true;
-            this.cBSpecial.Location = new System.Drawing.Point(89, 41);
+            this.cBSpecial.Location = new System.Drawing.Point(89, 13);
             this.cBSpecial.Name = "cBSpecial";
             this.cBSpecial.Size = new System.Drawing.Size(132, 21);
             this.cBSpecial.TabIndex = 28;
             // 
-            // cBSTEnable
-            // 
-            this.cBSTEnable.AutoSize = true;
-            this.cBSTEnable.Location = new System.Drawing.Point(9, 19);
-            this.cBSTEnable.Name = "cBSTEnable";
-            this.cBSTEnable.Size = new System.Drawing.Size(158, 17);
-            this.cBSTEnable.TabIndex = 23;
-            this.cBSTEnable.Text = "Special Treatment Required";
-            this.cBSTEnable.UseVisualStyleBackColor = true;
-            // 
             // txtTreatmentExtra
             // 
-            this.txtTreatmentExtra.Location = new System.Drawing.Point(100, 67);
+            this.txtTreatmentExtra.Location = new System.Drawing.Point(89, 39);
             this.txtTreatmentExtra.Multiline = true;
             this.txtTreatmentExtra.Name = "txtTreatmentExtra";
-            this.txtTreatmentExtra.Size = new System.Drawing.Size(121, 49);
+            this.txtTreatmentExtra.Size = new System.Drawing.Size(132, 49);
             this.txtTreatmentExtra.TabIndex = 20;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(28, 70);
+            this.label16.Location = new System.Drawing.Point(28, 42);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(66, 13);
             this.label16.TabIndex = 19;
@@ -356,7 +355,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 44);
+            this.label17.Location = new System.Drawing.Point(6, 16);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(88, 13);
             this.label17.TabIndex = 16;
@@ -372,7 +371,7 @@
             this.groupBox5.Controls.Add(this.txtPlateNo);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Location = new System.Drawing.Point(6, 273);
+            this.groupBox5.Location = new System.Drawing.Point(6, 298);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(229, 122);
             this.groupBox5.TabIndex = 24;
@@ -462,16 +461,24 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnharvest);
             this.groupBox4.Controls.Add(this.dtpHarvest);
             this.groupBox4.Controls.Add(this.cbHarvestType);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Location = new System.Drawing.Point(241, 193);
+            this.groupBox4.Location = new System.Drawing.Point(241, 181);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(229, 74);
+            this.groupBox4.Size = new System.Drawing.Size(229, 111);
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Harvest Method";
+            // 
+            // dtpHarvest
+            // 
+            this.dtpHarvest.Location = new System.Drawing.Point(89, 42);
+            this.dtpHarvest.Name = "dtpHarvest";
+            this.dtpHarvest.Size = new System.Drawing.Size(132, 20);
+            this.dtpHarvest.TabIndex = 22;
             // 
             // cbHarvestType
             // 
@@ -501,16 +508,24 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnSowing);
             this.groupBox3.Controls.Add(this.dtpSowing);
             this.groupBox3.Controls.Add(this.cbSowingType);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(6, 193);
+            this.groupBox3.Location = new System.Drawing.Point(6, 181);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(229, 74);
+            this.groupBox3.Size = new System.Drawing.Size(229, 111);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sowing Method";
+            // 
+            // dtpSowing
+            // 
+            this.dtpSowing.Location = new System.Drawing.Point(89, 42);
+            this.dtpSowing.Name = "dtpSowing";
+            this.dtpSowing.Size = new System.Drawing.Size(132, 20);
+            this.dtpSowing.TabIndex = 21;
             // 
             // cbSowingType
             // 
@@ -543,7 +558,7 @@
             this.groupBox2.Controls.Add(this.cbFertilizer);
             this.groupBox2.Controls.Add(this.btnFertilizer);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(285, 67);
+            this.groupBox2.Location = new System.Drawing.Point(285, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(185, 76);
             this.groupBox2.TabIndex = 21;
@@ -565,9 +580,9 @@
             this.btnFertilizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFertilizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFertilizer.ForeColor = System.Drawing.Color.White;
-            this.btnFertilizer.Location = new System.Drawing.Point(0, 48);
+            this.btnFertilizer.Location = new System.Drawing.Point(45, 48);
             this.btnFertilizer.Name = "btnFertilizer";
-            this.btnFertilizer.Size = new System.Drawing.Size(185, 24);
+            this.btnFertilizer.Size = new System.Drawing.Size(132, 24);
             this.btnFertilizer.TabIndex = 27;
             this.btnFertilizer.Text = "Edit Fertilizers";
             this.btnFertilizer.UseVisualStyleBackColor = false;
@@ -589,7 +604,7 @@
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(544, 54);
+            this.panel5.Size = new System.Drawing.Size(578, 54);
             this.panel5.TabIndex = 11;
             // 
             // btnUpdate
@@ -599,7 +614,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(286, 0);
+            this.btnUpdate.Location = new System.Drawing.Point(292, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(190, 54);
             this.btnUpdate.TabIndex = 8;
@@ -625,7 +640,7 @@
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(611, 423);
+            this.btnReload.Location = new System.Drawing.Point(598, 435);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(132, 21);
             this.btnReload.TabIndex = 9;
@@ -633,26 +648,47 @@
             this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // dtpPeriod
+            // btnSowing
             // 
-            this.dtpPeriod.Location = new System.Drawing.Point(87, 45);
-            this.dtpPeriod.Name = "dtpPeriod";
-            this.dtpPeriod.Size = new System.Drawing.Size(178, 20);
-            this.dtpPeriod.TabIndex = 20;
+            this.btnSowing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnSowing.FlatAppearance.BorderSize = 0;
+            this.btnSowing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSowing.ForeColor = System.Drawing.Color.White;
+            this.btnSowing.Location = new System.Drawing.Point(89, 68);
+            this.btnSowing.Name = "btnSowing";
+            this.btnSowing.Size = new System.Drawing.Size(132, 24);
+            this.btnSowing.TabIndex = 30;
+            this.btnSowing.Text = "Edit Sowing";
+            this.btnSowing.UseVisualStyleBackColor = false;
             // 
-            // dtpSowing
+            // btnharvest
             // 
-            this.dtpSowing.Location = new System.Drawing.Point(89, 42);
-            this.dtpSowing.Name = "dtpSowing";
-            this.dtpSowing.Size = new System.Drawing.Size(132, 20);
-            this.dtpSowing.TabIndex = 21;
+            this.btnharvest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnharvest.FlatAppearance.BorderSize = 0;
+            this.btnharvest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnharvest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnharvest.ForeColor = System.Drawing.Color.White;
+            this.btnharvest.Location = new System.Drawing.Point(89, 68);
+            this.btnharvest.Name = "btnharvest";
+            this.btnharvest.Size = new System.Drawing.Size(132, 24);
+            this.btnharvest.TabIndex = 31;
+            this.btnharvest.Text = "Edit Harvest";
+            this.btnharvest.UseVisualStyleBackColor = false;
             // 
-            // dtpHarvest
+            // btnSpecial
             // 
-            this.dtpHarvest.Location = new System.Drawing.Point(89, 42);
-            this.dtpHarvest.Name = "dtpHarvest";
-            this.dtpHarvest.Size = new System.Drawing.Size(132, 20);
-            this.dtpHarvest.TabIndex = 22;
+            this.btnSpecial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnSpecial.FlatAppearance.BorderSize = 0;
+            this.btnSpecial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpecial.ForeColor = System.Drawing.Color.White;
+            this.btnSpecial.Location = new System.Drawing.Point(89, 94);
+            this.btnSpecial.Name = "btnSpecial";
+            this.btnSpecial.Size = new System.Drawing.Size(132, 24);
+            this.btnSpecial.TabIndex = 30;
+            this.btnSpecial.Text = "Edit Treatment";
+            this.btnSpecial.UseVisualStyleBackColor = false;
             // 
             // Crops
             // 
@@ -733,7 +769,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnAssignedList;
-        private System.Windows.Forms.CheckBox cBSTEnable;
         private System.Windows.Forms.Button btnVehicle;
         private System.Windows.Forms.Button btnFertilizer;
         private System.Windows.Forms.ComboBox cBSpecial;
@@ -746,5 +781,8 @@
         private System.Windows.Forms.DateTimePicker dtpPeriod;
         private System.Windows.Forms.DateTimePicker dtpHarvest;
         private System.Windows.Forms.DateTimePicker dtpSowing;
+        private System.Windows.Forms.Button btnSpecial;
+        private System.Windows.Forms.Button btnharvest;
+        private System.Windows.Forms.Button btnSowing;
     }
 }
