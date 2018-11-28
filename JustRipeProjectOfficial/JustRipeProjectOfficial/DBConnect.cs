@@ -488,7 +488,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createVehicle(string name, int plateNumber, string fuelType)
+        public void createVehicle(int name, string plateNumber, int fuelType)
         {
 
             Initialize();

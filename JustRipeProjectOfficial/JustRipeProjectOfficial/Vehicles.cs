@@ -35,8 +35,8 @@ namespace JustRipeProjectOfficial
             cbVehicleType.ValueMember = "vehiclesT_ID";
 
             //getfuelTypedata
-            //dbconn.
-            cbFuelType.DataSource = ;
+            dbconn.getFuelTypeData();
+            cbFuelType.DataSource = dbconn.fuelTypeList;
             cbFuelType.DisplayMember = "fuelType";
             cbFuelType.ValueMember = "fuel_ID";
             
@@ -92,7 +92,7 @@ namespace JustRipeProjectOfficial
 
             cbVehicleType.Text = dbconn.vehicleDetail.Rows[0]["vehicleType"].ToString();
             txtPlateNumber.Text = dbconn.vehicleDetail.Rows[0]["plateNum"].ToString();
-            txtFuelType.Text = dbconn.vehicleDetail.Rows[0]["fuelType"].ToString();
+            cbFuelType.Text = dbconn.vehicleDetail.Rows[0]["fuelType"].ToString();
 
         }
 
@@ -103,7 +103,7 @@ namespace JustRipeProjectOfficial
 
             cbVehicleType.Text = null;
             txtPlateNumber.Text = null;
-            txtFuelType.Text = null;
+            cbFuelType.Text = null;
 
             btnCreate.Enabled = false;
 
@@ -114,15 +114,16 @@ namespace JustRipeProjectOfficial
 
             btnCreate.Enabled = true;
 
-            string name = cbVehicleType.Text;
-            int plateNumber = Convert.ToInt32(txtPlateNumber.Text);
-            string fuelType = txtFuelType.Text;
+            int type = Convert.ToInt32(cbVehicleType.SelectedValue.ToString());
+            string plateNumber = txtPlateNumber.Text;
+            int fuelid = Convert.ToInt32(cbFuelType.SelectedValue.ToString());
 
 
             if(createEnable)
             {
-                int type = Convert.ToInt32(cbVehicleType.SelectedValue.ToString());
-                dbconn.createVehicle();
+                
+                dbconn.createVehicle(type, plateNumber, fuelid);
+
             }
             else
             {
