@@ -56,11 +56,7 @@ namespace JustRipeProjectOfficial
             cbFertilizer.ValueMember = "fertilizer_ID";
             cbFertilizer.Text = null;
 
-            dbconn.getVehicleTypeData();
-            cbVehicle.DataSource = dbconn.vehicleTypeList;
-            cbVehicle.DisplayMember = "vehicleType";
-            cbVehicle.ValueMember = "vehiclesT_ID";
-            cbVehicle.Text = null;
+            
 
             userID = ID;
 
@@ -73,6 +69,12 @@ namespace JustRipeProjectOfficial
                 rankAccessDisable();
 
             }
+
+            dbconn.getVehicleTypeData();
+            cbVehicle.DataSource = dbconn.vehicleTypeList;
+            cbVehicle.DisplayMember = "vehicleType";
+            cbVehicle.ValueMember = "vehiclesT_ID";
+            cbVehicle.Text = null;
 
         }
 
@@ -266,5 +268,14 @@ namespace JustRipeProjectOfficial
 
         }
 
+        private void btnVehicleSelect_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cbVehicle.SelectedValue.ToString());
+            dbconn.vehicleTypeFilter(id);
+
+            txtPlateNo.Text = dbconn.vehicleTypeFilterList.Rows[0]["plateNum"].ToString();
+            txtFuel.Text = dbconn.vehicleTypeFilterList.Rows[0]["fuelType"].ToString();
+
+        }
     }
 }
