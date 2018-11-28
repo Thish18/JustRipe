@@ -17,7 +17,7 @@ namespace JustRipeProjectOfficial
 
         private int userID;
         private int rankID;
-        private bool createEnable;
+        private bool createEnable = false;
 
         public Vehicles(int ID)
         {
@@ -123,17 +123,19 @@ namespace JustRipeProjectOfficial
             {
                 
                 dbconn.createVehicle(type, plateNumber, fuelid);
+                MessageBox.Show("Vehicle Registered.");
 
             }
             else
             {
-
+                MessageBox.Show("Vehicle Information Updated. ");
             }
 
+            createEnable = false;
             //auto updates list after creating vehicle
             dbconn.getVehicleData();
             lBVehiclesList.DataSource = dbconn.vehicleList;
-            lBVehiclesList.DisplayMember = "plateNum";
+            lBVehiclesList.DisplayMember = "typePlate";
             lBVehiclesList.ValueMember = "vehicles_ID";
 
         }
