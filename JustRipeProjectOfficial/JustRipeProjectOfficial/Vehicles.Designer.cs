@@ -30,8 +30,8 @@
         {
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.cbVehicleType = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtFuelType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPlateNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.lBVehiclesList = new System.Windows.Forms.ListBox();
-            this.cbVehicleType = new System.Windows.Forms.ComboBox();
+            this.cbFuelType = new System.Windows.Forms.ComboBox();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,9 +68,9 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.cbFuelType);
             this.panel6.Controls.Add(this.cbVehicleType);
             this.panel6.Controls.Add(this.label15);
-            this.panel6.Controls.Add(this.txtFuelType);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.txtPlateNumber);
             this.panel6.Controls.Add(this.label4);
@@ -81,6 +81,14 @@
             this.panel6.Size = new System.Drawing.Size(248, 441);
             this.panel6.TabIndex = 14;
             // 
+            // cbVehicleType
+            // 
+            this.cbVehicleType.FormattingEnabled = true;
+            this.cbVehicleType.Location = new System.Drawing.Point(82, 69);
+            this.cbVehicleType.Name = "cbVehicleType";
+            this.cbVehicleType.Size = new System.Drawing.Size(131, 21);
+            this.cbVehicleType.TabIndex = 24;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -89,13 +97,6 @@
             this.label15.Size = new System.Drawing.Size(60, 13);
             this.label15.TabIndex = 22;
             this.label15.Text = "Fuel Type: ";
-            // 
-            // txtFuelType
-            // 
-            this.txtFuelType.Location = new System.Drawing.Point(82, 150);
-            this.txtFuelType.Name = "txtFuelType";
-            this.txtFuelType.Size = new System.Drawing.Size(131, 20);
-            this.txtFuelType.TabIndex = 23;
             // 
             // label2
             // 
@@ -231,13 +232,13 @@
             this.lBVehiclesList.Size = new System.Drawing.Size(227, 212);
             this.lBVehiclesList.TabIndex = 4;
             // 
-            // cbVehicleType
+            // cbFuelType
             // 
-            this.cbVehicleType.FormattingEnabled = true;
-            this.cbVehicleType.Location = new System.Drawing.Point(82, 69);
-            this.cbVehicleType.Name = "cbVehicleType";
-            this.cbVehicleType.Size = new System.Drawing.Size(131, 21);
-            this.cbVehicleType.TabIndex = 24;
+            this.cbFuelType.FormattingEnabled = true;
+            this.cbFuelType.Location = new System.Drawing.Point(82, 150);
+            this.cbFuelType.Name = "cbFuelType";
+            this.cbFuelType.Size = new System.Drawing.Size(131, 21);
+            this.cbFuelType.TabIndex = 25;
             // 
             // Vehicles
             // 
@@ -277,10 +278,10 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.ListBox lBVehiclesList;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtFuelType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPlateNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbVehicleType;
+        private System.Windows.Forms.ComboBox cbFuelType;
     }
 }

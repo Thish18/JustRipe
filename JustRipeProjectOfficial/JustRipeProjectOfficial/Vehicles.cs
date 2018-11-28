@@ -34,6 +34,13 @@ namespace JustRipeProjectOfficial
             cbVehicleType.DisplayMember = "vehicleType";
             cbVehicleType.ValueMember = "vehiclesT_ID";
 
+            //getfuelTypedata
+            //dbconn.
+            cbFuelType.DataSource = ;
+            cbFuelType.DisplayMember = "fuelType";
+            cbFuelType.ValueMember = "fuel_ID";
+            
+
             userID = ID;
 
             dbconn.userInfoExport(userID);
@@ -107,11 +114,25 @@ namespace JustRipeProjectOfficial
 
             btnCreate.Enabled = true;
 
+            string name = cbVehicleType.Text;
+            int plateNumber = Convert.ToInt32(txtPlateNumber.Text);
+            string fuelType = txtFuelType.Text;
+
+
+            if(createEnable)
+            {
+                int type = Convert.ToInt32(cbVehicleType.SelectedValue.ToString());
+                dbconn.createVehicle();
+            }
+            else
+            {
+
+            }
 
             //auto updates list after creating vehicle
             dbconn.getVehicleData();
             lBVehiclesList.DataSource = dbconn.vehicleList;
-            lBVehiclesList.DisplayMember = "typePlate";
+            lBVehiclesList.DisplayMember = "plateNum";
             lBVehiclesList.ValueMember = "vehicles_ID";
 
         }
