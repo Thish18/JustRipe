@@ -654,10 +654,51 @@ namespace JustRipeProjectOfficial
         public void createSowingMethod(string type, int quantity)
         {
 
+            Initialize();
+            OpenConn();
+
+            string query = "INSERT INTO sowingMethods (sowingType)" +
+                "VALUES (@sowingType";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@", type);
+            comm.ExecuteNonQuery();
+
+            query = "";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@", quantity);
+            comm.ExecuteNonQuery();
+
+            CloseConn();
+            MessageBox.Show("Sowing Method Created.");
+
         }
 
+        public DataTable sowingTypeDetails;
         public void getSowingDetails(int id)
         {
+
+            Initialize();
+            OpenConn();
+            
+            string query;
+            query = "";
+
+            sowingTypeDetails = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(sowingTypeDetails);
+
+            }
+
+            CloseConn();
 
         }
 
