@@ -976,7 +976,7 @@ namespace JustRipeProjectOfficial
             //connection query for SQL.
             OpenConn();
 
-            string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID != ''" ;
+            string query = "SELECT crops.*, workschedule.* FROM WorkSchedule INNER JOIN Crops ON workschedule.crops_ID = crops.crops_ID ";
 
             scheduleInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -994,7 +994,6 @@ namespace JustRipeProjectOfficial
 
 
         }
-
         
     }
 
