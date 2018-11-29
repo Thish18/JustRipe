@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSize = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lBContainerList = new System.Windows.Forms.ListBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,10 +89,12 @@
             this.btnCreate.TabIndex = 7;
             this.btnCreate.Text = "Create New";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.btnAdd);
+            this.panel6.Controls.Add(this.txtSize);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.txtStorageID);
             this.panel6.Controls.Add(this.label2);
@@ -102,12 +105,12 @@
             this.panel6.Size = new System.Drawing.Size(271, 438);
             this.panel6.TabIndex = 20;
             // 
-            // textBox1
+            // txtSize
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtSize.Location = new System.Drawing.Point(91, 86);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.Size = new System.Drawing.Size(56, 20);
+            this.txtSize.TabIndex = 18;
             // 
             // btnUpdate
             // 
@@ -118,7 +121,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(0, 384);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(281, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(221, 54);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update Information";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -182,6 +185,7 @@
             this.btnSelect.TabIndex = 8;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // panel2
             // 
@@ -215,6 +219,21 @@
             this.lBContainerList.Name = "lBContainerList";
             this.lBContainerList.Size = new System.Drawing.Size(227, 212);
             this.lBContainerList.TabIndex = 4;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(217, 384);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(54, 54);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Container
             // 
@@ -255,6 +274,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox lBContainerList;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSize;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

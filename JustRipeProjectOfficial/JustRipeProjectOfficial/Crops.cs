@@ -262,6 +262,7 @@ namespace JustRipeProjectOfficial
 
         private void AccessEnable() {
 
+            //when create button not pressed
             createEnable = false;
             btnCreate.Enabled = true;
             btnCreate.Text = DefCreateText;
@@ -272,6 +273,7 @@ namespace JustRipeProjectOfficial
 
         private void AccessDisable() {
 
+            //when create button pressed
             createEnable = true;
             btnCreate.Enabled = false;
             btnUpdate.Text = newUpdateText;

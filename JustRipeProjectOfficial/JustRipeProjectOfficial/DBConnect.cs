@@ -718,7 +718,7 @@ namespace JustRipeProjectOfficial
 
             storageList = new DataTable();
 
-            string query = "SELECT storageSystem.storagesID AS storageGroup, storageSystem.storagesID FROM storageSystem " +
+            string query = "SELECT storageSystem.storagesID FROM storageSystem " +
                            "GROUP BY storageSystem.storagesID";
 
             comm = new SqlCommand(query, connToDB);
@@ -766,6 +766,32 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public DataTable storageLastID;
+        public void getStorageLastID() {
+
+            Initialize();
+            OpenConn();
+
+            storageLastID = new DataTable();
+
+            string query = "SELECT storage_ID FROM storages " +
+                "ORDER BY storage_ID DESC";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(storageLastID);
+
+            }
+
+
+            CloseConn();
+
+        }
+
         /*=============================[Container]=================================*/
 
         public DataTable containerList;
@@ -777,10 +803,10 @@ namespace JustRipeProjectOfficial
 
             containerList = new DataTable();
 
-            string query = "SELECT containerType.Type + '/' + containers.containers_ID + '/' + assignStatus.state AS TypeIDStatus FROM containers " +
+            string query = "SELECT containers_ID, containerStatusID, containerType.Type FROM containers " +
                 "INNER JOIN containerType ON containers.containerTypeID = containerType.containerT_ID " +
-                "INNER JOIN assignStatus ON containers.containerStatusID = assignStatus.assignStatus_ID " +
-                "ORDER BY containerType.containerType.Type ASC";
+                "WHERE containerStatusID = 1 " +
+                "ORDER BY containerType.Type ASC";
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
@@ -792,6 +818,83 @@ namespace JustRipeProjectOfficial
 
             }
 
+
+            CloseConn();
+
+        }
+
+        public DataTable containerDetail;
+        public void getContainerDetail(int id) {
+
+            Initialize();
+            OpenConn();
+
+            containerDetail = new DataTable();
+
+            string query = "SELECT containers.*, containerType.* FROM containers " +
+                "INNER JOIN containerType ON containers.containers_ID = containerType.containerT_ID " +
+                "WHERE containers.containers_ID = " + id;
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerDetail);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        public DataTable containerLastID;
+        public void getContainerLastID() {
+
+            Initialize();
+            OpenConn();
+
+            containerLastID = new DataTable();
+
+            string query = "SELECT containers_ID FROM containers " +
+                "ORDER BY containers_ID DESC ";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerLastID);
+
+            }
+
+            CloseConn();
+
+        }
+
+        public DataTable containerAddList;
+        public void tempAddContainer(int id) {
+
+            Initialize();
+            OpenConn();
+
+            containerAddList = new DataTable();
+
+            string query = "SELECT containers_ID FROM containers " +
+                "WHERE containers_ID = " + id;
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerAddList);
+
+            }
 
             CloseConn();
 
