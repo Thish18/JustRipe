@@ -25,8 +25,8 @@ namespace JustRipeProjectOfficial
 
             dbconn.getStorageData();
             lBStorageList.DataSource = dbconn.storageList;
-            lBStorageList.DisplayMember = "storagesID";
-            lBStorageList.ValueMember = "storagesID";
+            lBStorageList.DisplayMember = "storage_ID";
+            lBStorageList.ValueMember = "storage_ID";
 
             dbconn.getCropsData();
             cbCropsList.DataSource = dbconn.cropsList;

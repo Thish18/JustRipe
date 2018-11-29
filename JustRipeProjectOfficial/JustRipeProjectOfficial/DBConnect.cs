@@ -794,8 +794,8 @@ namespace JustRipeProjectOfficial
 
             storageDetail = new DataTable();
 
-            string query = "SELECT storages.*, Crops.* FROM storageSystem " +
-                "INNER JOIN Crops ON storageSystem.cropsID = Crops.crops_ID " +
+            string query = "SELECT storages.*, Crops.* FROM storages " +
+                "INNER JOIN Crops ON storages.cropsID = Crops.crops_ID " +
                 "WHERE storages.storage_ID = " + id;
 
             comm = new SqlCommand(query, connToDB);
