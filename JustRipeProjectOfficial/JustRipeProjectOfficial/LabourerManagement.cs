@@ -114,6 +114,7 @@ namespace JustRipeProjectOfficial
 
         private void btnStorage_Click(object sender, EventArgs e)
         {
+
             Storage strg = new Storage(userID);
             strg.Show();
             Hide();

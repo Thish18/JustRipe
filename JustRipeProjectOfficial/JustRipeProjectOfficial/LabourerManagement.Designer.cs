@@ -56,7 +56,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnStorage = new System.Windows.Forms.Button();
             this.lblDisplayInfo = new System.Windows.Forms.ListBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -154,7 +153,7 @@
             "[If this shows up database not working]"});
             this.cbStorage.Location = new System.Drawing.Point(0, 68);
             this.cbStorage.Name = "cbStorage";
-            this.cbStorage.Size = new System.Drawing.Size(176, 21);
+            this.cbStorage.Size = new System.Drawing.Size(200, 21);
             this.cbStorage.TabIndex = 10;
             // 
             // label3
@@ -380,7 +379,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
-            this.panel2.Controls.Add(this.btnStorage);
             this.panel2.Controls.Add(this.lblDisplayInfo);
             this.panel2.Controls.Add(this.dtpDate);
             this.panel2.Controls.Add(this.label1);
@@ -394,21 +392,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 459);
             this.panel2.TabIndex = 18;
-            // 
-            // btnStorage
-            // 
-            this.btnStorage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnStorage.FlatAppearance.BorderSize = 0;
-            this.btnStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStorage.ForeColor = System.Drawing.Color.White;
-            this.btnStorage.Location = new System.Drawing.Point(177, 68);
-            this.btnStorage.Name = "btnStorage";
-            this.btnStorage.Size = new System.Drawing.Size(22, 21);
-            this.btnStorage.TabIndex = 24;
-            this.btnStorage.Text = "🔧";
-            this.btnStorage.UseVisualStyleBackColor = false;
-            this.btnStorage.Click += new System.EventHandler(this.btnStorage_Click);
             // 
             // lblDisplayInfo
             // 
@@ -425,10 +408,10 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(2, 117);
+            this.dtpDate.Location = new System.Drawing.Point(-1, 117);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(197, 20);
+            this.dtpDate.Size = new System.Drawing.Size(200, 20);
             this.dtpDate.TabIndex = 21;
             // 
             // label11
@@ -601,6 +584,5 @@
         private System.Windows.Forms.TextBox txtLabID;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.ListBox lblDisplayInfo;
-        private System.Windows.Forms.Button btnStorage;
     }
 }

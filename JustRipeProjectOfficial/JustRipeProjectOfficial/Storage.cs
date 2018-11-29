@@ -40,14 +40,7 @@ namespace JustRipeProjectOfficial
         {
 
             foreach (Form f in Application.OpenForms)
-                if (f is LabourerManagement)
-                {
-
-                    f.Show();
-                    break;
-
-                }
-                else if (f is MainMenu){
+                if (f is MainMenu){
 
                     f.Show();
                     break;
