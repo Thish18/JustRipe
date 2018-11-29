@@ -718,7 +718,7 @@ namespace JustRipeProjectOfficial
 
             storageList = new DataTable();
 
-            string query = "SELECT storageSystem.storagesID AS storageGroup FROM storageSystem " +
+            string query = "SELECT storageSystem.storagesID AS storageGroup, storageSystem.storagesID FROM storageSystem " +
                            "GROUP BY storageSystem.storagesID";
 
             comm = new SqlCommand(query, connToDB);
@@ -744,11 +744,11 @@ namespace JustRipeProjectOfficial
 
             storageDetail = new DataTable();
 
-            string query = "SELECT storageSystem.*, storages.*, containers*, containerType.*, Crops.* FROM storageSystem " +
+            string query = "SELECT storageSystem.*, storages.*, containers.*, containerType.*, Crops.* FROM storageSystem " +
                 "INNER JOIN storages ON storageSystem.storagesID = storages.storage_ID " +
                 "INNER JOIN containers ON storageSystem.containersID = containers.containers_ID " +
                 "INNER JOIN containerType ON containers.containerTypeID = containerType.containerT_ID " +
-                "INNER JOIN Crops ON containers.cropsID = Crops.crops_ID " +
+                "INNER JOIN Crops ON storageSystem.cropsID = Crops.crops_ID " +
                 "WHERE storageSystem.storagesID = " + id;
 
             comm = new SqlCommand(query, connToDB);

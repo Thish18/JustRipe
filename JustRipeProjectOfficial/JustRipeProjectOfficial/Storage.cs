@@ -23,11 +23,17 @@ namespace JustRipeProjectOfficial
 
             userID = id;
 
-            //dbconn.getStorageData();
-            //lBStorageList.DataSource = /*dbconn.storageList*/;
-            lBStorageList.DisplayMember = "storage_ID";
-            lBStorageList.ValueMember = "storage_ID";
+            dbconn.getStorageData();
+            lBStorageList.DataSource = dbconn.storageList;
+            lBStorageList.DisplayMember = "storageGroup";
+            lBStorageList.ValueMember = "storagesID";
 
+            dbconn.getCropsData();
+            cbCropsList.DataSource = dbconn.cropsList;
+            cbCropsList.DisplayMember = "cropsType";
+            cbCropsList.ValueMember = "crops_ID";
+
+            
 
         }
 
@@ -55,5 +61,25 @@ namespace JustRipeProjectOfficial
             Hide();
 
         }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+
+            int id = Convert.ToInt32(lBStorageList.SelectedValue.ToString());
+            
+            dbconn.getStorageDetail(id);
+
+            txtStorageID.Text = dbconn.storageDetail.Rows[0]["storagesID"].ToString();
+
+            /*For some reason this one doesnt work*/
+
+            lbContainersList.DataSource = dbconn.storageDetail;
+            lbContainersList.DisplayMember = "containersID";
+            lbContainersList.ValueMember = "containersID";
+
+            cbCropsList.Text = dbconn.storageDetail.Rows[0]["cropsType"].ToString();
+
+        }
+
     }
 }

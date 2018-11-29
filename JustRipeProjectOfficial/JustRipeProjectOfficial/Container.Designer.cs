@@ -154,7 +154,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(227, 65);
             this.btnMenu.TabIndex = 6;
-            this.btnMenu.Text = "Back to main menu";
+            this.btnMenu.Text = "Back";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
