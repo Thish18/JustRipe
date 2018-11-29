@@ -651,6 +651,16 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public void createSowingMethod(string type, int quantity)
+        {
+
+        }
+
+        public void getSowingDetails(int id)
+        {
+
+        }
+
         /*=============================[Harvest]=================================*/
 
         public DataTable harvestTypeList;

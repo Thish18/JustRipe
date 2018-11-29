@@ -91,23 +91,8 @@ namespace JustRipeProjectOfficial
 
         private void btnTimetable_Click(object sender, EventArgs e)
         {
-            using (SqlConnection Conn = new SqlConnection(connStr))
-            {
-                Initialize();
-                //connection query for SQL for the types of crops.
-                OpenConn();
-                string query = "SELECT * FROM WorkSchedule";
-
-                comm = new SqlCommand(query, connToDB);
-                dataAdap = new SqlDataAdapter(comm);
-                DataTable dt = new DataTable();
-                // use adapter to flood above table
-                dataAdap.Fill(dt);
-
-                dgvTimeTable.DataSource = dt;
-
-                CloseConn();
-            }
+            LabourManagementTimetable frm = new LabourManagementTimetable();
+            frm.ShowDialog();
         }
 
         private void btnSelect_Click(object sender, EventArgs e)

@@ -123,6 +123,12 @@
     <Compile Include="LabourersList.Designer.cs">
       <DependentUpon>LabourersList.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabourManagementTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabourManagementTimetable.Designer.cs">
+      <DependentUpon>LabourManagementTimetable.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LabourersList.resx">
       <DependentUpon>LabourersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabourManagementTimetable.resx">
+      <DependentUpon>LabourManagementTimetable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
