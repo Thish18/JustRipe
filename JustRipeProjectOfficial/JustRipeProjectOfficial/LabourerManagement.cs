@@ -60,10 +60,10 @@ namespace JustRipeProjectOfficial
             cbCrops.DisplayMember = "cropstype";
             cbCrops.ValueMember = "crops_ID";
 
-            dbconn.getfertilizerData();
-            cbFertilizer.DataSource = dbconn.fertilizersList;
-            cbFertilizer.DisplayMember = "fertilizertype";
-            cbFertilizer.ValueMember = "fertilizer_ID";
+            dbconn.getStorageData();
+            cbStorage.DataSource = dbconn.storageList;
+            cbStorage.DisplayMember = "storage_ID";
+            cbStorage.ValueMember = "storage_ID";
 
         }
 
@@ -110,6 +110,13 @@ namespace JustRipeProjectOfficial
             txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
             txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
             
+        }
+
+        private void btnStorage_Click(object sender, EventArgs e)
+        {
+            Storage strg = new Storage(userID);
+            strg.Show();
+            Hide();
         }
     }
 }
