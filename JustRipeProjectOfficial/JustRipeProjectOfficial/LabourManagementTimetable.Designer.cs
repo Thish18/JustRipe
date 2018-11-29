@@ -52,6 +52,7 @@
             this.btnHarvTimetbale.TabIndex = 4;
             this.btnHarvTimetbale.Text = "Back to Main Menu";
             this.btnHarvTimetbale.UseVisualStyleBackColor = true;
+            this.btnHarvTimetbale.Click += new System.EventHandler(this.btnHarvTimetbale_Click);
             // 
             // btnHarvTimetable
             // 
