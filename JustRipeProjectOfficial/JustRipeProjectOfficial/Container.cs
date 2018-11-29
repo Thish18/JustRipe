@@ -32,12 +32,6 @@ namespace JustRipeProjectOfficial
         private void btnMenu_Click(object sender, EventArgs e)
         {
 
-            Storage ss = new Storage(userID);
-
-            ss.lbContainersList.DataSource = dbconn.containerAddList;
-            ss.lbContainersList.DisplayMember = "containerT_ID";
-            ss.lbContainersList.ValueMember = "containerT_ID";
-
             foreach (Form f in Application.OpenForms)
                 if (f is Storage)
                 {
@@ -93,9 +87,11 @@ namespace JustRipeProjectOfficial
             int id = Convert.ToInt32(lBContainerList.SelectedValue.ToString());
 
             dbconn.getContainerDetail(id);
+            MessageBox.Show(id.ToString());
             /*still working here, [0]["containers_ID"] doesnt work*/
             txtStorageID.Text = dbconn.containerDetail.Rows[0]["containers_ID"].ToString();
             txtSize.Text = dbconn.containerDetail.Rows[0]["size"].ToString();
+            
 
         }
 
