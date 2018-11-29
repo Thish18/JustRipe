@@ -32,6 +32,7 @@ namespace JustRipeProjectOfficial
             cbCropsList.DataSource = dbconn.cropsList;
             cbCropsList.DisplayMember = "cropsType";
             cbCropsList.ValueMember = "crops_ID";
+            cbCropsList.Text = null;
 
         }
 
@@ -39,8 +40,14 @@ namespace JustRipeProjectOfficial
         {
 
             foreach (Form f in Application.OpenForms)
-                if (f is MainMenu)
+                if (f is LabourerManagement)
                 {
+
+                    f.Show();
+                    break;
+
+                }
+                else if (f is MainMenu){
 
                     f.Show();
                     break;
@@ -53,10 +60,6 @@ namespace JustRipeProjectOfficial
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
-            Container ctner = new Container(userID);
-            ctner.Show();
-            Hide();
 
         }
 
@@ -74,17 +77,15 @@ namespace JustRipeProjectOfficial
 
                 txtStorageID.Text = dbconn.storageDetail.Rows[0]["storagesID"].ToString();
 
-                lbContainersList.DataSource = dbconn.storageDetail;
-                lbContainersList.DisplayMember = "containersID";
-                lbContainersList.ValueMember = "containersID";
-
                 cbCropsList.Text = dbconn.storageDetail.Rows[0]["cropsType"].ToString();
 
             }
             else {
 
                 txtStorageID.Text = id.ToString();
+                
                 MessageBox.Show("This Storage is Empty.");
+                
 
             }
 
@@ -126,8 +127,6 @@ namespace JustRipeProjectOfficial
         {
 
             AccessDisable();
-
-            lbContainersList.DataSource = null;
 
             dbconn.getStorageLastID();
 
