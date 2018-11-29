@@ -925,6 +925,36 @@ namespace JustRipeProjectOfficial
 
 
         }
+
+
+        public DataTable cropLabourerList;
+        public void getCropLabourerList(int id) {
+
+            Initialize();
+            OpenConn();
+
+            string query = "SELECT WorkSchedule.*, Crops.*, storages.*, Users.* FROM WorkSchedule " +
+                "INNER JOIN Crops ON WorkSchedule.crops_ID = Crops.crops_ID " +
+                "INNER JOIN storages ON WorkSchedule.storage_ID = storages.storage_ID " +
+                "INNER JOIN Users ON WorkSchedule.UserID = Users.users_ID " +
+                "WHERE crops_ID = " + id + " " +
+                "ORDER BY Users.firstname ASC";
+
+            cropLabourerList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(cropLabourerList);
+
+            }
+
+
+            CloseConn();
+
+        }
         
     }
 
