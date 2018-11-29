@@ -65,27 +65,26 @@ namespace JustRipeProjectOfficial
 
         private void btnHarvTimetable_Click(object sender, EventArgs e)
         {
+
+            dbconn.getHarvestData();
+            dgvHarvestMethod.DataSource = dbconn.harvestTypeList;
+
             using (SqlConnection Conn = new SqlConnection(connStr))
             {
+
                 InitializeComponent();
                 //connection query for SQL for the types of crops.
                 OpenConn();
-                string query = "SELECT * FROM HarvestMethod";
                 string query1 = "SELECT * FROM Harvest";
 
-                comm = new SqlCommand(query, connToDB);
                 comm1 = new SqlCommand(query1, connToDB);
-                dataAdap = new SqlDataAdapter(comm);
                 dataAdap1 = new SqlDataAdapter(comm1);
 
                 
-                DataTable dt = new DataTable();
                 DataTable dt1 = new DataTable();
                 // use adapter to flood above table
-                dataAdap.Fill(dt);
                 dataAdap1.Fill(dt1);
 
-                dgvHarvestMethod.DataSource = dt;
                 dgvHarvest.DataSource = dt1;
 
                 CloseConn();

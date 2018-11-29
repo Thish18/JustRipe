@@ -17,33 +17,9 @@ namespace JustRipeProjectOfficial
 
 
         DBConnect dbconn = new DBConnect();
-        private string connStr;
-        SqlConnection connToDB;
-        private SqlDataAdapter dataAdap;
-        private SqlDataReader dataRead;
-        SqlCommand comm;
 
         private int userID;
         private int tempID;
-
-        public void Initialize()
-        {
-            string mdfPath = Path.Combine(Application.StartupPath, "DBJustRipe.mdf");
-            connStr = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + mdfPath + ";Integrated Security=True;Connect Timeout=30");
-        }
-        //once MYSQL Connected. I believe this will actually try to connect to the database server.
-        public void OpenConn()
-        {
-            connToDB = new SqlConnection(connStr);
-            connToDB.Open();
-        }
-
-        //this will close the connection to the database server once the program closed.
-
-        public void CloseConn()
-        {
-            connToDB.Close();
-        }
 
         public LabourerManagement(int ID)
         {
