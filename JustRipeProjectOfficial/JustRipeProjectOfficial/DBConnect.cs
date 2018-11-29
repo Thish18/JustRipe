@@ -854,7 +854,7 @@ namespace JustRipeProjectOfficial
 
             containerList = new DataTable();
 
-            string query = "SELECT containers_ID, containerStatusID, containerType.Type FROM containers " +
+            string query = "SELECT containers.containers_ID, containers.containerStatusID, containerType.Type FROM containers " +
                 "INNER JOIN containerType ON containers.containerTypeID = containerType.containerT_ID " +
                 "WHERE containerStatusID = 1 " +
                 "ORDER BY containerType.Type ASC";

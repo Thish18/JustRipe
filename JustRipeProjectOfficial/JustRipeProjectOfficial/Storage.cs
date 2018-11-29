@@ -69,15 +69,26 @@ namespace JustRipeProjectOfficial
             
             dbconn.getStorageDetail(id);
 
-            txtStorageID.Text = dbconn.storageDetail.Rows[0]["storagesID"].ToString();
+            if (dbconn.storageDetail.Rows.Count != 0)
+            {
+
+                txtStorageID.Text = dbconn.storageDetail.Rows[0]["storagesID"].ToString();
+
+                lbContainersList.DataSource = dbconn.storageDetail;
+                lbContainersList.DisplayMember = "containersID";
+                lbContainersList.ValueMember = "containersID";
+
+                cbCropsList.Text = dbconn.storageDetail.Rows[0]["cropsType"].ToString();
+
+            }
+            else {
+
+                txtStorageID.Text = id.ToString();
+                MessageBox.Show("This Storage is Empty.");
+
+            }
 
             /*For some reason this one doesnt work*/
-
-            lbContainersList.DataSource = dbconn.storageDetail;
-            lbContainersList.DisplayMember = "containersID";
-            lbContainersList.ValueMember = "containersID";
-
-            cbCropsList.Text = dbconn.storageDetail.Rows[0]["cropsType"].ToString();
 
         }
 
