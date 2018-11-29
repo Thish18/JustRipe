@@ -769,8 +769,7 @@ namespace JustRipeProjectOfficial
 
             storageList = new DataTable();
 
-            string query = "SELECT storage_ID FROM storages" +
-                           "GROUP BY storage_ID";
+            string query = "SELECT storage_ID FROM storages";
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
