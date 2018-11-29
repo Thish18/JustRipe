@@ -20,6 +20,7 @@ namespace JustRipeProjectOfficial
         private SqlDataAdapter dataAdap;
         private SqlDataReader dataRead;
         SqlCommand comm;
+      
 
         public LabourManagementTimetable()
         {
