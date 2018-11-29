@@ -183,7 +183,7 @@ namespace JustRipeProjectOfficial
             tempUserInfo = new DataTable();
 
             Initialize();
-            
+
             OpenConn();
 
             string query = "SELECT users.*, ranktype.* FROM users INNER JOIN ranktype ON users.rankID = ranktype.rank_ID WHERE users_ID = " + userID + "";
@@ -246,7 +246,6 @@ namespace JustRipeProjectOfficial
             CloseConn();
         }
 
-
         /*===============================================================[Other Data Import/Output Functions]===============================================================================================*/
 
         /*=============================[Crops]=================================*/
@@ -273,7 +272,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void updateCrop(int cropID, string name, int quantity, int mini, int max, int ferID, int sMID, int hMID, int sID, int vID, int sTID) {
+        public void updateCrop(int cropID, string name, int quantity, int mini, int max, int ferID, int sMID, int hMID,/* int sID,*/ int vID, int sTID) {
 
             Initialize();
             OpenConn();
@@ -301,6 +300,13 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@vID", vID);
             comm.Parameters.AddWithValue("@sTID", sTID);
             comm.ExecuteNonQuery();
+
+            query = "UPDATE Vehicles SET vehicleStatusID = 2 WHERE vehicles_ID = @vID";
+
+            comm = new SqlCommand(query, connToDB);
+            comm.Parameters.AddWithValue("@vID", vID);
+            comm.ExecuteNonQuery();
+
             CloseConn();
 
         }
@@ -310,11 +316,10 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "INSERT INTO Crops (cropsType, Quantity, miniTemp, maxTemp, fertilizer_ID, sowingM_ID, harvestM_ID, storage_ID, "/*+"vehicles_ID, "*/+"specialT_ID) " +
+            string query = "INSERT INTO Crops (cropsType, Quantity, miniTemp, maxTemp, fertilizer_ID, sowingM_ID, harvestM_ID, "+/*"storage_ID, "+*/ "vehicles_ID, specialT_ID) " +
                 "VALUES (@cropsType, @Quantity, @miniTemp, @maxTemp, @fertilizer_ID, @sowingM_ID, @harvestM_ID, "+/*"@storage_ID, "+*/"@vehicles_ID, @specialT_ID)";
 
             comm = new SqlCommand(query, connToDB);
-
             comm.Parameters.AddWithValue("@cropsType", name);
             comm.Parameters.AddWithValue("@Quantity", quantity);
             comm.Parameters.AddWithValue("@miniTemp", mini);
@@ -325,7 +330,12 @@ namespace JustRipeProjectOfficial
             //comm.Parameters.AddWithValue("@storage_ID", sID);
             comm.Parameters.AddWithValue("@vehicles_ID", vID);
             comm.Parameters.AddWithValue("@specialT_ID", sTID);
+            comm.ExecuteNonQuery();
 
+            query = "UPDATE Vehicles SET vehicleStatusID = 2 WHERE vehicles_ID = @vID" ;
+
+            comm = new SqlCommand(query, connToDB);
+            comm.Parameters.AddWithValue("@vID", vID);
             comm.ExecuteNonQuery();
 
             CloseConn();
@@ -614,6 +624,282 @@ namespace JustRipeProjectOfficial
 
         }
 
+        /*=============================[Sowing]=================================*/
+
+        public DataTable sowingTypeList;
+        public void getSowingData() {
+
+            Initialize();
+            OpenConn();
+
+            sowingTypeList = new DataTable();
+
+            string query = "SELECT sowingM_ID, sowingType FROM sowingMethods";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(sowingTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        /*=============================[Harvest]=================================*/
+
+        public DataTable harvestTypeList;
+        public void getHarvestData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            harvestTypeList = new DataTable();
+
+            string query = "SELECT harvestM_ID, harvestType FROM HarvestMethod";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(harvestTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        /*=============================[specialTreatment]=================================*/
+
+        public DataTable specialTypeList;
+        public void getSpecialData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            specialTypeList = new DataTable();
+
+            string query = "SELECT specialT_ID, specialType FROM specialTreatment";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(specialTypeList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        /*=============================[Storage]=================================*/
+
+        public DataTable storageList;
+        public void getStorageData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            storageList = new DataTable();
+
+            string query = "SELECT storageSystem.storagesID FROM storageSystem " +
+                           "GROUP BY storageSystem.storagesID";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(storageList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        public DataTable storageDetail;
+        public void getStorageDetail(int id) {
+
+            Initialize();
+            OpenConn();
+
+            storageDetail = new DataTable();
+
+            string query = "SELECT storageSystem.*, storages.*, containers.*, containerType.*, Crops.* FROM storageSystem " +
+                "INNER JOIN storages ON storageSystem.storagesID = storages.storage_ID " +
+                "INNER JOIN containers ON storageSystem.containersID = containers.containers_ID " +
+                "INNER JOIN containerType ON containers.containerTypeID = containerType.containerT_ID " +
+                "INNER JOIN Crops ON storageSystem.cropsID = Crops.crops_ID " +
+                "WHERE storageSystem.storagesID = " + id;
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(storageDetail);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        public DataTable storageLastID;
+        public void getStorageLastID() {
+
+            Initialize();
+            OpenConn();
+
+            storageLastID = new DataTable();
+
+            string query = "SELECT storage_ID FROM storages " +
+                "ORDER BY storage_ID DESC";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(storageLastID);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        /*=============================[Container]=================================*/
+
+        public DataTable containerList;
+        public void getContainerData()
+        {
+
+            Initialize();
+            OpenConn();
+
+            containerList = new DataTable();
+
+            string query = "SELECT containers_ID, containerStatusID, containerType.Type FROM containers " +
+                "INNER JOIN containerType ON containers.containerTypeID = containerType.containerT_ID " +
+                "WHERE containerStatusID = 1 " +
+                "ORDER BY containerType.Type ASC";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        public DataTable containerDetail;
+        public void getContainerDetail(int id) {
+
+            Initialize();
+            OpenConn();
+
+            containerDetail = new DataTable();
+
+            string query = "SELECT containers.*, containerType.* FROM containers " +
+                "INNER JOIN containerType ON containers.containers_ID = containerType.containerT_ID " +
+                "WHERE containers.containers_ID = " + id;
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerDetail);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        public DataTable containerLastID;
+        public void getContainerLastID() {
+
+            Initialize();
+            OpenConn();
+
+            containerLastID = new DataTable();
+
+            string query = "SELECT containers_ID FROM containers " +
+                "ORDER BY containers_ID DESC ";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerLastID);
+
+            }
+
+            CloseConn();
+
+        }
+
+        public DataTable containerAddList;
+        public void tempAddContainer(int id) {
+
+            Initialize();
+            OpenConn();
+
+            containerAddList = new DataTable();
+
+            string query = "SELECT containers_ID FROM containers " +
+                "WHERE containers_ID = " + id;
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(containerAddList);
+
+            }
+
+            CloseConn();
+
+        }
+
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
         //for the list on the left hand side of the Labourer Management
@@ -680,7 +966,7 @@ namespace JustRipeProjectOfficial
             //connection query for SQL.
             OpenConn();
 
-            string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID!=''";
+            string query = "SELECT crops.*, workschedule.* FROM crops INNER JOIN workschedule ON crops.crops_ID = workschedule.crops_ID WHERE crops_ID != ''" ;
 
             scheduleInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -698,8 +984,6 @@ namespace JustRipeProjectOfficial
 
 
         }
-
-
 
         
     }

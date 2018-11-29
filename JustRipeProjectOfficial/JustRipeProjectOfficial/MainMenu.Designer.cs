@@ -77,7 +77,6 @@
             // btnStorage
             // 
             this.btnStorage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
-            this.btnStorage.Enabled = false;
             this.btnStorage.FlatAppearance.BorderSize = 0;
             this.btnStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,6 +342,7 @@
             this.Controls.Add(this.btnStorage);
             this.Controls.Add(this.btnCrops);
             this.Controls.Add(this.btnHarvestTimetable);
+            this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";

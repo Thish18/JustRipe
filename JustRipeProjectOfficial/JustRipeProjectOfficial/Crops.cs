@@ -21,7 +21,6 @@ namespace JustRipeProjectOfficial
 
         private string DefUpdateText = "Update Information";
         private string DefCreateText = "Create New Crops";
-        private string DefSelectText = "Select";
 
         private string newUpdateText = "Create New";
         private string newCreateText = "select existed crops to exit";
@@ -38,25 +37,32 @@ namespace JustRipeProjectOfficial
             lBCropsList.DisplayMember = "cropsType";
             lBCropsList.ValueMember = "crops_ID";
 
-            //cbSowingType.DataSource = *PlaceHolder *;
-            //cbSowingType.DisplayMember = "sowingType";
-            //cbSowingType.ValueMember = "sowingM_ID";
+            dbconn.getSowingData();
+            cbSowingType.DataSource = dbconn.sowingTypeList;
+            cbSowingType.DisplayMember = "sowingType";
+            cbSowingType.ValueMember = "sowingM_ID";
 
-            //cbHarvestType.DataSource = *PlaceHolder *;
-            //cbHarvestType.DisplayMember = "harvestType";
-            //cbHarvestType.ValueMember = "harvestM_ID";
+            dbconn.getHarvestData();
+            cbHarvestType.DataSource = dbconn.harvestTypeList;
+            cbHarvestType.DisplayMember = "harvestType";
+            cbHarvestType.ValueMember = "harvestM_ID";
 
-            //cBSpecial.DataSource = *PlaceHolder *;
-            //cBSpecial.DisplayMember = "specialType";
-            //cBSpecial.ValueMember = "specialT_ID";
+            dbconn.getSpecialData();
+            cBSpecial.DataSource = dbconn.specialTypeList;
+            cBSpecial.DisplayMember = "specialType";
+            cBSpecial.ValueMember = "specialT_ID";
+
+            dbconn.getVehicleTypeData();
+            cbVehicle.DataSource = dbconn.vehicleTypeList;
+            cbVehicle.DisplayMember = "vehicleType";
+            cbVehicle.ValueMember = "vehiclesT_ID";
+            cbVehicle.Text = null;
 
             dbconn.getfertilizerData();
             cbFertilizer.DataSource = dbconn.fertilizersList;
             cbFertilizer.DisplayMember = "fertilizerType";
             cbFertilizer.ValueMember = "fertilizer_ID";
             cbFertilizer.Text = null;
-
-            
 
             userID = ID;
 
@@ -70,11 +76,9 @@ namespace JustRipeProjectOfficial
 
             }
 
-            dbconn.getVehicleTypeData();
-            cbVehicle.DataSource = dbconn.vehicleTypeList;
-            cbVehicle.DisplayMember = "vehicleType";
-            cbVehicle.ValueMember = "vehiclesT_ID";
-            cbVehicle.Text = null;
+            dtpPeriod.MinDate = DateTime.Today;
+            dtpSowing.MinDate = DateTime.Today;
+            dtpHarvest.MinDate = DateTime.Today;
 
         }
 
@@ -132,19 +136,23 @@ namespace JustRipeProjectOfficial
             int id = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
             dbconn.getCropsDetails(id);
 
-            txtName.Text = dbconn.cropsDetail.Rows[0]["cropsType"].ToString();
-            txtQuantity.Text = dbconn.cropsDetail.Rows[0]["Quantity"].ToString();
-            txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
-            txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
-            txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
-            cbFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
-            cbSowingType.Text = dbconn.cropsDetail.Rows[0]["sowingType"].ToString();
-            cbHarvestType.Text = dbconn.cropsDetail.Rows[0]["harvestType"].ToString();
-            txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
-            cBSpecial.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
-            txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
-            txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
-            cbVehicle.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
+            if (dbconn.cropsDetail.Rows.Count != 0) {
+
+                txtName.Text = dbconn.cropsDetail.Rows[0]["cropsType"].ToString();
+                txtQuantity.Text = dbconn.cropsDetail.Rows[0]["Quantity"].ToString();
+                //txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
+                txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
+                txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
+                cbFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
+                cbSowingType.Text = dbconn.cropsDetail.Rows[0]["sowingType"].ToString();
+                cbHarvestType.Text = dbconn.cropsDetail.Rows[0]["harvestType"].ToString();
+                txtPlateNo.Text = dbconn.cropsDetail.Rows[0]["plateNum"].ToString();
+                cBSpecial.Text = dbconn.cropsDetail.Rows[0]["specialType"].ToString();
+                txtTreatmentExtra.Text = dbconn.cropsDetail.Rows[0]["Description"].ToString();
+                txtFuel.Text = dbconn.cropsDetail.Rows[0]["fuelType"].ToString();
+                cbVehicle.Text = dbconn.cropsDetail.Rows[0]["vehicleType"].ToString();
+
+            }
 
         }
 
@@ -184,7 +192,7 @@ namespace JustRipeProjectOfficial
 
             txtName.Text = null;
             txtQuantity.Text = null;
-            txtTimeNeeded.Text = null;
+            //txtTimeNeeded.Text = null;
             txtMini.Text = null;
             txtMax.Text = null;
 
@@ -201,15 +209,14 @@ namespace JustRipeProjectOfficial
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            AccessEnable();
-
             string name = txtName.Text;
             int quantity = Convert.ToInt32(txtQuantity.Text);
             int mini = Convert.ToInt32(txtMini.Text);
             int max = Convert.ToInt32(txtMax.Text);
-            
-            //placeHolder
-            int veh = 1;
+            int veh = vehicleID;
+
+            //placeHolder//
+
             //int special = Convert.ToInt32(cBSpecial.SelectedValue);
             int special = 1;
             int fer = Convert.ToInt32(cbFertilizer.SelectedValue);
@@ -223,16 +230,21 @@ namespace JustRipeProjectOfficial
             {
 
                 //use insert cmd.
-                dbconn.createCrop(name, quantity, mini, max, fer, sowing, harvest, veh, special);
+                dbconn.createCrop(name, quantity, mini, max, fer, sowing, harvest, vehicleID, special);
+                
 
             }
             else {
 
                 //use update cmd.
 
+                int cropID = Convert.ToInt32(lBCropsList.SelectedValue.ToString());
+                dbconn.updateCrop(cropID, name, quantity, mini, max, fer, sowing, harvest, vehicleID, special);
+                
+
             }
 
-            btnUpdate.Text = "Update Information";
+            AccessEnable();
 
             dbconn.getCropsData();
             lBCropsList.DataSource = dbconn.cropsList;
@@ -250,6 +262,7 @@ namespace JustRipeProjectOfficial
 
         private void AccessEnable() {
 
+            //when create button not pressed
             createEnable = false;
             btnCreate.Enabled = true;
             btnCreate.Text = DefCreateText;
@@ -260,6 +273,7 @@ namespace JustRipeProjectOfficial
 
         private void AccessDisable() {
 
+            //when create button pressed
             createEnable = true;
             btnCreate.Enabled = false;
             btnUpdate.Text = newUpdateText;
@@ -268,13 +282,48 @@ namespace JustRipeProjectOfficial
 
         }
 
+        private int vehicleID;
         private void btnVehicleSelect_Click(object sender, EventArgs e)
         {
+
             int id = Convert.ToInt32(cbVehicle.SelectedValue.ToString());
+
             dbconn.vehicleTypeFilter(id);
 
-            txtPlateNo.Text = dbconn.vehicleTypeFilterList.Rows[0]["plateNum"].ToString();
-            txtFuel.Text = dbconn.vehicleTypeFilterList.Rows[0]["fuelType"].ToString();
+            if (dbconn.vehicleTypeFilterList.Rows.Count != 0 )
+            {
+
+                txtPlateNo.Text = dbconn.vehicleTypeFilterList.Rows[0]["plateNum"].ToString();
+                txtFuel.Text = dbconn.vehicleTypeFilterList.Rows[0]["fuelType"].ToString();
+                vehicleID = Convert.ToInt32(dbconn.vehicleTypeFilterList.Rows[0]["vehicles_ID"].ToString());
+
+            }
+            else {
+
+                txtPlateNo.Text = "No Free Vehicle";
+                txtFuel.Text = "N/A";
+
+            }
+
+            
+
+        }
+
+        private void btnSowing_Click(object sender, EventArgs e)
+        {
+
+            sowingMethod sm = new sowingMethod(userID);
+            sm.Show();
+            Hide();
+
+        }
+
+        private void btnharvest_Click(object sender, EventArgs e)
+        {
+
+            harvestMethod hm = new harvestMethod(userID);
+            hm.Show();
+            Hide();
 
         }
     }

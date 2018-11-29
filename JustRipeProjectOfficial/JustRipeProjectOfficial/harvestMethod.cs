@@ -12,9 +12,31 @@ namespace JustRipeProjectOfficial
 {
     public partial class harvestMethod : Form
     {
-        public harvestMethod()
+
+        private int userID;
+
+        public harvestMethod(int id)
         {
             InitializeComponent();
+
+            userID = id;
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+
+            foreach (Form f in Application.OpenForms)
+                if (f is Crops)
+                {
+
+                    f.Show();
+                    break;
+
+                }
+
+            Close();
+
         }
     }
 }
