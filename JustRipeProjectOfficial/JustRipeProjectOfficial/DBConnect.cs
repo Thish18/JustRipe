@@ -926,6 +926,29 @@ namespace JustRipeProjectOfficial
 
         }
 
+        public void insertHarvestTimetable(string treatment, int time, int labourR, int labourersR, int harvestEx)
+        {
+
+            Initialize();
+            OpenConn();
+
+            string query = "INSERT INTO specialTreatment (treatment) VALUES(@treatment)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@treatment", treatment);
+            comm.Parameters.AddWithValue("@", time);
+            comm.Parameters.AddWithValue("@", labourR);
+            comm.Parameters.AddWithValue("@", labourersR);
+            comm.Parameters.AddWithValue("@", harvestEx);
+
+            comm.ExecuteNonQuery();
+            dataAdap = new SqlDataAdapter(query, connToDB);
+            CloseConn();
+            MessageBox.Show("Harvest Timetable Inserted.");
+
+        }
+
 
         public DataTable cropLabourerList;
         public void getCropLabourerList(int id) {
