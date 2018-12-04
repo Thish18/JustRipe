@@ -115,6 +115,7 @@
             this.btnAssign.TabIndex = 5;
             this.btnAssign.Text = "Assign";
             this.btnAssign.UseVisualStyleBackColor = false;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
             // btnTimetable
             // 
