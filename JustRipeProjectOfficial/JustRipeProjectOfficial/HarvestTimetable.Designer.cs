@@ -32,13 +32,13 @@
             this.dtpHarvest = new System.Windows.Forms.DateTimePicker();
             this.HarvestTxt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.harvest_id_textbox = new System.Windows.Forms.TextBox();
             this.harvest_id_label = new System.Windows.Forms.Label();
-            this.harvest_type_label = new System.Windows.Forms.Label();
+            this.harvest_treatment_label = new System.Windows.Forms.Label();
             this.harvest_type_textbox = new System.Windows.Forms.TextBox();
             this.labour_required = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -90,7 +90,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(75)))), ((int)(((byte)(182)))));
-            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.btnInsert);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.HarvestTxt);
             this.panel1.Controls.Add(this.btnMenu);
@@ -102,20 +102,21 @@
             this.panel1.Size = new System.Drawing.Size(303, 613);
             this.panel1.TabIndex = 46;
             // 
-            // btnUpdate
+            // btnInsert
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(0, 89);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(303, 80);
-            this.btnUpdate.TabIndex = 45;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.White;
+            this.btnInsert.Location = new System.Drawing.Point(0, 89);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(303, 80);
+            this.btnInsert.TabIndex = 45;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // panel2
             // 
@@ -173,15 +174,15 @@
             this.harvest_id_label.TabIndex = 48;
             this.harvest_id_label.Text = "Harvest ID";
             // 
-            // harvest_type_label
+            // harvest_treatment_label
             // 
-            this.harvest_type_label.AutoSize = true;
-            this.harvest_type_label.Location = new System.Drawing.Point(600, 72);
-            this.harvest_type_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.harvest_type_label.Name = "harvest_type_label";
-            this.harvest_type_label.Size = new System.Drawing.Size(93, 17);
-            this.harvest_type_label.TabIndex = 50;
-            this.harvest_type_label.Text = "Harvest Type";
+            this.harvest_treatment_label.AutoSize = true;
+            this.harvest_treatment_label.Location = new System.Drawing.Point(600, 72);
+            this.harvest_treatment_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.harvest_treatment_label.Name = "harvest_treatment_label";
+            this.harvest_treatment_label.Size = new System.Drawing.Size(126, 17);
+            this.harvest_treatment_label.TabIndex = 50;
+            this.harvest_treatment_label.Text = "Harvest Treatment";
             // 
             // harvest_type_textbox
             // 
@@ -345,7 +346,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.time_needed);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.harvest_type_label);
+            this.Controls.Add(this.harvest_treatment_label);
             this.Controls.Add(this.harvest_type_textbox);
             this.Controls.Add(this.harvest_id_label);
             this.Controls.Add(this.harvest_id_textbox);
@@ -376,10 +377,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.TextBox harvest_id_textbox;
         private System.Windows.Forms.Label harvest_id_label;
-        private System.Windows.Forms.Label harvest_type_label;
+        private System.Windows.Forms.Label harvest_treatment_label;
         private System.Windows.Forms.TextBox harvest_type_textbox;
         private System.Windows.Forms.Label labour_required;
         private System.Windows.Forms.TextBox textBox1;

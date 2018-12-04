@@ -59,5 +59,10 @@ namespace JustRipeProjectOfficial
             ManagerHarvestTimetable frm = new ManagerHarvestTimetable();
             frm.ShowDialog();
         }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
