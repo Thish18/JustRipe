@@ -100,11 +100,11 @@ namespace JustRipeProjectOfficial
 
         private void btnLoadComments_Click(object sender, EventArgs e)
         {
-            string ft = "Users_ID: " + txtLabID.Text + "\n";
-            ft = ft + "Firstname: " + txtLabFirstName.Text + "\n";
-            ft = ft + "Rank: " + txtLabRankID.Text + "\n";
-            ft = ft + "Crops: " + cbCrops.Text + "\n";
-            ft = ft + "Storage: " + cbStorage.Text + "\n";
+            string ft = "Users_ID: " + txtLabID.Text + "\r\n";
+            ft = ft + "Firstname: " + txtLabFirstName.Text + "\r\n";
+            ft = ft + "Rank: " + txtLabRankID.Text + "\r\n";
+            ft = ft + "Crops: " + cbCrops.Text + "\r\n";
+            ft = ft + "Storage: " + cbStorage.Text + "\r\n";
             ft = ft + "Date: " + dtpDate.Text;
             txtinfo.Text = ft;
         }
