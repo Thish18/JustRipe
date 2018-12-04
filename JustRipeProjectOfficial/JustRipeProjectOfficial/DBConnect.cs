@@ -978,6 +978,27 @@ namespace JustRipeProjectOfficial
             CloseConn();
 
         }
+
+        //Harvest* ??!?!?!?!
+
+        public DataTable HarvestList;
+        public void getHarvest() {
+
+            Initialize();
+            OpenConn();
+
+            string query = "SELECT * FROM Harvest";
+
+            HarvestList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            // use adapter to flood above table
+            dataAdap.Fill(HarvestList);
+
+            CloseConn();
+
+        }
         
     }
 
