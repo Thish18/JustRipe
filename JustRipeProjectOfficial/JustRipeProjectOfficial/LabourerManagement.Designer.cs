@@ -56,7 +56,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDisplayInfo = new System.Windows.Forms.ListBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -67,6 +66,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtLabID = new System.Windows.Forms.TextBox();
             this.btnLoadComments = new System.Windows.Forms.Button();
+            this.txtinfo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -408,8 +408,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
+            this.panel2.Controls.Add(this.txtinfo);
             this.panel2.Controls.Add(this.btnLoadComments);
-            this.panel2.Controls.Add(this.lblDisplayInfo);
             this.panel2.Controls.Add(this.dtpDate);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.cbCrops);
@@ -423,22 +423,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 565);
             this.panel2.TabIndex = 18;
-            // 
-            // lblDisplayInfo
-            // 
-            this.lblDisplayInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
-            this.lblDisplayInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lblDisplayInfo.ForeColor = System.Drawing.Color.White;
-            this.lblDisplayInfo.FormattingEnabled = true;
-            this.lblDisplayInfo.ItemHeight = 16;
-            this.lblDisplayInfo.Items.AddRange(new object[] {
-            "Displaying user info inputted on this screen............."});
-            this.lblDisplayInfo.Location = new System.Drawing.Point(-1, 242);
-            this.lblDisplayInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lblDisplayInfo.Name = "lblDisplayInfo";
-            this.lblDisplayInfo.Size = new System.Drawing.Size(268, 272);
-            this.lblDisplayInfo.TabIndex = 23;
-            this.lblDisplayInfo.SelectedIndexChanged += new System.EventHandler(this.lblDisplayInfo_SelectedIndexChanged);
             // 
             // dtpDate
             // 
@@ -556,6 +540,14 @@
             this.btnLoadComments.UseVisualStyleBackColor = false;
             this.btnLoadComments.Click += new System.EventHandler(this.btnLoadComments_Click);
             // 
+            // txtinfo
+            // 
+            this.txtinfo.Location = new System.Drawing.Point(-1, 236);
+            this.txtinfo.Multiline = true;
+            this.txtinfo.Name = "txtinfo";
+            this.txtinfo.Size = new System.Drawing.Size(268, 282);
+            this.txtinfo.TabIndex = 23;
+            // 
             // LabourerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -642,7 +634,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtLabID;
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.ListBox lblDisplayInfo;
         private System.Windows.Forms.Button btnLoadComments;
+        private System.Windows.Forms.TextBox txtinfo;
     }
 }

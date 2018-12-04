@@ -96,10 +96,7 @@ namespace JustRipeProjectOfficial
             Hide();
         }
 
-        private void lblDisplayInfo_SelectedIndexChanged(object sender, EventArgs e)
-        {
        
-        }
 
         private void btnLoadComments_Click(object sender, EventArgs e)
         {
@@ -109,7 +106,9 @@ namespace JustRipeProjectOfficial
             ft = ft + "Crops: " + cbCrops.Text + "\n";
             ft = ft + "Storage: " + cbStorage.Text + "\n";
             ft = ft + "Date: " + dtpDate.Text;
-            lblDisplayInfo.Text = ft;
+            txtinfo.Text = ft;
         }
+
+        
     }
 }
