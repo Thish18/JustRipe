@@ -80,8 +80,8 @@ namespace JustRipeProjectOfficial
             txtLabFirstName.Text = dbconn.labourerInfo.Rows[0]["firstname"].ToString();
             txtLabLastName.Text = dbconn.labourerInfo.Rows[0]["lastname"].ToString();
             txtLabUsername.Text = dbconn.labourerInfo.Rows[0]["username"].ToString();
-            txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
-            txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
+            //txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
+           // txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
             txtLabAddress.Text = dbconn.labourerInfo.Rows[0]["address1"].ToString();
             txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
             txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
@@ -94,6 +94,22 @@ namespace JustRipeProjectOfficial
             Storage strg = new Storage(userID);
             strg.Show();
             Hide();
+        }
+
+        private void lblDisplayInfo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void btnLoadComments_Click(object sender, EventArgs e)
+        {
+            string ft = "Users_ID: " + txtLabID.Text + "\n";
+            ft = ft + "Firstname: " + txtLabFirstName.Text + "\n";
+            ft = ft + "Rank: " + txtLabRankID.Text + "\n";
+            ft = ft + "Crops: " + cbCrops.Text + "\n";
+            ft = ft + "Storage: " + cbStorage.Text + "\n";
+            ft = ft + "Date: " + dtpDate.Text;
+            lblDisplayInfo.Text = ft;
         }
     }
 }
