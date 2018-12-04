@@ -17,6 +17,34 @@ namespace JustRipeProjectOfficial
 
 
         DBConnect dbconn = new DBConnect();
+        private string connStr;
+        SqlConnection connToDB;
+        private SqlDataAdapter dataAdap;
+        SqlCommand comm;
+
+        //once MYSQL Connected. I believe this will actually try to connect to the database server
+        //Initialize (Probably)
+        
+        public void OpenConn()
+        {
+
+            connToDB = new SqlConnection(connStr);
+
+            connToDB.Open();
+
+        }
+
+        //this will close the connection to the database server once the program closed.
+
+        public void CloseConn()
+        {
+
+            connToDB.Close();
+
+        }
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////
+        /// </summary>
 
         private int userID;
         private int tempID;
@@ -80,8 +108,8 @@ namespace JustRipeProjectOfficial
             txtLabFirstName.Text = dbconn.labourerInfo.Rows[0]["firstname"].ToString();
             txtLabLastName.Text = dbconn.labourerInfo.Rows[0]["lastname"].ToString();
             txtLabUsername.Text = dbconn.labourerInfo.Rows[0]["username"].ToString();
-            txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
-            txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
+            //txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
+           // txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
             txtLabAddress.Text = dbconn.labourerInfo.Rows[0]["address1"].ToString();
             txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
             txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
@@ -94,6 +122,40 @@ namespace JustRipeProjectOfficial
             Storage strg = new Storage(userID);
             strg.Show();
             Hide();
+        }
+
+       
+
+        private void btnLoadComments_Click(object sender, EventArgs e)
+        {
+            string ft = "Users_ID: " + txtLabID.Text + "\r\n";
+            ft = ft + "Firstname: " + txtLabFirstName.Text + "\r\n";
+            ft = ft + "Rank: " + txtLabRankID.Text + "\r\n";
+            ft = ft + "Crops: " + cbCrops.Text + "\r\n";
+            ft = ft + "Storage: " + cbStorage.Text + "\r\n";
+            ft = ft + "Date: " + dtpDate.Text;
+            txtinfo.Text = ft;
+        }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            InitializeComponent();
+            //connection query for SQL.
+            OpenConn();
+            string query = "INSERT INTO WorkSchedule (UserID,Crops,Storage,Date) VALUES(@UserID,@Crops,@Storage,@Date)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@UserID", txtLabID);
+            comm.Parameters.AddWithValue("@Crops", cbCrops);
+            comm.Parameters.AddWithValue("@Storage", cbStorage);
+            comm.Parameters.AddWithValue("@Date", dtpDate);
+           
+
+            comm.ExecuteNonQuery();
+            dataAdap = new SqlDataAdapter(query, connToDB);
+            CloseConn();
+            MessageBox.Show("Information inputted.");
         }
     }
 }
