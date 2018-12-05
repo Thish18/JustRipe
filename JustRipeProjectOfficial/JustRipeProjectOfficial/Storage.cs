@@ -23,7 +23,7 @@ namespace JustRipeProjectOfficial
 
             userID = id;
 
-            dbconn.getStorageData();
+            dbconn.getAllStorageData();
             lBStorageList.DataSource = dbconn.storageList;
             lBStorageList.DisplayMember = "storage_ID";
             lBStorageList.ValueMember = "storage_ID";

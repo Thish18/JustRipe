@@ -25,7 +25,7 @@ namespace JustRipeProjectOfficial
         private void btnHarvTimetable_Click(object sender, EventArgs e)
         {
 
-            dbconn.getWorkSchedule();
+            dbconn.getWorkScheduleWithCrops();
             dgvTimeTable.DataSource = dbconn.scheduleInfo;
 
         }

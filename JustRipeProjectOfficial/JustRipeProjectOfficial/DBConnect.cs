@@ -26,7 +26,6 @@ namespace JustRipeProjectOfficial
         private SqlDataAdapter dataAdap;
         private SqlDataReader dataRead;
         SqlCommand comm;
-        SqlCommand comm1;
 
         //Initialize (Probably)
         public DBConnect(/*string connStr*/)
@@ -308,6 +307,8 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@vID", vID);
             comm.ExecuteNonQuery();
 
+
+
             CloseConn();
 
         }
@@ -471,7 +472,7 @@ namespace JustRipeProjectOfficial
         {
             Initialize();
             OpenConn();
-            // query for creating new vehicles
+
             string query = "INSERT INTO Vehicles (vehicleTypeID, plateNum, fuelTypeID, vehicleStatusID) " +
                 "VALUES(@vehicleTypeID, @plateNum, @fuelTypeID, @vehicleStatusID)";
 
@@ -762,7 +763,7 @@ namespace JustRipeProjectOfficial
         /*=============================[Storage]=================================*/
 
         public DataTable storageList;
-        public void getStorageData()
+        public void getAllStorageData()
         {
 
             Initialize();
@@ -771,6 +772,31 @@ namespace JustRipeProjectOfficial
             storageList = new DataTable();
 
             string query = "SELECT storage_ID FROM storages";
+
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(storageList);
+
+            }
+
+
+            CloseConn();
+
+        }
+
+        public void getEmptyStorageData() {
+
+            Initialize();
+            OpenConn();
+
+            storageList = new DataTable();
+
+            string query = "SELECT storage_ID FROM storages " +
+                "WHERE storageStatusID = 1";
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
@@ -840,7 +866,22 @@ namespace JustRipeProjectOfficial
 
         }
 
-        
+        public void createStorage(int id) {
+
+            Initialize();
+            OpenConn();
+
+            string query = "INSERT INTO storages (storage_ID, storageStatusID) VALUES (@storage_ID, @storageStatusID)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@storage_ID", id);
+            comm.Parameters.AddWithValue("@storageStatusID", 1);
+
+            comm.ExecuteNonQuery();
+            CloseConn();
+
+        }
 
         /*===============================================================[Labourer Management / Work Schedule / Timetable Functions]===============================================================================================*/
 
@@ -902,7 +943,7 @@ namespace JustRipeProjectOfficial
         public void getHarvestTimeTable() { }
 
         public DataTable scheduleInfo;
-        public void getWorkSchedule() {
+        public void getWorkScheduleWithCrops() {
 
             Initialize();
             //connection query for SQL.
@@ -938,20 +979,12 @@ namespace JustRipeProjectOfficial
             comm = new SqlCommand(query, connToDB);
 
             comm.Parameters.AddWithValue("@treatment", treatment);
+            comm.Parameters.AddWithValue("@", time);
+            comm.Parameters.AddWithValue("@", labourR);
+            comm.Parameters.AddWithValue("@", labourersR);
+            comm.Parameters.AddWithValue("@", harvestEx);
+
             comm.ExecuteNonQuery();
-
-            string query1 = "INSERT INTO Harvest (time_needed, labour_required, labourers_required, expected) VALUES(@time_needed, @labour_required, @labourers_required, @expected)";
-            comm1 = new SqlCommand(query, connToDB);
-
-            comm1 = new SqlCommand(query, connToDB);
-
-            comm1.Parameters.AddWithValue("@time_needed", time);
-            comm1.Parameters.AddWithValue("@labour_required", labourR);
-            comm1.Parameters.AddWithValue("@labourers_required", labourersR);
-            comm1.Parameters.AddWithValue("@expected", harvestEx);
-
-            comm1.ExecuteNonQuery();
-            dataAdap = new SqlDataAdapter(query, connToDB);
             CloseConn();
             MessageBox.Show("Harvest Timetable Inserted.");
 
@@ -1002,15 +1035,102 @@ namespace JustRipeProjectOfficial
             dataAdap = new SqlDataAdapter(comm);
 
             // use adapter to flood above table
-            dataAdap.Fill(HarvestList);
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(HarvestList);
+
+            }
 
             CloseConn();
 
         }
-        
 
+        public void createWorkSchedule(int userID, int cropID, int storageID, DateTime date) {
+
+            Initialize();
+            OpenConn();
+            string query = "INSERT INTO WorkSchedule (UserID,crops_ID,Storage_ID,Date) VALUES(@UserID,@crops_ID,@Storage_ID,@Date)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@UserID", userID);
+            comm.Parameters.AddWithValue("@crops_ID", cropID);
+            comm.Parameters.AddWithValue("@Storage_ID", storageID);
+            comm.Parameters.AddWithValue("@Date", date);
+            comm.ExecuteNonQuery();
+
+            getWorkScheduleWithUserCropsStorage(userID,cropID,storageID);
+
+            CloseConn();
+            MessageBox.Show("Information inputted.");
+        }
+
+        private void getWorkScheduleWithUserCropsStorage(int userID, int cropID, int storageID) {
+
+            Initialize();
+            OpenConn();
+
+            string query = "SELECT Users.firstname, Users.lastname, Crops.cropsType, storages.ID FROM WorkSchedule " +
+                "INNER JOIN Users ON WorkSchedule.userID = Users.Users_ID " +
+                "INNER JOIN Crops ON WorkSchedule.crops_ID = Crops.crops_ID " +
+                "INNER JOIN storages ON WorkSchedule.storage_ID = storages.storage_ID " +
+                "WHERE userID = " +userID+ " AND crops_ID = " +cropID+ " AND storage_ID = " +storageID;
+
+            scheduleInfo = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            // use adapter to flood above table
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(scheduleInfo);
+
+            }
+
+        }
+
+        /*==============================================================[Maybe useful, or maybe not]==========================================================================================*/
+
+        private string storageTable = "storages";
+        private string vehicleTable = "vehicles";
+        private string userTable = "Users";
+
+        private string storageStatus = "storageStatusID";
+        private string vehicleStatus = "vehicleStatusID";
+        private string userStatus = "userStatusID";
+        int assignedInt;
+
+        private void inUseStatus(string table, string status)
+        {
+
+            assignedInt = 2;
+
+            Initialize();
+            OpenConn();
+
+            string query = "UPDATE " + table + " SET " + status + " = " + assignedInt;
+
+            comm = new SqlCommand(query, connToDB);
+
+        }
+
+        private void freeStatus(string table, string status)
+        {
+
+            assignedInt = 1;
+
+            Initialize();
+            OpenConn();
+
+            string query = "UPDATE " + table + " SET " + status + " = " + assignedInt;
+
+            comm = new SqlCommand(query, connToDB);
+
+        }
 
     }
-
+        
 }
 
