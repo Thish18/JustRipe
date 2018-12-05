@@ -55,6 +55,7 @@
             this.lbRank = new System.Windows.Forms.Label();
             this.btnManagerHavTime = new System.Windows.Forms.Button();
             this.btnHarvestTimetable = new System.Windows.Forms.Button();
+            this.btnViewDetails = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,12 +86,13 @@
             this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HarvestTxt.Multiline = true;
             this.HarvestTxt.Name = "HarvestTxt";
-            this.HarvestTxt.Size = new System.Drawing.Size(303, 366);
+            this.HarvestTxt.Size = new System.Drawing.Size(303, 291);
             this.HarvestTxt.TabIndex = 44;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(75)))), ((int)(((byte)(182)))));
+            this.panel1.Controls.Add(this.btnViewDetails);
             this.panel1.Controls.Add(this.btnInsert);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.HarvestTxt);
@@ -343,6 +345,22 @@
             this.btnHarvestTimetable.Text = "View Harvest Timetable ";
             this.btnHarvestTimetable.UseVisualStyleBackColor = true;
             // 
+            // btnViewDetails
+            // 
+            this.btnViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnViewDetails.FlatAppearance.BorderSize = 0;
+            this.btnViewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDetails.ForeColor = System.Drawing.Color.White;
+            this.btnViewDetails.Location = new System.Drawing.Point(0, 457);
+            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.Size = new System.Drawing.Size(303, 80);
+            this.btnViewDetails.TabIndex = 46;
+            this.btnViewDetails.Text = "View Inputted Info";
+            this.btnViewDetails.UseVisualStyleBackColor = false;
+            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click_1);
+            // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -410,5 +428,6 @@
         private System.Windows.Forms.Label lbRank;
         private System.Windows.Forms.Button btnManagerHavTime;
         private System.Windows.Forms.Button btnHarvestTimetable;
+        private System.Windows.Forms.Button btnViewDetails;
     }
 }

@@ -64,11 +64,11 @@ namespace JustRipeProjectOfficial
         {
             
         }
-
-        private void btnViewDetails_Click(object sender, EventArgs e)
+        
+        private void btnViewDetails_Click_1(object sender, EventArgs e)
         {
             string ft = "Date: " + dtpHarvest.Text + "\r\n";
-            ft = ft + "Harvest ID: " + txtHarvestID.Text + "\r\n";
+            ft = ft + "Harvest ID: " + .Text + "\r\n";
             ft = ft + "Harvest Treatment: " + txtHarvestTreat.Text + "\r\n";
             ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
             ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
