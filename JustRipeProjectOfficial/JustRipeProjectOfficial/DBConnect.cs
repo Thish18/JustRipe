@@ -1004,15 +1004,21 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "INSERT INTO specialTreatment (treatment) VALUES(@treatment)";
+            string query = "INSERT INTO Treatment (TreatmentType) VALUES(@TreatmentType)";
 
             comm = new SqlCommand(query, connToDB);
 
             comm.Parameters.AddWithValue("@treatment", treatment);
-            comm.Parameters.AddWithValue("@", time);
-            comm.Parameters.AddWithValue("@", labourR);
-            comm.Parameters.AddWithValue("@", labourersR);
-            comm.Parameters.AddWithValue("@", harvestEx);
+            comm.ExecuteNonQuery();
+
+            query = "INSERT INTO Harvest (time_needed, labour_required, labourers_required, expected) VALUES(@time_needed, @labour_required, @labourers_required, @expected)";
+
+            comm = new SqlCommand(query, connToDB);
+
+            comm.Parameters.AddWithValue("@time_needed", time);
+            comm.Parameters.AddWithValue("@labour_required", labourR);
+            comm.Parameters.AddWithValue("@labourers_required", labourersR);
+            comm.Parameters.AddWithValue("@expected", harvestEx);
 
             comm.ExecuteNonQuery();
             CloseConn();
