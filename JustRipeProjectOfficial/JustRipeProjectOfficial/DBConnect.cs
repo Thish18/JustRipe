@@ -26,6 +26,7 @@ namespace JustRipeProjectOfficial
         private SqlDataAdapter dataAdap;
         private SqlDataReader dataRead;
         SqlCommand comm;
+        SqlCommand comm1;
 
         //Initialize (Probably)
         public DBConnect(/*string connStr*/)
@@ -939,16 +940,17 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@treatment", treatment);
             comm.ExecuteNonQuery();
 
-            query = "INSERT INTO Harvest (time_needed, labour_required, labourers_required, expected) VALUES(@time_needed, @labour_required, @labourers_required, @expected)";
+            string query1 = "INSERT INTO Harvest (time_needed, labour_required, labourers_required, expected) VALUES(@time_needed, @labour_required, @labourers_required, @expected)";
+            comm1 = new SqlCommand(query, connToDB);
 
-            comm = new SqlCommand(query, connToDB);
+            comm1 = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@time_needed", time);
-            comm.Parameters.AddWithValue("@labour_required", labourR);
-            comm.Parameters.AddWithValue("@labourers_required", labourersR);
-            comm.Parameters.AddWithValue("@expected", harvestEx);
+            comm1.Parameters.AddWithValue("@time_needed", time);
+            comm1.Parameters.AddWithValue("@labour_required", labourR);
+            comm1.Parameters.AddWithValue("@labourers_required", labourersR);
+            comm1.Parameters.AddWithValue("@expected", harvestEx);
 
-            comm.ExecuteNonQuery();
+            comm1.ExecuteNonQuery();
             dataAdap = new SqlDataAdapter(query, connToDB);
             CloseConn();
             MessageBox.Show("Harvest Timetable Inserted.");
