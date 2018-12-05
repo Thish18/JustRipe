@@ -55,7 +55,6 @@
             this.lbRank = new System.Windows.Forms.Label();
             this.btnManagerHavTime = new System.Windows.Forms.Button();
             this.btnViewDetails = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -350,21 +349,11 @@
             this.btnViewDetails.UseVisualStyleBackColor = false;
             this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(346, 524);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(286, 46);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "View Harvest Timetable";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 613);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnManagerHavTime);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.harvest_expected);
@@ -426,6 +415,5 @@
         private System.Windows.Forms.Label lbRank;
         private System.Windows.Forms.Button btnManagerHavTime;
         private System.Windows.Forms.Button btnViewDetails;
-        private System.Windows.Forms.Button button1;
     }
 }
