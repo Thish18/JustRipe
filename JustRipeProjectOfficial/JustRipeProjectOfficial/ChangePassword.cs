@@ -16,16 +16,40 @@ namespace JustRipeProjectOfficial
     {
 
         DBConnect dbconn = new DBConnect();
+        private string connStr;
+        SqlConnection connToDB;
+        private SqlDataAdapter dataAdap;
+        private SqlDataReader dataRead;
+        SqlCommand comm;
 
         public ChangePassword()
         {
             InitializeComponent();
         }
 
+        //once MYSQL Connected. I believe this will actually try to connect to the database server.
+        public void OpenConn()
+        {
+
+            connToDB = new SqlConnection(connStr);
+
+            connToDB.Open();
+
+        }
+
+        //this will close the connection to the database server once the program closed.
+
+        public void CloseConn()
+        {
+
+            connToDB.Close();
+
+        }
+
         /// <summary>
         /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// </summary>
-        
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text != "" && txtPassword.Text != "" && txtNewPassword.Text != "" && txtConfirmPassword.Text != "") {
@@ -106,6 +130,21 @@ namespace JustRipeProjectOfficial
             txtPassword.Text = "";
             txtNewPassword.Text = "";
             txtConfirmPassword.Text= "";
+        }
+
+        private void btnOpenTable_Click(object sender, EventArgs e)
+        {         
+                InitializeComponent();
+                OpenConn();
+             
+                string query = "SELECT Username =" + txtUsername.Text + "Password FROM Users";
+                comm = new SqlCommand(query, connToDB);
+                dataAdap = new SqlDataAdapter(comm);
+
+             
+                CloseConn();
+
+            
         }
     }
 }
