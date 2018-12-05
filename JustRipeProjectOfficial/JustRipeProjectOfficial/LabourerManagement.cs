@@ -112,7 +112,7 @@ namespace JustRipeProjectOfficial
         private void btnAssign_Click(object sender, EventArgs e)
         {
 
-            if (txtLabID.Text == null)
+            if (txtLabID.Text == null || txtLabID.Text == "")
             {
 
                 MessageBox.Show("Please select a user first.");

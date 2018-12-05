@@ -76,6 +76,7 @@ namespace JustRipeProjectOfficial
         
         private void btnViewDetails_Click_1(object sender, EventArgs e)
         {
+            /*
             string ft = "Date: " + dtpHarvest.Text + "\r\n";
             ft = ft + "Harvest ID: " + .Text + "\r\n";
             ft = ft + "Harvest Treatment: " + txtHarvestTreat.Text + "\r\n";
@@ -83,7 +84,7 @@ namespace JustRipeProjectOfficial
             ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
             ft = ft + "Labourers Required: " + txtLabourersRequired.Text + "\r\n";
             ft = ft + "When Harvest Expected: " + txtHarvExpect.Text;
-            HarvestTxt.Text = ft;
+            HarvestTxt.Text = ft;*/
         }
     }
 }
