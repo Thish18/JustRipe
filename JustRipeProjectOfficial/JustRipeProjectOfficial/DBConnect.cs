@@ -470,7 +470,7 @@ namespace JustRipeProjectOfficial
         {
             Initialize();
             OpenConn();
-
+            // query for creating new vehicles
             string query = "INSERT INTO Vehicles (vehicleTypeID, plateNum, fuelTypeID, vehicleStatusID) " +
                 "VALUES(@vehicleTypeID, @plateNum, @fuelTypeID, @vehicleStatusID)";
 
