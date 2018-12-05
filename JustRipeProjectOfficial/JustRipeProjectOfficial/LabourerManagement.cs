@@ -17,34 +17,6 @@ namespace JustRipeProjectOfficial
 
 
         DBConnect dbconn = new DBConnect();
-        private string connStr;
-        SqlConnection connToDB;
-        private SqlDataAdapter dataAdap;
-        SqlCommand comm;
-
-        //once MYSQL Connected. I believe this will actually try to connect to the database server
-        //Initialize (Probably)
-        
-        public void OpenConn()
-        {
-
-            connToDB = new SqlConnection(connStr);
-
-            connToDB.Open();
-
-        }
-
-        //this will close the connection to the database server once the program closed.
-
-        public void CloseConn()
-        {
-
-            connToDB.Close();
-
-        }
-        /// <summary>
-        /// //////////////////////////////////////////////////////////////////////////////
-        /// </summary>
 
         private int userID;
         private int tempID;
@@ -64,7 +36,7 @@ namespace JustRipeProjectOfficial
             cbCrops.DisplayMember = "cropstype";
             cbCrops.ValueMember = "crops_ID";
 
-            dbconn.getStorageData();
+            dbconn.getEmptyStorageData();
             cbStorage.DataSource = dbconn.storageList;
             cbStorage.DisplayMember = "storage_ID";
             cbStorage.ValueMember = "storage_ID";
@@ -139,23 +111,25 @@ namespace JustRipeProjectOfficial
 
         private void btnAssign_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            //connection query for SQL.
-            OpenConn();
-            string query = "INSERT INTO WorkSchedule (UserID,Crops,Storage,Date) VALUES(@UserID,@Crops,@Storage,@Date)";
 
-            comm = new SqlCommand(query, connToDB);
+            if (txtLabID.Text == null)
+            {
 
-            comm.Parameters.AddWithValue("@UserID", txtLabID);
-            comm.Parameters.AddWithValue("@Crops", cbCrops);
-            comm.Parameters.AddWithValue("@Storage", cbStorage);
-            comm.Parameters.AddWithValue("@Date", dtpDate);
-           
+                MessageBox.Show("Please select a user first.");
 
-            comm.ExecuteNonQuery();
-            dataAdap = new SqlDataAdapter(query, connToDB);
-            CloseConn();
-            MessageBox.Show("Information inputted.");
+            }
+            else {
+
+                int userID = Convert.ToInt32(txtLabID.Text);
+                int cropID = Convert.ToInt32(cbCrops.SelectedValue.ToString());
+                int storageID = Convert.ToInt32(cbStorage.SelectedValue.ToString());
+
+                dbconn.createWorkSchedule(userID, cropID, storageID, dtpDate.Value);
+
+            }
+            
         }
+
+        
     }
 }

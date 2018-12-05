@@ -196,6 +196,7 @@
             // 
             // cbCropsList
             // 
+            this.cbCropsList.Enabled = false;
             this.cbCropsList.FormattingEnabled = true;
             this.cbCropsList.Location = new System.Drawing.Point(90, 86);
             this.cbCropsList.Name = "cbCropsList";
