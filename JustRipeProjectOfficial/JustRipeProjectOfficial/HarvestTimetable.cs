@@ -62,13 +62,22 @@ namespace JustRipeProjectOfficial
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            
-        }
+            string treatment;
+            int time, labourR, labourersR, harvestEx;
 
-        private void btnViewDetails_Click(object sender, EventArgs e)
+            treatment = special_treatment_textbox.Text;
+            time = Convert.ToInt32(time_needed.Text);
+            labourR = Convert.ToInt32(labour_required.Text);
+            labourersR = Convert.ToInt32(labourers_required.Text);
+            harvestEx = Convert.ToInt32(harvest_expected.Text);
+            
+            dbconn.insertHarvestTimetable(treatment, time, labourR, labourersR, harvestEx);
+        }
+        
+        private void btnViewDetails_Click_1(object sender, EventArgs e)
         {
             string ft = "Date: " + dtpHarvest.Text + "\r\n";
-            ft = ft + "Harvest ID: " + txtHarvestID.Text + "\r\n";
+            ft = ft + "Harvest ID: " + .Text + "\r\n";
             ft = ft + "Harvest Treatment: " + txtHarvestTreat.Text + "\r\n";
             ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
             ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";

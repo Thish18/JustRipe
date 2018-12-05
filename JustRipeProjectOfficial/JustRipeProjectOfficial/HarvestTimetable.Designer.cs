@@ -39,7 +39,7 @@
             this.harvest_id_textbox = new System.Windows.Forms.TextBox();
             this.harvest_id_label = new System.Windows.Forms.Label();
             this.special_treatment_label = new System.Windows.Forms.Label();
-            this.harvest_type_textbox = new System.Windows.Forms.TextBox();
+            this.special_treatment_textbox = new System.Windows.Forms.TextBox();
             this.labour_required = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.time_needed = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbRank = new System.Windows.Forms.Label();
             this.btnManagerHavTime = new System.Windows.Forms.Button();
+            this.btnHarvestTimetable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -175,12 +176,12 @@
             this.special_treatment_label.TabIndex = 50;
             this.special_treatment_label.Text = "Special Treatment";
             // 
-            // harvest_type_textbox
+            // special_treatment_textbox
             // 
-            this.harvest_type_textbox.Location = new System.Drawing.Point(450, 74);
-            this.harvest_type_textbox.Name = "harvest_type_textbox";
-            this.harvest_type_textbox.Size = new System.Drawing.Size(124, 20);
-            this.harvest_type_textbox.TabIndex = 49;
+            this.special_treatment_textbox.Location = new System.Drawing.Point(450, 74);
+            this.special_treatment_textbox.Name = "special_treatment_textbox";
+            this.special_treatment_textbox.Size = new System.Drawing.Size(124, 20);
+            this.special_treatment_textbox.TabIndex = 49;
             // 
             // labour_required
             // 
@@ -317,11 +318,22 @@
             this.btnManagerHavTime.UseVisualStyleBackColor = true;
             this.btnManagerHavTime.Click += new System.EventHandler(this.btnManagerHavTime_Click);
             // 
+            // btnHarvestTimetable
+            // 
+            this.btnHarvestTimetable.Location = new System.Drawing.Point(260, 426);
+            this.btnHarvestTimetable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHarvestTimetable.Name = "btnHarvestTimetable";
+            this.btnHarvestTimetable.Size = new System.Drawing.Size(214, 37);
+            this.btnHarvestTimetable.TabIndex = 61;
+            this.btnHarvestTimetable.Text = "View Harvest Timetable ";
+            this.btnHarvestTimetable.UseVisualStyleBackColor = true;
+            // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 498);
+            this.Controls.Add(this.btnHarvestTimetable);
             this.Controls.Add(this.btnManagerHavTime);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.harvest_expected);
@@ -333,7 +345,7 @@
             this.Controls.Add(this.time_needed);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.special_treatment_label);
-            this.Controls.Add(this.harvest_type_textbox);
+            this.Controls.Add(this.special_treatment_textbox);
             this.Controls.Add(this.harvest_id_label);
             this.Controls.Add(this.harvest_id_textbox);
             this.Controls.Add(this.panel1);
@@ -366,7 +378,7 @@
         private System.Windows.Forms.TextBox harvest_id_textbox;
         private System.Windows.Forms.Label harvest_id_label;
         private System.Windows.Forms.Label special_treatment_label;
-        private System.Windows.Forms.TextBox harvest_type_textbox;
+        private System.Windows.Forms.TextBox special_treatment_textbox;
         private System.Windows.Forms.Label labour_required;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label time_needed;
@@ -381,5 +393,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbRank;
         private System.Windows.Forms.Button btnManagerHavTime;
+        private System.Windows.Forms.Button btnHarvestTimetable;
     }
 }
