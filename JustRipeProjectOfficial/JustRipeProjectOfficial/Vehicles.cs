@@ -23,18 +23,18 @@ namespace JustRipeProjectOfficial
         {
 
             InitializeComponent();
-
+            // getVehicleData
             dbconn.getVehicleData();
             lBVehiclesList.DataSource = dbconn.vehicleList;
             lBVehiclesList.DisplayMember = "typePlate";
             lBVehiclesList.ValueMember = "vehicles_ID";
-
+            // getVehicleTypeData
             dbconn.getVehicleTypeData();
             cbVehicleType.DataSource = dbconn.vehicleTypeList;
             cbVehicleType.DisplayMember = "vehicleType";
             cbVehicleType.ValueMember = "vehiclesT_ID";
 
-            //getfuelTypedata
+            // getfuelTypedata
             dbconn.getFuelTypeData();
             cbFuelType.DataSource = dbconn.fuelTypeList;
             cbFuelType.DisplayMember = "fuelType";
@@ -71,7 +71,7 @@ namespace JustRipeProjectOfficial
 
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
-
+            // spends the user back to the main menu
             foreach (Form f in Application.OpenForms)
                 if (f is Crops)
                 {
@@ -98,7 +98,7 @@ namespace JustRipeProjectOfficial
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            // will enable the creation of a new vehicle
             createEnable = true;
 
             cbVehicleType.Text = null;
@@ -121,13 +121,14 @@ namespace JustRipeProjectOfficial
 
             if(createEnable)
             {
-                
+                // will be displayed when creating new vehicle
                 dbconn.createVehicle(type, plateNumber, fuelid);
                 MessageBox.Show("Vehicle Registered.");
 
             }
             else
             {
+                // will be displayed when updating vehicle information
                 MessageBox.Show("Vehicle Information Updated. ");
             }
 
