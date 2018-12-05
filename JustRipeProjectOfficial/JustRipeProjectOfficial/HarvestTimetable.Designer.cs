@@ -36,18 +36,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.harvest_id_textbox = new System.Windows.Forms.TextBox();
+            this.txtHarvID = new System.Windows.Forms.TextBox();
             this.harvest_id_label = new System.Windows.Forms.Label();
             this.special_treatment_label = new System.Windows.Forms.Label();
-            this.special_treatment_textbox = new System.Windows.Forms.TextBox();
+            this.txtHarvestTreat = new System.Windows.Forms.TextBox();
             this.labour_required = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLabourRequired = new System.Windows.Forms.TextBox();
             this.time_needed = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTimeNeed = new System.Windows.Forms.TextBox();
             this.labourers_required = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtLabourersRequired = new System.Windows.Forms.TextBox();
             this.harvest_expected = new System.Windows.Forms.Label();
-            this.harvest_expected_textbox = new System.Windows.Forms.TextBox();
+            this.txtHarvExpect = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(260, 145);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(508, 282);
@@ -74,7 +74,7 @@
             // dtpHarvest
             // 
             this.dtpHarvest.Location = new System.Drawing.Point(0, 52);
-            this.dtpHarvest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpHarvest.Margin = new System.Windows.Forms.Padding(2);
             this.dtpHarvest.Name = "dtpHarvest";
             this.dtpHarvest.Size = new System.Drawing.Size(227, 20);
             this.dtpHarvest.TabIndex = 40;
@@ -151,12 +151,12 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // harvest_id_textbox
+            // txtHarvID
             // 
-            this.harvest_id_textbox.Location = new System.Drawing.Point(261, 74);
-            this.harvest_id_textbox.Name = "harvest_id_textbox";
-            this.harvest_id_textbox.Size = new System.Drawing.Size(124, 20);
-            this.harvest_id_textbox.TabIndex = 47;
+            this.txtHarvID.Location = new System.Drawing.Point(261, 74);
+            this.txtHarvID.Name = "txtHarvID";
+            this.txtHarvID.Size = new System.Drawing.Size(124, 20);
+            this.txtHarvID.TabIndex = 47;
             // 
             // harvest_id_label
             // 
@@ -176,12 +176,12 @@
             this.special_treatment_label.TabIndex = 50;
             this.special_treatment_label.Text = "Special Treatment";
             // 
-            // special_treatment_textbox
+            // txtHarvestTreat
             // 
-            this.special_treatment_textbox.Location = new System.Drawing.Point(450, 74);
-            this.special_treatment_textbox.Name = "special_treatment_textbox";
-            this.special_treatment_textbox.Size = new System.Drawing.Size(124, 20);
-            this.special_treatment_textbox.TabIndex = 49;
+            this.txtHarvestTreat.Location = new System.Drawing.Point(450, 74);
+            this.txtHarvestTreat.Name = "txtHarvestTreat";
+            this.txtHarvestTreat.Size = new System.Drawing.Size(124, 20);
+            this.txtHarvestTreat.TabIndex = 49;
             // 
             // labour_required
             // 
@@ -192,12 +192,12 @@
             this.labour_required.TabIndex = 54;
             this.labour_required.Text = "Labour Required";
             // 
-            // textBox1
+            // txtLabourRequired
             // 
-            this.textBox1.Location = new System.Drawing.Point(261, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 20);
-            this.textBox1.TabIndex = 53;
+            this.txtLabourRequired.Location = new System.Drawing.Point(261, 115);
+            this.txtLabourRequired.Name = "txtLabourRequired";
+            this.txtLabourRequired.Size = new System.Drawing.Size(124, 20);
+            this.txtLabourRequired.TabIndex = 53;
             // 
             // time_needed
             // 
@@ -208,12 +208,12 @@
             this.time_needed.TabIndex = 52;
             this.time_needed.Text = "Time Needed";
             // 
-            // textBox2
+            // txtTimeNeed
             // 
-            this.textBox2.Location = new System.Drawing.Point(645, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 20);
-            this.textBox2.TabIndex = 51;
+            this.txtTimeNeed.Location = new System.Drawing.Point(645, 74);
+            this.txtTimeNeed.Name = "txtTimeNeed";
+            this.txtTimeNeed.Size = new System.Drawing.Size(124, 20);
+            this.txtTimeNeed.TabIndex = 51;
             // 
             // labourers_required
             // 
@@ -224,12 +224,12 @@
             this.labourers_required.TabIndex = 56;
             this.labourers_required.Text = "Labourers Required";
             // 
-            // textBox3
+            // txtLabourersRequired
             // 
-            this.textBox3.Location = new System.Drawing.Point(450, 115);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 20);
-            this.textBox3.TabIndex = 55;
+            this.txtLabourersRequired.Location = new System.Drawing.Point(450, 115);
+            this.txtLabourersRequired.Name = "txtLabourersRequired";
+            this.txtLabourersRequired.Size = new System.Drawing.Size(124, 20);
+            this.txtLabourersRequired.TabIndex = 55;
             // 
             // harvest_expected
             // 
@@ -240,12 +240,12 @@
             this.harvest_expected.TabIndex = 58;
             this.harvest_expected.Text = "When Harvest Expected";
             // 
-            // harvest_expected_textbox
+            // txtHarvExpect
             // 
-            this.harvest_expected_textbox.Location = new System.Drawing.Point(645, 115);
-            this.harvest_expected_textbox.Name = "harvest_expected_textbox";
-            this.harvest_expected_textbox.Size = new System.Drawing.Size(124, 20);
-            this.harvest_expected_textbox.TabIndex = 57;
+            this.txtHarvExpect.Location = new System.Drawing.Point(645, 115);
+            this.txtHarvExpect.Name = "txtHarvExpect";
+            this.txtHarvExpect.Size = new System.Drawing.Size(124, 20);
+            this.txtHarvExpect.TabIndex = 57;
             // 
             // panel3
             // 
@@ -310,7 +310,7 @@
             // btnManagerHavTime
             // 
             this.btnManagerHavTime.Location = new System.Drawing.Point(554, 455);
-            this.btnManagerHavTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnManagerHavTime.Margin = new System.Windows.Forms.Padding(2);
             this.btnManagerHavTime.Name = "btnManagerHavTime";
             this.btnManagerHavTime.Size = new System.Drawing.Size(214, 37);
             this.btnManagerHavTime.TabIndex = 60;
@@ -321,7 +321,7 @@
             // btnHarvestTimetable
             // 
             this.btnHarvestTimetable.Location = new System.Drawing.Point(260, 426);
-            this.btnHarvestTimetable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHarvestTimetable.Margin = new System.Windows.Forms.Padding(2);
             this.btnHarvestTimetable.Name = "btnHarvestTimetable";
             this.btnHarvestTimetable.Size = new System.Drawing.Size(214, 37);
             this.btnHarvestTimetable.TabIndex = 61;
@@ -337,17 +337,17 @@
             this.Controls.Add(this.btnManagerHavTime);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.harvest_expected);
-            this.Controls.Add(this.harvest_expected_textbox);
+            this.Controls.Add(this.txtHarvExpect);
             this.Controls.Add(this.labourers_required);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtLabourersRequired);
             this.Controls.Add(this.labour_required);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtLabourRequired);
             this.Controls.Add(this.time_needed);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTimeNeed);
             this.Controls.Add(this.special_treatment_label);
-            this.Controls.Add(this.special_treatment_textbox);
+            this.Controls.Add(this.txtHarvestTreat);
             this.Controls.Add(this.harvest_id_label);
-            this.Controls.Add(this.harvest_id_textbox);
+            this.Controls.Add(this.txtHarvID);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -375,18 +375,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.TextBox harvest_id_textbox;
+        private System.Windows.Forms.TextBox txtHarvID;
         private System.Windows.Forms.Label harvest_id_label;
         private System.Windows.Forms.Label special_treatment_label;
-        private System.Windows.Forms.TextBox special_treatment_textbox;
+        private System.Windows.Forms.TextBox txtHarvestTreat;
         private System.Windows.Forms.Label labour_required;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLabourRequired;
         private System.Windows.Forms.Label time_needed;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTimeNeed;
         private System.Windows.Forms.Label labourers_required;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtLabourersRequired;
         private System.Windows.Forms.Label harvest_expected;
-        private System.Windows.Forms.TextBox harvest_expected_textbox;
+        private System.Windows.Forms.TextBox txtHarvExpect;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label2;

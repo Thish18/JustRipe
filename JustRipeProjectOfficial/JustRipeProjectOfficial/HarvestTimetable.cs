@@ -65,16 +65,19 @@ namespace JustRipeProjectOfficial
             string treatment;
             int time, labourR, labourersR, harvestEx;
 
-            treatment = special_treatment_textbox.Text;
-            time = Convert.ToInt32(time_needed.Text);
-            labourR = Convert.ToInt32(labour_required.Text);
-            labourersR = Convert.ToInt32(labourers_required.Text);
-            harvestEx = Convert.ToInt32(harvest_expected.Text);
+            treatment = txtHarvestTreat.Text;
+            time = Convert.ToInt32(txtTimeNeed.Text);
+            labourR = Convert.ToInt32(txtLabourRequired.Text);
+            labourersR = Convert.ToInt32(txtLabourersRequired.Text);
+            harvestEx = Convert.ToInt32(txtHarvExpect.Text);
             
             dbconn.insertHarvestTimetable(treatment, time, labourR, labourersR, harvestEx);
-
+        }
+        
+        private void btnViewDetails_Click_1(object sender, EventArgs e)
+        {
             string ft = "Date: " + dtpHarvest.Text + "\r\n";
-            ft = ft + "Harvest ID: " + txt.Text + "\r\n";
+            ft = ft + "Harvest ID: " + txtHarvID.Text + "\r\n";
             ft = ft + "Harvest Treatment: " + txtHarvestTreat.Text + "\r\n";
             ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
             ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
@@ -82,6 +85,5 @@ namespace JustRipeProjectOfficial
             ft = ft + "When Harvest Expected: " + txtHarvExpect.Text;
             HarvestTxt.Text = ft;
         }
-      
     }
 }
