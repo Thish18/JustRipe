@@ -70,7 +70,7 @@ namespace JustRipeProjectOfficial
             labourR = Convert.ToInt32(txtLabourRequired.Text);
             labourersR = Convert.ToInt32(txtLabourersRequired.Text);
             harvestEx = Convert.ToInt32(txtHarvExpect.Text);
-            
+
             dbconn.insertHarvestTimetable(treatment, time, labourR, labourersR, harvestEx);
         }
         
