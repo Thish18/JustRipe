@@ -552,18 +552,48 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@fertilizerType", type);
             comm.ExecuteNonQuery();
 
+            query = "INSERT INTO FertiliserQuantity (quantity,fertilizer_ID)" +
+                "VALUES (@quantity,@fertilizer_ID)";
 
+            //WIP
+            int fertilizer_ID = getLatestfertilizerID();
 
-            query = "INSERT INTO FertiliserQuantity (quantity)" +
-                "VALUES (@quantity)";
-
-            comm = new SqlCommand(query, connToDB);
-                       
+            comm = new SqlCommand(query, connToDB);      
             comm.Parameters.AddWithValue("@quantity", quantity);
+            comm.Parameters.AddWithValue("@fertilizer_ID", fertilizer_ID);
             comm.ExecuteNonQuery();
             
             CloseConn();
             MessageBox.Show("Fertiliser Created.");
+
+        }
+        //WIP
+        private int getLatestfertilizerID() {
+
+            Initialize();
+            OpenConn();
+
+            string query = "SELECT TOP fertilizer_ID FROM fertilizers ORDER BY fertilizer_ID DESC";
+
+            int id = 0;
+            comm = new SqlCommand(query, connToDB);
+            dataRead = comm.ExecuteReader();
+
+            using (dataRead)
+            {
+
+                while (dataRead.Read())
+                {
+
+                    id = (Int32)dataRead["fertilizer_ID"];
+
+                }
+
+            }
+
+            
+
+            return id;
 
         }
 
@@ -1077,11 +1107,11 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "SELECT Users.firstname, Users.lastname, Crops.cropsType, storages.ID FROM WorkSchedule " +
+            string query = "SELECT Users.firstname, Users.lastname, Crops.cropsType, storages.storage_ID FROM WorkSchedule " +
                 "INNER JOIN Users ON WorkSchedule.userID = Users.Users_ID " +
                 "INNER JOIN Crops ON WorkSchedule.crops_ID = Crops.crops_ID " +
                 "INNER JOIN storages ON WorkSchedule.storage_ID = storages.storage_ID " +
-                "WHERE userID = " +userID+ " AND crops_ID = " +cropID+ " AND storage_ID = " +storageID;
+                "WHERE WorkSchedule.userID = " + userID+ " AND WorkSchedule.crops_ID = " + cropID+ " AND WorkSchedule.storage_ID = " + storageID;
 
             scheduleInfo = new DataTable();
             comm = new SqlCommand(query, connToDB);

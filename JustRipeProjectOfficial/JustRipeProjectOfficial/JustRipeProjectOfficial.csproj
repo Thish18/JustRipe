@@ -86,6 +86,12 @@
     <Compile Include="Crops.Designer.cs">
       <DependentUpon>Crops.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cultivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cultivation.Designer.cs">
+      <DependentUpon>Cultivation.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnect.cs" />
     <Compile Include="Fertiliser.cs">
       <SubType>Form</SubType>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Crops.resx">
       <DependentUpon>Crops.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cultivation.resx">
+      <DependentUpon>Cultivation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fertiliser.resx">
       <DependentUpon>Fertiliser.cs</DependentUpon>

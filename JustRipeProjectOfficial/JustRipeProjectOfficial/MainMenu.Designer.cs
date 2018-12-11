@@ -102,6 +102,7 @@
             this.btnPlaceHolder.Name = "btnPlaceHolder";
             this.btnPlaceHolder.Size = new System.Drawing.Size(383, 130);
             this.btnPlaceHolder.TabIndex = 3;
+            this.btnPlaceHolder.Text = "Cultivation";
             this.btnPlaceHolder.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPlaceHolder.UseVisualStyleBackColor = false;
             this.btnPlaceHolder.Click += new System.EventHandler(this.btnVehicle_Click);
