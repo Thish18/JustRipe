@@ -39,6 +39,8 @@ namespace JustRipeProjectOfficial
             {
                 btnManagerHavTime.Enabled = true; 
             }
+
+
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -73,20 +75,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.insertHarvestTimetable(treatment, time, labourR, labourersR, harvestEx);
         }
-        
-        private void btnViewDetails_Click_1(object sender, EventArgs e)
-        {
-            /*
-            string ft = "Date: " + dtpHarvest.Text + "\r\n";
-            ft = ft + "Harvest ID: " + txtHarvID.Text + "\r\n";
-            ft = ft + "Harvest Treatment: " + txtHarvestTreat.Text + "\r\n";
-            ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
-            ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
-            ft = ft + "Labourers Required: " + txtLabourersRequired.Text + "\r\n";
-            ft = ft + "When Harvest Expected: " + txtHarvExpect.Text;
-            HarvestTxt.Text = ft;
-        }
-
+                  
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
             string ft = "Date: " + dtpHarvest.Text + "\r\n";
@@ -96,7 +85,13 @@ namespace JustRipeProjectOfficial
             ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
             ft = ft + "Labourers Required: " + txtLabourersRequired.Text + "\r\n";
             ft = ft + "When Harvest Expected: " + txtHarvExpect.Text;
-            HarvestTxt.Text = ft;*/
+            HarvestTxt.Text = ft; 
+        }
+
+        private void btnHarvestTimetable_Click(object sender, EventArgs e)
+        {
+            dbconn.getHarvest();
+            dgvHarvest.DataSource = dbconn.HarvestList;
         }
     }
 }
