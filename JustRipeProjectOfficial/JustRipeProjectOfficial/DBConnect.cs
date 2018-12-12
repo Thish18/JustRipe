@@ -694,15 +694,15 @@ namespace JustRipeProjectOfficial
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@", type);
+            comm.Parameters.AddWithValue("@sowingType", type);
             comm.ExecuteNonQuery();
 
-            query = "";
+            //query = "";
 
-            comm = new SqlCommand(query, connToDB);
+            //comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@", quantity);
-            comm.ExecuteNonQuery();
+            //comm.Parameters.AddWithValue("@", quantity);
+            //comm.ExecuteNonQuery();
 
             CloseConn();
             MessageBox.Show("Sowing Method Created.");
@@ -1086,6 +1086,7 @@ namespace JustRipeProjectOfficial
 
             Initialize();
             OpenConn();
+
             string query = "INSERT INTO WorkSchedule (UserID,crops_ID,Storage_ID,Date) VALUES(@UserID,@crops_ID,@Storage_ID,@Date)";
 
             comm = new SqlCommand(query, connToDB);
