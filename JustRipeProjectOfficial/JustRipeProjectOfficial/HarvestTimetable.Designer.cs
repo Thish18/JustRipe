@@ -32,6 +32,7 @@
             this.dtpHarvest = new System.Windows.Forms.DateTimePicker();
             this.HarvestTxt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnViewDetails = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.lbRank = new System.Windows.Forms.Label();
             this.btnManagerHavTime = new System.Windows.Forms.Button();
             this.btnHarvestTimetable = new System.Windows.Forms.Button();
-            this.btnViewDetails = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,7 +83,7 @@
             // HarvestTxt
             // 
             this.HarvestTxt.Location = new System.Drawing.Point(0, 169);
-            this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4);
             this.HarvestTxt.Multiline = true;
             this.HarvestTxt.Name = "HarvestTxt";
             this.HarvestTxt.Size = new System.Drawing.Size(303, 366);
@@ -100,10 +100,26 @@
             this.panel1.Controls.Add(this.dtpHarvest);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(303, 613);
             this.panel1.TabIndex = 46;
+            // 
+            // btnViewDetails
+            // 
+            this.btnViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnViewDetails.FlatAppearance.BorderSize = 0;
+            this.btnViewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDetails.ForeColor = System.Drawing.Color.White;
+            this.btnViewDetails.Location = new System.Drawing.Point(0, 455);
+            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.Size = new System.Drawing.Size(303, 80);
+            this.btnViewDetails.TabIndex = 46;
+            this.btnViewDetails.Text = "View Inputted Info";
+            this.btnViewDetails.UseVisualStyleBackColor = false;
+            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click);
             // 
             // btnInsert
             // 
@@ -113,7 +129,7 @@
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.White;
             this.btnInsert.Location = new System.Drawing.Point(0, 89);
-            this.btnInsert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(303, 80);
             this.btnInsert.TabIndex = 45;
@@ -126,7 +142,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(89)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 68);
             this.panel2.TabIndex = 2;
@@ -151,7 +167,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Location = new System.Drawing.Point(0, 533);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(303, 80);
             this.btnMenu.TabIndex = 3;
@@ -162,7 +178,7 @@
             // txtHarvID
             // 
             this.txtHarvID.Location = new System.Drawing.Point(348, 91);
-            this.txtHarvID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHarvID.Margin = new System.Windows.Forms.Padding(4);
             this.txtHarvID.Name = "txtHarvID";
             this.txtHarvID.Size = new System.Drawing.Size(164, 22);
             this.txtHarvID.TabIndex = 47;
@@ -190,7 +206,7 @@
             // txtHarvestTreat
             // 
             this.txtHarvestTreat.Location = new System.Drawing.Point(600, 91);
-            this.txtHarvestTreat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHarvestTreat.Margin = new System.Windows.Forms.Padding(4);
             this.txtHarvestTreat.Name = "txtHarvestTreat";
             this.txtHarvestTreat.Size = new System.Drawing.Size(164, 22);
             this.txtHarvestTreat.TabIndex = 49;
@@ -208,7 +224,7 @@
             // txtLabourRequired
             // 
             this.txtLabourRequired.Location = new System.Drawing.Point(348, 142);
-            this.txtLabourRequired.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabourRequired.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabourRequired.Name = "txtLabourRequired";
             this.txtLabourRequired.Size = new System.Drawing.Size(164, 22);
             this.txtLabourRequired.TabIndex = 53;
@@ -226,7 +242,7 @@
             // txtTimeNeed
             // 
             this.txtTimeNeed.Location = new System.Drawing.Point(860, 91);
-            this.txtTimeNeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimeNeed.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimeNeed.Name = "txtTimeNeed";
             this.txtTimeNeed.Size = new System.Drawing.Size(164, 22);
             this.txtTimeNeed.TabIndex = 51;
@@ -244,7 +260,7 @@
             // txtLabourersRequired
             // 
             this.txtLabourersRequired.Location = new System.Drawing.Point(600, 142);
-            this.txtLabourersRequired.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabourersRequired.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabourersRequired.Name = "txtLabourersRequired";
             this.txtLabourersRequired.Size = new System.Drawing.Size(164, 22);
             this.txtLabourersRequired.TabIndex = 55;
@@ -262,7 +278,7 @@
             // txtHarvExpect
             // 
             this.txtHarvExpect.Location = new System.Drawing.Point(860, 142);
-            this.txtHarvExpect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHarvExpect.Margin = new System.Windows.Forms.Padding(4);
             this.txtHarvExpect.Name = "txtHarvExpect";
             this.txtHarvExpect.Size = new System.Drawing.Size(164, 22);
             this.txtHarvExpect.TabIndex = 57;
@@ -275,7 +291,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.lbRank);
             this.panel3.Location = new System.Drawing.Point(301, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(773, 68);
             this.panel3.TabIndex = 59;
@@ -344,21 +360,7 @@
             this.btnHarvestTimetable.TabIndex = 61;
             this.btnHarvestTimetable.Text = "View Harvest Timetable ";
             this.btnHarvestTimetable.UseVisualStyleBackColor = true;
-            // 
-            // btnViewDetails
-            // 
-            this.btnViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnViewDetails.FlatAppearance.BorderSize = 0;
-            this.btnViewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewDetails.ForeColor = System.Drawing.Color.White;
-            this.btnViewDetails.Location = new System.Drawing.Point(0, 455);
-            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewDetails.Name = "btnViewDetails";
-            this.btnViewDetails.Size = new System.Drawing.Size(303, 80);
-            this.btnViewDetails.TabIndex = 46;
-            this.btnViewDetails.Text = "View Inputted Info";
-            this.btnViewDetails.UseVisualStyleBackColor = false;
+            this.btnHarvestTimetable.Click += new System.EventHandler(this.btnHarvestTimetable_Click);
             // 
             // HarvestTimetable
             // 
@@ -383,7 +385,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HarvestTimetable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HarvestTimetable";
