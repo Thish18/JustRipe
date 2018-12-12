@@ -64,14 +64,13 @@ namespace JustRipeProjectOfficial
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string treatment;
-            int time, labourR, labourersR, harvestEx;
-
-            treatment = txtHarvestTreat.Text;
-            time = Convert.ToInt32(txtTimeNeed.Text);
-            labourR = Convert.ToInt32(txtLabourRequired.Text);
-            labourersR = Convert.ToInt32(txtLabourersRequired.Text);
-            harvestEx = Convert.ToInt32(txtHarvExpect.Text);
+            
+            string treatment = txtHarvestTreat.Text;
+            int cropID = 0;
+            int time = Convert.ToInt32(txtTimeNeed.Text);
+            int labourR = Convert.ToInt32(txtLabourRequired.Text);
+            int labourersR = Convert.ToInt32(txtLabourersRequired.Text);
+            int harvestEx = Convert.ToInt32(txtHarvExpect.Text);
 
             dbconn.insertHarvestTimetable(treatment, time, labourR, labourersR, harvestEx);
         }
