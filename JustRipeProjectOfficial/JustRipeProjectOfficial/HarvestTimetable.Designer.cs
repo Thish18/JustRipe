@@ -359,7 +359,6 @@
             this.btnViewDetails.TabIndex = 46;
             this.btnViewDetails.Text = "View Inputted Info";
             this.btnViewDetails.UseVisualStyleBackColor = false;
-            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click);
             // 
             // HarvestTimetable
             // 

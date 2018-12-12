@@ -1008,7 +1008,7 @@ namespace JustRipeProjectOfficial
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@treatment", treatment);
+            comm.Parameters.AddWithValue("@TreatmentType", treatment);
             comm.ExecuteNonQuery();
 
             query = "INSERT INTO Harvest (time_needed, labour_required, labourers_required, expected) VALUES(@time_needed, @labour_required, @labourers_required, @expected)";
