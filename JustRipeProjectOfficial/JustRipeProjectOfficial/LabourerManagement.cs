@@ -36,8 +36,8 @@ namespace JustRipeProjectOfficial
             cbCrops.DisplayMember = "cropstype";
             cbCrops.ValueMember = "crops_ID";
 
-            dbconn.getEmptyStorageData();
-            cbStorage.DataSource = dbconn.storageList;
+            dbconn.getStorageLastID();
+            cbStorage.DataSource = dbconn.storageLastID;
             cbStorage.DisplayMember = "storage_ID";
             cbStorage.ValueMember = "storage_ID";
 
@@ -85,7 +85,10 @@ namespace JustRipeProjectOfficial
             txtLabAddress.Text = dbconn.labourerInfo.Rows[0]["address1"].ToString();
             txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
             txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
-            
+            txtLabRankID.Text = dbconn.labourerInfo.Rows[0]["rankID"].ToString();
+
+
+
         }
 
         private void btnStorage_Click(object sender, EventArgs e)
@@ -123,10 +126,11 @@ namespace JustRipeProjectOfficial
             else {
 
                 int userID = Convert.ToInt32(txtLabID.Text);
+                String Date = Convert.ToString(dtpDate.Text);               
                 int cropID = Convert.ToInt32(cbCrops.SelectedValue.ToString());
                 int storageID = Convert.ToInt32(cbStorage.SelectedValue.ToString());
 
-                dbconn.createWorkSchedule(userID, cropID, storageID, dtpDate.Value);
+                dbconn.createWorkSchedule(userID, cropID, storageID, dtpDate.Text);
 
             }
 

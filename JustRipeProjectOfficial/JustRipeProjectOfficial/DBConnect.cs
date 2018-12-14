@@ -1082,7 +1082,7 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createWorkSchedule(int userID, int cropID, int storageID, DateTime date) {
+        public void createWorkSchedule(int userID, int cropID, int storageID, string Date) {
 
             Initialize();
             OpenConn();
@@ -1094,7 +1094,9 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@UserID", userID);
             comm.Parameters.AddWithValue("@crops_ID", cropID);
             comm.Parameters.AddWithValue("@Storage_ID", storageID);
-            comm.Parameters.AddWithValue("@Date", date);
+            comm.Parameters.AddWithValue("@Date", Date);
+         
+
             comm.ExecuteNonQuery();
 
             getWorkScheduleWithUserCropsStorage(userID,cropID,storageID);
