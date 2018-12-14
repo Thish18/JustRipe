@@ -1064,7 +1064,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "SELECT * FROM Harvest";
+            string query = "SELECT Harvest.*,specialType FROM Harvest,specialTreatment";
 
             HarvestList = new DataTable();
             comm = new SqlCommand(query, connToDB);
