@@ -826,7 +826,7 @@ namespace JustRipeProjectOfficial
             storageList = new DataTable();
 
             string query = "SELECT storage_ID FROM storages " +
-                "WHERE storageStatusID = 1";
+                "WHERE storage_ID = 1";
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
