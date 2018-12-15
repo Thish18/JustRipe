@@ -998,13 +998,13 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void insertHarvestTimetable(int specialTreatmentID, string time, string labourR, string labourersR, string harvestEx)
+        public void insertHarvestTimetable(int specialTreatmentID, string time, string labourR, int labourersR, DateTime harvestEx)
         {
 
             Initialize();
             OpenConn();           
 
-            string  query = "INSERT INTO Harvest (specialtreamentID,time_needed, labour_required, labourers_required, expected) VALUES(@specialtrementID,@time_needed, @labour_required, @labourers_required, @expected)";
+            string  query = "INSERT INTO Harvest (specialtreatmentID,time_needed, labour_required, labourers_required, expected) VALUES(@specialtreatmentID,@time_needed, @labour_required, @labourers_required, @expected)";
 
             comm = new SqlCommand(query, connToDB);
 

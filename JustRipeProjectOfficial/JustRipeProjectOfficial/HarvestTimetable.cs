@@ -74,11 +74,9 @@ namespace JustRipeProjectOfficial
             int cropID = 0;
             string time = Convert.ToString(txtTimeNeed.Text);
             string labourR = Convert.ToString(txtLabourRequired.Text);
-            string labourersR = Convert.ToString(txtLabourersRequired.Text);
-            string harvestEx = Convert.ToString(dtpHarvExpect.Text);
-            
+            int labourersR = Convert.ToInt32(txtLabourersRequired.Text);  
 
-            dbconn.insertHarvestTimetable(specialTreatmentID, time, labourR, labourersR, harvestEx);
+            dbconn.insertHarvestTimetable(specialTreatmentID, time, labourR, labourersR, dtpHarvExpect.Value);
         }
                   
         private void btnViewDetails_Click(object sender, EventArgs e)
