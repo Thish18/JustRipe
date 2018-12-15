@@ -998,23 +998,17 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void insertHarvestTimetable(string treatment, int time, int labourR, int labourersR, int harvestEx)
+        public void insertHarvestTimetable(int specialTreatmentID, string time, string labourR, string labourersR, string harvestEx)
         {
 
             Initialize();
-            OpenConn();
+            OpenConn();           
 
-            string query = "INSERT INTO Treatment (TreatmentType) VALUES(@TreatmentType)";
-
-            comm = new SqlCommand(query, connToDB);
-
-            comm.Parameters.AddWithValue("@TreatmentType", treatment);
-            comm.ExecuteNonQuery();
-
-            query = "INSERT INTO Harvest (time_needed, labour_required, labourers_required, expected) VALUES(@time_needed, @labour_required, @labourers_required, @expected)";
+            string  query = "INSERT INTO Harvest (specialtreamentID,time_needed, labour_required, labourers_required, expected) VALUES(@specialtrementID,@time_needed, @labour_required, @labourers_required, @expected)";
 
             comm = new SqlCommand(query, connToDB);
 
+            comm.Parameters.AddWithValue("@specialtreatmentID", specialTreatmentID);
             comm.Parameters.AddWithValue("@time_needed", time);
             comm.Parameters.AddWithValue("@labour_required", labourR);
             comm.Parameters.AddWithValue("@labourers_required", labourersR);
@@ -1082,7 +1076,32 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createWorkSchedule(int userID, int cropID, int storageID, string Date) {
+        public DataTable specialTreatmentList;
+        public void getTreatment()
+        {
+
+            Initialize();
+            OpenConn();
+
+            string query = "SELECT specialT_ID FROM specialTreatment";
+
+            specialTreatmentList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            // use adapter to flood above table
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(specialTreatmentList);
+
+            }
+
+
+            CloseConn();
+
+        }
+            public void createWorkSchedule(int userID, int cropID, int storageID, string Date) {
 
             Initialize();
             OpenConn();
