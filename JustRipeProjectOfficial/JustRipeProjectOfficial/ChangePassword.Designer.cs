@@ -32,7 +32,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnOpenTable = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -41,9 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.dgvSettingTimetable = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSettingTimetable)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReset
@@ -97,7 +94,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(53)))));
-            this.panel1.Controls.Add(this.btnOpenTable);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnReset);
@@ -107,22 +103,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 384);
             this.panel1.TabIndex = 52;
-            // 
-            // btnOpenTable
-            // 
-            this.btnOpenTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnOpenTable.FlatAppearance.BorderSize = 0;
-            this.btnOpenTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenTable.ForeColor = System.Drawing.Color.White;
-            this.btnOpenTable.Location = new System.Drawing.Point(0, 181);
-            this.btnOpenTable.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOpenTable.Name = "btnOpenTable";
-            this.btnOpenTable.Size = new System.Drawing.Size(203, 52);
-            this.btnOpenTable.TabIndex = 45;
-            this.btnOpenTable.Text = "Open Table";
-            this.btnOpenTable.UseVisualStyleBackColor = false;
-            this.btnOpenTable.Click += new System.EventHandler(this.btnOpenTable_Click);
             // 
             // lblUsername
             // 
@@ -208,23 +188,12 @@
             this.txtUsername.Size = new System.Drawing.Size(348, 22);
             this.txtUsername.TabIndex = 51;
             // 
-            // dgvSettingTimetable
-            // 
-            this.dgvSettingTimetable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSettingTimetable.Location = new System.Drawing.Point(210, 266);
-            this.dgvSettingTimetable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvSettingTimetable.Name = "dgvSettingTimetable";
-            this.dgvSettingTimetable.RowTemplate.Height = 24;
-            this.dgvSettingTimetable.Size = new System.Drawing.Size(349, 107);
-            this.dgvSettingTimetable.TabIndex = 53;
-            // 
             // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(576, 384);
-            this.Controls.Add(this.dgvSettingTimetable);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtConfirmPassword);
@@ -240,7 +209,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSettingTimetable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +227,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.DataGridView dgvSettingTimetable;
-        private System.Windows.Forms.Button btnOpenTable;
     }
 }
