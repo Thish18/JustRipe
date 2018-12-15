@@ -1058,7 +1058,8 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "SELECT Harvest.*,specialType FROM Harvest,specialTreatment";
+            string query = "SELECT Harvest.*,specialTreatment.specialType FROM Harvest " +
+                 "INNER JOIN specialTreatment ON harvest.specialTreatmentID = specialTreatment.specialT_ID";
 
             HarvestList = new DataTable();
             comm = new SqlCommand(query, connToDB);
