@@ -694,15 +694,15 @@ namespace JustRipeProjectOfficial
 
             comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@", type);
+            comm.Parameters.AddWithValue("@sowingType", type);
             comm.ExecuteNonQuery();
 
-            query = "";
+            //query = "";
 
-            comm = new SqlCommand(query, connToDB);
+            //comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@", quantity);
-            comm.ExecuteNonQuery();
+            //comm.Parameters.AddWithValue("@", quantity);
+            //comm.ExecuteNonQuery();
 
             CloseConn();
             MessageBox.Show("Sowing Method Created.");
@@ -826,7 +826,7 @@ namespace JustRipeProjectOfficial
             storageList = new DataTable();
 
             string query = "SELECT storage_ID FROM storages " +
-                "WHERE storageStatusID = 1";
+                "WHERE storage_ID = 1";
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
@@ -998,23 +998,17 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void insertHarvestTimetable(string treatment, int time, int labourR, int labourersR, int harvestEx)
+        public void insertHarvestTimetable(int specialTreatmentID, string time, string labourR, int labourersR, DateTime harvestEx)
         {
 
             Initialize();
-            OpenConn();
+            OpenConn();           
 
-            string query = "INSERT INTO Treatment (TreatmentType) VALUES(@TreatmentType)";
-
-            comm = new SqlCommand(query, connToDB);
-
-            comm.Parameters.AddWithValue("@treatment", treatment);
-            comm.ExecuteNonQuery();
-
-            query = "INSERT INTO Harvest (time_needed, labour_required, labourers_required, expected) VALUES(@time_needed, @labour_required, @labourers_required, @expected)";
+            string  query = "INSERT INTO Harvest (specialtreatmentID,time_needed, labour_required, labourers_required, expected) VALUES(@specialtreatmentID,@time_needed, @labour_required, @labourers_required, @expected)";
 
             comm = new SqlCommand(query, connToDB);
 
+            comm.Parameters.AddWithValue("@specialtreatmentID", specialTreatmentID);
             comm.Parameters.AddWithValue("@time_needed", time);
             comm.Parameters.AddWithValue("@labour_required", labourR);
             comm.Parameters.AddWithValue("@labourers_required", labourersR);
@@ -1064,7 +1058,8 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "SELECT * FROM Harvest";
+            string query = "SELECT Harvest.*,specialTreatment.specialType FROM Harvest " +
+                 "INNER JOIN specialTreatment ON harvest.specialTreatmentID = specialTreatment.specialT_ID";
 
             HarvestList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -1082,10 +1077,36 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createWorkSchedule(int userID, int cropID, int storageID, DateTime date) {
+        public DataTable specialTreatmentList;
+        public void getTreatment()
+        {
 
             Initialize();
             OpenConn();
+
+            string query = "SELECT specialT_ID FROM specialTreatment";
+
+            specialTreatmentList = new DataTable();
+            comm = new SqlCommand(query, connToDB);
+            dataAdap = new SqlDataAdapter(comm);
+
+            // use adapter to flood above table
+            using (dataAdap)
+            {
+
+                dataAdap.Fill(specialTreatmentList);
+
+            }
+
+
+            CloseConn();
+
+        }
+            public void createWorkSchedule(int userID, int cropID, int storageID, DateTime Date) {
+
+            Initialize();
+            OpenConn();
+
             string query = "INSERT INTO WorkSchedule (UserID,crops_ID,Storage_ID,Date) VALUES(@UserID,@crops_ID,@Storage_ID,@Date)";
 
             comm = new SqlCommand(query, connToDB);
@@ -1093,7 +1114,9 @@ namespace JustRipeProjectOfficial
             comm.Parameters.AddWithValue("@UserID", userID);
             comm.Parameters.AddWithValue("@crops_ID", cropID);
             comm.Parameters.AddWithValue("@Storage_ID", storageID);
-            comm.Parameters.AddWithValue("@Date", date);
+            comm.Parameters.AddWithValue("@Date", Date);
+         
+
             comm.ExecuteNonQuery();
 
             getWorkScheduleWithUserCropsStorage(userID,cropID,storageID);

@@ -36,8 +36,8 @@ namespace JustRipeProjectOfficial
             cbCrops.DisplayMember = "cropstype";
             cbCrops.ValueMember = "crops_ID";
 
-            dbconn.getEmptyStorageData();
-            cbStorage.DataSource = dbconn.storageList;
+            dbconn.getStorageLastID();
+            cbStorage.DataSource = dbconn.storageLastID;
             cbStorage.DisplayMember = "storage_ID";
             cbStorage.ValueMember = "storage_ID";
 
@@ -80,12 +80,15 @@ namespace JustRipeProjectOfficial
             txtLabFirstName.Text = dbconn.labourerInfo.Rows[0]["firstname"].ToString();
             txtLabLastName.Text = dbconn.labourerInfo.Rows[0]["lastname"].ToString();
             txtLabUsername.Text = dbconn.labourerInfo.Rows[0]["username"].ToString();
-            //txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
-           // txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
+            txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
+            txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
             txtLabAddress.Text = dbconn.labourerInfo.Rows[0]["address1"].ToString();
             txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
             txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
-            
+            txtLabRankID.Text = dbconn.labourerInfo.Rows[0]["rankID"].ToString();
+
+
+
         }
 
         private void btnStorage_Click(object sender, EventArgs e)
@@ -112,6 +115,8 @@ namespace JustRipeProjectOfficial
         private void btnAssign_Click(object sender, EventArgs e)
         {
 
+
+            
             if (txtLabID.Text == null || txtLabID.Text == "")
             {
 
@@ -120,14 +125,14 @@ namespace JustRipeProjectOfficial
             }
             else {
 
-                int userID = Convert.ToInt32(txtLabID.Text);
+                int userID = Convert.ToInt32(txtLabID.Text);              
                 int cropID = Convert.ToInt32(cbCrops.SelectedValue.ToString());
                 int storageID = Convert.ToInt32(cbStorage.SelectedValue.ToString());
 
                 dbconn.createWorkSchedule(userID, cropID, storageID, dtpDate.Value);
 
             }
-            
+
         }
 
         
