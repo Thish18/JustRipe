@@ -83,7 +83,7 @@ namespace JustRipeProjectOfficial
         {
             string ft = "Date: " + dtpHarvest.Text + "\r\n";
             ft = ft + "Harvest ID: " + txtHarvID.Text + "\r\n";
-            ft = ft + "Harvest Treatment: " + txtHarvestTreat.Text + "\r\n";
+            ft = ft + "Special Treatment: " + cboSpecTreatment.Text + "\r\n";
             ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
             ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
             ft = ft + "Labourers Required: " + txtLabourersRequired.Text + "\r\n";
