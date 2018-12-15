@@ -1101,7 +1101,7 @@ namespace JustRipeProjectOfficial
             CloseConn();
 
         }
-            public void createWorkSchedule(int userID, int cropID, int storageID, string Date) {
+            public void createWorkSchedule(int userID, int cropID, int storageID, DateTime Date) {
 
             Initialize();
             OpenConn();

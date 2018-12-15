@@ -125,12 +125,11 @@ namespace JustRipeProjectOfficial
             }
             else {
 
-                int userID = Convert.ToInt32(txtLabID.Text);
-                String Date = Convert.ToString(dtpDate.Text);               
+                int userID = Convert.ToInt32(txtLabID.Text);              
                 int cropID = Convert.ToInt32(cbCrops.SelectedValue.ToString());
                 int storageID = Convert.ToInt32(cbStorage.SelectedValue.ToString());
 
-                dbconn.createWorkSchedule(userID, cropID, storageID, dtpDate.Text);
+                dbconn.createWorkSchedule(userID, cropID, storageID, dtpDate.Value);
 
             }
 
