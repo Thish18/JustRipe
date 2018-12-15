@@ -171,6 +171,7 @@
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update storage Information";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel6
             // 
@@ -196,6 +197,7 @@
             // 
             // cbCropsList
             // 
+            this.cbCropsList.Enabled = false;
             this.cbCropsList.FormattingEnabled = true;
             this.cbCropsList.Location = new System.Drawing.Point(90, 86);
             this.cbCropsList.Name = "cbCropsList";

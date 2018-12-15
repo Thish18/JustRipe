@@ -89,12 +89,12 @@ namespace JustRipeProjectOfficial
             btnCreate.Enabled = true;
 
             string type = typeTextBox.Text;
-            int quantity = Convert.ToInt32(quantityTextBox.Text);
+            //int quantity = Convert.ToInt32(quantityTextBox.Text);
             //int maxQuantity = Convert.ToInt32(maxQuantityTextBox.Text);
 
             if(createEnable)
             {
-                dbconn.createSowingMethod(type, quantity);
+                //dbconn.createSowingMethod(type, quantity);
             }
             else
             {

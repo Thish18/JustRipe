@@ -17,34 +17,6 @@ namespace JustRipeProjectOfficial
 
 
         DBConnect dbconn = new DBConnect();
-        private string connStr;
-        SqlConnection connToDB;
-        private SqlDataAdapter dataAdap;
-        SqlCommand comm;
-
-        //once MYSQL Connected. I believe this will actually try to connect to the database server
-        //Initialize (Probably)
-        
-        public void OpenConn()
-        {
-
-            connToDB = new SqlConnection(connStr);
-
-            connToDB.Open();
-
-        }
-
-        //this will close the connection to the database server once the program closed.
-
-        public void CloseConn()
-        {
-
-            connToDB.Close();
-
-        }
-        /// <summary>
-        /// //////////////////////////////////////////////////////////////////////////////
-        /// </summary>
 
         private int userID;
         private int tempID;
@@ -64,8 +36,8 @@ namespace JustRipeProjectOfficial
             cbCrops.DisplayMember = "cropstype";
             cbCrops.ValueMember = "crops_ID";
 
-            dbconn.getStorageData();
-            cbStorage.DataSource = dbconn.storageList;
+            dbconn.getStorageLastID();
+            cbStorage.DataSource = dbconn.storageLastID;
             cbStorage.DisplayMember = "storage_ID";
             cbStorage.ValueMember = "storage_ID";
 
@@ -108,12 +80,15 @@ namespace JustRipeProjectOfficial
             txtLabFirstName.Text = dbconn.labourerInfo.Rows[0]["firstname"].ToString();
             txtLabLastName.Text = dbconn.labourerInfo.Rows[0]["lastname"].ToString();
             txtLabUsername.Text = dbconn.labourerInfo.Rows[0]["username"].ToString();
-            //txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
-           // txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
+            txtLabDoB.Text = dbconn.labourerInfo.Rows[0]["DateOfBirth"].ToString();
+            txtLabGender.Text = dbconn.labourerInfo.Rows[0]["Gender"].ToString();
             txtLabAddress.Text = dbconn.labourerInfo.Rows[0]["address1"].ToString();
             txtLabAddress1.Text = dbconn.labourerInfo.Rows[0]["address2"].ToString();
             txtLabContactNum.Text = dbconn.labourerInfo.Rows[0]["ContactNum"].ToString();
-            
+            txtLabRankID.Text = dbconn.labourerInfo.Rows[0]["rankID"].ToString();
+
+
+
         }
 
         private void btnStorage_Click(object sender, EventArgs e)
@@ -139,23 +114,28 @@ namespace JustRipeProjectOfficial
 
         private void btnAssign_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            //connection query for SQL.
-            OpenConn();
-            string query = "INSERT INTO WorkSchedule (UserID,Crops,Storage,Date) VALUES(@UserID,@Crops,@Storage,@Date)";
 
-            comm = new SqlCommand(query, connToDB);
 
-            comm.Parameters.AddWithValue("@UserID", txtLabID);
-            comm.Parameters.AddWithValue("@Crops", cbCrops);
-            comm.Parameters.AddWithValue("@Storage", cbStorage);
-            comm.Parameters.AddWithValue("@Date", dtpDate);
-           
+            
+            if (txtLabID.Text == null || txtLabID.Text == "")
+            {
 
-            comm.ExecuteNonQuery();
-            dataAdap = new SqlDataAdapter(query, connToDB);
-            CloseConn();
-            MessageBox.Show("Information inputted.");
+                MessageBox.Show("Please select a user first.");
+
+            }
+            else {
+
+                int userID = Convert.ToInt32(txtLabID.Text);
+                String Date = Convert.ToString(dtpDate.Text);               
+                int cropID = Convert.ToInt32(cbCrops.SelectedValue.ToString());
+                int storageID = Convert.ToInt32(cbStorage.SelectedValue.ToString());
+
+                dbconn.createWorkSchedule(userID, cropID, storageID, dtpDate.Text);
+
+            }
+
         }
+
+        
     }
 }

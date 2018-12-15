@@ -39,6 +39,13 @@ namespace JustRipeProjectOfficial
             {
                 btnManagerHavTime.Enabled = true; 
             }
+
+            dbconn.getTreatment();
+            cboSpecTreatment.DataSource = dbconn.specialTreatmentList;
+            cboSpecTreatment.DisplayMember = "SpecialT_ID";
+            cboSpecTreatment.ValueMember = "SpecialT_ID";
+
+
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -63,6 +70,41 @@ namespace JustRipeProjectOfficial
         private void btnInsert_Click(object sender, EventArgs e)
         {
             
+            int specialTreatmentID = Convert.ToInt32(cboSpecTreatment.SelectedValue);
+            int cropID = 0;
+            string time = Convert.ToString(txtTimeNeed.Text);
+            string labourR = Convert.ToString(txtLabourRequired.Text);
+            string labourersR = Convert.ToString(txtLabourersRequired.Text);
+            string harvestEx = Convert.ToString(dtpHarvExpect.Text);
+            
+
+            dbconn.insertHarvestTimetable(specialTreatmentID, time, labourR, labourersR, harvestEx);
+        }
+                  
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            string ft = "Date: " + dtpHarvest.Text + "\r\n";
+            ft = ft + "Harvest ID: " + txtHarvID.Text + "\r\n";
+            ft = ft + "Harvest Treatment: " + txtHarvestTreat.Text + "\r\n";
+            ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
+            ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
+            ft = ft + "Labourers Required: " + txtLabourersRequired.Text + "\r\n";
+            ft = ft + "When Harvest Expected: " + dtpHarvExpect.Text;
+            HarvestTxt.Text = ft; 
+        }
+
+        private void btnHarvestTimetable_Click(object sender, EventArgs e)
+        {
+            dbconn.getHarvest();
+            dgvHarvest.DataSource = dbconn.HarvestList;
+        }
+
+        private void cboSpecTreatment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dbconn.getTreatment();
+            cboSpecTreatment.DataSource = dbconn.cropsList;
+            cboSpecTreatment.DisplayMember = "Special Type";
+            cboSpecTreatment.ValueMember = "SpecialT_ID";
         }
     }
 }

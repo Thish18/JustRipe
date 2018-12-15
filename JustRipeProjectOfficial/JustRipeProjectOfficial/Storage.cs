@@ -23,7 +23,7 @@ namespace JustRipeProjectOfficial
 
             userID = id;
 
-            dbconn.getStorageData();
+            dbconn.getAllStorageData();
             lBStorageList.DataSource = dbconn.storageList;
             lBStorageList.DisplayMember = "storage_ID";
             lBStorageList.ValueMember = "storage_ID";
@@ -127,6 +127,17 @@ namespace JustRipeProjectOfficial
 
             txtStorageID.Text = (newID + 1).ToString();
 
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (createEnable) {
+
+                int id = Convert.ToInt32(txtStorageID.Text);
+
+                dbconn.createStorage(id);
+
+            }
         }
     }
 }

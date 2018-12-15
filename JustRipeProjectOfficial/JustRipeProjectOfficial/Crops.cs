@@ -76,7 +76,6 @@ namespace JustRipeProjectOfficial
 
             }
 
-            dtpPeriod.MinDate = DateTime.Today;
             dtpSowing.MinDate = DateTime.Today;
             dtpHarvest.MinDate = DateTime.Today;
 
@@ -217,13 +216,11 @@ namespace JustRipeProjectOfficial
 
             //placeHolder//
 
-            //int special = Convert.ToInt32(cBSpecial.SelectedValue);
-            int special = 1;
+            int special = Convert.ToInt32(cBSpecial.SelectedValue);
+
             int fer = Convert.ToInt32(cbFertilizer.SelectedValue);
-            //int sowing = Convert.ToInt32(cbSowingType.SelectedValue);
-            int sowing = 1;
-            //int harvest = Convert.ToInt32(cbHarvestType.SelectedValue);
-            int harvest = 1;
+            int sowing = Convert.ToInt32(cbSowingType.SelectedValue);
+            int harvest = Convert.ToInt32(cbHarvestType.SelectedValue);
 
 
             if (createEnable)
