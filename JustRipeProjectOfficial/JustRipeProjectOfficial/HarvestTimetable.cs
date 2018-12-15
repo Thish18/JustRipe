@@ -101,10 +101,7 @@ namespace JustRipeProjectOfficial
 
         private void cboSpecTreatment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dbconn.getTreatment();
-            cboSpecTreatment.DataSource = dbconn.cropsList;
-            cboSpecTreatment.DisplayMember = "Special Type";
-            cboSpecTreatment.ValueMember = "SpecialT_ID";
+           
         }
     }
 }
