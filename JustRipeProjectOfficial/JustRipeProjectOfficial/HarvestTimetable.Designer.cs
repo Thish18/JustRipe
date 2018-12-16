@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHarvest = new System.Windows.Forms.DataGridView();
             this.dtpHarvest = new System.Windows.Forms.DateTimePicker();
             this.HarvestTxt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnViewDetails = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.txtHarvID = new System.Windows.Forms.TextBox();
             this.harvest_id_label = new System.Windows.Forms.Label();
             this.special_treatment_label = new System.Windows.Forms.Label();
-            this.txtHarvestTreat = new System.Windows.Forms.TextBox();
             this.labour_required = new System.Windows.Forms.Label();
             this.txtLabourRequired = new System.Windows.Forms.TextBox();
             this.time_needed = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@
             this.labourers_required = new System.Windows.Forms.Label();
             this.txtLabourersRequired = new System.Windows.Forms.TextBox();
             this.harvest_expected = new System.Windows.Forms.Label();
-            this.txtHarvExpect = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,22 +54,23 @@
             this.lbRank = new System.Windows.Forms.Label();
             this.btnManagerHavTime = new System.Windows.Forms.Button();
             this.btnHarvestTimetable = new System.Windows.Forms.Button();
-            this.btnViewDetails = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cboSpecTreatment = new System.Windows.Forms.ComboBox();
+            this.dtpHarvExpect = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHarvest)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvHarvest
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(347, 178);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(677, 347);
-            this.dataGridView1.TabIndex = 41;
+            this.dgvHarvest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHarvest.Location = new System.Drawing.Point(347, 178);
+            this.dgvHarvest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvHarvest.Name = "dgvHarvest";
+            this.dgvHarvest.RowTemplate.Height = 24;
+            this.dgvHarvest.Size = new System.Drawing.Size(677, 347);
+            this.dgvHarvest.TabIndex = 41;
             // 
             // dtpHarvest
             // 
@@ -83,7 +83,7 @@
             // HarvestTxt
             // 
             this.HarvestTxt.Location = new System.Drawing.Point(0, 169);
-            this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HarvestTxt.Margin = new System.Windows.Forms.Padding(4);
             this.HarvestTxt.Multiline = true;
             this.HarvestTxt.Name = "HarvestTxt";
             this.HarvestTxt.Size = new System.Drawing.Size(303, 366);
@@ -100,10 +100,26 @@
             this.panel1.Controls.Add(this.dtpHarvest);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(303, 613);
             this.panel1.TabIndex = 46;
+            // 
+            // btnViewDetails
+            // 
+            this.btnViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
+            this.btnViewDetails.FlatAppearance.BorderSize = 0;
+            this.btnViewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDetails.ForeColor = System.Drawing.Color.White;
+            this.btnViewDetails.Location = new System.Drawing.Point(0, 455);
+            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.Size = new System.Drawing.Size(303, 80);
+            this.btnViewDetails.TabIndex = 46;
+            this.btnViewDetails.Text = "View Inputted Info";
+            this.btnViewDetails.UseVisualStyleBackColor = false;
+            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click_1);
             // 
             // btnInsert
             // 
@@ -113,7 +129,7 @@
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.White;
             this.btnInsert.Location = new System.Drawing.Point(0, 89);
-            this.btnInsert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(303, 80);
             this.btnInsert.TabIndex = 45;
@@ -126,7 +142,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(89)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 68);
             this.panel2.TabIndex = 2;
@@ -151,7 +167,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Location = new System.Drawing.Point(0, 533);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(303, 80);
             this.btnMenu.TabIndex = 3;
@@ -161,8 +177,9 @@
             // 
             // txtHarvID
             // 
+            this.txtHarvID.Enabled = false;
             this.txtHarvID.Location = new System.Drawing.Point(348, 91);
-            this.txtHarvID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHarvID.Margin = new System.Windows.Forms.Padding(4);
             this.txtHarvID.Name = "txtHarvID";
             this.txtHarvID.Size = new System.Drawing.Size(164, 22);
             this.txtHarvID.TabIndex = 47;
@@ -187,14 +204,6 @@
             this.special_treatment_label.TabIndex = 50;
             this.special_treatment_label.Text = "Special Treatment";
             // 
-            // txtHarvestTreat
-            // 
-            this.txtHarvestTreat.Location = new System.Drawing.Point(600, 91);
-            this.txtHarvestTreat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtHarvestTreat.Name = "txtHarvestTreat";
-            this.txtHarvestTreat.Size = new System.Drawing.Size(164, 22);
-            this.txtHarvestTreat.TabIndex = 49;
-            // 
             // labour_required
             // 
             this.labour_required.AutoSize = true;
@@ -208,7 +217,7 @@
             // txtLabourRequired
             // 
             this.txtLabourRequired.Location = new System.Drawing.Point(348, 142);
-            this.txtLabourRequired.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabourRequired.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabourRequired.Name = "txtLabourRequired";
             this.txtLabourRequired.Size = new System.Drawing.Size(164, 22);
             this.txtLabourRequired.TabIndex = 53;
@@ -226,7 +235,7 @@
             // txtTimeNeed
             // 
             this.txtTimeNeed.Location = new System.Drawing.Point(860, 91);
-            this.txtTimeNeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimeNeed.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimeNeed.Name = "txtTimeNeed";
             this.txtTimeNeed.Size = new System.Drawing.Size(164, 22);
             this.txtTimeNeed.TabIndex = 51;
@@ -244,7 +253,7 @@
             // txtLabourersRequired
             // 
             this.txtLabourersRequired.Location = new System.Drawing.Point(600, 142);
-            this.txtLabourersRequired.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLabourersRequired.Margin = new System.Windows.Forms.Padding(4);
             this.txtLabourersRequired.Name = "txtLabourersRequired";
             this.txtLabourersRequired.Size = new System.Drawing.Size(164, 22);
             this.txtLabourersRequired.TabIndex = 55;
@@ -259,14 +268,6 @@
             this.harvest_expected.TabIndex = 58;
             this.harvest_expected.Text = "When Harvest Expected";
             // 
-            // txtHarvExpect
-            // 
-            this.txtHarvExpect.Location = new System.Drawing.Point(860, 142);
-            this.txtHarvExpect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtHarvExpect.Name = "txtHarvExpect";
-            this.txtHarvExpect.Size = new System.Drawing.Size(164, 22);
-            this.txtHarvExpect.TabIndex = 57;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(89)))));
@@ -275,7 +276,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.lbRank);
             this.panel3.Location = new System.Drawing.Point(301, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(773, 68);
             this.panel3.TabIndex = 59;
@@ -337,39 +338,41 @@
             // 
             // btnHarvestTimetable
             // 
-            this.btnHarvestTimetable.Location = new System.Drawing.Point(347, 524);
+            this.btnHarvestTimetable.Location = new System.Drawing.Point(347, 543);
             this.btnHarvestTimetable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHarvestTimetable.Name = "btnHarvestTimetable";
             this.btnHarvestTimetable.Size = new System.Drawing.Size(285, 46);
             this.btnHarvestTimetable.TabIndex = 61;
             this.btnHarvestTimetable.Text = "View Harvest Timetable ";
             this.btnHarvestTimetable.UseVisualStyleBackColor = true;
+            this.btnHarvestTimetable.Click += new System.EventHandler(this.btnHarvestTimetable_Click_1);
             // 
-            // btnViewDetails
+            // cboSpecTreatment
             // 
-            this.btnViewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(242)))));
-            this.btnViewDetails.FlatAppearance.BorderSize = 0;
-            this.btnViewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewDetails.ForeColor = System.Drawing.Color.White;
-            this.btnViewDetails.Location = new System.Drawing.Point(0, 455);
-            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewDetails.Name = "btnViewDetails";
-            this.btnViewDetails.Size = new System.Drawing.Size(303, 80);
-            this.btnViewDetails.TabIndex = 46;
-            this.btnViewDetails.Text = "View Inputted Info";
-            this.btnViewDetails.UseVisualStyleBackColor = false;
+            this.cboSpecTreatment.FormattingEnabled = true;
+            this.cboSpecTreatment.Location = new System.Drawing.Point(602, 92);
+            this.cboSpecTreatment.Name = "cboSpecTreatment";
+            this.cboSpecTreatment.Size = new System.Drawing.Size(162, 24);
+            this.cboSpecTreatment.TabIndex = 62;
+            // 
+            // dtpHarvExpect
+            // 
+            this.dtpHarvExpect.Location = new System.Drawing.Point(860, 142);
+            this.dtpHarvExpect.Name = "dtpHarvExpect";
+            this.dtpHarvExpect.Size = new System.Drawing.Size(160, 22);
+            this.dtpHarvExpect.TabIndex = 63;
             // 
             // HarvestTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 613);
+            this.Controls.Add(this.dtpHarvExpect);
+            this.Controls.Add(this.cboSpecTreatment);
             this.Controls.Add(this.btnHarvestTimetable);
             this.Controls.Add(this.btnManagerHavTime);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.harvest_expected);
-            this.Controls.Add(this.txtHarvExpect);
             this.Controls.Add(this.labourers_required);
             this.Controls.Add(this.txtLabourersRequired);
             this.Controls.Add(this.labour_required);
@@ -377,17 +380,16 @@
             this.Controls.Add(this.time_needed);
             this.Controls.Add(this.txtTimeNeed);
             this.Controls.Add(this.special_treatment_label);
-            this.Controls.Add(this.txtHarvestTreat);
             this.Controls.Add(this.harvest_id_label);
             this.Controls.Add(this.txtHarvID);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvHarvest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HarvestTimetable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HarvestTimetable";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHarvest)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -400,7 +402,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHarvest;
         private System.Windows.Forms.DateTimePicker dtpHarvest;
         private System.Windows.Forms.TextBox HarvestTxt;
         private System.Windows.Forms.Panel panel1;
@@ -411,7 +413,6 @@
         private System.Windows.Forms.TextBox txtHarvID;
         private System.Windows.Forms.Label harvest_id_label;
         private System.Windows.Forms.Label special_treatment_label;
-        private System.Windows.Forms.TextBox txtHarvestTreat;
         private System.Windows.Forms.Label labour_required;
         private System.Windows.Forms.TextBox txtLabourRequired;
         private System.Windows.Forms.Label time_needed;
@@ -419,7 +420,6 @@
         private System.Windows.Forms.Label labourers_required;
         private System.Windows.Forms.TextBox txtLabourersRequired;
         private System.Windows.Forms.Label harvest_expected;
-        private System.Windows.Forms.TextBox txtHarvExpect;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label2;
@@ -428,5 +428,7 @@
         private System.Windows.Forms.Button btnManagerHavTime;
         private System.Windows.Forms.Button btnHarvestTimetable;
         private System.Windows.Forms.Button btnViewDetails;
+        private System.Windows.Forms.ComboBox cboSpecTreatment;
+        private System.Windows.Forms.DateTimePicker dtpHarvExpect;
     }
 }

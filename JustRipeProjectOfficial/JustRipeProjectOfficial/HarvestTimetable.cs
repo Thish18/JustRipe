@@ -12,15 +12,16 @@ namespace JustRipeProjectOfficial
 {
     public partial class HarvestTimetable : Form
     {
+
         DBConnect dbconn = new DBConnect();
         private int userID;
         private int rankID;
-
 
         public HarvestTimetable(int ID)
         {
             InitializeComponent();
             userID = ID;
+            
 
             dbconn.userInfoExport(userID);
 
@@ -42,7 +43,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.getTreatment();
             cboSpecTreatment.DataSource = dbconn.specialTreatmentList;
-            cboSpecTreatment.DisplayMember = "SpecialT_ID";
+            cboSpecTreatment.DisplayMember = "SpecialType";
             cboSpecTreatment.ValueMember = "SpecialT_ID";
 
 
@@ -78,20 +79,8 @@ namespace JustRipeProjectOfficial
 
             dbconn.insertHarvestTimetable(specialTreatmentID, time, labourR, labourersR, dtpHarvExpect.Value);
         }
-                  
-        private void btnViewDetails_Click(object sender, EventArgs e)
-        {
-            string ft = "Date: " + dtpHarvest.Text + "\r\n";
-            ft = ft + "Harvest ID: " + txtHarvID.Text + "\r\n";
-            ft = ft + "Special Treatment: " + cboSpecTreatment.Text + "\r\n";
-            ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
-            ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
-            ft = ft + "Labourers Required: " + txtLabourersRequired.Text + "\r\n";
-            ft = ft + "When Harvest Expected: " + dtpHarvExpect.Text;
-            HarvestTxt.Text = ft; 
-        }
 
-        private void btnHarvestTimetable_Click(object sender, EventArgs e)
+        private void btnHarvestTimetable_Click_1(object sender, EventArgs e)
         {
             dbconn.getHarvest();
             dgvHarvest.DataSource = dbconn.HarvestList;
@@ -101,5 +90,19 @@ namespace JustRipeProjectOfficial
         {
            
         }
+
+        private void btnViewDetails_Click_1(object sender, EventArgs e)
+        {
+            string ft = "Date: " + dtpHarvest.Text + "\r\n";
+            ft = ft + "Harvest ID: " + txtHarvID.Text + "\r\n";
+            ft = ft + "Special Treatment: " + cboSpecTreatment.Text + "\r\n";
+            ft = ft + "Time needed: " + txtTimeNeed.Text + "\r\n";
+            ft = ft + "Labour Required: " + txtLabourRequired.Text + "\r\n";
+            ft = ft + "Labourers Required: " + txtLabourersRequired.Text + "\r\n";
+            ft = ft + "When Harvest Expected: " + dtpHarvExpect.Text;
+            HarvestTxt.Text = ft;
+        }
+
+       
     }
 }
