@@ -68,9 +68,9 @@ namespace JustRipeProjectOfficial
             int id = Convert.ToInt32(lBSowingList.SelectedValue.ToString());
             dbconn.getSowingDetails(id);
 
-            typeTextBox.Text = dbconn.sowingTypeDetails.Rows[0][""].ToString();
-            quantityTextBox.Text = dbconn.sowingTypeDetails.Rows[0][""].ToString();
-            timeNeededTextBox.Text = dbconn.sowingTypeDetails.Rows[0][""].ToString();
+            typeTextBox.Text = dbconn.sowingTypeDetails.Rows[0]["sowingType"].ToString();
+            quantityTextBox.Text = dbconn.sowingTypeDetails.Rows[0]["quantity"].ToString();
+            timeNeededTextBox.Text = dbconn.sowingTypeDetails.Rows[0]["TimeNeeded"].ToString();
 
         }
 
@@ -109,7 +109,7 @@ namespace JustRipeProjectOfficial
 
             //auto updates list after creating a fertiliser
             dbconn.getSowingData();
-            lBSowingList.DataSource = dbconn.fertilizersList;
+            lBSowingList.DataSource = dbconn.sowingTypeList;
             lBSowingList.DisplayMember = "sowingType";
             lBSowingList.ValueMember = "sowingM_ID";
 
