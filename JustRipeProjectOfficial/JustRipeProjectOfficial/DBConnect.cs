@@ -524,7 +524,8 @@ namespace JustRipeProjectOfficial
 
             fertilizersList = new DataTable();
 
-            string query = "SELECT fertilizer_ID, fertilizerType FROM fertilizers";
+            string query = "SELECT fertiliserQuantity.fertilizer_ID, fertilizers.fertilizerType FROM fertiliserQuantity " +
+                "INNER JOIN fertilizers ON fertiliserQuantity.fertilizer_ID = fertilizers.fertilizer_ID";
 
             fertilizersList = new DataTable();
             comm = new SqlCommand(query, connToDB);
@@ -573,7 +574,7 @@ namespace JustRipeProjectOfficial
             Initialize();
             OpenConn();
 
-            string query = "SELECT TOP fertilizer_ID FROM fertilizers ORDER BY fertilizer_ID DESC";
+            string query = "SELECT TOP 1 fertilizer_ID FROM fertilizers ORDER BY fertilizer_ID DESC";
 
             int id = 0;
             comm = new SqlCommand(query, connToDB);
@@ -611,7 +612,7 @@ namespace JustRipeProjectOfficial
                 "FertiliserQuantity.* " +
                 "FROM FertiliserQuantity " +
                 "INNER JOIN fertilizers ON FertiliserQuantity.fertilizer_ID = fertilizers.fertilizer_ID " +
-                "WHERE FertiliserRequired_ID = " + id;
+                "WHERE fertiliserQuantity.Fertilizer_ID = " + id;
 
             fertilizerDetail = new DataTable();
             comm = new SqlCommand(query, connToDB);
