@@ -139,7 +139,6 @@ namespace JustRipeProjectOfficial
 
                 txtName.Text = dbconn.cropsDetail.Rows[0]["cropsType"].ToString();
                 txtQuantity.Text = dbconn.cropsDetail.Rows[0]["Quantity"].ToString();
-                //txtTimeNeeded.Text = dbconn.cropsDetail.Rows[0]["PeriodNeeded"].ToString();
                 txtMini.Text = dbconn.cropsDetail.Rows[0]["miniTemp"].ToString();
                 txtMax.Text = dbconn.cropsDetail.Rows[0]["maxTemp"].ToString();
                 cbFertilizer.Text = dbconn.cropsDetail.Rows[0]["fertilizerType"].ToString();
