@@ -43,7 +43,7 @@ namespace JustRipeProjectOfficial
 
             dbconn.getTreatment();
             cboSpecTreatment.DataSource = dbconn.specialTreatmentList;
-            cboSpecTreatment.DisplayMember = "SpecialT_ID";
+            cboSpecTreatment.DisplayMember = "SpecialType";
             cboSpecTreatment.ValueMember = "SpecialT_ID";
 
 
