@@ -712,8 +712,8 @@ namespace JustRipeProjectOfficial
             OpenConn();
             
             string query;
-            query = "SELECT sowingMethods.*" +
-                "FROM sowingMethods" +
+            query = "SELECT sowingMethods.* " +
+                "FROM sowingMethods " +
                 "WHERE sowingM_ID = " + id;
 
             sowingTypeDetails = new DataTable();
