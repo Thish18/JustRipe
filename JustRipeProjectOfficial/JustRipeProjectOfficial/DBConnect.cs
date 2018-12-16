@@ -666,7 +666,7 @@ namespace JustRipeProjectOfficial
 
             sowingTypeList = new DataTable();
 
-            string query = "SELECT sowingM_ID, sowingType FROM sowingMethods";
+            string query = "SELECT sowingM_ID, sowingType, quantity, TimeNeeded FROM sowingMethods";
 
             comm = new SqlCommand(query, connToDB);
             dataAdap = new SqlDataAdapter(comm);
@@ -683,26 +683,21 @@ namespace JustRipeProjectOfficial
 
         }
 
-        public void createSowingMethod(string type, int quantity)
+        public void createSowingMethod(string type, int quantity, int timeNeeded)
         {
 
             Initialize();
             OpenConn();
 
-            string query = "INSERT INTO sowingMethods (sowingType)" +
-                "VALUES (@sowingType";
+            string query = "INSERT INTO sowingMethods (sowingType,quantity,TimeNeeded)" +
+                "VALUES (@sowingType,@quantity,@TimeNeeded)";
 
             comm = new SqlCommand(query, connToDB);
 
             comm.Parameters.AddWithValue("@sowingType", type);
+            comm.Parameters.AddWithValue("@quantity", quantity);
+            comm.Parameters.AddWithValue("@TimeNeeded", timeNeeded);
             comm.ExecuteNonQuery();
-
-            //query = "";
-
-            //comm = new SqlCommand(query, connToDB);
-
-            //comm.Parameters.AddWithValue("@", quantity);
-            //comm.ExecuteNonQuery();
 
             CloseConn();
             MessageBox.Show("Sowing Method Created.");
@@ -717,7 +712,9 @@ namespace JustRipeProjectOfficial
             OpenConn();
             
             string query;
-            query = "";
+            query = "SELECT sowingMethods.*" +
+                "FROM sowingMethods" +
+                "WHERE sowingM_ID = " + id;
 
             sowingTypeDetails = new DataTable();
             comm = new SqlCommand(query, connToDB);

@@ -41,7 +41,7 @@ namespace JustRipeProjectOfficial
             }
 
             dbconn.getSowingData();
-            lBSowingList.DataSource = dbconn.fertilizersList;
+            lBSowingList.DataSource = dbconn.sowingTypeList;
             lBSowingList.DisplayMember = "sowingType";
             lBSowingList.ValueMember = "sowingM_ID";
 
@@ -67,6 +67,11 @@ namespace JustRipeProjectOfficial
         {
             int id = Convert.ToInt32(lBSowingList.SelectedValue.ToString());
             dbconn.getSowingDetails(id);
+
+            typeTextBox.Text = dbconn.sowingTypeDetails.Rows[0][""].ToString();
+            quantityTextBox.Text = dbconn.sowingTypeDetails.Rows[0][""].ToString();
+            timeNeededTextBox.Text = dbconn.sowingTypeDetails.Rows[0][""].ToString();
+
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -89,12 +94,13 @@ namespace JustRipeProjectOfficial
             btnCreate.Enabled = true;
 
             string type = typeTextBox.Text;
-            //int quantity = Convert.ToInt32(quantityTextBox.Text);
+            int quantity = Convert.ToInt32(quantityTextBox.Text);
             //int maxQuantity = Convert.ToInt32(maxQuantityTextBox.Text);
+            int timeNeeded = Convert.ToInt32(timeNeededTextBox.Text);
 
             if(createEnable)
             {
-                //dbconn.createSowingMethod(type, quantity);
+                dbconn.createSowingMethod(type, quantity, timeNeeded);
             }
             else
             {
